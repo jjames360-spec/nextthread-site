@@ -1,0 +1,1103 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NextThread — A website built the way you'd build it</title>
+<meta name="description" content="One-page websites for tradespeople, anywhere in the UK. £595, live in a week, and you see it finished before you pay a penny. Plus a £99-a-month plan so a missed call never becomes a missed job.">
+<meta name="theme-color" content="#0F2A21">
+<meta property="og:title" content="NextThread — A website built the way you'd build it">
+<meta property="og:description" content="£595. Live in a week. See it before you pay. Websites for roofers, plumbers, sparks, brickies and hauliers across the UK.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://nextthreadautomation.co.uk/">
+<meta property="og:image" content="https://nextthreadautomation.co.uk/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://nextthreadautomation.co.uk/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&display=swap" rel="stylesheet">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F2A21'/%3E%3Cpath d='M18 46 46 18M24 18h22v22' fill='none' stroke='%23F2C230' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<style>
+/* ---------- Tokens ---------- */
+:root{
+  --cream:#F5F4EF; --cream-2:#ECEAE2; --mint:#D9E5DD; --line:#CDD6D0;
+  --ink:#1B3328; --green:#255C49; --deep:#17382C; --night:#0F2A21; --abyss:#0A1E17;
+  --hivis:#F2C230; --hivis-2:#FFD95A; --wa:#1FA855; --white:#fff;
+  --muted-l:#55665D; --muted-d:#A9BDB2;
+  --max:1240px; --gutter:clamp(18px,4vw,44px);
+  --ease:cubic-bezier(.2,.8,.2,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; -webkit-text-size-adjust:100%; text-size-adjust:100%}
+body{margin:0; background:var(--cream); color:var(--ink); font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+a,button,summary,label{-webkit-tap-highlight-color:transparent}
+a{color:inherit}
+p{margin:0}
+h1,h2,h3{margin:0; line-height:1; letter-spacing:-0.025em}
+h1,h2{font-weight:800; font-variation-settings:"wdth" 118}
+h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
+.skip{position:absolute; left:-999px; top:8px; background:var(--ink); color:var(--cream); padding:8px 12px; border-radius:8px}
+.skip:focus{left:8px; z-index:200}
+:focus-visible{outline:3px solid var(--hivis); outline-offset:3px}
+.wrap{max-width:var(--max); margin:0 auto; padding:0 var(--gutter)}
+
+/* section themes */
+.dark{--bg:var(--night); --fg:var(--cream); --mut:var(--muted-d); --panel:#14322A; --panel-line:#27493D; background:var(--bg); color:var(--fg); position:relative}
+.light{--bg:var(--cream); --fg:var(--ink); --mut:var(--muted-l); --panel:var(--white); --panel-line:var(--line); background:var(--bg); color:var(--fg); position:relative}
+.grain::before{content:""; position:absolute; inset:0; pointer-events:none; opacity:.07; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.grain > *{position:relative}
+
+/* buttons */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:15px 22px; border-radius:999px; font:inherit; font-weight:700; line-height:1; text-decoration:none; border:2px solid transparent; cursor:pointer; white-space:nowrap; transition:transform .18s var(--ease), background .18s}
+.btn:active{transform:scale(.98)}
+.btn svg{width:20px; height:20px; flex:none}
+.btn-wa{background:var(--wa); color:#fff}
+.btn-wa:hover{background:#188a46}
+.btn-hv{background:var(--hivis); color:var(--ink)}
+.btn-hv:hover{background:var(--hivis-2)}
+.btn-ghost{background:transparent; color:var(--fg); border-color:currentColor}
+.btn-ghost:hover{background:rgba(127,127,127,.12)}
+.btn-sm{padding:11px 16px; font-size:15px}
+
+/* ---------- Nav ---------- */
+.nav{position:fixed; top:0; left:0; right:0; z-index:60; transition:background .3s, color .3s, border-color .3s; color:var(--cream); border-bottom:1px solid transparent}
+.nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; height:70px}
+.nav.scrolled{background:rgba(245,244,239,.92); color:var(--ink); -webkit-backdrop-filter:blur(10px) saturate(1.2); backdrop-filter:blur(10px) saturate(1.2); border-color:var(--line)}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; font-size:20px; letter-spacing:-0.01em}
+.brand svg{width:28px; height:28px; border-radius:7px; box-shadow:0 0 0 1.5px rgba(255,255,255,.18)}
+.nav.scrolled .brand svg{box-shadow:none}
+
+.nav-links{display:none; gap:28px; font-size:15px}
+.nav-links a{text-decoration:none; opacity:.8}
+.nav-links a:hover{opacity:1}
+@media (min-width:960px){ .nav-links{display:flex} }
+
+/* ---------- Hero ---------- */
+.hero{min-height:100vh; min-height:100svh; display:grid; align-items:center; padding:110px 0 64px; overflow:hidden;
+  background:radial-gradient(1200px 700px at 80% -10%, #1F4A3B 0%, var(--night) 55%), var(--night)}
+.hero .wrap{display:grid; gap:48px; align-items:center; width:100%}
+@media (min-width:1000px){ .hero .wrap{grid-template-columns:1.05fr .95fr; gap:40px} }
+.hero h1{font-size:clamp(44px,7vw,88px); color:var(--cream); max-width:11ch}
+.hero h1 .w{display:inline-block; opacity:1; transform:none; filter:none; transition:opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease); font-variation-settings:"wdth" 118}
+.hero.pre h1 .w{opacity:0; transform:translateY(.35em); filter:blur(6px)}
+.hero h1 .w:nth-child(2){transition-delay:.07s} .hero h1 .w:nth-child(3){transition-delay:.14s} .hero h1 .w:nth-child(4){transition-delay:.21s} .hero h1 .w:nth-child(5){transition-delay:.28s} .hero h1 .w:nth-child(6){transition-delay:.35s} .hero h1 .w:nth-child(7){transition-delay:.42s} .hero h1 .w:nth-child(8){transition-delay:.49s} .hero h1 .w:nth-child(9){transition-delay:.6s}
+.hero .stage3d{transition:opacity 1s var(--ease) .35s, transform 1s var(--ease) .35s}
+.hero.pre .stage3d{opacity:0; transform:translateY(24px)}
+.hero h1 .hl{color:var(--hivis)}
+.hero .lede{margin-top:26px; color:#D5E0D9; font-size:clamp(18px,1.7vw,22px); max-width:46ch; line-height:1.5}
+.hero .lede b{color:var(--cream); font-weight:700}
+.chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:24px}
+.chips span{border:1.5px solid #3F6655; color:#D5E0D9; border-radius:999px; padding:8px 14px; font-size:15px; font-weight:600}
+.chips span b{color:var(--hivis); font-weight:800}
+.hero-ctas{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px}
+.hero-ctas .btn{max-width:100%}
+@media (max-width:400px){ .hero-ctas .btn{width:100%; white-space:normal; text-align:center} }
+.rise{opacity:0; transform:translateY(18px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
+.hero:not(.pre) .rise{opacity:1; transform:none}
+.rise.d1{transition-delay:.7s} .rise.d2{transition-delay:.85s} .rise.d3{transition-delay:1s} .rise.d4{transition-delay:.4s}
+
+/* device: phone */
+.stage3d{perspective:1400px; display:grid; justify-items:center; align-content:center; gap:18px}
+/* the script snaps each phone to whole pixels (width and height) so Safari never rasterises its edges or seams on a half pixel */
+.phone{width:min(272px,76vw); aspect-ratio:300/610; background:#0D1B16; border:2px solid #2F4F42; border-radius:46px; padding:12px; position:relative; box-shadow:0 60px 90px -40px rgba(0,0,0,.75); transition:transform .25s var(--ease)}
+@media (hover:hover) and (pointer:fine){ .phone{transform-style:preserve-3d; will-change:transform} }
+/* highlight ring sits 2px outside the frame, so its radius is 2px larger to stay concentric */
+@media (hover:hover) and (pointer:fine){ .phone::after{content:""; position:absolute; inset:-2px; border-radius:48px; background:linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,0) 40%); pointer-events:none} }
+/* concentric corners (44px frame − 12px bezel = 32px) and a Safari-safe rounded clip for the moving content inside */
+.phone .screen{position:absolute; inset:12px; border-radius:32px; background:#fff; overflow:hidden; color:#111; isolation:isolate; transform:translateZ(0); -webkit-mask-image:-webkit-radial-gradient(white, black); mask-image:radial-gradient(white, black)}
+/* browsers without aspect-ratio (iOS 14 and older) get explicit heights instead of a collapsed frame */
+@supports not (aspect-ratio:1/1){
+  .phone{height:calc(min(272px,76vw) * 2.0333)}
+  .callphone{height:calc(min(300px,66vw) * 2.0333)}
+  @media (max-width:959px){ .callphone{height:calc(min(252px,66vw) * 2.0333)} }
+  .cmp{height:0; padding-top:62.5%}
+  @media (max-width:700px){ .cmp{padding-top:125%} }
+  .laptop .disp{height:min(60vw,540px)}
+  .s-hero .pic{height:110px}
+  .s-pics svg{height:70px}
+}
+.callphone .screen::before{content:""; position:absolute; top:0; left:0; right:0; height:54px; background:linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,0)); z-index:2; pointer-events:none}
+.phone .island{position:absolute; top:8px; left:50%; transform:translateX(-50%); width:84px; height:22px; background:#0A1612; border-radius:14px; z-index:3}
+.phone .sb{position:absolute; top:9px; left:16px; right:16px; display:flex; justify-content:space-between; font-size:11px; font-weight:600; z-index:2; color:#fff; opacity:.9; pointer-events:none; text-shadow:0 1px 2px rgba(0,0,0,.35)}
+@media (hover:hover) and (pointer:fine){ .hero .phone{animation:float 7s ease-in-out infinite} }
+@keyframes float{0%,100%{translate:0 0} 50%{translate:0 -10px}}
+/* lite mode: switched on by the script when the machine can't hold a steady frame rate (no GPU acceleration, remote desktop,
+   locked-down office PCs). Same content and the same motion, minus the effects that make a software renderer stutter. */
+.lite .phone{transform-style:flat; will-change:auto; animation:none; transform:none !important; box-shadow:0 40px 60px -40px rgba(0,0,0,.7)}
+.lite .phone::after{display:none}
+.lite .nav.scrolled{-webkit-backdrop-filter:none; backdrop-filter:none; background:rgba(245,244,239,.98)}
+.lite .grain::before{display:none}
+.lite .incall .ring::before,.lite .incall .ring::after,.lite .typing i,.lite .maker .hint i{animation:none}
+.lite .typing i{opacity:.7}
+
+/* mini site (shared) */
+.mini{--m:#8E3B2F; --m2:#F3E3DF; position:absolute; inset:0; overflow:hidden; font-size:10.5px; line-height:1.35; transition:opacity .28s ease}
+/* The solid status band is 1px taller than the scroll window below it, so it covers the window's top clip edge.
+   Safari draws a hairline where a composited (moving) layer meets a clip edge, and with the screen white underneath
+   that hairline showed as a white line under the island. Overlapping the two edges by a pixel removes it. */
+.mini::before{content:""; position:absolute; top:0; left:0; right:0; height:45px; background:var(--m); z-index:1; transition:background .5s}
+.mini.fade{opacity:0}
+.mini-scroll{position:absolute; inset:44px 0 0 0; overflow:hidden; background:#fff}
+.mini-inner{will-change:transform}
+.mini-hero{background:var(--m); color:#fff; padding:10px 14px 18px; transition:background .5s}
+.mini-brand{font-weight:800; font-size:12px; letter-spacing:-0.01em; opacity:.95; display:flex; justify-content:space-between; align-items:center}
+.mini-brand i{display:inline-block; width:18px; height:18px; border-radius:50%; background:rgba(255,255,255,.22)}
+.mini-kicker{opacity:.85; margin-top:18px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+/* every trade gets an identical layout: two-line headline, fixed-height review and services rows */
+.mini-h{font-size:21px; line-height:1.02; letter-spacing:-0.025em; font-weight:800; font-variation-settings:"wdth" 112; margin:6px 0 12px; height:calc(2 * 1.02em); overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical}
+.mini-btns{display:flex; gap:6px}
+.mini-btns span{padding:7px 10px; border-radius:999px; font-weight:700; font-size:9.5px}
+.mini-btns span:first-child{background:#fff; color:var(--m)}
+.mini-btns span:last-child{border:1px solid rgba(255,255,255,.75)}
+.mini-art{display:grid; grid-template-columns:1.4fr 1fr; grid-auto-rows:70px; gap:6px; padding:10px 12px 0}
+.mini-art svg{width:100%; height:100%; display:block; border-radius:8px; background:var(--m2)}
+.mini-art svg:first-child{grid-row:span 2}
+.mini-rev{margin:10px 12px 0; padding:10px; border-radius:10px; background:#F6F6F3; color:#222; min-height:72px}
+.mini-rev b{color:var(--m); letter-spacing:1px}
+.mini-rev small{display:block; color:#666; margin-top:3px}
+.mini-serv{display:flex; flex-wrap:wrap; gap:5px; padding:10px 12px; min-height:69px; align-content:flex-start}
+.mini-serv span{border:1px solid #ddd; border-radius:999px; padding:4px 8px; font-size:9px; font-weight:600; color:#333}
+.mini-why{margin:2px 12px 0; padding:10px 12px; border-radius:10px; border:1px solid #E6E6E1}
+.mini-why .mh,.mini-areas .mh{margin:0 0 6px; font-size:11px; font-weight:800; letter-spacing:-0.01em}
+.mini-why ul{margin:0; padding:0; list-style:none; display:grid; gap:5px}
+.mini-why li{position:relative; padding-left:16px; color:#333; font-size:10px; line-height:1.3}
+.mini-why li::before{content:""; position:absolute; left:0; top:3px; width:9px; height:9px; border-radius:50%; background:var(--m)}
+.mini-areas{margin:10px 12px 0}
+.mini-areas div{display:flex; flex-wrap:wrap; gap:5px; min-height:49px; align-content:flex-start}
+.mini-areas span{background:var(--m2); color:#333; border-radius:999px; padding:4px 8px; font-size:9px; font-weight:600}
+.mini-foot{margin:12px 12px 56px; padding-top:8px; border-top:1px solid #eee; color:#777; font-size:9px; display:flex; justify-content:space-between}
+.mini-cta{position:absolute; left:12px; right:12px; bottom:10px; background:var(--m); color:#fff; text-align:center; padding:10px; border-radius:999px; font-weight:800; font-size:10.5px; box-shadow:0 8px 20px -10px rgba(0,0,0,.6)}
+
+/* make-it-yours */
+.maker{width:min(520px,100%); background:var(--panel); border:1px solid var(--panel-line); border-radius:18px; padding:14px; display:grid; gap:8px 10px; grid-template-columns:1fr 1fr; color:var(--cream)}
+.maker label{font-size:12px; color:var(--mut); display:grid; gap:4px}
+.maker label:first-child{grid-column:1 / -1}
+/* 16px minimum: iPhones zoom the whole page in when a smaller field is tapped */
+.maker input,.maker select{font:inherit; font-size:16px; padding:10px 12px; border-radius:10px; border:1px solid #2F5A4A; background:#0D2219; color:var(--cream); width:100%; min-width:0}
+.maker input::placeholder{color:#6F8A7C}
+.maker select{appearance:none; -webkit-appearance:none; color-scheme:dark; text-overflow:ellipsis; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpath d='M3 6l5 5 5-5' fill='none' stroke='%23B9CBC0' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 12px center; padding-right:36px}
+@media (max-width:360px){ .maker{grid-template-columns:1fr} .maker label{grid-column:1 / -1} }
+.maker .btn{grid-column:1 / -1; margin-top:4px}
+.maker .hint{grid-column:1 / -1; font-size:13px; color:var(--mut); display:flex; align-items:center; gap:8px}
+.maker .hint i{width:8px; height:8px; border-radius:50%; background:var(--hivis); display:inline-block; animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1; transform:scale(1)} 50%{opacity:.4; transform:scale(.7)}}
+
+/* ---------- Build section (scroll-driven) ---------- */
+.build{position:relative}
+.build .track{height:420vh; position:relative}
+.build .stage{position:sticky; top:0; height:100vh; height:100svh; display:grid; align-items:center; overflow:hidden}
+.build .stage .wrap{display:grid; gap:18px; align-items:center; width:100%; grid-template-areas:"head" "laptop" "steps"}
+.build .b-head{grid-area:head} .build .laptop{grid-area:laptop} .build .steps{grid-area:steps}
+@media (min-width:1000px){ .build .stage .wrap{grid-template-columns:.9fr 1.1fr; grid-template-areas:"head laptop" "steps laptop"; column-gap:60px; row-gap:26px; align-items:start; align-content:center} .build .laptop{align-self:center} }
+.build h2{font-size:clamp(30px,5vw,64px); max-width:14ch}
+.steps{list-style:none; margin:0; padding:0; display:grid; gap:6px}
+@media (max-width:999px){ .build .steps li{display:none; opacity:1} .build .steps li.now{display:grid; transform:none} .build .stage{align-items:start; align-content:start; padding-top:88px} .build .b-head{padding-top:0} .build h2{font-size:clamp(28px,8vw,40px)} }
+.build .cue{position:absolute; left:50%; bottom:22px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; font-size:13px; font-weight:600; color:var(--mut); transition:opacity .4s var(--ease); pointer-events:none; white-space:nowrap}
+.build .cue i{width:18px; height:18px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); animation:cue 1.6s ease-in-out infinite}
+.build .cue.off{opacity:0}
+@media (max-width:899px){ .build .cue{bottom:calc(104px + env(safe-area-inset-bottom))} }
+@keyframes cue{0%,100%{transform:translateY(0) rotate(45deg); opacity:.5} 50%{transform:translateY(6px) rotate(45deg); opacity:1}}
+.steps li{display:grid; grid-template-columns:38px 1fr; gap:14px; align-items:start; padding:12px 14px; border-radius:14px; opacity:.38; transition:opacity .35s, background .35s, transform .35s var(--ease)}
+.steps li.on{opacity:1}
+.steps li.now{background:var(--panel); border:1px solid var(--panel-line); transform:translateX(6px)}
+.steps .d{width:38px; height:38px; border-radius:50%; display:grid; place-items:center; font-weight:800; font-size:14px; background:var(--mint); color:var(--ink)}
+.steps li.now .d{background:var(--hivis)}
+.steps h3{font-size:18px; margin-bottom:3px}
+.steps p{font-size:15px; color:var(--mut)}
+@media (max-width:999px){ .steps li h3{font-size:16px} .steps p{font-size:14px} .steps li{padding:9px 12px} }
+
+.laptop{width:min(100%,720px); margin:0 auto; position:relative}
+.laptop .lid{background:#0A1612; border-radius:18px 18px 6px 6px; padding:14px 14px 20px; box-shadow:0 50px 80px -40px rgba(0,0,0,.6), 0 0 0 1px #2B4A3E}
+.laptop .cam{width:6px; height:6px; border-radius:50%; background:#2B4A3E; margin:0 auto 8px}
+.laptop .disp{aspect-ratio:4/3; background:#fff; border-radius:8px; overflow:hidden; position:relative; color:#111}
+@media (max-width:999px){ .laptop{width:min(100%,520px)} .laptop .disp{aspect-ratio:16/11} }
+.laptop .base{height:14px; background:linear-gradient(#1A2F28,#0E1F19); border-radius:0 0 16px 16px; margin:0 -18px; box-shadow:0 20px 30px -20px rgba(0,0,0,.6)}
+.laptop .base::after{content:""; display:block; width:90px; height:4px; background:#2B4A3E; border-radius:0 0 6px 6px; margin:0 auto}
+.url{height:26px; background:#EEF1EF; display:flex; align-items:center; gap:8px; padding:0 10px; font-size:10px; color:#777}
+.url i{width:8px; height:8px; border-radius:50%; background:#DDD}
+.url .bar{flex:1; background:#fff; border-radius:6px; height:16px; display:flex; align-items:center; padding:0 8px; gap:6px}
+.url .bar b{color:#222; font-weight:600}
+.url .live{margin-left:auto; background:var(--hivis); color:var(--ink); font-weight:800; font-size:9px; padding:2px 7px; border-radius:999px; opacity:0; transform:translateY(-6px); transition:all .4s var(--ease)}
+.site{--m:#8E3B2F; --m2:#F3E3DF; position:absolute; top:26px; left:0; right:0; bottom:0; overflow:hidden; font-size:11px; background:#fff; color:#111}
+.site .s-in{transition:transform .6s var(--ease)}
+.part{opacity:0; transform:translateY(22px) scale(.98); transition:opacity .55s var(--ease), transform .55s var(--ease)}
+.part.on{opacity:1; transform:none}
+.s-nav{display:flex; justify-content:space-between; align-items:center; padding:9px 16px; border-bottom:1px solid #eee; font-weight:800; font-size:12px}
+.s-nav span:last-child{background:var(--m); color:#fff; padding:5px 10px; border-radius:999px; font-size:10px}
+.s-hero{display:grid; grid-template-columns:1.2fr .8fr; gap:14px; padding:14px 16px 10px; align-items:center}
+.s-hero .sh{margin:0; font-size:clamp(15px,2.2vw,22px); line-height:1.02; letter-spacing:-0.025em; font-variation-settings:"wdth" 112; font-weight:800}
+.s-hero p{color:#555; margin-top:7px; font-size:11px}
+.s-hero .pic{aspect-ratio:16/10; border-radius:10px; overflow:hidden; position:relative; background:var(--m2); background:linear-gradient(160deg, color-mix(in srgb, var(--m) 18%, #fff), color-mix(in srgb, var(--m) 48%, #fff))}
+.s-hero .pic svg{width:72%; height:72%; display:block; position:absolute; left:14%; top:14%; opacity:.95}
+.s-pics{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding:0 16px}
+.s-pics svg{width:100%; aspect-ratio:16/10; border-radius:8px; display:block; padding:12%; box-sizing:border-box; background:var(--m2)}
+.s-pics svg:nth-child(1){background:linear-gradient(150deg, color-mix(in srgb, var(--m) 14%, #fff), color-mix(in srgb, var(--m) 40%, #fff))}
+.s-pics svg:nth-child(2){background:linear-gradient(200deg, color-mix(in srgb, var(--m) 30%, #fff), color-mix(in srgb, var(--m) 62%, #fff)); padding:18% 22%}
+.s-pics svg:nth-child(3){background:linear-gradient(120deg, color-mix(in srgb, var(--m) 20%, #fff), color-mix(in srgb, var(--m) 50%, #fff)); padding:8%}
+.s-pics svg:nth-child(4){background:linear-gradient(170deg, color-mix(in srgb, var(--m) 40%, #fff), color-mix(in srgb, var(--m) 72%, #fff)); padding:16% 14% 10%}
+.mini-art svg{padding:10%; box-sizing:border-box; background:linear-gradient(160deg, color-mix(in srgb, var(--m) 16%, #fff), color-mix(in srgb, var(--m) 46%, #fff))}
+.mini-art svg:nth-child(2){background:linear-gradient(200deg, color-mix(in srgb, var(--m) 32%, #fff), color-mix(in srgb, var(--m) 64%, #fff))}
+.mini-art svg:nth-child(3){background:linear-gradient(120deg, color-mix(in srgb, var(--m) 22%, #fff), color-mix(in srgb, var(--m) 52%, #fff))}
+.s-revs{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding:10px 16px 0}
+.s-revs div{background:#F6F6F3; border-radius:10px; padding:8px 9px; font-size:10px; color:#333; line-height:1.3}
+.s-revs b{color:var(--m); letter-spacing:1px; display:block; margin-bottom:2px}
+.s-btns{display:flex; gap:8px; padding:10px 16px 14px}
+.s-btns span{padding:8px 12px; border-radius:999px; font-weight:800; font-size:10.5px}
+.s-btns span:first-child{background:var(--m); color:#fff}
+.s-btns span:last-child{border:1.5px solid var(--m); color:var(--m)}
+.s-btns span:first-child.ring{animation:ring .5s ease 2}
+@keyframes ring{0%,100%{transform:rotate(0)} 25%{transform:rotate(-4deg)} 75%{transform:rotate(4deg)}}
+.progress{position:absolute; left:0; right:0; bottom:0; height:4px; background:rgba(127,127,127,.15)}
+.progress i{display:block; height:100%; width:0; background:var(--hivis); transition:width .2s linear}
+@media (max-width:959px){ .progress{bottom:auto; top:70px; height:5px} } /* sits under the header on phones, clear of the floating pills */
+
+/* ---------- Before / after ---------- */
+.ba h2{font-size:clamp(34px,5vw,64px); max-width:14ch}
+.ba .intro{margin-top:16px; color:var(--mut); max-width:52ch; font-size:clamp(17px,1.5vw,19px)}
+.cmp{position:relative; margin-top:36px; border-radius:22px; overflow:hidden; aspect-ratio:16/10; background:#fff; box-shadow:0 60px 90px -50px rgba(0,0,0,.8); user-select:none; -webkit-user-select:none; touch-action:pan-y; cursor:ew-resize; isolation:isolate; transform:translateZ(0); -webkit-mask-image:-webkit-radial-gradient(white, black); mask-image:radial-gradient(white, black)}
+.cmp::after{content:""; position:absolute; inset:0; border-radius:22px; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.12); pointer-events:none; z-index:5}
+@media (max-width:700px){ .cmp{aspect-ratio:4/5} }
+.cmp .layer{position:absolute; inset:0}
+.cmp .after{clip-path:inset(0 0 0 50%)}
+.cmp .handle{position:absolute; top:0; bottom:0; left:50%; width:3px; background:var(--hivis); transform:translateX(-50%); pointer-events:none; box-shadow:0 0 0 1px rgba(0,0,0,.2)}
+.cmp .knob{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:58px; height:58px; border-radius:50%; background:var(--hivis); display:grid; place-items:center; box-shadow:0 14px 30px -10px rgba(0,0,0,.7); pointer-events:none}
+.cmp .knob svg{width:28px; height:28px}
+/* the range input is kept for keyboard users only; dragging is handled with pointer events on .cmp */
+.cmp input[type=range]{position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; pointer-events:none; -webkit-appearance:none; appearance:none; background:transparent}
+.cmp:focus-within .knob{outline:3px solid #fff; outline-offset:3px}
+.cmp .tag{position:absolute; bottom:14px; padding:6px 11px; border-radius:999px; font-size:12px; font-weight:800; background:rgba(0,0,0,.65); color:#fff; pointer-events:none}
+.cmp .tag.l{left:14px} .cmp .tag.r{right:14px; background:var(--hivis); color:var(--ink)}
+.cmp .hintdrag{position:absolute; left:50%; top:14px; transform:translateX(-50%); font-size:12px; font-weight:700; color:#fff; background:rgba(0,0,0,.6); padding:6px 12px; border-radius:999px; pointer-events:none; transition:opacity .3s}
+.cmp.used .hintdrag{opacity:0}
+/* the 2014 site */
+.old{background:#fff; font-family:"Times New Roman",Times,serif; color:#000; padding:0; font-size:12px; overflow:hidden}
+.old .page{width:100%; height:100%; background:#fff}
+.old .fake{text-decoration:underline; color:#00e; cursor:default}
+@media (max-width:700px){ .old .body{grid-template-columns:1fr !important} .old .side{display:none} }
+.old .top{background:linear-gradient(#5a7fd1,#2a4fa0); color:#fff; padding:10px 14px; font-family:Arial,sans-serif; font-weight:bold; font-size:14px; text-shadow:1px 1px 0 #000; display:flex; justify-content:space-between; align-items:center}
+.old .top small{font-weight:normal; font-size:10px}
+.old .menu{background:#ddd; border-bottom:2px solid #999; padding:6px 10px; font-family:Arial,sans-serif; font-size:11px}
+.old .menu span{text-decoration:underline; cursor:default; color:#00e; margin-right:14px}
+.old .body{padding:14px; display:grid; grid-template-columns:150px 1fr; gap:14px; align-items:start}
+.old .oh{font-family:"Times New Roman",serif; font-size:20px; color:#c00; font-weight:bold; margin:0 0 8px; letter-spacing:0; font-variation-settings:normal}
+.old p{line-height:1.3; margin-bottom:8px; font-size:12px}
+.old .side{border:1px solid #999; background:#f4f4f4; padding:8px; font-family:Arial,sans-serif; font-size:10px}
+.old .broken{width:100%; height:80px; border:1px solid #999; background:#eee; display:grid; place-items:center; color:#555; font-size:9px; margin-bottom:8px}
+.old .counter{margin-top:8px; font-family:"Courier New",monospace; background:#000; color:#0f0; padding:3px 6px; display:inline-block; font-size:10px}
+.old marquee,.old .mq{color:#c00; font-family:Arial,sans-serif; font-size:11px; display:block; white-space:nowrap; overflow:hidden; border-top:1px dotted #999; padding:6px 10px}
+.old .mq span{display:inline-block; animation:mq 12s linear infinite}
+@keyframes mq{from{transform:translateX(100%)} to{transform:translateX(-100%)}}
+.old .blink{animation:blink 1s steps(2) infinite}
+@keyframes blink{to{visibility:hidden}}
+/* the new site inside the comparison */
+.cmp .site{top:0; font-size:12px; --gx:max(20px, calc((100% - 860px) / 2))}
+.cmp .site .s-in{max-width:none; margin:0}
+.cmp .site .s-nav{padding:14px var(--gx); font-size:14px; border-bottom:0; background:var(--m); color:#fff}
+.cmp .site .s-nav span:last-child{font-size:11px; padding:7px 12px; background:#fff; color:var(--m)}
+.cmp .site .s-hero{padding:6px var(--gx) 26px; gap:26px; background:var(--m); color:#fff}
+.cmp .site .s-hero .sh{font-size:clamp(22px,3.2vw,38px); color:#fff}
+.cmp .site .s-hero p{font-size:13px; max-width:40ch; color:rgba(255,255,255,.85)}
+.cmp .site .s-hero .pic{box-shadow:0 20px 40px -20px rgba(0,0,0,.5)}
+.cmp .site .s-pics{padding:18px var(--gx) 0}
+.cmp .site .s-revs{padding:14px var(--gx) 0}
+.cmp .site .s-revs div{font-size:11.5px; padding:10px 12px}
+.cmp .site .s-serv{display:flex; flex-wrap:wrap; gap:6px; padding:14px var(--gx) 0}
+.cmp .site .s-serv span{border:1px solid #ddd; border-radius:999px; padding:5px 10px; font-size:10.5px; font-weight:600; color:#333}
+.cmp .site .s-btns{padding:14px var(--gx) 16px}
+.cmp .site .s-btns span{font-size:12px; padding:10px 16px}
+.cmp .site .s-foot{margin:6px var(--gx) 0; padding:10px 0 20px; border-top:1px solid #eee; display:flex; justify-content:space-between; color:#777; font-size:10.5px}
+@media (max-width:700px){
+  .cmp .site .s-hero{grid-template-columns:1fr; gap:12px}
+  .cmp .site .s-hero .pic{aspect-ratio:16/9}
+  .cmp .site .s-pics{grid-template-columns:repeat(2,1fr)}
+  .cmp .site .s-revs{grid-template-columns:1fr}
+  .cmp .site .s-revs div:nth-child(3){display:none}
+}
+
+/* ---------- Included ---------- */
+.inc h2{font-size:clamp(34px,5vw,64px)}
+.two{display:grid; gap:36px}
+@media (min-width:960px){ .two{grid-template-columns:1fr 1fr; gap:64px; align-items:start} }
+.price{display:flex; align-items:baseline; gap:12px; margin-top:26px; flex-wrap:wrap}
+.price .n{font-size:clamp(56px,8vw,112px); font-weight:800; font-variation-settings:"wdth" 118; letter-spacing:-0.04em; line-height:.95; background:var(--hivis); color:var(--ink); padding:.02em .14em; border-radius:12px}
+.price small{font-size:16px; color:var(--mut); max-width:22ch; line-height:1.3}
+.list{list-style:none; margin:0; padding:0; display:grid}
+.list li{display:grid; grid-template-columns:28px 1fr; gap:14px; padding:18px 0; border-top:1px solid var(--panel-line)}
+.list li:last-child{border-bottom:1px solid var(--panel-line)}
+.list svg{width:26px; height:26px; margin-top:2px; color:var(--green)}
+.dark .list svg{color:var(--hivis)}
+.list strong{display:block; font-size:18px; font-weight:700; letter-spacing:-0.01em}
+.list span{color:var(--mut); font-size:16px}
+.fine{margin-top:22px; padding:16px 18px; border-left:4px solid var(--hivis); background:var(--cream-2); border-radius:0 12px 12px 0; font-size:16px}
+
+/* ---------- Plan ---------- */
+.plan .wrap{display:grid; gap:40px}
+@media (min-width:960px){ .plan .wrap{grid-template-columns:1fr 1fr; gap:64px; align-items:center} }
+.plan h2{font-size:clamp(34px,5vw,64px); max-width:13ch}
+.plan .intro{margin-top:18px; color:var(--mut); font-size:clamp(17px,1.5vw,19px); max-width:50ch}
+.plan .price .n{font-size:clamp(48px,6vw,88px)}
+.plan .list li{border-color:var(--panel-line)}
+.callphone{width:min(300px,66vw); margin:0 auto}
+@media (max-width:959px){ .callphone{width:min(252px,66vw)} .callphone .screen{font-size:13px} .msgs{padding-top:96px} .msgs .hdr{height:86px} .incall{padding:60px 20px 30px} .incall .who .num{font-size:21px} .incall .acts{gap:44px} .incall .acts i{width:54px; height:54px} }
+.callphone .screen{background:#0B0F0D; color:#fff; font-family:-apple-system,"SF Pro Text","Segoe UI",system-ui,sans-serif; font-size:14px}
+.incall{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:70px 24px 36px; background:radial-gradient(500px 400px at 50% 20%, #28352F, #0B0F0D); transition:opacity .4s, transform .4s var(--ease)}
+.incall.gone{opacity:0; transform:scale(1.04); pointer-events:none}
+.incall .who{text-align:center}
+.incall .who .num{font-size:24px; font-weight:600; letter-spacing:-0.01em}
+.incall .who .lbl{color:#9aa; margin-top:4px; font-size:13px}
+.incall .ring{width:84px; height:84px; border-radius:50%; background:#2E3A34; display:grid; place-items:center; position:relative}
+.incall .ring::before,.incall .ring::after{content:""; position:absolute; inset:-10px; border-radius:50%; border:2px solid rgba(255,255,255,.18); animation:ripple 1.4s ease-out infinite}
+.incall .ring::after{animation-delay:.7s}
+@keyframes ripple{from{transform:scale(.8); opacity:1} to{transform:scale(1.5); opacity:0}}
+.incall .acts{display:flex; gap:56px}
+.incall .acts div{display:grid; justify-items:center; gap:8px; font-size:12px; color:#ccc}
+.incall .acts i{width:62px; height:62px; border-radius:50%; display:grid; place-items:center}
+.incall .acts .dec i{background:#E5473E} .incall .acts .acc i{background:#34C759}
+.incall .acts svg{width:28px; height:28px}
+.msgs{position:absolute; inset:0; display:flex; flex-direction:column; padding:62px 12px 14px; gap:8px; opacity:0; transition:opacity .4s}
+.msgs.in{opacity:1}
+.msgs{padding-top:104px}
+.msgs .hdr{position:absolute; top:0; left:0; right:0; height:94px; background:#161A18; border-bottom:1px solid #2a2f2c; display:grid; place-items:center; align-content:end; padding-bottom:10px; gap:2px; font-size:12px; color:#9aa; line-height:1.2}
+.msgs .hdr b{display:block; color:#fff; font-size:15px; font-weight:600}
+.m{max-width:84%; padding:9px 12px; border-radius:18px; font-size:13.5px; line-height:1.35; opacity:0; transform:translateY(8px); transition:opacity .3s, transform .3s var(--ease)}
+.m.show{opacity:1; transform:none}
+.m.sys{align-self:center; background:transparent; color:#9aa; font-size:12px; text-align:center; max-width:100%; padding:4px}
+.m.sys b{color:#E5473E; font-weight:600}
+.m.out{align-self:flex-end; background:#34C759; color:#fff; border-bottom-right-radius:5px}
+.m.in{align-self:flex-start; background:#26302B; color:#fff; border-bottom-left-radius:5px}
+.m.you{align-self:center; max-width:100%; width:100%; background:var(--hivis); color:var(--ink); border-radius:14px; font-weight:600}
+.m.you small{display:block; font-weight:500; opacity:.75; margin-bottom:3px; font-size:11px}
+.typing{align-self:flex-start; background:#26302B; border-radius:18px; padding:10px 14px; display:none; gap:4px}
+.typing.show{display:flex}
+.typing i{width:7px; height:7px; border-radius:50%; background:#9aa; animation:dots 1s infinite}
+.typing i:nth-child(2){animation-delay:.15s} .typing i:nth-child(3){animation-delay:.3s}
+@keyframes dots{0%,100%{opacity:.3; transform:translateY(0)} 50%{opacity:1; transform:translateY(-3px)}}
+.replay{margin:16px auto 0; display:block; background:transparent; border:1px solid var(--panel-line); color:var(--mut); font:inherit; font-size:14px; padding:9px 16px; border-radius:999px; cursor:pointer}
+.replay:hover{color:var(--fg); border-color:currentColor}
+.plan .caption{text-align:center; color:var(--mut); font-size:14px; margin-top:10px}
+
+/* ---------- Trades marquee ---------- */
+.trades h2{font-size:clamp(28px,3.6vw,44px); max-width:20ch}
+.marq{margin-top:28px; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent); mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+/* gap lives on each chip (not flex gap) so that -50% is exactly one full set and the loop point is seamless */
+.row{display:flex; width:max-content; padding:7px 0; animation:slide 46s linear infinite; will-change:transform; -webkit-backface-visibility:hidden; backface-visibility:hidden}
+.row.rev{animation-direction:reverse; animation-duration:54s}
+/* pause on hover only where hover exists: on touch screens a tap would otherwise freeze the ticker until the next tap */
+@media (hover:hover) and (pointer:fine){ .marq:hover .row{animation-play-state:paused} }
+/* and nothing animates while it's off screen (the script toggles these), which keeps weak machines smooth */
+.marq.offscreen .row{animation-play-state:paused}
+.hero.offscreen .phone,.hero.offscreen .hint i{animation-play-state:paused}
+.callphone.offscreen .ring::before,.callphone.offscreen .ring::after,.callphone.offscreen .typing i{animation-play-state:paused}
+.cmp.offscreen .mq span,.cmp.offscreen .blink{animation-play-state:paused}
+.row span{margin-right:14px; border:1.5px solid var(--ink); border-radius:999px; padding:12px 22px; font-weight:700; font-size:clamp(18px,2.2vw,26px); letter-spacing:-0.01em; white-space:nowrap; font-variation-settings:"wdth" 108}
+.row span.hv{background:var(--hivis); border-color:var(--hivis)}
+@keyframes slide{from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)}}
+
+/* ---------- FAQ ---------- */
+.faq h2{font-size:clamp(34px,5vw,64px)}
+.qa{margin-top:28px; border-top:1px solid var(--panel-line)}
+.qa details{border-bottom:1px solid var(--panel-line)}
+.qa summary{cursor:pointer; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:16px; padding:22px 0; font-weight:700; font-size:clamp(18px,1.6vw,21px); letter-spacing:-0.01em}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"+"; font-size:30px; line-height:1; font-weight:400; color:var(--green); flex:none; transition:transform .25s var(--ease)}
+.qa details[open] summary::after{transform:rotate(45deg)}
+.qa details p{padding:0 0 22px; max-width:64ch; color:var(--fg); font-size:17px}
+
+/* ---------- About ---------- */
+.about .two{align-items:center}
+.about h2{font-size:clamp(34px,5vw,64px)}
+.about .intro{margin-top:18px; font-size:clamp(17px,1.5vw,20px); max-width:50ch}
+.card{background:var(--panel); border:1px solid var(--panel-line); border-radius:22px; padding:28px; display:grid; gap:16px}
+.card .mark{width:72px; height:72px; display:grid; place-items:center}
+.card .mark svg{width:72px; height:72px; border-radius:16px}
+.card .who{font-weight:800; font-size:22px; letter-spacing:-0.015em}
+.card .who span{display:block; font-weight:400; color:var(--mut); font-size:15px; margin-top:2px}
+.card p{font-size:16px}
+
+/* ---------- Final ---------- */
+.final{padding:clamp(80px,12vw,160px) 0; text-align:left; overflow:hidden}
+.final h2{font-size:clamp(44px,9vw,128px); line-height:.95; max-width:10ch}
+.final h2 .hl{color:var(--hivis)}
+.final .intro{margin-top:22px; color:var(--mut); font-size:clamp(18px,1.7vw,22px); max-width:44ch}
+.final .hero-ctas{margin-top:34px}
+.final .big-arrow{position:absolute; right:-6vw; bottom:-8vw; width:46vw; max-width:620px; opacity:.09; pointer-events:none}
+
+footer{padding:40px 0 112px; font-size:15px; color:var(--muted-l)}
+@media (min-width:960px){ footer{padding-bottom:44px} }
+footer .wrap{display:grid; gap:16px}
+@media (min-width:760px){ footer .wrap{grid-template-columns:1fr auto; align-items:start} }
+footer a{color:var(--ink); text-decoration:none}
+footer a:hover{text-decoration:underline}
+footer .contact{display:grid; gap:4px}
+@media (min-width:760px){ footer .contact{text-align:right} }
+footer .legal{max-width:62ch}
+
+/* floating pill, bottom-left, leaving the bottom-right corner clear for the host's badge */
+.mobile-bar{position:fixed; left:14px; bottom:calc(14px + env(safe-area-inset-bottom)); z-index:70; max-width:calc(100% - 214px); transform:translateY(140%); transition:transform .35s var(--ease)}
+.mobile-bar.show{transform:none}
+.mobile-bar .btn{width:100%; padding:14px 16px; gap:8px; font-size:15px; box-shadow:0 14px 30px -12px rgba(0,0,0,.55); white-space:nowrap}
+.mobile-bar .btn svg{flex:none; width:18px; height:18px}
+@media (max-width:379px){ .mobile-bar .btn span{display:none} .mobile-bar .btn{padding:14px} }
+@media (min-width:960px){ .mobile-bar{display:none} }
+
+section.block{padding:clamp(72px,10vw,140px) 0}
+
+/* Motion is intentionally the same on every device, including machines with the OS "reduce motion" flag set (see script). */
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- shared trade illustrations -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="nt-mark" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-roof" viewBox="0 0 120 90"><path d="M8 52 60 14l52 38" fill="none" stroke="var(--m)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 50v30h76V50" fill="none" stroke="var(--m)" stroke-width="6" stroke-linejoin="round"/><path d="M22 60h76M22 70h76" stroke="var(--m)" stroke-width="3" opacity=".55"/><rect x="80" y="20" width="10" height="18" fill="var(--m)"/></symbol>
+  <symbol id="i-pipe" viewBox="0 0 120 90"><path d="M10 70h40a14 14 0 0 0 14-14V20h46" fill="none" stroke="var(--m)" stroke-width="12" stroke-linecap="round"/><circle cx="86" cy="20" r="6" fill="#fff"/><path d="M98 48c0 8 10 12 10 20a10 10 0 0 1-20 0c0-8 10-12 10-20Z" fill="var(--m)"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 120 90"><path d="M66 6 34 50h24l-8 34 36-48H62z" fill="var(--m)"/><path d="M10 80h20M90 12h20" stroke="var(--m)" stroke-width="4" stroke-linecap="round" opacity=".5"/></symbol>
+  <symbol id="i-brick" viewBox="0 0 120 90"><g fill="var(--m)"><rect x="6" y="12" width="32" height="16" rx="2"/><rect x="44" y="12" width="32" height="16" rx="2"/><rect x="82" y="12" width="32" height="16" rx="2"/><rect x="-12" y="34" width="32" height="16" rx="2"/><rect x="26" y="34" width="32" height="16" rx="2"/><rect x="64" y="34" width="32" height="16" rx="2"/><rect x="102" y="34" width="32" height="16" rx="2"/><rect x="6" y="56" width="32" height="16" rx="2"/><rect x="44" y="56" width="32" height="16" rx="2"/><rect x="82" y="56" width="32" height="16" rx="2"/></g></symbol>
+  <symbol id="i-crane" viewBox="0 0 120 90"><path d="M20 84V20h8v64M12 84h24" fill="none" stroke="var(--m)" stroke-width="6" stroke-linecap="round"/><path d="M24 22h80" stroke="var(--m)" stroke-width="7" stroke-linecap="round"/><path d="M84 24v26" stroke="var(--m)" stroke-width="3"/><rect x="74" y="50" width="20" height="16" rx="2" fill="var(--m)"/><path d="M24 22 60 8" stroke="var(--m)" stroke-width="4" stroke-linecap="round"/></symbol>
+  <symbol id="i-trowel" viewBox="0 0 120 90"><path d="M20 70 70 24l26 26-46 32z" fill="var(--m)"/><path d="M72 22 90 6" stroke="var(--m)" stroke-width="10" stroke-linecap="round"/><path d="M10 82h40" stroke="var(--m)" stroke-width="4" stroke-linecap="round" opacity=".5"/></symbol>
+  <symbol id="i-hedge" viewBox="0 0 120 90"><path d="M8 78h104" stroke="var(--m)" stroke-width="6" stroke-linecap="round"/><path d="M14 72c0-26 18-32 30-24 8-14 34-14 42 0 12-8 24 2 24 24z" fill="var(--m)"/><rect x="40" y="74" width="40" height="6" fill="#fff" opacity=".6"/></symbol>
+  <symbol id="i-lorry" viewBox="0 0 120 90"><rect x="6" y="26" width="64" height="40" rx="4" fill="var(--m)"/><path d="M70 36h22l16 14v16H70z" fill="var(--m)"/><rect x="76" y="40" width="12" height="10" fill="#fff" opacity=".7"/><circle cx="26" cy="70" r="9" fill="var(--m)" stroke="#fff" stroke-width="4"/><circle cx="90" cy="70" r="9" fill="var(--m)" stroke="#fff" stroke-width="4"/></symbol>
+  <symbol id="i-tools" viewBox="0 0 120 90"><rect x="20" y="36" width="80" height="44" rx="6" fill="var(--m)"/><path d="M44 36v-10h32v10" fill="none" stroke="var(--m)" stroke-width="7"/><rect x="52" y="52" width="16" height="10" fill="#fff" opacity=".7"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2 3 6.6 7 .8-5.2 4.8 1.4 7-6.2-3.6L5.8 21l1.4-7L2 9.4l7-.8z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 64 64"><path d="M16 48 48 16M22 16h26v26" fill="none" stroke="currentColor" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></symbol>
+</svg>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="NextThread home">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#nt-mark"/></svg>
+      NextThread
+    </a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#build">How it's built</a>
+      <a href="#compare">Before and after</a>
+      <a href="#included">What you get</a>
+      <a href="#plan">Never miss a job</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <a class="btn btn-wa btn-sm" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20I%27d%20like%20a%20website%20preview%20for%20my%20business."><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+  </div>
+</header>
+
+<main id="main">
+<span id="top"></span>
+
+<!-- ============ HERO ============ -->
+<section class="hero dark grain pre" id="hero">
+  <div class="wrap">
+    <div>
+      <h1><span class="w">A</span> <span class="w">website</span> <span class="w">built</span> <span class="w">the</span> <span class="w">way</span> <span class="w">you'd</span> <span class="w">build</span> <span class="w">it.</span> <span class="w hl">Properly.</span></h1>
+      <p class="lede rise d1">One page. Your photos, your reviews, and a button that rings your phone. <b>Built in a week for £595, and you see it finished before you pay a penny.</b></p>
+      <div class="chips rise d2">
+        <span><b>£595</b> one-off</span>
+        <span>Live in <b>7 days</b></span>
+        <span>Pay <b>after</b> you've seen it</span>
+        <span>Anywhere in the <b>UK</b></span>
+      </div>
+      <div class="hero-ctas rise d3">
+        <a class="btn btn-wa" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20I%27d%20like%20a%20website%20preview%20for%20my%20business."><svg aria-hidden="true"><use href="#i-wa"/></svg>Message Joshua on WhatsApp</a>
+        <a class="btn btn-ghost" href="#build">Watch one get built</a>
+      </div>
+    </div>
+
+    <div class="stage3d rise d4">
+      <div class="phone" id="heroPhone">
+        <div class="screen">
+          <div class="island"></div>
+          <div class="sb"><span>09:41</span><span>●●●</span></div>
+          <div class="mini" id="heroMini" data-trade="roofing">
+            <div class="mini-scroll"><div class="mini-inner" id="heroInner">
+              <div class="mini-hero">
+                <div class="mini-brand"><span data-f="brand">Hartley Roofing</span><i></i></div>
+                <p class="mini-kicker" data-f="kicker">Roofers in Dudley</p>
+                <p class="mini-h" data-f="head">Fixed right the first time.</p>
+                <div class="mini-btns"><span>Call now</span><span>Get a quote</span></div>
+              </div>
+              <div class="mini-art" data-f="art"></div>
+              <div class="mini-rev"><b>★★★★★</b> <span data-f="rev">“Turned up when he said he would, tidy job, fair price.”</span><small data-f="revby">Sarah, Netherton</small></div>
+              <div class="mini-serv" data-f="serv"></div>
+              <div class="mini-why">
+                <p class="mh">Why <span data-f="brand4">Hartley Roofing</span></p>
+                <ul><li>Fully insured, certificates on request</li><li>Free, written quotes within 48 hours</li><li>We tidy up like we were never there</li></ul>
+              </div>
+              <div class="mini-rev"><b>★★★★★</b> <span data-f="rev2">“Came out in the rain to sort the leak. Can't fault him.”</span><small data-f="revby2">Gary, Sedgley</small></div>
+              <div class="mini-areas"><p class="mh">Areas we cover</p><div data-f="areas"></div></div>
+              <div class="mini-foot"><span data-f="brand2">Hartley Roofing</span><span>Fully insured</span></div>
+            </div></div>
+            <div class="mini-cta">Call <span data-f="brand3">Hartley Roofing</span></div>
+          </div>
+        </div>
+      </div>
+
+      <form class="maker" id="maker" autocomplete="off" onsubmit="return false">
+        <label>Make it yours. Your business name
+          <input id="bizName" type="text" maxlength="30" placeholder="e.g. Hartley Roofing">
+        </label>
+        <label>Trade
+          <select id="trade">
+            <option value="roofing">Roofing</option>
+            <option value="plumbing">Plumbing &amp; heating</option>
+            <option value="electrical">Electrical</option>
+            <option value="brick">Bricklaying</option>
+            <option value="building">Building &amp; extensions</option>
+            <option value="plastering">Plastering</option>
+            <option value="landscaping">Landscaping &amp; driveways</option>
+            <option value="haulage">Haulage &amp; transport</option>
+            <option value="other">Something else</option>
+          </select>
+        </label>
+        <label>Town
+          <input id="town" type="text" maxlength="26" placeholder="e.g. Dudley">
+        </label>
+        <p class="hint" id="makerHint"><i></i>Cycling through trades. Type to make it yours.</p>
+        <a class="btn btn-hv" id="makerWa" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20I%27d%20like%20a%20website%20preview%20for%20my%20business.">Build mine for real</a>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BUILD (scroll) ============ -->
+<section class="build light" id="build">
+  <div class="track" id="buildTrack">
+    <div class="stage">
+      <div class="wrap">
+        <div class="b-head"><h2>Watch yours come together</h2></div>
+          <ol class="steps" id="steps">
+            <li data-s="1"><span class="d">1</span><div><h3>You send photos</h3><p>Six to ten from your phone. Nothing fancy.</p></div></li>
+            <li data-s="2"><span class="d">2</span><div><h3>I write the words</h3><p>Plain, confident, yours. You check every line.</p></div></li>
+            <li data-s="3"><span class="d">3</span><div><h3>Your reviews go front and centre</h3><p>The thing that actually wins the job.</p></div></li>
+            <li data-s="4"><span class="d">4</span><div><h3>Buttons that ring your phone</h3><p>One tap to call or WhatsApp. No forms nobody fills in.</p></div></li>
+            <li data-s="5"><span class="d">5</span><div><h3>Preview in your hand</h3><p>Usually within three days. Change what you like.</p></div></li>
+            <li data-s="6"><span class="d">6</span><div><h3>Live in a week</h3><p>Your own web address, a year's hosting. It's yours.</p></div></li>
+          </ol>
+        <div class="laptop" id="laptop">
+          <div class="lid">
+            <div class="cam"></div>
+            <div class="disp">
+              <div class="url"><i></i><i></i><i></i><div class="bar"><span>🔒</span><b id="urlText">preview.nextthread.co.uk</b></div><span class="live" id="liveBadge">LIVE</span></div>
+              <div class="site" id="buildSite" data-trade="roofing"><div class="s-in" id="buildIn">
+                <div class="part s-nav" data-p="1"><span>Hartley Roofing</span><span>Call now</span></div>
+                <div class="part s-hero" data-p="2">
+                  <div><p class="sh">Fixed right the first time.</p><p>Roofing repairs and re-roofs across Dudley and the Black Country. Fully insured, 20 years on the tools.</p></div>
+                  <div class="pic"><svg><use href="#i-roof"/></svg></div>
+                </div>
+                <div class="part s-pics" data-p="1"><svg><use href="#i-roof"/></svg><svg><use href="#i-roof"/></svg><svg><use href="#i-roof"/></svg><svg><use href="#i-roof"/></svg></div>
+                <div class="part s-revs" data-p="3">
+                  <div><b>★★★★★</b>Turned up when he said he would. Tidy job.</div>
+                  <div><b>★★★★★</b>Fair price, no fuss, roof's been dry since.</div>
+                  <div><b>★★★★★</b>Recommended to my mum. Says it all.</div>
+                </div>
+                <div class="part s-btns" data-p="4"><span id="ringBtn">Call Hartley Roofing</span><span>WhatsApp</span></div>
+              </div></div>
+            </div>
+          </div>
+          <div class="base"></div>
+        </div>
+      </div>
+      <div class="progress"><i id="prog"></i></div>
+      <div class="cue" id="buildCue" aria-hidden="true"><span>Keep scrolling to build it</span><i></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BEFORE / AFTER ============ -->
+<section class="ba dark grain block" id="compare">
+  <div class="wrap">
+    <h2>The site you've got. The site you'd have.</h2>
+    <p class="intro">Most tradesmen are still being judged on a website someone's nephew made in 2014. Drag the handle.</p>
+    <div class="cmp" id="cmp">
+      <div class="layer old" aria-hidden="true"><div class="page">
+        <div class="top">Hartley Roofing Services <small>est. 1998</small></div>
+        <div class="menu"><span>Home</span><span>About Us</span><span>Services</span><span>Gallery</span><span>Contact Us</span><span>Links</span></div>
+        <div class="body">
+          <div class="side">
+            <div class="broken">image.jpg</div>
+            <div class="broken" style="height:60px">photo2 (1).JPG</div>
+            Best viewed in Internet Explorer 6 at 800x600<br>
+            <span class="counter">Visitors: 004213</span>
+          </div>
+          <div>
+            <p class="oh">Welcome to our website!!!</p>
+            <p>Hartley Roofing Services are a roofing company based in Dudley. We do all aspects of roofing including flat roofs, tiled roofs, slate roofs, chimneys, guttering, fascias and soffits, lead work and much much more. No job to big or to small. We have been established since 1998 and pride ourselves on our workmanship.</p>
+            <p>Please <span class="fake">click here</span> to contact us or ring us on the number at the top of the page. We look forward to hearing from you.</p>
+            <p><span class="blink">***</span> FREE QUOTES <span class="blink">***</span></p>
+          </div>
+        </div>
+        <div class="mq"><span>*** Welcome to Hartley Roofing Services *** Call us today for a FREE no obligation quote *** All work guaranteed ***</span></div>
+      </div></div>
+      <div class="layer after" id="after">
+        <div class="site" data-trade="roofing"><div class="s-in">
+          <div class="s-nav"><span>Hartley Roofing</span><span>Call now</span></div>
+          <div class="s-hero">
+            <div><p class="sh">Fixed right the first time.</p><p>Roofing repairs and re-roofs across Dudley and the Black Country. Fully insured, 20 years on the tools.</p></div>
+            <div class="pic"><svg><use href="#i-roof"/></svg></div>
+          </div>
+          <div class="s-pics"><svg><use href="#i-roof"/></svg><svg><use href="#i-roof"/></svg><svg><use href="#i-roof"/></svg><svg><use href="#i-roof"/></svg></div>
+          <div class="s-revs">
+            <div><b>★★★★★</b>Turned up when he said he would. Tidy job.</div>
+            <div><b>★★★★★</b>Fair price, no fuss, roof's been dry since.</div>
+            <div><b>★★★★★</b>Recommended to my mum. Says it all.</div>
+          </div>
+          <div class="s-serv"><span>Re-roofs</span><span>Flat roofs</span><span>Leak repairs</span><span>Guttering</span><span>Fascias &amp; soffits</span><span>Chimneys</span></div>
+          <div class="s-btns"><span>Call Hartley Roofing</span><span>WhatsApp</span></div>
+          <div class="s-foot"><span>Hartley Roofing · Dudley</span><span>Fully insured · Free quotes</span></div>
+        </div></div>
+      </div>
+      <div class="handle" id="handle"></div>
+      <div class="knob" id="knob"><svg viewBox="0 0 24 24" fill="none" stroke="#1B3328" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 7 3 12l5 5M16 7l5 5-5 5"/></svg></div>
+      <span class="tag l">2014</span><span class="tag r">Yours</span>
+      <span class="hintdrag">Drag</span>
+      <input type="range" id="cmpRange" min="0" max="100" value="50" aria-label="Compare old website with new website">
+    </div>
+  </div>
+</section>
+
+<!-- ============ INCLUDED ============ -->
+<section class="inc light block" id="included">
+  <div class="wrap two">
+    <div>
+      <h2>What £595 buys</h2>
+      <div class="price"><span class="n">£595</span><small>one-off. Includes your first year's hosting and your web address.</small></div>
+      <p class="fine">The site is yours. Web address in your name, files yours to keep. Walk away after a year and you take it with you.</p>
+    </div>
+    <ul class="list">
+      <li><svg aria-hidden="true"><use href="#i-arrow"/></svg><div><strong>A one-page site that works on phones first</strong><span>Because that's where your customers are when their roof is leaking.</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-arrow"/></svg><div><strong>Written for you</strong><span>You send photos and tell me what you do. I write the words. You check them.</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-arrow"/></svg><div><strong>Reviews and photos front and centre</strong><span>The two things that make someone pick you over the next name on Google.</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-arrow"/></svg><div><strong>Call and WhatsApp buttons that work with one tap</strong><span>No forms nobody fills in. A thumb on a button and your phone rings.</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-arrow"/></svg><div><strong>Your own web address</strong><span>yourbusiness.co.uk in your name, or your existing one moved over without a day offline.</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-arrow"/></svg><div><strong>Set up to show on Google for your trade and area</strong><span>The basics done properly, so "roofer Dudley" has a fighting chance of finding you.</span></div></li>
+      <li><svg aria-hidden="true"><use href="#i-arrow"/></svg><div><strong>Live within a week of saying yes</strong><span>Most previews are ready in three days.</span></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ PLAN ============ -->
+<section class="plan dark grain block" id="plan">
+  <div class="wrap">
+    <div>
+      <h2>Never miss a job while you're on one</h2>
+      <p class="intro">Half your calls come while you're up a ladder or under a floor. A missed call is a job that goes to the next name on Google. This fixes that, for less than one small job a month.</p>
+      <div class="price"><span class="n">£99</span><small>a month. Cancel any month.</small></div>
+      <ul class="list" style="margin-top:26px">
+        <li><svg aria-hidden="true"><use href="#i-arrow"/></svg><div><strong>Missed call? They get a text within seconds</strong><span>From your business, in your words, while you carry on working.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#i-arrow"/></svg><div><strong>You get a text with their details</strong><span>What they need, where they are, their number. Ring back when you're off the roof.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#i-arrow"/></svg><div><strong>Enquiries that go quiet get a polite follow-up</strong><span>So the ones comparing quotes come back to you.</span></div></li>
+        <li><svg aria-hidden="true"><use href="#i-arrow"/></svg><div><strong>Website updates whenever you need them</strong><span>New photos, new prices, Christmas hours. Message me, it's done.</span></div></li>
+      </ul>
+      <div class="hero-ctas">
+        <a class="btn btn-hv" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20tell%20me%20more%20about%20the%20never-miss-a-job%20plan.">Ask about the plan</a>
+      </div>
+    </div>
+    <div>
+      <div class="phone callphone" id="callphone">
+        <div class="screen">
+          <div class="island"></div>
+          <div class="sb"><span>09:41</span><span>●●●</span></div>
+          <div class="incall" id="incall">
+            <div class="who"><div class="num">07700 900 123</div><div class="lbl">mobile · Halesowen</div></div>
+            <div class="ring"><svg viewBox="0 0 24 24" width="36" height="36" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></div>
+            <div class="acts">
+              <div class="dec"><i><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" transform="rotate(135 12 12)"/></svg></i>Decline</div>
+              <div class="acc"><i><svg viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25c1.1.37 2.3.57 3.6.57a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg></i>Accept</div>
+            </div>
+          </div>
+          <div class="msgs" id="msgs">
+            <div class="hdr">Messages<b>07700 900 123</b></div>
+            <div class="m sys" data-i="0"><b>Missed call</b> · Tuesday 10:42</div>
+            <div class="typing" id="typ1"><i></i><i></i><i></i></div>
+            <div class="m out" data-i="1">Hi, it's Dave at Hartley Roofing. Sorry I missed you, I'm on a job. What needs doing and whereabouts are you? I'll come back to you by 5 today.</div>
+            <div class="typing" id="typ2"><i></i><i></i><i></i></div>
+            <div class="m in" data-i="2">Hi Dave, flat roof on the garage is leaking, Halesowen. Can you look this week?</div>
+            <div class="m you" data-i="3"><small>Text to Dave, 10:44</small>New lead: garage flat roof leak, Halesowen, wants this week. 07700 900 123.</div>
+          </div>
+        </div>
+      </div>
+      <p class="caption">What your customer sees, then what you see. Nobody rings the next roofer.</p>
+      <button class="replay" type="button" id="replay">Replay</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRADES ============ -->
+<section class="trades light block" aria-label="Who it's for">
+  <div class="wrap">
+    <h2>Built for people who work with their hands and their phone</h2>
+  </div>
+  <div class="marq" aria-hidden="true">
+    <div class="row" id="row1"></div>
+    <div class="row rev" id="row2"></div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq light block" id="faq" style="padding-top:0">
+  <div class="wrap">
+    <h2>Questions people ask</h2>
+    <div class="qa">
+      <details><summary>Do I need to write anything?</summary><p>No. Send photos and tell me what you do in a message or a voice note. I write it, you read it, we change anything you don't like.</p></details>
+      <details><summary>Who owns the website?</summary><p>You do. The web address is registered in your name and the files are yours. If you ever want to move it somewhere else, I hand everything over.</p></details>
+      <details><summary>I've already got a website. Can you fix it?</summary><p>I'll rebuild it properly and move your existing web address across, so the old one keeps working right up until the new one takes over. Nothing goes offline.</p></details>
+      <details><summary>How do I pay?</summary><p>By bank transfer, once you've seen the preview and said yes. The monthly plan is a standing order you can stop any month.</p></details>
+      <details><summary>Is £595 really everything?</summary><p>For the site, your web address and your first year's hosting, yes. After the first year, hosting is included in the monthly plan, or £60 a year if you'd rather not have the plan.</p></details>
+      <details><summary>Where are you based?</summary><p>The West Midlands, but I build sites for tradespeople anywhere in the UK. Everything happens over WhatsApp and email, so it makes no difference where you are.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="about light block" style="padding-top:0">
+  <div class="wrap two">
+    <div>
+      <h2>One person, not an agency</h2>
+      <p class="intro">I'm Joshua James. I started NextThread because most tradespeople I know are brilliant at the job and have either no website or one from 2014 that doesn't work on a phone. I build each site myself, one at a time, and I answer my own WhatsApp.</p>
+    </div>
+    <div class="card">
+      <div class="mark"><svg viewBox="0 0 64 64" aria-hidden="true"><use href="#nt-mark"/></svg></div>
+      <p class="who">Joshua James<span>Founder, NextThread. West Midlands, working UK-wide.</span></p>
+      <p>You deal with the same person from first message to going live, and every month after.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL ============ -->
+<section class="final dark grain" id="go">
+  <div class="wrap">
+    <h2>See yours <span class="hl">before</span> you pay for it.</h2>
+    <p class="intro">Send your business name and trade. You'll have a preview link in a few days and nothing to pay until you like it.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-wa" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20I%27d%20like%20a%20website%20preview%20for%20my%20business."><svg aria-hidden="true"><use href="#i-wa"/></svg>Message Joshua on WhatsApp</a>
+      <a class="btn btn-ghost" href="mailto:joshua@nextthreadautomation.co.uk?subject=Website%20preview">Email instead</a>
+    </div>
+  </div>
+  <svg class="big-arrow" viewBox="0 0 64 64" aria-hidden="true"><path d="M16 48 48 16M22 16h26v26" fill="none" stroke="#F2C230" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p><strong style="color:var(--ink)">NextThread</strong></p>
+      <p class="legal">Websites and the never-miss-a-job plan for tradespeople across the UK. No cookies, no tracking. The preview tool runs in your browser and sends nothing anywhere until you tap WhatsApp.</p>
+    </div>
+    <div class="contact">
+      <a href="https://wa.me/447856075882">WhatsApp 07856 075882</a>
+      <a href="mailto:joshua@nextthreadautomation.co.uk">joshua@nextthreadautomation.co.uk</a>
+      <span>Run by Joshua James, West Midlands</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mobile-bar" id="mobileBar">
+  <a class="btn btn-wa" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20I%27d%20like%20a%20website%20preview%20for%20my%20business." aria-label="Message Joshua on WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp Joshua</span></a>
+</div>
+
+<script>
+(function(){
+  var $ = function(s, r){ return (r||document).querySelector(s); };
+  var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  // Same experience on every device. Many corporate Windows builds force the OS "reduce motion" flag on,
+  // so honouring it here froze the site for a lot of people who never chose that. Nothing on the page flashes.
+  var reduce = false;
+  var WA = "https://wa.me/447856075882?text=";
+
+  /* ----- trade data ----- */
+  var T = {
+    roofing:     {name:"Hartley Roofing",        town:"Dudley",        kicker:"Roofers in {t}",                 head:"Fixed right the first time.",          m:"#8E3B2F", m2:"#F3E3DF", art:"i-roof",   serv:["Re-roofs","Flat roofs","Leak repairs","Guttering"],            rev:"Turned up when he said he would, tidy job, fair price.", by:"Sarah, Netherton", rev2:"Came out in the rain to sort the leak. Can't fault him.", by2:"Gary, Sedgley", areas:["Dudley","Stourbridge","Halesowen","Kingswinford"]},
+    plumbing:    {name:"Brook Plumbing & Heating",town:"Walsall",      kicker:"Plumbing & heating in {t}",      head:"Warm house. Dry floors. No fuss.",      m:"#1F5FA6", m2:"#E0EAF6", art:"i-pipe",   serv:["Boilers","Bathrooms","Leaks","Gas Safe"],                     rev:"Boiler fixed the same day. Explained everything.",       by:"Dean, Bloxwich", rev2:"New bathroom in four days, spotless.", by2:"Lisa, Aldridge", areas:["Walsall","Bloxwich","Aldridge","Willenhall"]},
+    electrical:  {name:"Amp Electrical",          town:"Wolverhampton", kicker:"Electricians in {t}",            head:"Safe, certified, left tidy.",           m:"#B9720A", m2:"#F7EBD6", art:"i-bolt",   serv:["Rewires","Fuse boards","EV chargers","EICRs"],                rev:"Spotless work and he hoovered up after. Rare.",            by:"Priya, Tettenhall", rev2:"Fuse board done in a morning, certificate the same day.", by2:"Raj, Penn", areas:["Wolverhampton","Tettenhall","Penn","Codsall"]},
+    brick:       {name:"Stonefield Brickwork",    town:"Cardiff",       kicker:"Bricklayers in {t}",             head:"Walls that stand for decades.",         m:"#A84E2A", m2:"#F5E4DB", art:"i-brick",  serv:["Garden walls","Extensions","Repointing","Piers"],             rev:"Straight, level, beautiful pointing. Proper craftsman.",  by:"Owen, Penarth", rev2:"The garden wall is the talk of the street.", by2:"Megan, Barry", areas:["Cardiff","Penarth","Barry","Caerphilly"]},
+    building:    {name:"Redwood Builders",        town:"Leeds",         kicker:"Builders in {t}",                head:"Extensions done properly.", m:"#4A4A58", m2:"#E8E8EE", art:"i-crane", serv:["Extensions","Lofts","Garages","Renovations"],              rev:"On budget, on time, and no surprises. Unheard of.",       by:"Hannah, Horsforth", rev2:"Kept us informed every single day.", by2:"James, Headingley", areas:["Leeds","Horsforth","Headingley","Otley"]},
+    plastering:  {name:"Smooth Plastering Co",    town:"Bristol",       kicker:"Plasterers in {t}",              head:"Smooth walls. Clean finish.",           m:"#5F5247", m2:"#ECE7E2", art:"i-trowel", serv:["Skimming","Rendering","Ceilings","Repairs"],                  rev:"You'd never know the old artex was there.",                by:"Tom, Bedminster", rev2:"Mirror finish. Our decorator was impressed.", by2:"Aisha, Clifton", areas:["Bristol","Bedminster","Clifton","Keynsham"]},
+    landscaping: {name:"Greenway Landscapes",     town:"Norwich",       kicker:"Landscaping & driveways in {t}", head:"Gardens built to be lived in.",         m:"#3E7A3B", m2:"#E3EFE2", art:"i-hedge",  serv:["Patios","Driveways","Turfing","Fencing"],                     rev:"Garden's the best it's ever looked. Neighbours ask who did it.", by:"Claire, Eaton", rev2:"Driveway laid in two days and it looks superb.", by2:"Paul, Thorpe", areas:["Norwich","Eaton","Thorpe","Wymondham"]},
+    haulage:     {name:"Northgate Haulage",       town:"Glasgow",       kicker:"Haulage in {t} and beyond",      head:"Big loads. Careful hands.",             m:"#1E3A5F", m2:"#E0E7F0", art:"i-lorry",  serv:["Plant moves","Abnormal loads","Pallets","Escorts"],           rev:"Moved a 40ft lodge without a scratch. Brilliant team.",   by:"Mark, Paisley", rev2:"Collected on time, delivered on time. Simple.", by2:"Fiona, Hamilton", areas:["Glasgow","Paisley","Hamilton","Scotland-wide"]},
+    other:       {name:"Your Business",           town:"your town",     kicker:"Trusted trades in {t}",          head:"Good work, done properly.",             m:"#255C49", m2:"#DDE9E2", art:"i-tools",  serv:["Repairs","Installs","Call-outs","Quotes"],                    rev:"Did exactly what they said they'd do, when they said.",   by:"A happy customer", rev2:"Fair price, good work, no fuss.", by2:"A local customer", areas:["Your town","Nearby towns","Within 20 miles"]}
+  };
+  var order = ["roofing","plumbing","electrical","brick","building","landscaping","haulage","plastering"];
+
+  /* ----- hero mini site ----- */
+  var mini = $("#heroMini"), inner = $("#heroInner");
+  var nameI = $("#bizName"), tradeI = $("#trade"), townI = $("#town"), hint = $("#makerHint"), makerWa = $("#makerWa");
+  var userTouched = false, cycleIdx = 0, cycleTimer = null;
+
+  function artHtml(id){ return '<svg><use href="#'+id+'"/></svg><svg><use href="#'+id+'"/></svg><svg><use href="#'+id+'"/></svg>'; }
+  function setMini(key, name, town){
+    var t = T[key] || T.other;
+    var n = name || t.name, tw = town || t.town;
+    mini.style.setProperty("--m", t.m); mini.style.setProperty("--m2", t.m2);
+    mini.setAttribute("data-trade", key);
+    $$("[data-f=brand],[data-f=brand2],[data-f=brand3],[data-f=brand4]", mini).forEach(function(e){ e.textContent = n; });
+    $("[data-f=rev2]", mini).textContent = "“" + t.rev2 + "”";
+    $("[data-f=revby2]", mini).textContent = t.by2;
+    $("[data-f=areas]", mini).innerHTML = (town ? [town, "Surrounding areas", "Within 20 miles"] : t.areas).map(function(a){ return "<span>"+a+"</span>"; }).join("");
+    $("[data-f=kicker]", mini).textContent = t.kicker.replace("{t}", tw);
+    $("[data-f=head]", mini).textContent = t.head;
+    $("[data-f=art]", mini).innerHTML = artHtml(t.art);
+    $("[data-f=rev]", mini).textContent = "“" + t.rev + "”";
+    $("[data-f=revby]", mini).textContent = t.by;
+    $("[data-f=serv]", mini).innerHTML = t.serv.map(function(s){ return "<span>"+s+"</span>"; }).join("");
+    var msg = "Hi Joshua, I'm " + n + " (" + key.replace("brick","bricklaying") + (town ? ", " + town : "") + "). Can you build me a preview?";
+    makerWa.setAttribute("href", WA + encodeURIComponent(msg));
+  }
+  function swapTo(key, name, town){
+    if (reduce){ setMini(key, name, town); resetScroll(); return; }
+    mini.classList.add("fade");
+    setTimeout(function(){ setMini(key, name, town); resetScroll(); mini.classList.remove("fade"); }, 280);
+  }
+  function cycle(){
+    if (userTouched) return;
+    cycleIdx = (cycleIdx + 1) % order.length;
+    swapTo(order[cycleIdx]);
+    // reflect in the select so it never feels out of sync
+    tradeI.value = order[cycleIdx];
+    nameI.placeholder = "e.g. " + T[order[cycleIdx]].name;
+    townI.placeholder = "e.g. " + T[order[cycleIdx]].town;
+  }
+  /* one shared scroll sequence for every trade: hold at the top, glide to the bottom, hold, (then back up if the user has stopped the cycle) */
+  var HOLD = 1000, GLIDE = 3600, PERIOD = HOLD + GLIDE + HOLD;
+  // reduced motion: everything still happens, nothing glides. Trades swap in place on a shorter beat.
+  var CYCLE = reduce ? 4200 : PERIOD;
+  var scrollT0 = performance.now();
+  function resetScroll(){ scrollT0 = performance.now(); if (pausedAt) pausedAt = scrollT0; inner.style.transform = "translateY(0)"; }
+  function ease(x){ return x < .5 ? 2*x*x : 1 - Math.pow(-2*x + 2, 2) / 2; }
+  function scrollPos(t){ // 0..1 position within the sequence
+    var loop = 2 * (HOLD + GLIDE), u = t % loop;
+    if (u < HOLD) return 0;
+    if (u < HOLD + GLIDE) return ease((u - HOLD) / GLIDE);
+    if (u < 2*HOLD + GLIDE) return 1;
+    return 1 - ease((u - 2*HOLD - GLIDE) / GLIDE);
+  }
+  /* the glide only runs while the hero is on screen; off screen it pauses (and the clock pauses with it, so nothing jumps on return) */
+  var heroOn = true, ticking = false, pausedAt = 0;
+  function tick(){
+    if (!heroOn){ ticking = false; return; }
+    var max = inner.offsetHeight - inner.parentNode.offsetHeight;
+    if (max > 0){
+      var t = performance.now() - scrollT0;
+      var p = userTouched ? scrollPos(t) : Math.min(1, scrollPos(Math.min(t, HOLD + GLIDE))); // auto-cycle: one pass down, then the next trade
+      inner.style.transform = "translateY(" + (-(p * max)).toFixed(2) + "px)";
+    }
+    requestAnimationFrame(tick);
+  }
+  function startTick(){ if (!reduce && !ticking){ ticking = true; requestAnimationFrame(tick); } }
+  function startCycle(){ clearInterval(cycleTimer); if (!userTouched) cycleTimer = setInterval(cycle, CYCLE); }
+  function stopCycle(){ clearInterval(cycleTimer); cycleTimer = null; }
+
+  setMini("roofing"); resetScroll();
+  startTick(); startCycle();
+
+  function onUser(){
+    if (!userTouched){ userTouched = true; stopCycle(); hint.innerHTML = "That's roughly the top of your site. Want the real thing?"; }
+    swapTo(tradeI.value, nameI.value.trim(), townI.value.trim());
+  }
+  ["input","change"].forEach(function(ev){
+    nameI.addEventListener(ev, onUser); townI.addEventListener(ev, onUser); tradeI.addEventListener(ev, onUser);
+  });
+
+
+  /* 3D tilt on pointer (desktop only) */
+  var heroPhone = $("#heroPhone"), hero = $("#hero");
+  var lite = false;
+  if (!reduce && window.matchMedia("(hover:hover) and (pointer:fine)").matches){
+    hero.addEventListener("pointermove", function(e){
+      if (lite) return;
+      var r = heroPhone.getBoundingClientRect();
+      var cx = r.left + r.width/2, cy = r.top + r.height/2;
+      var dx = (e.clientX - cx) / window.innerWidth, dy = (e.clientY - cy) / window.innerHeight;
+      heroPhone.style.transform = "rotateY(" + (dx*14) + "deg) rotateX(" + (-dy*10) + "deg)";
+    });
+    hero.addEventListener("pointerleave", function(){ heroPhone.style.transform = ""; });
+  }
+
+  /* hero load sequence: wait for the webfont (max 1.2s) so words never flash in a fallback face */
+  var started = false;
+  function startHero(){
+    if (started) return; started = true;
+    requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.remove("pre"); }); });
+    // start the phone's scroll sequence and trade cycle fresh once the hero has actually appeared
+    if (!userTouched){ setTimeout(function(){ resetScroll(); if (heroOn) startCycle(); }, 700); }
+  }
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(startHero); }
+  setTimeout(startHero, 1200);
+
+  /* pause everything that moves while it's off screen: the hero glide and cycle, the ticker, the ringing phone */
+  if ("IntersectionObserver" in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        var show = e.isIntersecting;
+        if (show === heroOn) return;
+        heroOn = show;
+        hero.classList.toggle("offscreen", !show);
+        if (show){
+          if (pausedAt){ scrollT0 += performance.now() - pausedAt; pausedAt = 0; }
+          startTick();
+          // if the glide had already finished when the visitor scrolled away, come back with a fresh trade rather than a still frame
+          if (started && !userTouched && performance.now() - scrollT0 > HOLD + GLIDE) cycle();
+          if (started) startCycle();
+        } else { pausedAt = performance.now(); stopCycle(); }
+      });
+    }, {threshold:0}).observe(hero);
+    var offs = new IntersectionObserver(function(es){ es.forEach(function(e){ e.target.classList.toggle("offscreen", !e.isIntersecting); }); }, {threshold:0});
+    $$(".marq, .callphone, .cmp").forEach(function(el){ offs.observe(el); });
+  }
+
+  /* whole-pixel phones: Safari draws hairlines and soft edges when a frame lands on a half pixel, so each phone is
+     measured and snapped to integers (width and the matching height) on load and whenever the window changes size */
+  function snapPhones(){
+    $$(".phone").forEach(function(p){
+      p.style.width = ""; p.style.height = "";
+      var w = Math.round(p.offsetWidth);
+      if (w > 0){ p.style.width = w + "px"; p.style.height = Math.round(w * 610 / 300) + "px"; }
+    });
+  }
+  snapPhones();
+  var snapT; window.addEventListener("resize", function(){ clearTimeout(snapT); snapT = setTimeout(snapPhones, 120); });
+
+  /* frame-rate check: measure for ~1.2s once the page has settled; under ~45fps, drop the heavy effects (see .lite in the CSS) */
+  (function(){
+    var gaps = [], last = 0, t0 = 0;
+    function sample(now){
+      if (!t0) t0 = now;
+      if (last) gaps.push(now - last);
+      last = now;
+      if (now - t0 < 1500) { requestAnimationFrame(sample); return; }
+      var g = gaps.slice(Math.floor(gaps.length * 0.3)).sort(function(a,b){ return a-b; }); // ignore the warm-up frames
+      var median = g.length ? g[Math.floor(g.length / 2)] : 16;
+      if (median > 22){
+        lite = true; document.documentElement.classList.add("lite"); heroPhone.style.transform = "";
+      }
+    }
+    setTimeout(function(){ requestAnimationFrame(sample); }, 1800);
+  })();
+
+  /* ----- nav + mobile bar ----- */
+  var nav = $("#nav"), bar = $("#mobileBar");
+  function onScroll(){
+    var past = window.scrollY > window.innerHeight * 0.75;
+    nav.classList.toggle("scrolled", window.scrollY > 40);
+    bar.classList.toggle("show", past);
+    updateBuild();
+  }
+  // one update per frame however many scroll events the browser fires (iOS and trackpads fire a lot)
+  var scrollQueued = false;
+  function queueScroll(){ if (scrollQueued) return; scrollQueued = true; requestAnimationFrame(function(){ scrollQueued = false; onScroll(); }); }
+  window.addEventListener("scroll", queueScroll, {passive:true});
+  window.addEventListener("resize", queueScroll);
+
+  /* ----- scroll-driven build ----- */
+  var track = $("#buildTrack"), steps = $$("#steps li"), parts = $$("#buildSite .part"), live = $("#liveBadge"), prog = $("#prog"), urlText = $("#urlText"), ringBtn = $("#ringBtn");
+  var buildSite = $("#buildSite"), buildIn = $("#buildIn"), cue = $("#buildCue"), stage = $(".build .stage");
+  var lastStep = -1;
+  function scrollSiteFor(step){
+    // once reviews/buttons exist, scroll the mock page so the newest part is in view
+    if (step < 3){ buildIn.style.transform = ""; return; }
+    var overflow = buildIn.scrollHeight - buildSite.clientHeight;
+    buildIn.style.transform = overflow > 0 ? "translateY(" + (-overflow) + "px)" : "";
+  }
+  function updateBuild(){
+    // measured against the sticky stage, not window.innerHeight, which changes on phones as the browser bar hides and shows
+    var r = track.getBoundingClientRect();
+    var vh = stage.offsetHeight || window.innerHeight;
+    var total = Math.max(1, track.offsetHeight - vh);
+    var p = Math.max(0, Math.min(1, -r.top / total));
+    prog.style.width = (p*100).toFixed(1) + "%";
+    cue.classList.toggle("off", p > 0.06 || r.top > vh * 0.5);
+    var step = Math.min(6, Math.floor(p * 6) + 1); // 1..6, never an empty screen
+    if (step === lastStep) return; lastStep = step;
+    steps.forEach(function(li, i){ li.classList.toggle("on", i < step); li.classList.toggle("now", i === step - 1); });
+    parts.forEach(function(el){ el.classList.toggle("on", parseInt(el.getAttribute("data-p"),10) <= step); });
+    scrollSiteFor(step);
+    if (step >= 4 && !reduce){ ringBtn.classList.add("ring"); setTimeout(function(){ ringBtn.classList.remove("ring"); }, 1200); }
+    live.style.opacity = step >= 6 ? 1 : 0; live.style.transform = step >= 6 ? "none" : "translateY(-6px)";
+    urlText.textContent = step >= 6 ? "hartleyroofing.co.uk" : "preview.nextthread.co.uk";
+  }
+  onScroll(); // also sets the header and floating button correctly when the page opens already scrolled (refresh, back button)
+
+  /* ----- before/after ----- */
+  var cmp = $("#cmp"), range = $("#cmpRange"), after = $("#after"), handle = $("#handle"), knob = $("#knob");
+  function setCmp(v){
+    after.style.clipPath = "inset(0 0 0 " + v + "%)";
+    handle.style.left = v + "%"; knob.style.left = v + "%";
+  }
+  range.addEventListener("input", function(){ cmp.classList.add("used"); setCmp(range.value); });
+  setCmp(50);
+  // touch + mouse dragging anywhere on the comparison (iOS ignores touches on a stretched range input)
+  // Direction-aware: a sideways drag moves the slider, an up/down swipe scrolls the page as normal.
+  var drag = null; // {id, x0, y0, active}
+  function pctFrom(e){ var r = cmp.getBoundingClientRect(); return Math.max(0, Math.min(100, (e.clientX - r.left) / r.width * 100)); }
+  cmp.addEventListener("pointerdown", function(e){
+    if (e.button !== undefined && e.button !== 0) return;
+    drag = { id: e.pointerId, x0: e.clientX, y0: e.clientY, active: e.pointerType === "mouse" };
+    if (drag.active){ cmp.classList.add("used"); var v = pctFrom(e); range.value = v; setCmp(v); }
+  });
+  cmp.addEventListener("pointermove", function(e){
+    if (!drag || e.pointerId !== drag.id) return;
+    if (!drag.active){
+      var dx = Math.abs(e.clientX - drag.x0), dy = Math.abs(e.clientY - drag.y0);
+      if (dx < 8 && dy < 8) return;            // not sure yet
+      if (dy > dx){ drag = null; return; }      // vertical: let the page scroll
+      drag.active = true; cmp.classList.add("used");
+      if (e.pointerType === "mouse"){ try { cmp.setPointerCapture(e.pointerId); } catch(_){} } // touch pointers are captured implicitly
+    }
+    var v = pctFrom(e); range.value = v; setCmp(v);
+    if (e.cancelable) e.preventDefault();
+  });
+  ["pointerup","pointercancel"].forEach(function(t){ cmp.addEventListener(t, function(e){ if (drag && e.pointerId === drag.id) drag = null; }); });
+  // gentle nudge once when it scrolls into view
+  if ("IntersectionObserver" in window && !reduce){
+    var nudged = false;
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting && !nudged){ nudged = true;
+          var v = 50, dir = 1, n = 0;
+          var id = setInterval(function(){ v += dir*1.2; if (v > 62) dir = -1; if (v < 50 && dir < 0){ clearInterval(id); setCmp(50); return; } setCmp(v); }, 16);
+        }
+      });
+    }, {threshold:.6}).observe(cmp);
+  }
+
+  /* ----- missed call simulation ----- */
+  var incall = $("#incall"), msgs = $("#msgs"), ms = $$("#msgs .m"), typ1 = $("#typ1"), typ2 = $("#typ2"), replay = $("#replay");
+  var running = false, timers = [];
+  function reset(){
+    timers.forEach(clearTimeout); timers = [];
+    incall.classList.remove("gone"); msgs.classList.remove("in");
+    ms.forEach(function(m){ m.classList.remove("show"); }); typ1.classList.remove("show"); typ2.classList.remove("show");
+  }
+  function showAll(){ incall.classList.add("gone"); msgs.classList.add("in"); ms.forEach(function(m){ m.classList.add("show"); }); }
+  function play(){
+    if (running) return; running = true; reset();
+    // under reduced motion the same sequence plays, but each step appears in place (the CSS removes the transitions)
+    var t = function(fn, ms){ timers.push(setTimeout(fn, ms)); };
+    t(function(){ incall.classList.add("gone"); msgs.classList.add("in"); }, 2600);
+    t(function(){ ms[0].classList.add("show"); }, 3100);
+    t(function(){ typ1.classList.add("show"); }, 3600);
+    t(function(){ typ1.classList.remove("show"); ms[1].classList.add("show"); }, 4900);
+    t(function(){ typ2.classList.add("show"); }, 6400);
+    t(function(){ typ2.classList.remove("show"); ms[2].classList.add("show"); }, 8200);
+    t(function(){ ms[3].classList.add("show"); running = false; }, 9400);
+  }
+  if ("IntersectionObserver" in window){
+    var played = false;
+    new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting && !played){ played = true; play(); } }); }, {threshold:.5}).observe($("#callphone"));
+  } else { showAll(); }
+  replay.addEventListener("click", function(){ running = false; play(); });
+
+  /* ----- trades marquee ----- */
+  var trades = ["Roofers","Plumbers","Heating engineers","Electricians","Bricklayers","Builders","Plasterers","Landscapers","Driveway & paving","Window fitters","Decorators","Hauliers","Removals","Tree surgeons","Locksmiths","Carpenters","Tilers","Scaffolders","Groundworkers","Fencing"];
+  function fill(el, arr){
+    var html = arr.concat(arr).map(function(x, i){ return "<span" + (i % 5 === 2 ? ' class="hv"' : "") + ">" + x + "</span>"; }).join("");
+    el.innerHTML = html;
+  }
+  fill($("#row1"), trades);
+  fill($("#row2"), trades.slice(10).concat(trades.slice(0,10)));
+})();
+</script>
+</body>
+</html>
