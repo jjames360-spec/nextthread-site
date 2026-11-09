@@ -107,7 +107,10 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 /* highlight ring sits 2px outside the frame, so its radius is 2px larger to stay concentric */
 @media (hover:hover) and (pointer:fine){ .phone::after{content:""; position:absolute; inset:-2px; border-radius:48px; background:linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,0) 40%); pointer-events:none} }
 /* concentric corners (44px frame − 12px bezel = 32px) and a Safari-safe rounded clip for the moving content inside */
-.phone .screen{position:absolute; inset:12px; border-radius:32px; background:#fff; overflow:hidden; color:#111; isolation:isolate; transform:translateZ(0); -webkit-mask-image:-webkit-radial-gradient(white, black); mask-image:radial-gradient(white, black)}
+/* the screen's own background matches the bezel, not white: Safari lets a parent's background bleed through the
+   anti-aliased edge of clipped children, which showed as a pale line along the top of the screen. The page content
+   inside carries its own white. */
+.phone .screen{position:absolute; inset:12px; border-radius:32px; background:#0D1B16; overflow:hidden; color:#111; isolation:isolate; transform:translateZ(0); -webkit-mask-image:-webkit-radial-gradient(white, black); mask-image:radial-gradient(white, black)}
 /* browsers without aspect-ratio (iOS 14 and older) get explicit heights instead of a collapsed frame */
 @supports not (aspect-ratio:1/1){
   .phone{height:calc(min(272px,76vw) * 2.0333)}
@@ -134,14 +137,15 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 .lite .typing i{opacity:.7}
 
 /* mini site (shared) */
-.mini{--m:#8E3B2F; --m2:#F3E3DF; position:absolute; inset:0; overflow:hidden; font-size:10.5px; line-height:1.35; transition:opacity .28s ease}
+.mini{--m:#8E3B2F; --m2:#F3E3DF; position:absolute; inset:0; overflow:hidden; font-size:10.5px; line-height:1.35}
 /* The solid status band is 1px taller than the scroll window below it, so it covers the window's top clip edge.
    Safari draws a hairline where a composited (moving) layer meets a clip edge, and with the screen white underneath
    that hairline showed as a white line under the island. Overlapping the two edges by a pixel removes it. */
 .mini::before{content:""; position:absolute; top:0; left:0; right:0; height:45px; background:var(--m); z-index:1; transition:background .5s}
-.mini.fade{opacity:0}
+/* on a trade swap only the page content fades; the status band stays and glides to the new colour, the white page stays white */
+.mini.fade .mini-inner,.mini.fade .mini-cta{opacity:0}
 .mini-scroll{position:absolute; inset:44px 0 0 0; overflow:hidden; background:#fff}
-.mini-inner{will-change:transform}
+.mini-inner{will-change:transform; transition:opacity .28s ease}
 .mini-hero{background:var(--m); color:#fff; padding:10px 14px 18px; transition:background .5s}
 .mini-brand{font-weight:800; font-size:12px; letter-spacing:-0.01em; opacity:.95; display:flex; justify-content:space-between; align-items:center}
 .mini-brand i{display:inline-block; width:18px; height:18px; border-radius:50%; background:rgba(255,255,255,.22)}
@@ -169,7 +173,7 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 .mini-areas div{display:flex; flex-wrap:wrap; gap:5px; min-height:49px; align-content:flex-start}
 .mini-areas span{background:var(--m2); color:#333; border-radius:999px; padding:4px 8px; font-size:9px; font-weight:600}
 .mini-foot{margin:12px 12px 56px; padding-top:8px; border-top:1px solid #eee; color:#777; font-size:9px; display:flex; justify-content:space-between}
-.mini-cta{position:absolute; left:12px; right:12px; bottom:10px; background:var(--m); color:#fff; text-align:center; padding:10px; border-radius:999px; font-weight:800; font-size:10.5px; box-shadow:0 8px 20px -10px rgba(0,0,0,.6)}
+.mini-cta{position:absolute; left:12px; right:12px; bottom:10px; background:var(--m); color:#fff; text-align:center; padding:10px; border-radius:999px; font-weight:800; font-size:10.5px; box-shadow:0 8px 20px -10px rgba(0,0,0,.6); transition:opacity .28s ease, background .5s}
 
 /* make-it-yours */
 .maker{width:min(520px,100%); background:var(--panel); border:1px solid var(--panel-line); border-radius:18px; padding:14px; display:grid; gap:8px 10px; grid-template-columns:1fr 1fr; color:var(--cream)}
@@ -434,6 +438,8 @@ footer a:hover{text-decoration:underline}
 footer .contact{display:grid; gap:4px}
 @media (min-width:760px){ footer .contact{text-align:right} }
 footer .legal{max-width:62ch}
+footer .legal-links{margin-top:6px}
+footer .legal-links a{color:var(--muted-l); text-decoration:underline; text-underline-offset:3px}
 
 /* floating pill, bottom-left, leaving the bottom-right corner clear for the host's badge */
 .mobile-bar{position:fixed; left:14px; bottom:calc(14px + env(safe-area-inset-bottom)); z-index:70; max-width:calc(100% - 214px); transform:translateY(140%); transition:transform .35s var(--ease)}
@@ -789,7 +795,8 @@ section.block{padding:clamp(72px,10vw,140px) 0}
     <div class="contact">
       <a href="https://wa.me/447856075882">WhatsApp 07856 075882</a>
       <a href="mailto:joshua@nextthreadautomation.co.uk">joshua@nextthreadautomation.co.uk</a>
-      <span>Run by Joshua James, West Midlands</span>
+      <span>Joshua James, trading as NextThread · West Midlands</span>
+      <span class="legal-links"><a href="/terms.html">Terms</a> · <a href="/privacy.html">Privacy</a></span>
     </div>
   </div>
 </footer>
