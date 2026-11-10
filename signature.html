@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Email signature — NextThread</title>
+<meta name="robots" content="noindex">
+<style>
+body{margin:0; background:#F5F4EF; color:#1B3328; font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:1.5}
+.wrap{max-width:640px; margin:0 auto; padding:40px 20px 80px}
+h1{font-size:22px; margin:0 0 6px}
+p.lead{margin:0 0 24px; color:#55665D}
+.card{background:#fff; border:1px solid #CDD6D0; border-radius:14px; padding:28px 24px}
+button{font:inherit; font-weight:700; margin-top:20px; padding:12px 20px; border-radius:999px; border:0; background:#1B3328; color:#F5F4EF; cursor:pointer}
+button:active{transform:translateY(1px)}
+ol{color:#55665D; padding-left:20px; margin:24px 0 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Your email signature</h1>
+  <p class="lead">Press the button, then paste into Gmail's signature box.</p>
+  <div class="card">
+    <div id="sig">
+<table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse; font-family:Arial,Helvetica,sans-serif; color:#1B3328;">
+  <tr>
+    <td valign="middle" style="padding:0 14px 0 0;">
+      <a href="https://nextthreadautomation.co.uk" style="text-decoration:none;"><img src="https://nextthreadautomation.co.uk/mark-email.png" width="54" height="54" alt="NextThread" style="display:block; border:0; width:54px; height:54px;"></a>
+    </td>
+    <td valign="middle" style="padding:2px 0 2px 14px; border-left:3px solid #F2C230;">
+      <table cellpadding="0" cellspacing="0" border="0" role="presentation" style="border-collapse:collapse;">
+        <tr><td style="font-family:Arial,Helvetica,sans-serif; font-size:16px; line-height:20px; font-weight:bold; color:#1B3328; padding:0 0 2px 0;">Joshua James</td></tr>
+        <tr><td style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:18px; color:#55665D; padding:0 0 5px 0;"><span style="font-weight:bold; color:#255C49;">NextThread</span> &nbsp;·&nbsp; Websites for tradespeople</td></tr>
+        <tr><td style="font-family:Arial,Helvetica,sans-serif; font-size:13px; line-height:18px; color:#1B3328; padding:0;"><a href="tel:+447856075882" style="color:#1B3328; text-decoration:none;">07856 075882</a> &nbsp;·&nbsp; <a href="https://nextthreadautomation.co.uk" style="color:#255C49; text-decoration:none; font-weight:bold;">nextthreadautomation.co.uk</a></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+    </div>
+    <button id="copy" type="button">Copy signature</button>
+  </div>
+  <ol>
+    <li>In Gmail: Settings (cog) → See all settings → General → Signature → Create new.</li>
+    <li>Click in the box and paste.</li>
+    <li>Under "Signature defaults", choose it for new emails and for replies, then Save Changes at the bottom.</li>
+  </ol>
+</div>
+<script>
+document.getElementById("copy").addEventListener("click", async function(){
+  var el = document.getElementById("sig"), btn = this, ok = false;
+  try {
+    var html = el.innerHTML, text = el.innerText;
+    await navigator.clipboard.write([new ClipboardItem({"text/html": new Blob([html], {type:"text/html"}), "text/plain": new Blob([text], {type:"text/plain"})})]);
+    ok = true;
+  } catch (e) {
+    var r = document.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    try { ok = document.execCommand("copy"); } catch (e2) {}
+  }
+  btn.textContent = ok ? "Copied. Now paste into Gmail" : "Select the signature and copy it by hand";
+});
+</script>
+</body>
+</html>
