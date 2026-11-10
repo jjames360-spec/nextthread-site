@@ -1,11 +1,15 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-GB" class="flat">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>NextThread — A website built the way you'd build it</title>
 <meta name="description" content="One-page websites for tradespeople, anywhere in the UK. £595, live in a week, and you see it finished before you pay a penny. Plus a £99-a-month plan so a missed call never becomes a missed job.">
 <meta name="theme-color" content="#0F2A21">
+<!-- the site has one colour scheme; this stops phones in dark mode from recolouring it -->
+<meta name="color-scheme" content="only light">
+<!-- the phone numbers inside the demo screens are part of a picture, so iPhones must not turn them into blue links -->
+<meta name="format-detection" content="telephone=no, date=no, address=no, email=no">
 <meta property="og:title" content="NextThread — A website built the way you'd build it">
 <meta property="og:description" content="£595. Live in a week. See it before you pay. Websites for roofers, plumbers, sparks, brickies and hauliers across the UK.">
 <meta property="og:type" content="website">
@@ -18,7 +22,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,400..900;1,62..125,400..900&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F2A21'/%3E%3Cpath d='M18 46 46 18M24 18h22v22' fill='none' stroke='%23F2C230' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<!-- icon files (not an inline one) so Safari, Google's search results and phone home screens all show the logo -->
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
 /* ---------- Tokens ---------- */
 :root{
@@ -26,9 +33,12 @@
   --ink:#1B3328; --green:#255C49; --deep:#17382C; --night:#0F2A21; --abyss:#0A1E17;
   --hivis:#F2C230; --hivis-2:#FFD95A; --wa:#1FA855; --white:#fff;
   --muted-l:#55665D; --muted-d:#A9BDB2;
-  --max:1240px; --gutter:clamp(18px,4vw,44px);
+  --max:1240px; --gutter:18px; --sp:72px; --nav:70px;
   --ease:cubic-bezier(.2,.8,.2,1);
+  color-scheme:light; color-scheme:only light;
 }
+/* fluid gutters and section spacing wherever clamp() exists; older phones keep the fixed values above */
+@supports (width:clamp(1px,2px,3px)){ :root{--gutter:clamp(18px,4vw,44px); --sp:clamp(72px,10vw,140px)} }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth; -webkit-text-size-adjust:100%; text-size-adjust:100%}
 body{margin:0; background:var(--cream); color:var(--ink); font-family:"Archivo",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; font-size:17px; line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden}
@@ -37,7 +47,11 @@ a{color:inherit}
 p{margin:0}
 h1,h2,h3{margin:0; line-height:1; letter-spacing:-0.025em}
 h1,h2{font-weight:800; font-variation-settings:"wdth" 118}
+h1{font-size:44px} h2{font-size:34px} /* starting sizes; each section sets its own fluid size below */
 h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
+.nb{white-space:nowrap}
+/* links in the header land each section's heading the same distance below the header bar */
+section[id]{scroll-margin-top:calc(var(--nav) + 26px - var(--sp))}
 .skip{position:absolute; left:-999px; top:8px; background:var(--ink); color:var(--cream); padding:8px 12px; border-radius:8px}
 .skip:focus{left:8px; z-index:200}
 :focus-visible{outline:3px solid var(--hivis); outline-offset:3px}
@@ -46,7 +60,7 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 /* section themes */
 .dark{--bg:var(--night); --fg:var(--cream); --mut:var(--muted-d); --panel:#14322A; --panel-line:#27493D; background:var(--bg); color:var(--fg); position:relative}
 .light{--bg:var(--cream); --fg:var(--ink); --mut:var(--muted-l); --panel:var(--white); --panel-line:var(--line); background:var(--bg); color:var(--fg); position:relative}
-.grain::before{content:""; position:absolute; inset:0; pointer-events:none; opacity:.07; mix-blend-mode:overlay;
+.grain::before{content:""; position:absolute; top:0; right:0; bottom:0; left:0; pointer-events:none; opacity:.07; mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .grain > *{position:relative}
 
@@ -55,24 +69,38 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 .btn:active{transform:scale(.98)}
 .btn svg{width:20px; height:20px; flex:none}
 .btn-wa{background:var(--wa); color:#fff}
-.btn-wa:hover{background:#188a46}
 .btn-hv{background:var(--hivis); color:var(--ink)}
-.btn-hv:hover{background:var(--hivis-2)}
 .btn-ghost{background:transparent; color:var(--fg); border-color:currentColor}
-.btn-ghost:hover{background:rgba(127,127,127,.12)}
 .btn-sm{padding:11px 16px; font-size:15px}
+/* hover colours only where there is a real pointer: on touch screens a hover style sticks to a button after it's tapped */
+@media (hover:hover){
+  .btn-wa:hover{background:#188a46}
+  .btn-hv:hover{background:var(--hivis-2)}
+  .btn-ghost:hover{background:rgba(127,127,127,.12)}
+  .nav-links a:hover{opacity:1}
+  .replay:hover{color:var(--fg); border-color:currentColor}
+  footer a:hover{text-decoration:underline}
+}
 
 /* ---------- Nav ---------- */
 .nav{position:fixed; top:0; left:0; right:0; z-index:60; transition:background .3s, color .3s, border-color .3s; color:var(--cream); border-bottom:1px solid transparent}
-.nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; height:70px}
+.nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:16px; height:var(--nav)}
 .nav.scrolled{background:rgba(245,244,239,.92); color:var(--ink); -webkit-backdrop-filter:blur(10px) saturate(1.2); backdrop-filter:blur(10px) saturate(1.2); border-color:var(--line)}
-.brand{display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; font-size:20px; letter-spacing:-0.01em}
-.brand svg{width:28px; height:28px; border-radius:7px; box-shadow:0 0 0 1.5px rgba(255,255,255,.18)}
+.brand{display:flex; align-items:center; gap:10px; padding:8px 0; text-decoration:none; font-weight:700; font-size:20px; letter-spacing:-0.01em; white-space:nowrap}
+.brand svg{flex:none; width:28px; height:28px; border-radius:7px; box-shadow:0 0 0 1.5px rgba(255,255,255,.18)}
 .nav.scrolled .brand svg{box-shadow:none}
+/* the narrowest phones (320px wide, and iPhones set to "larger text"): same header, slightly tighter, so nothing touches the edge */
+@media (max-width:359px){
+  .nav .wrap{gap:10px}
+  .brand{font-size:18px; gap:8px}
+  .brand svg{width:26px; height:26px}
+  .nav .btn-sm{padding:10px 12px; gap:7px; font-size:14px}
+  .nav .btn-sm svg{width:18px; height:18px}
+}
+@media (max-width:299px){ .nav .btn-sm span{display:none} .nav .btn-sm{padding:10px} }
 
 .nav-links{display:none; gap:28px; font-size:15px}
-.nav-links a{text-decoration:none; opacity:.8}
-.nav-links a:hover{opacity:1}
+.nav-links a{text-decoration:none; opacity:.8; padding:12px 0}
 @media (min-width:960px){ .nav-links{display:flex} }
 
 /* ---------- Hero ---------- */
@@ -95,6 +123,8 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 .hero-ctas{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px}
 .hero-ctas .btn{max-width:100%}
 @media (max-width:400px){ .hero-ctas .btn{width:100%; white-space:normal; text-align:center} }
+/* the narrower phones (360px Androids): trimmed just enough that the WhatsApp button stays on one line, as it does on wider ones */
+@media (max-width:374px){ .hero-ctas .btn{padding-left:12px; padding-right:12px; gap:8px; font-size:16px} }
 .rise{opacity:0; transform:translateY(18px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
 .hero:not(.pre) .rise{opacity:1; transform:none}
 .rise.d1{transition-delay:.7s} .rise.d2{transition-delay:.85s} .rise.d3{transition-delay:1s} .rise.d4{transition-delay:.4s}
@@ -102,27 +132,22 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 /* device: phone */
 .stage3d{perspective:1400px; display:grid; justify-items:center; align-content:center; gap:18px}
 /* the script snaps each phone to whole pixels (width and height) so Safari never rasterises its edges or seams on a half pixel */
-.phone{width:min(272px,76vw); aspect-ratio:300/610; background:#0D1B16; border:2px solid #2F4F42; border-radius:46px; padding:12px; position:relative; box-shadow:0 60px 90px -40px rgba(0,0,0,.75); transition:transform .25s var(--ease)}
+.phone{width:272px; width:min(272px,100%); aspect-ratio:300/610; background:#0D1B16; border:2px solid #2F4F42; border-radius:46px; padding:12px; position:relative; box-shadow:0 60px 90px -40px rgba(0,0,0,.75); transition:transform .25s var(--ease)}
 @media (hover:hover) and (pointer:fine){ .phone{transform-style:preserve-3d; will-change:transform} }
 /* highlight ring sits 2px outside the frame, so its radius is 2px larger to stay concentric */
-@media (hover:hover) and (pointer:fine){ .phone::after{content:""; position:absolute; inset:-2px; border-radius:48px; background:linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,0) 40%); pointer-events:none} }
+@media (hover:hover) and (pointer:fine){ .phone::after{content:""; position:absolute; top:-2px; right:-2px; bottom:-2px; left:-2px; border-radius:48px; background:linear-gradient(160deg, rgba(255,255,255,.10), rgba(255,255,255,0) 40%); pointer-events:none} }
 /* concentric corners (44px frame − 12px bezel = 32px) and a Safari-safe rounded clip for the moving content inside */
 /* the screen's own background matches the bezel, not white: Safari lets a parent's background bleed through the
    anti-aliased edge of clipped children, which showed as a pale line along the top of the screen. The page content
    inside carries its own white. */
-.phone .screen{position:absolute; inset:12px; border-radius:32px; background:#0D1B16; overflow:hidden; color:#111; isolation:isolate; transform:translateZ(0); -webkit-mask-image:-webkit-radial-gradient(white, black); mask-image:radial-gradient(white, black)}
-/* browsers without aspect-ratio (iOS 14 and older) get explicit heights instead of a collapsed frame */
+.phone .screen{position:absolute; top:12px; right:12px; bottom:12px; left:12px; border-radius:32px; background:#0D1B16; overflow:hidden; color:#111; isolation:isolate; transform:translateZ(0); -webkit-mask-image:-webkit-radial-gradient(white, black); mask-image:radial-gradient(white, black)}
+/* browsers without aspect-ratio (iOS 14 and older): the script gives each phone its height; these cover the rest */
 @supports not (aspect-ratio:1/1){
-  .phone{height:calc(min(272px,76vw) * 2.0333)}
-  .callphone{height:calc(min(300px,66vw) * 2.0333)}
-  @media (max-width:959px){ .callphone{height:calc(min(252px,66vw) * 2.0333)} }
+  .phone{height:553px}
   .cmp{height:0; padding-top:62.5%}
   @media (max-width:700px){ .cmp{padding-top:125%} }
-  .laptop .disp{height:min(60vw,540px)}
-  .s-hero .pic{height:110px}
-  .s-pics svg{height:70px}
+  .s-pics svg{height:5.4em}
 }
-.callphone .screen::before{content:""; position:absolute; top:0; left:0; right:0; height:54px; background:linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,0)); z-index:2; pointer-events:none}
 .phone .island{position:absolute; top:8px; left:50%; transform:translateX(-50%); width:84px; height:22px; background:#0A1612; border-radius:14px; z-index:3}
 .phone .sb{position:absolute; top:9px; left:16px; right:16px; display:flex; justify-content:space-between; font-size:11px; font-weight:600; z-index:2; color:#fff; opacity:.9; pointer-events:none; text-shadow:0 1px 2px rgba(0,0,0,.35)}
 @media (hover:hover) and (pointer:fine){ .hero .phone{animation:float 7s ease-in-out infinite} }
@@ -137,21 +162,21 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 .lite .typing i{opacity:.7}
 
 /* mini site (shared) */
-.mini{--m:#8E3B2F; --m2:#F3E3DF; position:absolute; inset:0; overflow:hidden; font-size:10.5px; line-height:1.35}
+.mini{--m:#8E3B2F; --m2:#F3E3DF; position:absolute; top:0; right:0; bottom:0; left:0; overflow:hidden; font-size:10.5px; line-height:1.35}
 /* The solid status band is 1px taller than the scroll window below it, so it covers the window's top clip edge.
    Safari draws a hairline where a composited (moving) layer meets a clip edge, and with the screen white underneath
    that hairline showed as a white line under the island. Overlapping the two edges by a pixel removes it. */
 .mini::before{content:""; position:absolute; top:0; left:0; right:0; height:45px; background:var(--m); z-index:1; transition:background .5s}
 /* on a trade swap only the page content fades; the status band stays and glides to the new colour, the white page stays white */
 .mini.fade .mini-inner,.mini.fade .mini-cta{opacity:0}
-.mini-scroll{position:absolute; inset:44px 0 0 0; overflow:hidden; background:#fff}
+.mini-scroll{position:absolute; top:44px; right:0; bottom:0; left:0; overflow:hidden; background:#fff}
 .mini-inner{will-change:transform; transition:opacity .28s ease}
 .mini-hero{background:var(--m); color:#fff; padding:10px 14px 18px; transition:background .5s}
 .mini-brand{font-weight:800; font-size:12px; letter-spacing:-0.01em; opacity:.95; display:flex; justify-content:space-between; align-items:center}
 .mini-brand i{display:inline-block; width:18px; height:18px; border-radius:50%; background:rgba(255,255,255,.22)}
 .mini-kicker{opacity:.85; margin-top:18px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
 /* every trade gets an identical layout: two-line headline, fixed-height review and services rows */
-.mini-h{font-size:21px; line-height:1.02; letter-spacing:-0.025em; font-weight:800; font-variation-settings:"wdth" 112; margin:6px 0 12px; height:calc(2 * 1.02em); overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical}
+.mini-h{font-size:21px; font-size:min(21px,6.6vw); line-height:1.02; letter-spacing:-0.025em; font-weight:800; font-variation-settings:"wdth" 112; margin:6px 0 12px; height:calc(2 * 1.02em); overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical}
 .mini-btns{display:flex; gap:6px}
 .mini-btns span{padding:7px 10px; border-radius:999px; font-weight:700; font-size:9.5px}
 .mini-btns span:first-child{background:#fff; color:var(--m)}
@@ -190,61 +215,74 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 @keyframes pulse{0%,100%{opacity:1; transform:scale(1)} 50%{opacity:.4; transform:scale(.7)}}
 
 /* ---------- Build section (scroll-driven) ---------- */
+/* The scene is pinned to the screen for the length of the track while the six steps play. It always sits clear of the
+   header bar, and every size in it follows the height of the screen, so it fits a short laptop the same way it fits a
+   tall monitor. Where a screen is too short to pin it at all (a phone turned on its side), the script switches to the
+   plain layout at the end of this block: the finished site and all six steps, nothing pinned. */
 .build{position:relative}
+#build{scroll-margin-top:0}
 .build .track{height:420vh; position:relative}
-.build .stage{position:sticky; top:0; height:100vh; height:100svh; display:grid; align-items:center; overflow:hidden}
-.build .stage .wrap{display:grid; gap:18px; align-items:center; width:100%; grid-template-areas:"head" "laptop" "steps"}
-.build .b-head{grid-area:head} .build .laptop{grid-area:laptop} .build .steps{grid-area:steps}
-@media (min-width:1000px){ .build .stage .wrap{grid-template-columns:.9fr 1.1fr; grid-template-areas:"head laptop" "steps laptop"; column-gap:60px; row-gap:26px; align-items:start; align-content:center} .build .laptop{align-self:center} }
-.build h2{font-size:clamp(30px,5vw,64px); max-width:14ch}
-.steps{list-style:none; margin:0; padding:0; display:grid; gap:6px}
-@media (max-width:999px){ .build .steps li{display:none; opacity:1} .build .steps li.now{display:grid; transform:none} .build .stage{align-items:start; align-content:start; padding-top:88px} .build .b-head{padding-top:0} .build h2{font-size:clamp(28px,8vw,40px)} }
-.build .cue{position:absolute; left:50%; bottom:22px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; font-size:13px; font-weight:600; color:var(--mut); transition:opacity .4s var(--ease); pointer-events:none; white-space:nowrap}
-.build .cue i{width:18px; height:18px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); animation:cue 1.6s ease-in-out infinite}
-.build .cue.off{opacity:0}
-@media (max-width:899px){ .build .cue{bottom:calc(104px + env(safe-area-inset-bottom))} }
-@keyframes cue{0%,100%{transform:translateY(0) rotate(45deg); opacity:.5} 50%{transform:translateY(6px) rotate(45deg); opacity:1}}
-.steps li{display:grid; grid-template-columns:38px 1fr; gap:14px; align-items:start; padding:12px 14px; border-radius:14px; opacity:.38; transition:opacity .35s, background .35s, transform .35s var(--ease)}
+.build .stage{position:sticky; top:0; height:100vh; height:100svh; display:grid; align-items:center; overflow:hidden; padding:var(--nav) 0 24px}
+.build .stage .wrap{display:grid; width:100%; grid-template-columns:.9fr 1.1fr; grid-template-areas:"head laptop" "steps laptop"; column-gap:60px; row-gap:26px; row-gap:clamp(10px,2.6vh,26px); align-items:start; align-content:center}
+.build .b-head{grid-area:head} .build .laptop{grid-area:laptop; align-self:center} .build .steps{grid-area:steps}
+.build h2{font-size:clamp(30px,min(4.4vw,7.4vh),58px); max-width:16ch}
+.steps{list-style:none; margin:0; padding:0; display:grid; gap:6px; gap:clamp(2px,.7vh,6px)}
+/* every step carries the same (invisible) border, so nothing shifts by a pixel when the highlight moves on */
+.steps li{display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start; padding:12px 14px; padding:clamp(5px,1.3vh,12px) 14px; border:1px solid transparent; border-radius:14px; opacity:.38; transition:opacity .35s, background .35s, border-color .35s, transform .35s var(--ease)}
 .steps li.on{opacity:1}
-.steps li.now{background:var(--panel); border:1px solid var(--panel-line); transform:translateX(6px)}
-.steps .d{width:38px; height:38px; border-radius:50%; display:grid; place-items:center; font-weight:800; font-size:14px; background:var(--mint); color:var(--ink)}
+.steps li.now{background:var(--panel); border-color:var(--panel-line); transform:translateX(6px)}
+.steps .d{width:38px; height:38px; border-radius:50%; display:grid; place-items:center; font-weight:800; font-size:14px; background:var(--mint); color:var(--ink); transition:background .35s}
 .steps li.now .d{background:var(--hivis)}
-.steps h3{font-size:18px; margin-bottom:3px}
-.steps p{font-size:15px; color:var(--mut)}
-@media (max-width:999px){ .steps li h3{font-size:16px} .steps p{font-size:14px} .steps li{padding:9px 12px} }
+.steps h3{font-size:18px; font-size:clamp(15px,2.4vh,18px); margin-bottom:3px}
+.steps p{font-size:15px; font-size:clamp(13px,2vh,15px); color:var(--mut)}
+@media (max-height:760px){ .steps p{line-height:1.4} .steps .d{width:32px; height:32px; font-size:13px} }
 
-.laptop{width:min(100%,720px); margin:0 auto; position:relative}
+/* the laptop: never taller than the space under the header, with room left beneath it for the scroll prompt */
+.laptop{width:100%; max-width:720px; max-width:min(720px,calc((100vh - 242px) * 1.3333 + 28px)); max-width:min(720px,calc((100svh - 242px) * 1.3333 + 28px)); margin:0 auto; position:relative}
 .laptop .lid{background:#0A1612; border-radius:18px 18px 6px 6px; padding:14px 14px 20px; box-shadow:0 50px 80px -40px rgba(0,0,0,.6), 0 0 0 1px #2B4A3E}
 .laptop .cam{width:6px; height:6px; border-radius:50%; background:#2B4A3E; margin:0 auto 8px}
-.laptop .disp{aspect-ratio:4/3; background:#fff; border-radius:8px; overflow:hidden; position:relative; color:#111}
-@media (max-width:999px){ .laptop{width:min(100%,520px)} .laptop .disp{aspect-ratio:16/11} }
+/* The screen gets its height from padding rather than aspect-ratio, which holds in every browser. Everything on the
+   screen is sized in em from this one font-size; on a laptop smaller than the design the script turns the font-size
+   down in step, so the page on the screen keeps the same shape instead of crowding. */
+.laptop .disp{position:relative; height:0; padding-top:75%; background:#fff; border-radius:8px; overflow:hidden; color:#111; font-size:11px}
 .laptop .base{height:14px; background:linear-gradient(#1A2F28,#0E1F19); border-radius:0 0 16px 16px; margin:0 -18px; box-shadow:0 20px 30px -20px rgba(0,0,0,.6)}
 .laptop .base::after{content:""; display:block; width:90px; height:4px; background:#2B4A3E; border-radius:0 0 6px 6px; margin:0 auto}
-.url{height:26px; background:#EEF1EF; display:flex; align-items:center; gap:8px; padding:0 10px; font-size:10px; color:#777}
-.url i{width:8px; height:8px; border-radius:50%; background:#DDD}
-.url .bar{flex:1; background:#fff; border-radius:6px; height:16px; display:flex; align-items:center; padding:0 8px; gap:6px}
+.url{position:absolute; top:0; left:0; right:0; height:2.6em; background:#EEF1EF; display:flex; align-items:center; gap:.8em; padding:0 1em; font-size:.9091em; color:#777}
+.url i{flex:none; width:.8em; height:.8em; border-radius:50%; background:#DDD}
+.url .bar{flex:1; min-width:0; background:#fff; border-radius:.6em; height:1.6em; display:flex; align-items:center; padding:0 .8em; gap:.6em; white-space:nowrap; overflow:hidden}
 .url .bar b{color:#222; font-weight:600}
-.url .live{margin-left:auto; background:var(--hivis); color:var(--ink); font-weight:800; font-size:9px; padding:2px 7px; border-radius:999px; opacity:0; transform:translateY(-6px); transition:all .4s var(--ease)}
+.url .lock{flex:none; width:.8em; height:1em; color:#93A199}
+.url .live{flex:none; margin-left:auto; background:var(--hivis); color:var(--ink); font-weight:800; font-size:.9em; padding:.2222em .7778em; border-radius:999px; opacity:0; transform:translateY(-6px); transition:all .4s var(--ease)}
+
+/* the mock page (shared by the laptop here and the before/after further down) */
 .site{--m:#8E3B2F; --m2:#F3E3DF; position:absolute; top:26px; left:0; right:0; bottom:0; overflow:hidden; font-size:11px; background:#fff; color:#111}
-.site .s-in{transition:transform .6s var(--ease)}
+.site .s-in{position:relative; transition:transform .6s var(--ease)}
 .part{opacity:0; transform:translateY(22px) scale(.98); transition:opacity .55s var(--ease), transform .55s var(--ease)}
 .part.on{opacity:1; transform:none}
 .s-nav{display:flex; justify-content:space-between; align-items:center; padding:9px 16px; border-bottom:1px solid #eee; font-weight:800; font-size:12px}
 .s-nav span:last-child{background:var(--m); color:#fff; padding:5px 10px; border-radius:999px; font-size:10px}
 .s-hero{display:grid; grid-template-columns:1.2fr .8fr; gap:14px; padding:14px 16px 10px; align-items:center}
-.s-hero .sh{margin:0; font-size:clamp(15px,2.2vw,22px); line-height:1.02; letter-spacing:-0.025em; font-variation-settings:"wdth" 112; font-weight:800}
+.s-hero .sh{margin:0; font-size:22px; font-size:clamp(15px,2.2vw,22px); line-height:1.02; letter-spacing:-0.025em; font-variation-settings:"wdth" 112; font-weight:800}
 .s-hero p{color:#555; margin-top:7px; font-size:11px}
-.s-hero .pic{aspect-ratio:16/10; border-radius:10px; overflow:hidden; position:relative; background:var(--m2); background:linear-gradient(160deg, color-mix(in srgb, var(--m) 18%, #fff), color-mix(in srgb, var(--m) 48%, #fff))}
+.s-hero .pic{height:0; padding-top:62.5%; border-radius:10px; overflow:hidden; position:relative; background:var(--m2)}
 .s-hero .pic svg{width:72%; height:72%; display:block; position:absolute; left:14%; top:14%; opacity:.95}
 .s-pics{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding:0 16px}
 .s-pics svg{width:100%; aspect-ratio:16/10; border-radius:8px; display:block; padding:12%; box-sizing:border-box; background:var(--m2)}
-.s-pics svg:nth-child(1){background:linear-gradient(150deg, color-mix(in srgb, var(--m) 14%, #fff), color-mix(in srgb, var(--m) 40%, #fff))}
-.s-pics svg:nth-child(2){background:linear-gradient(200deg, color-mix(in srgb, var(--m) 30%, #fff), color-mix(in srgb, var(--m) 62%, #fff)); padding:18% 22%}
-.s-pics svg:nth-child(3){background:linear-gradient(120deg, color-mix(in srgb, var(--m) 20%, #fff), color-mix(in srgb, var(--m) 50%, #fff)); padding:8%}
-.s-pics svg:nth-child(4){background:linear-gradient(170deg, color-mix(in srgb, var(--m) 40%, #fff), color-mix(in srgb, var(--m) 72%, #fff)); padding:16% 14% 10%}
-.mini-art svg{padding:10%; box-sizing:border-box; background:linear-gradient(160deg, color-mix(in srgb, var(--m) 16%, #fff), color-mix(in srgb, var(--m) 46%, #fff))}
-.mini-art svg:nth-child(2){background:linear-gradient(200deg, color-mix(in srgb, var(--m) 32%, #fff), color-mix(in srgb, var(--m) 64%, #fff))}
-.mini-art svg:nth-child(3){background:linear-gradient(120deg, color-mix(in srgb, var(--m) 22%, #fff), color-mix(in srgb, var(--m) 52%, #fff))}
+.s-pics svg:nth-child(2){padding:18% 22%}
+.s-pics svg:nth-child(3){padding:8%}
+.s-pics svg:nth-child(4){padding:16% 14% 10%}
+.mini-art svg{padding:10%; box-sizing:border-box}
+/* tinted "photo" tiles. Browsers without color-mix() (Safari before 16.2, Chrome before 111) keep the flat tint set above. */
+@supports (background:color-mix(in srgb, red 50%, blue)){
+  .s-hero .pic{background:linear-gradient(160deg, color-mix(in srgb, var(--m) 18%, #fff), color-mix(in srgb, var(--m) 48%, #fff))}
+  .s-pics svg:nth-child(1){background:linear-gradient(150deg, color-mix(in srgb, var(--m) 14%, #fff), color-mix(in srgb, var(--m) 40%, #fff))}
+  .s-pics svg:nth-child(2){background:linear-gradient(200deg, color-mix(in srgb, var(--m) 30%, #fff), color-mix(in srgb, var(--m) 62%, #fff))}
+  .s-pics svg:nth-child(3){background:linear-gradient(120deg, color-mix(in srgb, var(--m) 20%, #fff), color-mix(in srgb, var(--m) 50%, #fff))}
+  .s-pics svg:nth-child(4){background:linear-gradient(170deg, color-mix(in srgb, var(--m) 40%, #fff), color-mix(in srgb, var(--m) 72%, #fff))}
+  .mini-art svg{background:linear-gradient(160deg, color-mix(in srgb, var(--m) 16%, #fff), color-mix(in srgb, var(--m) 46%, #fff))}
+  .mini-art svg:nth-child(2){background:linear-gradient(200deg, color-mix(in srgb, var(--m) 32%, #fff), color-mix(in srgb, var(--m) 64%, #fff))}
+  .mini-art svg:nth-child(3){background:linear-gradient(120deg, color-mix(in srgb, var(--m) 22%, #fff), color-mix(in srgb, var(--m) 52%, #fff))}
+}
 .s-revs{display:grid; grid-template-columns:repeat(3,1fr); gap:8px; padding:10px 16px 0}
 .s-revs div{background:#F6F6F3; border-radius:10px; padding:8px 9px; font-size:10px; color:#333; line-height:1.3}
 .s-revs b{color:var(--m); letter-spacing:1px; display:block; margin-bottom:2px}
@@ -254,23 +292,98 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 .s-btns span:last-child{border:1.5px solid var(--m); color:var(--m)}
 .s-btns span:first-child.ring{animation:ring .5s ease 2}
 @keyframes ring{0%,100%{transform:rotate(0)} 25%{transform:rotate(-4deg)} 75%{transform:rotate(4deg)}}
+/* the laptop's copy of the mock page: the same sizes as above, written in em so it scales with the screen */
+.build .site{top:2.3636em; font-size:1em}
+.build .s-nav{padding:.75em 1.3333em; font-size:1.0909em}
+.build .s-nav span:last-child{padding:.5em 1em; font-size:.8333em}
+.build .s-hero{gap:1.2727em; padding:1.2727em 1.4545em .9091em}
+.build .s-hero p{margin-top:.6364em; font-size:1em}
+.build .s-hero .sh{margin:0; font-size:2em}
+.build .s-hero .pic{border-radius:.9091em}
+.build .s-pics{gap:.7273em; padding:0 1.4545em}
+.build .s-pics svg{border-radius:.7273em}
+.build .s-revs{gap:.7273em; padding:.9091em 1.4545em 0}
+.build .s-revs div{border-radius:1em; padding:.8em .9em; font-size:.9091em}
+.build .s-revs b{letter-spacing:.1em; margin-bottom:.2em}
+.build .s-btns{gap:.7273em; padding:.9091em 1.4545em 1.2727em}
+.build .s-btns span{padding:.7619em 1.1429em; font-size:.9545em}
+
+/* "keep scrolling" prompt: tucked under the laptop */
+.build .cue{position:absolute; top:100%; left:50%; margin-top:14px; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; font-size:13px; font-weight:600; line-height:1.3; color:var(--mut); transition:opacity .4s var(--ease); pointer-events:none; white-space:nowrap}
+.build .cue i{flex:none; width:18px; height:18px; border-right:2px solid currentColor; border-bottom:2px solid currentColor; transform:rotate(45deg); animation:cue 1.6s ease-in-out infinite}
+.build .cue.off{opacity:0}
+@keyframes cue{0%,100%{transform:translateY(0) rotate(45deg); opacity:.5} 50%{transform:translateY(6px) rotate(45deg); opacity:1}}
 .progress{position:absolute; left:0; right:0; bottom:0; height:4px; background:rgba(127,127,127,.15)}
 .progress i{display:block; height:100%; width:0; background:var(--hivis); transition:width .2s linear}
-@media (max-width:959px){ .progress{bottom:auto; top:70px; height:5px} } /* sits under the header on phones, clear of the floating pills */
+@media (max-width:959px){ .progress{bottom:auto; top:var(--nav); height:5px} } /* sits under the header on phones, clear of the floating button */
+
+/* phones and tablets: heading, laptop and one step card in a single column. The strip along the bottom is kept free
+   for the floating WhatsApp button (left) and the scroll prompt (right), so neither ever sits on top of the card. */
+@media (max-width:999px){
+  .build .stage{padding:88px 0 72px; padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+  .build .stage .wrap{grid-template-columns:minmax(0,1fr); grid-template-areas:"head" "laptop" "steps"; row-gap:14px; max-width:calc(548px + 2 * var(--gutter))}
+  .build h2{font-size:clamp(26px,7.6vw,40px)}
+  /* the script also caps the laptop's width so the heading above it and the card below it always fit on the screen */
+  .laptop{position:static; width:calc(100% - 28px); max-width:520px}
+  .laptop .base{margin:0 -14px}
+  .build .s-hero .sh{font-size:1.3636em}
+  /* one step card: all six sit in the same cell and only the current one shows, so the card never changes size */
+  .build .steps{grid-template-columns:minmax(0,1fr); gap:0; background:var(--panel); border:1px solid var(--panel-line); border-radius:14px}
+  .build .steps li{grid-area:1 / 1; align-items:center; padding:9px 12px; border:0; visibility:hidden; opacity:0; transition:opacity .2s ease, visibility 0s linear .2s}
+  .build .steps li.now{visibility:visible; opacity:1; background:none; transform:none; transition:opacity .25s ease .12s, visibility 0s linear 0s}
+  .steps .d{width:38px; height:38px; font-size:14px}
+  .steps h3{font-size:16px}
+  .steps p{font-size:14px; line-height:1.5}
+  .build .cue{top:auto; left:auto; right:var(--gutter); bottom:14px; bottom:calc(14px + env(safe-area-inset-bottom)); margin:0; transform:none; height:48px; flex-direction:row; gap:12px}
+  .build .cue .more{display:none}
+  .build .cue i{margin:-8px 4px 0 0}
+}
+/* phones get a slightly wider-format laptop screen; the mock page on it is laid out so that each step's part is in full view */
+@media (max-width:599px){
+  .laptop .disp{padding-top:70%}
+  .build .s-hero{padding:1em 1.4545em .7273em}
+}
+
+/* plain layout: used when the screen is too short to pin the scene, and when scripts are switched off */
+.flat #build{scroll-margin-top:calc(var(--nav) + 26px - var(--sp))}
+.flat .build .track{height:auto}
+.flat .build .stage{position:relative; height:auto; overflow:visible; padding:var(--sp) 0}
+.flat .build .stage .wrap{align-content:start; row-gap:26px}
+.flat .build h2{font-size:clamp(30px,4.4vw,58px)}
+.flat .laptop{max-width:720px}
+.flat .laptop .disp{height:auto; padding-top:0}
+.flat .url,.flat .build .site{position:static}
+.flat .site .s-in{transform:none !important}
+.flat .part{opacity:1; transform:none; transition:none}
+.flat .url .live{opacity:1 !important; transform:none !important}
+.flat .steps{gap:4px}
+.flat .steps li,.flat .steps li.now{opacity:1; padding:10px 14px; background:none; border-color:transparent; transform:none}
+.flat .steps li .d,.flat .steps li.now .d{width:38px; height:38px; font-size:14px; background:var(--mint)}
+.flat .steps h3{font-size:17px}
+.flat .steps p{font-size:15px; line-height:1.5}
+.flat .build .cue,.flat .progress{display:none}
+@media (max-width:999px){
+  .flat .build .stage .wrap{row-gap:18px}
+  .flat .build h2{font-size:clamp(26px,7.6vw,40px)}
+  .flat .laptop{max-width:520px}
+  .flat .build .steps{background:none; border:0; border-radius:0; gap:2px}
+  .flat .build .steps li,.flat .build .steps li.now{grid-area:auto; align-items:start; visibility:visible; opacity:1; padding:8px 0; transition:none}
+}
+@media (min-width:640px) and (max-width:999px){ .flat .build .steps{grid-template-columns:1fr 1fr; column-gap:28px} }
 
 /* ---------- Before / after ---------- */
 .ba h2{font-size:clamp(34px,5vw,64px); max-width:14ch}
 .ba .intro{margin-top:16px; color:var(--mut); max-width:52ch; font-size:clamp(17px,1.5vw,19px)}
 .cmp{position:relative; margin-top:36px; border-radius:22px; overflow:hidden; aspect-ratio:16/10; background:#fff; box-shadow:0 60px 90px -50px rgba(0,0,0,.8); user-select:none; -webkit-user-select:none; touch-action:pan-y; cursor:ew-resize; isolation:isolate; transform:translateZ(0); -webkit-mask-image:-webkit-radial-gradient(white, black); mask-image:radial-gradient(white, black)}
-.cmp::after{content:""; position:absolute; inset:0; border-radius:22px; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.12); pointer-events:none; z-index:5}
+.cmp::after{content:""; position:absolute; top:0; right:0; bottom:0; left:0; border-radius:22px; box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.12); pointer-events:none; z-index:5}
 @media (max-width:700px){ .cmp{aspect-ratio:4/5} }
-.cmp .layer{position:absolute; inset:0}
-.cmp .after{clip-path:inset(0 0 0 50%)}
+.cmp .layer{position:absolute; top:0; right:0; bottom:0; left:0}
+.cmp .after{-webkit-clip-path:inset(0 0 0 50%); clip-path:inset(0 0 0 50%)}
 .cmp .handle{position:absolute; top:0; bottom:0; left:50%; width:3px; background:var(--hivis); transform:translateX(-50%); pointer-events:none; box-shadow:0 0 0 1px rgba(0,0,0,.2)}
 .cmp .knob{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:58px; height:58px; border-radius:50%; background:var(--hivis); display:grid; place-items:center; box-shadow:0 14px 30px -10px rgba(0,0,0,.7); pointer-events:none}
 .cmp .knob svg{width:28px; height:28px}
 /* the range input is kept for keyboard users only; dragging is handled with pointer events on .cmp */
-.cmp input[type=range]{position:absolute; inset:0; width:100%; height:100%; margin:0; opacity:0; pointer-events:none; -webkit-appearance:none; appearance:none; background:transparent}
+.cmp input[type=range]{position:absolute; top:0; left:0; width:100%; height:100%; margin:0; opacity:0; pointer-events:none; -webkit-appearance:none; appearance:none; background:transparent}
 .cmp:focus-within .knob{outline:3px solid #fff; outline-offset:3px}
 .cmp .tag{position:absolute; bottom:14px; padding:6px 11px; border-radius:999px; font-size:12px; font-weight:800; background:rgba(0,0,0,.65); color:#fff; pointer-events:none}
 .cmp .tag.l{left:14px} .cmp .tag.r{right:14px; background:var(--hivis); color:var(--ink)}
@@ -315,7 +428,7 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 .cmp .site .s-foot{margin:6px var(--gx) 0; padding:10px 0 20px; border-top:1px solid #eee; display:flex; justify-content:space-between; color:#777; font-size:10.5px}
 @media (max-width:700px){
   .cmp .site .s-hero{grid-template-columns:1fr; gap:12px}
-  .cmp .site .s-hero .pic{aspect-ratio:16/9}
+  .cmp .site .s-hero .pic{padding-top:56.25%}
   .cmp .site .s-pics{grid-template-columns:repeat(2,1fr)}
   .cmp .site .s-revs{grid-template-columns:1fr}
   .cmp .site .s-revs div:nth-child(3){display:none}
@@ -344,43 +457,50 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 .plan .intro{margin-top:18px; color:var(--mut); font-size:clamp(17px,1.5vw,19px); max-width:50ch}
 .plan .price .n{font-size:clamp(48px,6vw,88px)}
 .plan .list li{border-color:var(--panel-line)}
-.callphone{width:min(300px,66vw); margin:0 auto}
-@media (max-width:959px){ .callphone{width:min(252px,66vw)} .callphone .screen{font-size:13px} .msgs{padding-top:96px} .msgs .hdr{height:86px} .incall{padding:60px 20px 30px} .incall .who .num{font-size:21px} .incall .acts{gap:44px} .incall .acts i{width:54px; height:54px} }
-.callphone .screen{background:#0B0F0D; color:#fff; font-family:-apple-system,"SF Pro Text","Segoe UI",system-ui,sans-serif; font-size:14px}
-.incall{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:70px 24px 36px; background:radial-gradient(500px 400px at 50% 20%, #28352F, #0B0F0D); transition:opacity .4s, transform .4s var(--ease)}
+/* The call screen is designed once, at one size, and scaled with the phone: every length inside it is in em, and the
+   script sets the screen's font-size from the phone's width. So the number never wraps, the messages break in the same
+   places on every device, and the last message always lands inside the screen. The phone itself is never taller than
+   the space under the header, so the whole exchange can be seen at once. */
+.callphone{width:300px; width:min(300px,100%,max(232px,calc((100vh - 110px) * .4918))); width:min(300px,100%,max(232px,calc((100svh - 110px) * .4918))); margin:0 auto}
+@media (max-width:959px){ .callphone{width:272px; width:min(272px,100%,max(232px,calc((100vh - 110px) * .4918))); width:min(272px,100%,max(232px,calc((100svh - 110px) * .4918)))} }
+.callphone .screen{background:#0B0F0D; color:#fff; font-size:15.6px}
+@media (max-width:959px){ .callphone .screen{font-size:14px} }
+.callphone .screen::before{content:""; position:absolute; top:0; left:0; right:0; height:3.857em; background:linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,0)); z-index:2; pointer-events:none}
+.callphone .island{top:.5714em; width:6em; height:1.5714em; border-radius:1em}
+.callphone .sb{top:.6429em; left:1.1429em; right:1.1429em; font-size:.7857em}
+.incall{position:absolute; top:0; right:0; bottom:0; left:0; display:flex; flex-direction:column; align-items:center; justify-content:space-between; padding:4.2857em 1.4286em 2.1429em; background:radial-gradient(32em 26em at 50% 20%, #28352F, #0B0F0D); transition:opacity .4s, transform .4s var(--ease)}
 .incall.gone{opacity:0; transform:scale(1.04); pointer-events:none}
 .incall .who{text-align:center}
-.incall .who .num{font-size:24px; font-weight:600; letter-spacing:-0.01em}
-.incall .who .lbl{color:#9aa; margin-top:4px; font-size:13px}
-.incall .ring{width:84px; height:84px; border-radius:50%; background:#2E3A34; display:grid; place-items:center; position:relative}
-.incall .ring::before,.incall .ring::after{content:""; position:absolute; inset:-10px; border-radius:50%; border:2px solid rgba(255,255,255,.18); animation:ripple 1.4s ease-out infinite}
+.incall .who .num{font-size:1.7143em; font-weight:600; letter-spacing:-0.01em; white-space:nowrap}
+.incall .who .lbl{color:#9aa; margin-top:.3077em; font-size:.9286em}
+.incall .ring{width:6em; height:6em; border-radius:50%; background:#2E3A34; display:grid; place-items:center; position:relative}
+.incall .ring svg{width:2.5714em; height:2.5714em}
+.incall .ring::before,.incall .ring::after{content:""; position:absolute; top:-.7143em; right:-.7143em; bottom:-.7143em; left:-.7143em; border-radius:50%; border:2px solid rgba(255,255,255,.18); animation:ripple 1.4s ease-out infinite}
 .incall .ring::after{animation-delay:.7s}
 @keyframes ripple{from{transform:scale(.8); opacity:1} to{transform:scale(1.5); opacity:0}}
-.incall .acts{display:flex; gap:56px}
-.incall .acts div{display:grid; justify-items:center; gap:8px; font-size:12px; color:#ccc}
-.incall .acts i{width:62px; height:62px; border-radius:50%; display:grid; place-items:center}
+.incall .acts{display:flex; gap:3.1429em}
+.incall .acts div{display:grid; justify-items:center; gap:.6667em; font-size:.8571em; color:#ccc}
+.incall .acts i{width:4.5em; height:4.5em; border-radius:50%; display:grid; place-items:center}
 .incall .acts .dec i{background:#E5473E} .incall .acts .acc i{background:#34C759}
-.incall .acts svg{width:28px; height:28px}
-.msgs{position:absolute; inset:0; display:flex; flex-direction:column; padding:62px 12px 14px; gap:8px; opacity:0; transition:opacity .4s}
+.incall .acts svg{width:2.3333em; height:2.3333em}
+.msgs{position:absolute; top:0; right:0; bottom:0; left:0; display:flex; flex-direction:column; padding:6.8571em .8571em 1em; gap:.5714em; opacity:0; transition:opacity .4s}
 .msgs.in{opacity:1}
-.msgs{padding-top:104px}
-.msgs .hdr{position:absolute; top:0; left:0; right:0; height:94px; background:#161A18; border-bottom:1px solid #2a2f2c; display:grid; place-items:center; align-content:end; padding-bottom:10px; gap:2px; font-size:12px; color:#9aa; line-height:1.2}
-.msgs .hdr b{display:block; color:#fff; font-size:15px; font-weight:600}
-.m{max-width:84%; padding:9px 12px; border-radius:18px; font-size:13.5px; line-height:1.35; opacity:0; transform:translateY(8px); transition:opacity .3s, transform .3s var(--ease)}
+.msgs .hdr{position:absolute; top:0; left:0; right:0; height:7.1667em; background:#161A18; border-bottom:1px solid #2a2f2c; display:grid; place-items:center; align-content:end; padding-bottom:.8333em; gap:.1667em; font-size:.8571em; color:#9aa; line-height:1.2}
+.msgs .hdr b{display:block; color:#fff; font-size:1.25em; font-weight:600}
+.m{max-width:84%; padding:.6667em .8889em; border-radius:1.3333em; font-size:.9643em; line-height:1.35; opacity:0; transform:translateY(8px); transition:opacity .3s, transform .3s var(--ease)}
 .m.show{opacity:1; transform:none}
-.m.sys{align-self:center; background:transparent; color:#9aa; font-size:12px; text-align:center; max-width:100%; padding:4px}
+.m.sys{align-self:center; background:transparent; color:#9aa; font-size:.8571em; text-align:center; max-width:100%; padding:.3333em; white-space:nowrap}
 .m.sys b{color:#E5473E; font-weight:600}
-.m.out{align-self:flex-end; background:#34C759; color:#fff; border-bottom-right-radius:5px}
-.m.in{align-self:flex-start; background:#26302B; color:#fff; border-bottom-left-radius:5px}
-.m.you{align-self:center; max-width:100%; width:100%; background:var(--hivis); color:var(--ink); border-radius:14px; font-weight:600}
-.m.you small{display:block; font-weight:500; opacity:.75; margin-bottom:3px; font-size:11px}
-.typing{align-self:flex-start; background:#26302B; border-radius:18px; padding:10px 14px; display:none; gap:4px}
+.m.out{align-self:flex-end; background:#34C759; color:#fff; border-bottom-right-radius:.3704em}
+.m.in{align-self:flex-start; background:#26302B; color:#fff; border-bottom-left-radius:.3704em}
+.m.you{align-self:center; max-width:100%; width:100%; background:var(--hivis); color:var(--ink); border-radius:1.037em; font-weight:600}
+.m.you small{display:block; font-weight:500; opacity:.75; margin-bottom:.2727em; font-size:.8148em}
+.typing{align-self:flex-start; background:#26302B; border-radius:1.2857em; padding:.7143em 1em; display:none; gap:.2857em}
 .typing.show{display:flex}
-.typing i{width:7px; height:7px; border-radius:50%; background:#9aa; animation:dots 1s infinite}
+.typing i{width:.5em; height:.5em; border-radius:50%; background:#9aa; animation:dots 1s infinite}
 .typing i:nth-child(2){animation-delay:.15s} .typing i:nth-child(3){animation-delay:.3s}
 @keyframes dots{0%,100%{opacity:.3; transform:translateY(0)} 50%{opacity:1; transform:translateY(-3px)}}
 .replay{margin:16px auto 0; display:block; background:transparent; border:1px solid var(--panel-line); color:var(--mut); font:inherit; font-size:14px; padding:9px 16px; border-radius:999px; cursor:pointer}
-.replay:hover{color:var(--fg); border-color:currentColor}
 .plan .caption{text-align:center; color:var(--mut); font-size:14px; margin-top:10px}
 
 /* ---------- Trades marquee ---------- */
@@ -401,6 +521,7 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 @keyframes slide{from{transform:translate3d(0,0,0)} to{transform:translate3d(-50%,0,0)}}
 
 /* ---------- FAQ ---------- */
+#faq{scroll-margin-top:calc(var(--nav) + 26px)} /* this section has no top padding of its own, so the header link needs the full offset */
 .faq h2{font-size:clamp(34px,5vw,64px)}
 .qa{margin-top:28px; border-top:1px solid var(--panel-line)}
 .qa details{border-bottom:1px solid var(--panel-line)}
@@ -427,6 +548,7 @@ h3{font-weight:700; font-variation-settings:"wdth" 108; letter-spacing:-0.015em}
 .final h2 .hl{color:var(--hivis)}
 .final .intro{margin-top:22px; color:var(--mut); font-size:clamp(18px,1.7vw,22px); max-width:44ch}
 .final .hero-ctas{margin-top:34px}
+.final .wrap{z-index:1} /* the text and buttons sit above the big arrow, never under it */
 .final .big-arrow{position:absolute; right:-6vw; bottom:-8vw; width:46vw; max-width:620px; opacity:.09; pointer-events:none}
 
 footer{padding:40px 0 112px; font-size:15px; color:var(--muted-l)}
@@ -434,25 +556,62 @@ footer{padding:40px 0 112px; font-size:15px; color:var(--muted-l)}
 footer .wrap{display:grid; gap:16px}
 @media (min-width:760px){ footer .wrap{grid-template-columns:1fr auto; align-items:start} }
 footer a{color:var(--ink); text-decoration:none}
-footer a:hover{text-decoration:underline}
-footer .contact{display:grid; gap:4px}
+footer .contact{display:grid; gap:0}
+footer .contact > *{padding:4px 0} /* a little more room around each link for thumbs */
 @media (min-width:760px){ footer .contact{text-align:right} }
 footer .legal{max-width:62ch}
 footer .legal-links{margin-top:6px}
 footer .legal-links a{color:var(--muted-l); text-decoration:underline; text-underline-offset:3px}
 
-/* floating pill, bottom-left, leaving the bottom-right corner clear for the host's badge */
-.mobile-bar{position:fixed; left:14px; bottom:calc(14px + env(safe-area-inset-bottom)); z-index:70; max-width:calc(100% - 214px); transform:translateY(140%); transition:transform .35s var(--ease)}
+/* floating WhatsApp button, bottom-left on phones and tablets. The script brings it in once the first screen (which has
+   its own buttons) has been scrolled past, so it never sits on top of them. */
+.mobile-bar{position:fixed; left:14px; bottom:14px; bottom:calc(14px + env(safe-area-inset-bottom)); z-index:70; max-width:calc(100% - 28px); transform:translateY(140%); transform:translateY(calc(100% + 40px + env(safe-area-inset-bottom))); transition:transform .35s var(--ease)}
 .mobile-bar.show{transform:none}
 .mobile-bar .btn{width:100%; padding:14px 16px; gap:8px; font-size:15px; box-shadow:0 14px 30px -12px rgba(0,0,0,.55); white-space:nowrap}
 .mobile-bar .btn svg{flex:none; width:18px; height:18px}
 @media (max-width:379px){ .mobile-bar .btn span{display:none} .mobile-bar .btn{padding:14px} }
 @media (min-width:960px){ .mobile-bar{display:none} }
 
-section.block{padding:clamp(72px,10vw,140px) 0}
+section.block{padding:var(--sp) 0}
+/* invisible ruler the script reads: the height of the screen with the browser's toolbar showing */
+#vhProbe{position:fixed; top:0; left:0; width:0; height:100vh; height:100svh; visibility:hidden; pointer-events:none}
+
+/* Browsers from before 2021 (iPhones on iOS 14.4 and older) don't space out flex items with "gap". The script spots
+   those and adds this class, which puts the same spacing back with margins. */
+.no-flexgap .btn svg,.no-flexgap .brand svg{margin-right:10px}
+.no-flexgap .mobile-bar .btn svg{margin-right:8px}
+@media (max-width:379px){ .no-flexgap .mobile-bar .btn svg{margin-right:0} }
+.no-flexgap .nav-links a + a{margin-left:28px}
+.no-flexgap .chips span{margin:0 10px 10px 0}
+.no-flexgap .hero-ctas .btn{margin:0 12px 12px 0}
+@media (max-width:400px){ .no-flexgap .hero-ctas .btn{margin-right:0} }
+.no-flexgap .mini-btns span + span{margin-left:6px}
+.no-flexgap .mini-serv span,.no-flexgap .mini-areas span{margin:0 5px 5px 0}
+.no-flexgap .maker .hint i{margin-right:8px}
+.no-flexgap .url > * + *{margin-left:.8em}
+.no-flexgap .url .bar > * + *{margin-left:.6em}
+.no-flexgap .s-btns span + span{margin-left:8px}
+.no-flexgap .cmp .site .s-serv span{margin:0 6px 6px 0}
+.no-flexgap .price .n{margin-right:12px}
+.no-flexgap .incall .acts div + div{margin-left:3.6667em}
+.no-flexgap .msgs > .m ~ *{margin-top:.5714em}
+.no-flexgap .typing i + i{margin-left:.2857em}
+.no-flexgap .build .cue span + i{margin-top:6px}
+@media (max-width:999px){ .no-flexgap .build .cue span + i{margin:-8px 4px 0 12px} }
 
 /* Motion is intentionally the same on every device, including machines with the OS "reduce motion" flag set (see script). */
 </style>
+<!-- with scripts switched off: everything that normally animates in is simply shown -->
+<noscript><style>
+.hero.pre h1 .w{opacity:1; transform:none; filter:none}
+.hero.pre .stage3d,.rise{opacity:1; transform:none}
+.maker .hint{display:none}
+.incall{display:none}
+.msgs,.m{opacity:1; transform:none}
+.replay,.cmp .hintdrag,.mobile-bar{display:none}
+</style></noscript>
+<!-- the page starts in its plain layout and this switches the full one on straight away, so nothing depends on a script arriving -->
+<script>document.documentElement.className = "";</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -487,7 +646,7 @@ section.block{padding:clamp(72px,10vw,140px) 0}
       <a href="#plan">Never miss a job</a>
       <a href="#faq">Questions</a>
     </nav>
-    <a class="btn btn-wa btn-sm" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20I%27d%20like%20a%20website%20preview%20for%20my%20business."><svg aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+    <a class="btn btn-wa btn-sm" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20I%27d%20like%20a%20website%20preview%20for%20my%20business." aria-label="Message Joshua on WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp</span></a>
   </div>
 </header>
 
@@ -573,7 +732,7 @@ section.block{padding:clamp(72px,10vw,140px) 0}
   <div class="track" id="buildTrack">
     <div class="stage">
       <div class="wrap">
-        <div class="b-head"><h2>Watch yours come together</h2></div>
+        <div class="b-head"><h2>Watch yours <span class="nb">come together</span></h2></div>
           <ol class="steps" id="steps">
             <li data-s="1"><span class="d">1</span><div><h3>You send photos</h3><p>Six to ten from your phone. Nothing fancy.</p></div></li>
             <li data-s="2"><span class="d">2</span><div><h3>I write the words</h3><p>Plain, confident, yours. You check every line.</p></div></li>
@@ -585,13 +744,15 @@ section.block{padding:clamp(72px,10vw,140px) 0}
         <div class="laptop" id="laptop">
           <div class="lid">
             <div class="cam"></div>
-            <div class="disp">
-              <div class="url"><i></i><i></i><i></i><div class="bar"><span>🔒</span><b id="urlText">preview.nextthread.co.uk</b></div><span class="live" id="liveBadge">LIVE</span></div>
+            <div class="disp" id="buildDisp">
+              <!-- the padlock is drawn here (not an emoji) so it looks the same on every phone and computer -->
+              <div class="url"><i></i><i></i><i></i><div class="bar"><svg class="lock" viewBox="0 0 12 15" aria-hidden="true"><path d="M3.2 6.5V4.3a2.8 2.8 0 0 1 5.6 0v2.2" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="1" y="6.5" width="10" height="7.5" rx="1.8" fill="currentColor"/></svg><b id="urlText">preview.nextthread.co.uk</b></div><span class="live" id="liveBadge">LIVE</span></div>
               <div class="site" id="buildSite" data-trade="roofing"><div class="s-in" id="buildIn">
                 <div class="part s-nav" data-p="1"><span>Hartley Roofing</span><span>Call now</span></div>
-                <div class="part s-hero" data-p="2">
-                  <div><p class="sh">Fixed right the first time.</p><p>Roofing repairs and re-roofs across Dudley and the Black Country. Fully insured, 20 years on the tools.</p></div>
-                  <div class="pic"><svg><use href="#i-roof"/></svg></div>
+                <!-- the photo arrives with step 1 ("you send photos"), the words beside it with step 2 -->
+                <div class="s-hero">
+                  <div class="part" data-p="2"><p class="sh">Fixed right the first time.</p><p>Roofing repairs and re-roofs across Dudley. Fully insured, 20 years on the tools.</p></div>
+                  <div class="part pic" data-p="1"><svg><use href="#i-roof"/></svg></div>
                 </div>
                 <div class="part s-pics" data-p="1"><svg><use href="#i-roof"/></svg><svg><use href="#i-roof"/></svg><svg><use href="#i-roof"/></svg><svg><use href="#i-roof"/></svg></div>
                 <div class="part s-revs" data-p="3">
@@ -604,10 +765,10 @@ section.block{padding:clamp(72px,10vw,140px) 0}
             </div>
           </div>
           <div class="base"></div>
+          <div class="cue" id="buildCue" aria-hidden="true"><span>Keep scrolling<span class="more"> to build it</span></span><i></i></div>
         </div>
       </div>
       <div class="progress"><i id="prog"></i></div>
-      <div class="cue" id="buildCue" aria-hidden="true"><span>Keep scrolling to build it</span><i></i></div>
     </div>
   </div>
 </section>
@@ -801,6 +962,7 @@ section.block{padding:clamp(72px,10vw,140px) 0}
   </div>
 </footer>
 
+<i id="vhProbe" aria-hidden="true"></i>
 <div class="mobile-bar" id="mobileBar">
   <a class="btn btn-wa" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20I%27d%20like%20a%20website%20preview%20for%20my%20business." aria-label="Message Joshua on WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>WhatsApp Joshua</span></a>
 </div>
@@ -809,10 +971,21 @@ section.block{padding:clamp(72px,10vw,140px) 0}
 (function(){
   var $ = function(s, r){ return (r||document).querySelector(s); };
   var $$ = function(s, r){ return Array.prototype.slice.call((r||document).querySelectorAll(s)); };
+  var root = document.documentElement;
   // Same experience on every device. Many corporate Windows builds force the OS "reduce motion" flag on,
   // so honouring it here froze the site for a lot of people who never chose that. Nothing on the page flashes.
   var reduce = false;
   var WA = "https://wa.me/447856075882?text=";
+
+  /* browsers from before 2021 don't space flex items out with "gap": spot them, and the styles (.no-flexgap) use margins instead */
+  (function(){
+    var f = document.createElement("div");
+    f.style.cssText = "display:flex;flex-direction:column;row-gap:1px;position:absolute;visibility:hidden";
+    f.appendChild(document.createElement("div")); f.appendChild(document.createElement("div"));
+    document.body.appendChild(f);
+    if (f.scrollHeight !== 1) root.classList.add("no-flexgap");
+    document.body.removeChild(f);
+  })();
 
   /* ----- trade data ----- */
   var T = {
@@ -834,6 +1007,11 @@ section.block{padding:clamp(72px,10vw,140px) 0}
   var userTouched = false, cycleIdx = 0, cycleTimer = null;
 
   function artHtml(id){ return '<svg><use href="#'+id+'"/></svg><svg><use href="#'+id+'"/></svg><svg><use href="#'+id+'"/></svg>'; }
+  // whatever a visitor types is only ever placed on the page as plain text, never as markup
+  function fillChips(el, arr){
+    el.textContent = "";
+    arr.forEach(function(a){ var s = document.createElement("span"); s.textContent = a; el.appendChild(s); });
+  }
   function setMini(key, name, town){
     var t = T[key] || T.other;
     var n = name || t.name, tw = town || t.town;
@@ -842,13 +1020,13 @@ section.block{padding:clamp(72px,10vw,140px) 0}
     $$("[data-f=brand],[data-f=brand2],[data-f=brand3],[data-f=brand4]", mini).forEach(function(e){ e.textContent = n; });
     $("[data-f=rev2]", mini).textContent = "“" + t.rev2 + "”";
     $("[data-f=revby2]", mini).textContent = t.by2;
-    $("[data-f=areas]", mini).innerHTML = (town ? [town, "Surrounding areas", "Within 20 miles"] : t.areas).map(function(a){ return "<span>"+a+"</span>"; }).join("");
-    $("[data-f=kicker]", mini).textContent = t.kicker.replace("{t}", tw);
+    fillChips($("[data-f=areas]", mini), town ? [town, "Surrounding areas", "Within 20 miles"] : t.areas);
+    $("[data-f=kicker]", mini).textContent = t.kicker.replace("{t}", function(){ return tw; });
     $("[data-f=head]", mini).textContent = t.head;
     $("[data-f=art]", mini).innerHTML = artHtml(t.art);
     $("[data-f=rev]", mini).textContent = "“" + t.rev + "”";
     $("[data-f=revby]", mini).textContent = t.by;
-    $("[data-f=serv]", mini).innerHTML = t.serv.map(function(s){ return "<span>"+s+"</span>"; }).join("");
+    fillChips($("[data-f=serv]", mini), t.serv);
     var msg = "Hi Joshua, I'm " + n + " (" + key.replace("brick","bricklaying") + (town ? ", " + town : "") + "). Can you build me a preview?";
     makerWa.setAttribute("href", WA + encodeURIComponent(msg));
   }
@@ -900,7 +1078,7 @@ section.block{padding:clamp(72px,10vw,140px) 0}
   startTick(); startCycle();
 
   function onUser(){
-    if (!userTouched){ userTouched = true; stopCycle(); hint.innerHTML = "That's roughly the top of your site. Want the real thing?"; }
+    if (!userTouched){ userTouched = true; stopCycle(); hint.textContent = "That's roughly the top of your site. Want the real thing?"; }
     swapTo(tradeI.value, nameI.value.trim(), townI.value.trim());
   }
   ["input","change"].forEach(function(ev){
@@ -956,15 +1134,18 @@ section.block{padding:clamp(72px,10vw,140px) 0}
 
   /* whole-pixel phones: Safari draws hairlines and soft edges when a frame lands on a half pixel, so each phone is
      measured and snapped to integers (width and the matching height) on load and whenever the window changes size */
+  var callScreen = $("#callphone .screen");
   function snapPhones(){
     $$(".phone").forEach(function(p){
       p.style.width = ""; p.style.height = "";
       var w = Math.round(p.offsetWidth);
       if (w > 0){ p.style.width = w + "px"; p.style.height = Math.round(w * 610 / 300) + "px"; }
     });
+    // the call screen is designed for a screen 244px wide with 14px type: scale it to whatever size this phone came out at
+    var sw = callScreen.clientWidth;
+    if (sw > 0) callScreen.style.fontSize = (14 * sw / 244).toFixed(3) + "px";
+    fitMsgs();
   }
-  snapPhones();
-  var snapT; window.addEventListener("resize", function(){ clearTimeout(snapT); snapT = setTimeout(snapPhones, 120); });
 
   /* frame-rate check: measure for ~1.2s once the page has settled; under ~45fps, drop the heavy effects (see .lite in the CSS) */
   (function(){
@@ -986,28 +1167,88 @@ section.block{padding:clamp(72px,10vw,140px) 0}
   /* ----- nav + mobile bar ----- */
   var nav = $("#nav"), bar = $("#mobileBar");
   function onScroll(){
-    var past = window.scrollY > window.innerHeight * 0.75;
-    nav.classList.toggle("scrolled", window.scrollY > 40);
-    bar.classList.toggle("show", past);
+    var y = window.pageYOffset || 0;
+    // the floating button waits until the first screen, which has its own buttons, has been scrolled past
+    var heroGone = hero.getBoundingClientRect().bottom <= (window.innerHeight || root.clientHeight);
+    nav.classList.toggle("scrolled", y > 40);
+    bar.classList.toggle("show", heroGone);
     updateBuild();
   }
   // one update per frame however many scroll events the browser fires (iOS and trackpads fire a lot)
   var scrollQueued = false;
   function queueScroll(){ if (scrollQueued) return; scrollQueued = true; requestAnimationFrame(function(){ scrollQueued = false; onScroll(); }); }
   window.addEventListener("scroll", queueScroll, {passive:true});
-  window.addEventListener("resize", queueScroll);
 
   /* ----- scroll-driven build ----- */
-  var track = $("#buildTrack"), steps = $$("#steps li"), parts = $$("#buildSite .part"), live = $("#liveBadge"), prog = $("#prog"), urlText = $("#urlText"), ringBtn = $("#ringBtn");
-  var buildSite = $("#buildSite"), buildIn = $("#buildIn"), cue = $("#buildCue"), stage = $(".build .stage");
-  var lastStep = -1;
+  var track = $("#buildTrack"), stage = $(".build .stage"), bwrap = $(".build .stage .wrap"), bhead = $(".build .b-head"), stepsEl = $("#steps");
+  var steps = $$("#steps li"), parts = $$("#buildSite .part"), live = $("#liveBadge"), prog = $("#prog"), urlText = $("#urlText"), ringBtn = $("#ringBtn");
+  var laptop = $("#laptop"), disp = $("#buildDisp"), buildSite = $("#buildSite"), buildIn = $("#buildIn"), cue = $("#buildCue");
+  var sNav = $(".s-nav", buildIn), sPics = $(".s-pics", buildIn), sBtns = $(".s-btns", buildIn);
+  // the same two breakpoints the styles use, asked the same way round, so the script and the styles can never disagree
+  var oneColMq = window.matchMedia("(max-width:999px)"), phoneMq = window.matchMedia("(max-width:599px)");
+  var lastStep = -1, flat = false;
+
+  /* Works out how the scene is laid out for this screen. Runs on load and whenever the window changes size.
+     - One-column layout (phones, tablets): the laptop gets whatever height is left between the heading and the step card.
+     - If the scene still can't fit on the screen (a phone on its side, a very short window), it is shown plainly
+       instead: the finished site and all six steps, nothing pinned (.flat in the styles). */
+  function layoutBuild(){
+    var wasFlat = flat;
+    root.classList.remove("flat");
+    laptop.style.maxWidth = "";
+    var cs = getComputedStyle(stage);
+    var avail = stage.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    flat = false;
+    if (oneColMq.matches){
+      var gap = parseFloat(getComputedStyle(bwrap).rowGap) || 14;
+      var frameH = laptop.offsetHeight - disp.offsetHeight, frameW = laptop.offsetWidth - disp.offsetWidth;
+      var room = avail - bhead.offsetHeight - stepsEl.offsetHeight - 2 * gap - frameH;
+      var cap = Math.floor(room * disp.offsetWidth / Math.max(1, disp.offsetHeight) + frameW);
+      if (cap < 220) flat = true;
+      else if (cap < laptop.offsetWidth) laptop.style.maxWidth = cap + "px";
+    }
+    if (!flat && bwrap.offsetHeight > avail + 1) flat = true;
+    if (flat) laptop.style.maxWidth = "";
+    root.classList.toggle("flat", flat);
+    // The mock page is designed for a laptop screen 600px wide, and it shrinks in step on anything smaller, so it keeps
+    // exactly the same shape and line breaks instead of crowding. The phone layout has its own design (326px wide,
+    // larger type) which scales with the laptop both ways.
+    var w = disp.clientWidth, size = "";
+    if (w > 0){
+      if (phoneMq.matches) size = (11 * w / 326).toFixed(3) + "px";
+      else if (w < 600) size = (11 * w / 600).toFixed(3) + "px";
+    }
+    disp.style.fontSize = size;
+    if (flat !== wasFlat) lastStep = -1;
+    updateBuild();
+    if (lastStep > 0) scrollSiteFor(lastStep);
+  }
   function scrollSiteFor(step){
-    // once reviews/buttons exist, scroll the mock page so the newest part is in view
-    if (step < 3){ buildIn.style.transform = ""; return; }
-    var overflow = buildIn.scrollHeight - buildSite.clientHeight;
-    buildIn.style.transform = overflow > 0 ? "translateY(" + (-overflow) + "px)" : "";
+    // Once the reviews and buttons exist, the mock page is scrolled up so they are in view. It only ever stops at a
+    // clean edge (just under its own header, or with the row of photos at the top), never part-way through a line.
+    var shift = 0;
+    if (!flat && step >= 3){
+      var over = buildIn.offsetHeight - buildSite.clientHeight;
+      var spare = parseFloat(getComputedStyle(sBtns).paddingBottom) || 0; // the white space under the buttons can go
+      if (over > spare){
+        var em = parseFloat(getComputedStyle(buildSite).fontSize) || 11;
+        var stops = [sNav.offsetHeight, sPics.offsetTop - Math.round(em * 0.5)];
+        shift = over;
+        for (var i = 0; i < stops.length; i++){ if (stops[i] >= over - spare){ shift = stops[i]; break; } }
+      }
+    }
+    buildIn.style.transform = shift > 0 ? "translateY(" + (-Math.round(shift)) + "px)" : "";
+  }
+  function setStep(step){
+    lastStep = step;
+    steps.forEach(function(li, i){ li.classList.toggle("on", i < step); li.classList.toggle("now", i === step - 1); });
+    parts.forEach(function(el){ el.classList.toggle("on", parseInt(el.getAttribute("data-p"),10) <= step); });
+    scrollSiteFor(step);
+    live.style.opacity = step >= 6 ? 1 : 0; live.style.transform = step >= 6 ? "none" : "translateY(-6px)";
+    urlText.textContent = step >= 6 ? "hartleyroofing.co.uk" : "preview.nextthread.co.uk";
   }
   function updateBuild(){
+    if (flat){ if (lastStep !== 6) setStep(6); return; } // plain layout: the finished site, all steps shown
     // measured against the sticky stage, not window.innerHeight, which changes on phones as the browser bar hides and shows
     var r = track.getBoundingClientRect();
     var vh = stage.offsetHeight || window.innerHeight;
@@ -1016,54 +1257,64 @@ section.block{padding:clamp(72px,10vw,140px) 0}
     prog.style.width = (p*100).toFixed(1) + "%";
     cue.classList.toggle("off", p > 0.06 || r.top > vh * 0.5);
     var step = Math.min(6, Math.floor(p * 6) + 1); // 1..6, never an empty screen
-    if (step === lastStep) return; lastStep = step;
-    steps.forEach(function(li, i){ li.classList.toggle("on", i < step); li.classList.toggle("now", i === step - 1); });
-    parts.forEach(function(el){ el.classList.toggle("on", parseInt(el.getAttribute("data-p"),10) <= step); });
-    scrollSiteFor(step);
-    if (step >= 4 && !reduce){ ringBtn.classList.add("ring"); setTimeout(function(){ ringBtn.classList.remove("ring"); }, 1200); }
-    live.style.opacity = step >= 6 ? 1 : 0; live.style.transform = step >= 6 ? "none" : "translateY(-6px)";
-    urlText.textContent = step >= 6 ? "hartleyroofing.co.uk" : "preview.nextthread.co.uk";
+    if (step === lastStep) return;
+    var first = lastStep === -1;
+    setStep(step);
+    if (step >= 4 && !first && !reduce){ ringBtn.classList.add("ring"); setTimeout(function(){ ringBtn.classList.remove("ring"); }, 1200); }
   }
-  onScroll(); // also sets the header and floating button correctly when the page opens already scrolled (refresh, back button)
 
   /* ----- before/after ----- */
   var cmp = $("#cmp"), range = $("#cmpRange"), after = $("#after"), handle = $("#handle"), knob = $("#knob");
   function setCmp(v){
-    after.style.clipPath = "inset(0 0 0 " + v + "%)";
+    var clip = "inset(0 0 0 " + v + "%)";
+    after.style.webkitClipPath = clip; after.style.clipPath = clip;
     handle.style.left = v + "%"; knob.style.left = v + "%";
   }
-  range.addEventListener("input", function(){ cmp.classList.add("used"); setCmp(range.value); });
+  var nudgeRaf = 0;
+  function stopNudge(){ if (nudgeRaf){ cancelAnimationFrame(nudgeRaf); nudgeRaf = 0; } }
+  range.addEventListener("input", function(){ stopNudge(); cmp.classList.add("used"); setCmp(range.value); });
   setCmp(50);
   // touch + mouse dragging anywhere on the comparison (iOS ignores touches on a stretched range input)
   // Direction-aware: a sideways drag moves the slider, an up/down swipe scrolls the page as normal.
   var drag = null; // {id, x0, y0, active}
   function pctFrom(e){ var r = cmp.getBoundingClientRect(); return Math.max(0, Math.min(100, (e.clientX - r.left) / r.width * 100)); }
+  function moveTo(e){ var v = pctFrom(e); range.value = v; setCmp(v); }
+  // a mouse is "captured" for the length of the drag, so the handle keeps following (and lets go properly) even when
+  // the pointer leaves the picture or the button is released outside it. Touch pointers are captured by the browser.
+  function capture(e){ if (e.pointerType === "mouse" && cmp.setPointerCapture){ try { cmp.setPointerCapture(e.pointerId); } catch(_){} } }
   cmp.addEventListener("pointerdown", function(e){
     if (e.button !== undefined && e.button !== 0) return;
+    stopNudge();
     drag = { id: e.pointerId, x0: e.clientX, y0: e.clientY, active: e.pointerType === "mouse" };
-    if (drag.active){ cmp.classList.add("used"); var v = pctFrom(e); range.value = v; setCmp(v); }
+    if (drag.active){ capture(e); cmp.classList.add("used"); moveTo(e); }
   });
   cmp.addEventListener("pointermove", function(e){
     if (!drag || e.pointerId !== drag.id) return;
+    if (e.pointerType === "mouse" && e.buttons === 0){ drag = null; return; } // the button came up somewhere we didn't see
     if (!drag.active){
       var dx = Math.abs(e.clientX - drag.x0), dy = Math.abs(e.clientY - drag.y0);
       if (dx < 8 && dy < 8) return;            // not sure yet
       if (dy > dx){ drag = null; return; }      // vertical: let the page scroll
       drag.active = true; cmp.classList.add("used");
-      if (e.pointerType === "mouse"){ try { cmp.setPointerCapture(e.pointerId); } catch(_){} } // touch pointers are captured implicitly
     }
-    var v = pctFrom(e); range.value = v; setCmp(v);
+    moveTo(e);
     if (e.cancelable) e.preventDefault();
   });
-  ["pointerup","pointercancel"].forEach(function(t){ cmp.addEventListener(t, function(e){ if (drag && e.pointerId === drag.id) drag = null; }); });
-  // gentle nudge once when it scrolls into view
+  ["pointerup","pointercancel","lostpointercapture"].forEach(function(t){ cmp.addEventListener(t, function(e){ if (drag && e.pointerId === drag.id) drag = null; }); });
+  // gentle nudge once when it scrolls into view (stops the moment the visitor takes hold of it)
   if ("IntersectionObserver" in window && !reduce){
     var nudged = false;
     new IntersectionObserver(function(es){
       es.forEach(function(e){
-        if (e.isIntersecting && !nudged){ nudged = true;
-          var v = 50, dir = 1, n = 0;
-          var id = setInterval(function(){ v += dir*1.2; if (v > 62) dir = -1; if (v < 50 && dir < 0){ clearInterval(id); setCmp(50); return; } setCmp(v); }, 16);
+        if (e.isIntersecting && !nudged && !cmp.classList.contains("used")){ nudged = true;
+          var t0 = 0;
+          var frame = function(t){
+            if (!t0) t0 = t;
+            var u = Math.min(1, (t - t0) / 700);
+            setCmp(50 + 12 * Math.sin(Math.PI * u));
+            if (u < 1) nudgeRaf = requestAnimationFrame(frame); else { nudgeRaf = 0; setCmp(50); }
+          };
+          nudgeRaf = requestAnimationFrame(frame);
         }
       });
     }, {threshold:.6}).observe(cmp);
@@ -1072,6 +1323,19 @@ section.block{padding:clamp(72px,10vw,140px) 0}
   /* ----- missed call simulation ----- */
   var incall = $("#incall"), msgs = $("#msgs"), ms = $$("#msgs .m"), typ1 = $("#typ1"), typ2 = $("#typ2"), replay = $("#replay");
   var running = false, timers = [];
+  /* Safety net for the texts. They are designed to end comfortably inside the screen; if a device's own fonts make
+     them wrap further (the web font failed to load, or the reader has enlarged text), they are scaled down a notch
+     at a time until the last one fits. */
+  function fitMsgs(){
+    msgs.style.fontSize = "";
+    for (var n = 0, f = 1; n < 14; n++){
+      var cs = getComputedStyle(msgs);
+      var need = parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom) + (parseFloat(cs.rowGap) || 0) * (ms.length - 1);
+      for (var i = 0; i < ms.length; i++) need += ms[i].offsetHeight + (parseFloat(getComputedStyle(ms[i]).marginTop) || 0);
+      if (need <= msgs.clientHeight + 0.5) break;
+      f *= 0.96; msgs.style.fontSize = f.toFixed(3) + "em";
+    }
+  }
   function reset(){
     timers.forEach(clearTimeout); timers = [];
     incall.classList.remove("gone"); msgs.classList.remove("in");
@@ -1104,6 +1368,26 @@ section.block{padding:clamp(72px,10vw,140px) 0}
   }
   fill($("#row1"), trades);
   fill($("#row2"), trades.slice(10).concat(trades.slice(0,10)));
+
+  /* ----- sizing: on load, when the web font arrives, and whenever the window changes size or the phone is turned -----
+     Also sets the header and floating button correctly when the page opens already scrolled (refresh, back button). */
+  var probe = $("#vhProbe"), layoutKey = "";
+  function layout(force){
+    // phones fire "resize" every time the browser's toolbar slides away or back while scrolling. That changes nothing
+    // the layout depends on (the probe is as tall as the screen with the toolbar showing), so those are skipped.
+    var key = root.clientWidth + "x" + probe.offsetHeight;
+    if (force === true || key !== layoutKey){ layoutKey = key; snapPhones(); layoutBuild(); }
+    onScroll();
+  }
+  layout(true);
+  var layoutT = 0;
+  function queueLayout(ms){ clearTimeout(layoutT); layoutT = setTimeout(layout, ms); }
+  window.addEventListener("resize", function(){ queueLayout(120); queueScroll(); });
+  window.addEventListener("orientationchange", function(){ queueLayout(300); });
+  window.addEventListener("load", function(){ layout(true); });
+  window.addEventListener("pageshow", function(e){ if (e.persisted) layout(true); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function(){ layout(true); });
+  if (document.fonts && document.fonts.addEventListener) document.fonts.addEventListener("loadingdone", function(){ layout(true); });
 })();
 </script>
 </body>
