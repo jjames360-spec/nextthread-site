@@ -42,6 +42,8 @@ p{margin:0}
 .badges svg{width:16px; height:16px; color:var(--accent)}
 .art{border-radius:20px; overflow:hidden; background:var(--sky); box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
 .art svg{width:100%; height:auto}
+/* on phones the pictures are a supporting strip, not the main event */
+@media (max-width:859px){ .art{aspect-ratio:16/9} .art svg{height:100%} }
 @media (min-width:860px){
   .hero .wrap{grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); align-items:center; padding-top:64px; padding-bottom:72px}
   .hero h1{font-size:60px}
@@ -65,7 +67,7 @@ p{margin:0}
 /* jobs */
 .jobs{display:grid; gap:12px; margin-top:26px; grid-template-columns:1fr 1fr}
 .jobs figure{margin:0; border-radius:16px; overflow:hidden; background:var(--sky); position:relative; aspect-ratio:400/260}
-.jobs figure:first-child{grid-column:1 / -1; aspect-ratio:480/330}
+.jobs figure:first-child{grid-column:1 / -1; aspect-ratio:2/1}
 .jobs svg{width:100%; height:100%}
 .jobs figcaption{position:absolute; left:10px; bottom:10px; background:rgba(255,255,255,.92); color:var(--ink); font-size:13px; font-weight:700; padding:5px 10px; border-radius:999px}
 @media (min-width:860px){ .jobs{grid-template-columns:repeat(3,1fr)} .jobs figure,.jobs figure:first-child{grid-column:auto; aspect-ratio:3/2} }
@@ -78,7 +80,11 @@ p{margin:0}
 .rev{background:#fff; border:1px solid var(--line); border-radius:18px; padding:20px}
 .stars{display:flex; gap:3px; color:#F2B01E}
 .stars svg{width:18px; height:18px}
-.bar{height:10px; border-radius:6px; background:#ECEAE4; margin-top:12px}
+.bar{height:9px; border-radius:6px; background:#F0EEE9; margin-top:10px}
+.rev .ph{margin-top:12px; font-size:15px; font-weight:600; line-height:1.35; color:var(--mut)}
+.score{display:flex; align-items:center; gap:14px; margin-top:24px; background:#fff; border:1px solid var(--line); border-radius:18px; padding:16px 20px; width:max-content; max-width:100%}
+.score b{font-size:46px; font-weight:800; line-height:1; letter-spacing:-0.02em; color:var(--brand); font-variation-settings:"wdth" 112}
+.score span{display:block; margin-top:5px; font-size:14px; color:var(--mut)}
 .bar.s{width:62%}
 .rev .who{display:flex; align-items:center; gap:10px; margin-top:18px}
 .rev .who i{width:30px; height:30px; border-radius:50%; background:var(--tint)}
