@@ -172,6 +172,104 @@ legend{font-weight:750;font-size:18px;padding:0;margin-bottom:10px}
 .contact .also a{font-weight:700;text-underline-offset:3px;display:inline-block;padding:10px 0}
 .legal{border-top:1px solid rgba(238,232,218,.2);margin-top:40px;padding-top:18px;font-size:14.5px;line-height:1.5;color:rgba(238,232,218,.68);display:grid;gap:6px}
 
+
+/* desktop nav */
+.nav{display:none}
+
+/* the week it started */
+.week{background:var(--brick-dark);color:var(--lime);padding:52px 0 56px}
+.week p{font-stretch:62%;font-weight:800;font-size:clamp(30px,8.3vw,62px);line-height:1.04;max-width:21em;text-wrap:balance}
+.week p+p{margin-top:.5em;color:var(--ochre)}
+
+/* plan your extension */
+.dark{background:var(--blue);color:var(--lime)}
+.dark .lead{color:rgba(238,232,218,.84)}
+.dark legend{color:var(--lime)}
+.dark .chips span{background:transparent;border-color:rgba(238,232,218,.7);color:var(--lime)}
+.dark .chips input:checked+span{background:var(--lime);border-color:var(--lime);color:var(--ink)}
+.dark .chips input:focus-visible+span{outline-color:var(--ochre)}
+.pgrid{display:grid;gap:24px;margin-top:30px}
+.rg{margin-top:22px}
+.rg .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.rg label{font-weight:750;font-size:18px}
+.rg output{font-stretch:62%;font-weight:900;font-size:36px;line-height:1;color:var(--ochre);white-space:nowrap}
+.rg input[type=range]{-webkit-appearance:none;appearance:none;display:block;background:transparent;width:100%;height:46px;margin:2px 0 0;cursor:pointer}
+.rg input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:4px;background:rgba(238,232,218,.3)}
+.rg input[type=range]::-moz-range-track{height:8px;border-radius:4px;background:rgba(238,232,218,.3)}
+.rg input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:34px;height:34px;border-radius:50%;background:var(--ochre);border:3px solid var(--ink);margin-top:-13px}
+.rg input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:var(--ochre);border:3px solid var(--ink)}
+.plot{background:var(--blue-deep);border-radius:14px;padding:12px 12px 14px;margin:0}
+.plot svg{width:100%;height:auto}
+.plot .bd{fill:none;stroke:rgba(238,232,218,.55);stroke-width:1.5;stroke-dasharray:5 5}
+.plot .la{fill:none;stroke:var(--ochre);stroke-width:2;stroke-dasharray:7 5}
+.plot .lb{fill:none;stroke:var(--lime);stroke-width:2;stroke-dasharray:2 5;stroke-linecap:round}
+.plot text{font-size:13px;font-weight:650;fill:var(--lime)}
+.plot .hs{fill:var(--ink);font-size:14px;font-weight:750}
+.plot .ta{fill:var(--ochre)}
+.plot .dm{font-stretch:62%;font-weight:900;font-size:22px;fill:#fff}
+.plot figcaption{display:grid;gap:5px;margin-top:10px;font-size:14.5px;line-height:1.3;color:rgba(238,232,218,.86)}
+.plot figcaption span{display:flex;align-items:center;gap:9px}
+.plot figcaption i{flex:none;width:28px;border-top:2px dashed var(--ochre)}
+.plot figcaption i.b{border-top:2px dotted var(--lime)}
+.res{background:var(--lime);color:var(--ink);border-radius:14px;padding:6px 18px 18px;margin-top:24px}
+.res div{padding:13px 0 14px;border-bottom:1px solid rgba(22,27,40,.16)}
+.res dt{font-size:15px;font-weight:650;color:#4A4636}
+.res dd{font-stretch:62%;font-weight:900;font-size:35px;line-height:1.02;margin-top:3px}
+.res dd.v{display:flex;align-items:baseline;gap:10px}
+.res dd.v i{flex:none;width:15px;height:15px;border-radius:3px;background:#2F7D4F;transform:translateY(-2px)}
+.res dd.v.am i{background:#C98A14}
+.res dd.v.rd i{background:var(--brick)}
+.res p{font-size:16px;line-height:1.4;color:#3A3729;margin-top:6px}
+.res .btn{width:100%;margin-top:16px}
+.fine{font-size:14.5px;line-height:1.5;color:rgba(238,232,218,.7);margin-top:16px;max-width:46em}
+.dark .jn{margin-top:22px}
+
+/* where we work */
+.mgrid{display:grid;gap:22px;margin-top:26px}
+.map{width:100%;max-width:440px;height:auto;margin:0 auto}
+.map .rg1{fill:none;stroke:#9AA3B8;stroke-width:1.5;stroke-dasharray:3 6;stroke-linecap:round}
+.map text{font-size:13.5px;font-weight:600;fill:var(--ink)}
+.map .rl{font-size:12.5px;font-weight:650;fill:#6B7387}
+.map .pl{fill:var(--ink)}
+.map .home{font-stretch:62%;font-weight:900;font-size:27px;fill:var(--brick-dark)}
+.places{font-size:19px;line-height:1.5;color:var(--mute);max-width:30em}
+.places b{color:var(--ink);font-weight:700}
+
+/* still to add: photos and customers (NextThread's ask, hidden in customer view) */
+.todo{padding:0 0 72px}
+.todo .tg{display:grid;gap:44px}
+.todo .tg>div{min-width:0}
+.todo h2{font-stretch:62%;font-weight:900;font-size:clamp(40px,10.5vw,64px);line-height:.96}
+.frames{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:18px}
+.frames div{aspect-ratio:4/3;border:2px dashed #9AA3B8;border-radius:10px;display:grid;place-items:center;text-align:center;color:#6B7387;font-size:14px;line-height:1.25;padding:6px;background:rgba(255,255,255,.45)}
+.frames svg{width:26px;height:26px;margin:0 auto 4px;stroke:#8D97AE}
+.quotes{display:grid;gap:10px;margin-top:18px}
+.quotes div{border:2px dashed #9AA3B8;border-radius:10px;padding:14px 16px;color:#6B7387;font-size:16px;line-height:1.4;background:rgba(255,255,255,.45)}
+.quotes b{display:block;color:#C98A14;letter-spacing:3px;font-size:18px;margin-bottom:2px}
+.todo .jn{margin-top:14px;max-width:none;flex-wrap:wrap}
+.todo .jn p{flex:1;min-width:0}
+.btn-n{background:var(--ntg);color:var(--nty);width:100%;margin-top:12px;min-height:52px;font-size:17px}
+.btn-n:hover{background:#17392E}
+body.nn .todo{display:none}
+
+/* search comparison inside Joshua's card */
+.serp{display:grid;gap:18px;margin-top:26px}
+.serp>div{min-width:0}
+.serp h3{margin-bottom:9px}
+.serp .r{background:#fff;color:#202124;border-radius:12px;padding:13px 16px 14px}
+.serp .r+.r{margin-top:8px}
+.serp .u{font-size:13px;line-height:1.3;color:#4D5156;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.serp .t{font-size:18.5px;line-height:1.25;color:#1A0DAB;font-weight:500;margin-top:3px}
+.serp .s{font-size:14.5px;line-height:1.4;color:#4D5156;margin-top:4px}
+.serp .new{box-shadow:0 0 0 3px var(--nty)}
+.card .after{margin-top:12px;font-size:16px}
+
+/* customer view: the bar the live site would carry */
+.cb{display:none;position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--blue-deep);padding:10px 12px calc(10px + env(safe-area-inset-bottom));gap:10px;grid-template-columns:1fr 1fr;box-shadow:0 -8px 24px rgba(8,12,22,.4)}
+.cb .btn{min-height:52px;padding:10px 12px}
+body.nn .cb{display:grid}
+body.nn .nt{display:none}
+
 /* NextThread bar */
 .nt{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom));z-index:20;max-width:600px;margin:0 auto;background:var(--ntg);color:#F4F1E6;border-radius:14px;padding:10px 10px 10px 12px;display:flex;align-items:center;gap:11px;box-shadow:0 10px 30px rgba(8,12,22,.45),0 0 0 1px rgba(244,241,230,.14)}
 .nt svg{width:34px;height:34px;flex:none}
@@ -182,6 +280,8 @@ legend{font-weight:750;font-size:18px;padding:0;margin-bottom:10px}
 .toast.show{opacity:1}
 
 @media (min-width:560px){
+  .quotes{grid-template-columns:1fr 1fr}
+  .btn-n{width:auto}
   .ctas{grid-template-columns:auto auto;justify-content:start}
   .two{grid-template-columns:1fr 1fr}
   .card .go{grid-template-columns:auto;justify-content:start}
@@ -189,6 +289,19 @@ legend{font-weight:750;font-size:18px;padding:0;margin-bottom:10px}
 }
 @media (min-width:900px){
   body{font-size:19px}
+  .nav{display:flex;gap:26px;font-size:17px;font-weight:600;margin-left:auto;margin-right:8px}
+  .nav a{text-decoration:none;color:rgba(238,232,218,.86);padding:8px 0}
+  .nav a:hover{color:var(--ochre)}
+  .week{padding:84px 0 90px}
+  .pgrid{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);column-gap:56px;align-items:start;margin-top:44px}
+  .pgrid .plot{position:sticky;top:24px;order:2;padding:18px 18px 20px}
+  .mgrid{grid-template-columns:minmax(0,440px) minmax(0,1fr);column-gap:64px;align-items:center;margin-top:36px}
+  .places{font-size:21px}
+  .todo{padding-bottom:104px}
+  .todo .tg{grid-template-columns:1fr 1fr;column-gap:56px}
+  .serp{grid-template-columns:1fr 1fr;column-gap:56px}
+  body.nn .cb{display:none}
+  body.nn .nt{display:flex}
   .wrap{padding:0 36px}
   .wm b{font-size:36px}
   .top{padding-top:24px}
@@ -235,12 +348,13 @@ legend{font-weight:750;font-size:18px;padding:0;margin-bottom:10px}
 <div class="pv" role="note" aria-label="About this preview"><div class="wrap">
   <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F2C230"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#0F2A21" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
   <p><b>Your free preview, Dave.</b> <span id="pvt">Yellow notes are from Joshua.</span></p>
-  <button type="button" id="ntg" aria-pressed="false">Hide notes</button>
+  <button type="button" id="ntg" aria-pressed="false">Customer view</button>
 </div></div>
 
 <header class="hero"><div class="wrap">
   <div class="top">
     <a class="wm" href="#top" aria-label="D and G Builders, home"><b>D&amp;G Builders</b><span>Blurton, Stoke-on-Trent</span></a>
+    <nav class="nav" aria-label="Sections"><a href="#build">What we build</a><a href="#plan">Plan an extension</a><a href="#area">Where we work</a><a href="#quote">Get a price</a></nav>
     <a class="btn btn-p" href="tel:01782310054" aria-label="Call 01782 310054"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span class="num">01782 310054</span></a>
   </div>
   <div class="hgrid" id="top">
@@ -267,6 +381,11 @@ legend{font-weight:750;font-size:18px;padding:0;margin-bottom:10px}
 </header>
 
 <main>
+<section class="week" id="since"><div class="wrap">
+  <p>On 16 July 1981, Botham&rsquo;s Ashes Test began at Headingley, Ghost Town was number one, and in Blurton, D&nbsp;&amp;&nbsp;G Builders became a limited company.</p>
+  <p><span class="yr">45</span> years on, we&rsquo;re still building.</p>
+</div></section>
+
 <section class="light sec" id="build"><div class="wrap">
   <h2 class="d">What we build</h2>
   <p class="lead">Building work for homes across Stoke-on-Trent and the surrounding area. Tap a job to see where it sits on the house.</p>
@@ -316,6 +435,80 @@ legend{font-weight:750;font-size:18px;padding:0;margin-bottom:10px}
   </div>
 </div></section>
 
+<section class="dark sec" id="plan"><div class="wrap">
+  <h2 class="d">Plan your extension</h2>
+  <p class="lead">Set the size, see it drawn on your plot, and get a rough idea of planning and cost before you ring.</p>
+  <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Joshua:</b> this is the bit other builders&rsquo; sites don&rsquo;t have, Dave. The prices are UK averages I looked up. I&rsquo;ll put in your own figures, or take prices off if you&rsquo;d rather not show them.</p></aside>
+  <div class="pgrid">
+    <figure class="plot">
+      <svg id="plot" viewBox="0 0 360 312" role="img" aria-label="Plan of the house and garden with the extension drawn to size">
+        <defs><pattern id="bh2" width="28" height="14" patternUnits="userSpaceOnUse"><rect width="28" height="14" fill="#B5482F"/><path d="M0 .5h28M0 7.5h28M7 .5v7M21 7.5v7" stroke="#F0C9BA" stroke-opacity=".6" stroke-width="1" fill="none"/></pattern></defs>
+        <rect id="gdn" x="92" y="10" width="228" height="292" fill="#2B3450"/>
+        <rect id="nbL" x="0" y="10" width="92" height="62" fill="#3B455E"/>
+        <rect id="nbR" x="268" y="10" width="92" height="62" fill="#3B455E" style="display:none"/>
+        <path id="bd" class="bd" d="M92 10V302H320V10"/>
+        <path id="la" class="la" d="M0 138H360"/><text id="lat" class="ta" x="6" y="132">3 m</text>
+        <path id="lb" class="lb" d="M0 204H360"/><text id="lbt" x="6" y="198">6 m</text>
+        <rect x="92" y="10" width="176" height="62" fill="#EEE8DA"/>
+        <text class="hs" x="180" y="46" text-anchor="middle">Your house</text>
+        <rect id="ext" x="130.500" y="72" width="99" height="77" fill="url(#bh2)" stroke="#161B28" stroke-width="2"/>
+        <text id="dw" class="dm" x="180" y="172" text-anchor="middle">4.5 m</text>
+        <text id="dd" class="dm" x="238" y="118">3.5 m</text>
+      </svg>
+      <figcaption><span><i></i><span id="lac">No application needed up to 3 m</span></span><span><i class="b"></i><span id="lbc">Prior approval up to 6 m</span></span></figcaption>
+    </figure>
+    <form id="pf" autocomplete="off" onsubmit="return false">
+      <fieldset><legend>Your house</legend><div class="chips">
+        <label><input type="radio" name="ht" value="detached"><span>Detached</span></label>
+        <label><input type="radio" name="ht" value="semi-detached" checked><span>Semi-detached</span></label>
+        <label><input type="radio" name="ht" value="terraced"><span>Terraced</span></label>
+      </div></fieldset>
+      <div class="rg"><div class="row"><label for="pd">How far out from the back wall</label><output id="pdo" for="pd">3.5 m</output></div>
+        <input type="range" id="pd" min="2" max="9" step="0.5" value="3.5"></div>
+      <div class="rg"><div class="row"><label for="pw">How wide</label><output id="pwo" for="pw">4.5 m</output></div>
+        <input type="range" id="pw" min="2.5" max="8" step="0.5" value="4.5"></div>
+      <dl class="res" aria-live="polite">
+        <div><dt>Planning</dt><dd class="v" id="pv"><i></i><span id="pvt2">Prior approval needed</span></dd><p id="pvx">Between 3 m and 6 m out from a semi-detached house, the council asks your neighbours first. It is a lighter process than full planning permission.</p></div>
+        <div><dt>Floor area</dt><dd id="pa">15.8 m&sup2;</dd></div>
+        <div><dt>Guide build cost</dt><dd id="pc">&pound;28,000 to &pound;47,000</dd></div>
+        <a class="btn btn-k" id="ps" href="sms:+447973826006">Text this plan to Dave</a>
+      </dl>
+    </form>
+  </div>
+  <p class="fine">A rough guide for single-storey rear extensions on houses in England, measured from the back wall of the original house. Height, boundaries, conservation areas and earlier extensions can all change the answer, so check with Stoke-on-Trent City Council before you build. Building regulations approval is needed either way. The cost is a typical UK range of &pound;1,800 to &pound;3,000 per square metre (HomeOwners Alliance, 2026) before kitchens and fees. Dave prices every job after a visit.</p>
+</div></section>
+
+<section class="light sec" id="area"><div class="wrap">
+  <h2 class="d">Where we work</h2>
+  <div class="mgrid">
+    <svg class="map" viewBox="0 0 360 428" role="img" aria-label="Map showing Blurton and the towns within two and five miles of it">
+      <circle class="rg1" cx="150" cy="232" r="71"/><circle class="rg1" cx="150" cy="232" r="177"/>
+      <text class="rl" x="206" y="296">2 miles</text><text class="rl" x="278" y="372">5 miles</text>
+      <g class="pl">
+        <circle cx="69" cy="23" r="4"/><text x="79" y="28">Tunstall</text>
+        <circle cx="88" cy="60" r="4"/><text x="98" y="65">Burslem</text>
+        <circle cx="121" cy="110" r="4"/><text x="131" y="115">Hanley</text>
+        <circle cx="44" cy="144" r="4"/><text x="44" y="131" text-anchor="middle">Newcastle</text>
+        <circle cx="107" cy="162" r="4"/><text x="97" y="167" text-anchor="end">Stoke</text>
+        <circle cx="143" cy="176" r="4"/><text x="153" y="176">Fenton</text>
+        <circle cx="238" cy="179" r="4"/><text x="248" y="184">Weston Coyney</text>
+        <circle cx="182" cy="200" r="4"/><text x="192" y="205">Longton</text>
+        <circle cx="231" cy="228" r="4"/><text x="241" y="233">Meir</text>
+        <circle cx="278" cy="247" r="4"/><text x="288" y="266" text-anchor="middle">Blythe Bridge</text>
+        <circle cx="84" cy="256" r="4"/><text x="74" y="261" text-anchor="end">Trentham</text>
+        <circle cx="128" cy="308" r="4"/><text x="138" y="313">Barlaston</text>
+        <circle cx="163" cy="408" r="4"/><text x="173" y="413">Stone</text>
+      </g>
+      <circle cx="150" cy="232" r="13" fill="#F0B23E"/><circle cx="150" cy="232" r="7" fill="#B5482F"/>
+      <text class="home" x="150" y="268" text-anchor="middle">Blurton</text>
+    </svg>
+    <div>
+      <p class="places">Based in <b>Blurton</b>, in the south of the city. <b>Longton, Fenton, Trentham and Meir</b> are on the doorstep, with <b>Stoke, Hanley, Newcastle, Barlaston and Stone</b> all within about five miles.</p>
+      <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Joshua:</b> tell me how far you&rsquo;ll travel for a job, Dave, and I&rsquo;ll draw the line there.</p></aside>
+    </div>
+  </div>
+</div></section>
+
 <section class="on-ochre sec" id="quote"><div class="wrap">
   <h2 class="d">Tell Dave about the job</h2>
   <p class="lead">Two taps and your message is written for you. No forms, no waiting on an email.</p>
@@ -359,10 +552,35 @@ legend{font-weight:750;font-size:18px;padding:0;margin-bottom:10px}
   </ol>
 </div></section>
 
+<section class="light todo" id="todo"><div class="wrap"><div class="tg">
+  <div>
+    <h2>Our work</h2>
+    <div class="frames"><div><span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.500-2h7L17 8h3v11H4Z"/><circle cx="12" cy="13" r="3.500"/></svg>Your photo</span></div><div><span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.500-2h7L17 8h3v11H4Z"/><circle cx="12" cy="13" r="3.500"/></svg>Your photo</span></div><div><span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.500-2h7L17 8h3v11H4Z"/><circle cx="12" cy="13" r="3.500"/></svg>Your photo</span></div></div>
+    <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Joshua:</b> this is the one thing I can&rsquo;t do for you, Dave. Text me one photo of a job you&rsquo;re proud of and I&rsquo;ll have it in the first frame the same day, so you can see it.</p></aside>
+    <a class="btn btn-n" href="sms:+447856075882?&amp;body=Photo%20for%20the%20D%20%26%20G%20Builders%20website%20from%20Dave%3A">Text Joshua a photo</a>
+  </div>
+  <div>
+    <h2>What customers say</h2>
+    <div class="quotes"><div><b>&#9733;&#9733;&#9733;&#9733;&#9733;</b>A few words from one of your customers go here.</div><div><b>&#9733;&#9733;&#9733;&#9733;&#9733;</b>And another here, with their first name and area.</div></div>
+    <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Joshua:</b> 45 years of customers and none of it is online yet. This button writes the text for you. Pick an old customer and press send.</p></aside>
+    <a class="btn btn-n" href="sms:?&amp;body=Hi%2C%20it%27s%20Dave%20from%20D%20%26%20G%20Builders.%20I%27m%20putting%20a%20website%20together%20and%20would%20be%20grateful%20for%20a%20line%20or%20two%20about%20the%20work%20we%20did%20for%20you.%20Just%20reply%20to%20this%20text.%20Thanks%2C%20Dave">Ask a customer for a few words</a>
+  </div>
+</div></div></section>
+
 <section class="light" id="yours"><div class="wrap"><div class="card">
   <div class="who"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F2C230"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#0F2A21" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>From Joshua at NextThread</div>
   <h2>Dave, this is yours if you want it.</h2>
   <p>I build websites for tradespeople, and I made this one for D &amp; G Builders before asking you for a penny. Everything on it is true to what I could find: the 1981 start, Blurton, and your numbers from the Trader Register.</p>
+  <div class="serp">
+    <div><h3>Search your name today</h3>
+      <div class="r"><div class="u">traderregister.org.uk</div><div class="t">D &amp; G Builders (Stoke) Ltd</div><div class="s">Services provided: Builders. Overall rating: 0 reviews.</div></div>
+      <div class="r"><div class="u">find-and-update.company-information.service.gov.uk</div><div class="t">D. &amp; G. BUILDERS (STOKE) LIMITED overview</div><div class="s">Company number 01574731. Incorporated on 16 July 1981.</div></div>
+    </div>
+    <div><h3>With a site of your own</h3>
+      <div class="r new"><div class="u">Your own web address</div><div class="t">D &amp; G Builders | Building in Stoke-on-Trent since 1981</div><div class="s">Extensions, renovations and brickwork from a Blurton firm with 45 years behind it. Call Dave on 01782 310054.</div></div>
+      <p class="after">Right now, someone who looks you up finds a company record and a bare listing. This gives them something of yours to land on, and a button that rings you.</p>
+    </div>
+  </div>
   <div class="cgrid">
     <div><h3>What it costs</h3><ul>
       <li>£595 one-off, with your web address and first year&rsquo;s hosting included</li>
@@ -399,22 +617,26 @@ legend{font-weight:750;font-size:18px;padding:0;margin-bottom:10px}
   <div><b>Your free website preview</b>£595 one-off, live within a week.</div>
   <a href="#yours" id="ntb">I like it</a>
 </div>
+<div class="cb" role="complementary" aria-label="Contact D and G Builders"><a class="btn btn-p" href="tel:01782310054">Call Dave</a><a class="btn btn-g" href="#quote">Text Dave</a></div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script>
 (function(){
   var d=document, $=function(s){return d.querySelector(s)}, $$=function(s){return [].slice.call(d.querySelectorAll(s))};
 
+  // once the wall is laid, take the covers away
+  var cvs=$$('.numerals .cv'); if(cvs.length){ cvs[cvs.length-1].addEventListener('animationend',function(){cvs.forEach(function(c){if(c.parentNode)c.parentNode.removeChild(c)})}); }
+
   // years in business, from the incorporation date on Companies House
   var now=new Date(), y=now.getFullYear()-1981-((now.getMonth()<6||(now.getMonth()===6&&now.getDate()<16))?1:0);
-  if(y>=45) $('#yrs').textContent=y;
+  if(y>=45){ $('#yrs').textContent=y; $$('.yr').forEach(function(e){e.textContent=y}); }
 
   // Joshua's notes on and off
   var tg=$('#ntg');
   tg.addEventListener('click',function(){
     var off=d.body.classList.toggle('nn');
-    tg.textContent=off?'Show notes':'Hide notes'; tg.setAttribute('aria-pressed',off);
-    $('#pvt').textContent=off?'This is how your customers would see it.':'Yellow notes are from Joshua.';
+    tg.textContent=off?'Show notes':'Customer view'; tg.setAttribute('aria-pressed',off);
+    $('#pvt').textContent=off?'This is how customers see it.':'Yellow notes are from Joshua.';
     $('#ntb').setAttribute('href',off?'#contact':'#yours');
   });
   $('#ntb').addEventListener('click',function(e){
@@ -434,6 +656,44 @@ legend{font-weight:750;font-size:18px;padding:0;margin-bottom:10px}
     b.addEventListener('focus',function(){pick(k)});
   });
   parts.forEach(function(g){g.addEventListener('click',function(){pick(g.getAttribute('data-part'))})});
+
+
+  // plan your extension: size on the plot, planning guide, guide cost
+  var pf=$('#pf'), PX=22, HX=92, HW=176, RY=72;
+  function fm(n){return (Math.round(n*10)/10).toString()}
+  function plan(){
+    var type=(pf.querySelector('input[name=ht]:checked')||{}).value||'semi-detached',
+        dpt=parseFloat($('#pd').value), w=parseFloat($('#pw').value),
+        lim=type==='detached'?4:3, big=type==='detached'?8:6, a=dpt*w;
+    $('#pdo').textContent=fm(dpt)+' m'; $('#pwo').textContent=fm(w)+' m';
+    // the drawing
+    var L=type==='detached'?40:92, R=type==='terraced'?268:320, ew=w*PX, eh=dpt*PX, ex=HX+(HW-ew)/2;
+    $('#nbL').style.display=type==='detached'?'none':''; $('#nbR').style.display=type==='terraced'?'':'none';
+    $('#gdn').setAttribute('x',L); $('#gdn').setAttribute('width',R-L);
+    $('#bd').setAttribute('d','M'+L+' 10V302H'+R+'V10');
+    var e=$('#ext'); e.setAttribute('x',ex); e.setAttribute('width',ew); e.setAttribute('height',eh);
+    var ya=RY+lim*PX, yb=RY+big*PX;
+    $('#la').setAttribute('d','M0 '+ya+'H360'); $('#lat').setAttribute('y',ya-6); $('#lat').textContent=lim+' m';
+    $('#lb').setAttribute('d','M0 '+yb+'H360'); $('#lbt').setAttribute('y',yb-6); $('#lbt').textContent=big+' m';
+    $('#lac').textContent='No application needed up to '+lim+' m'; $('#lbc').textContent='Prior approval up to '+big+' m';
+    var dw=$('#dw'), dd=$('#dd');
+    dw.textContent=fm(w)+' m'; dw.setAttribute('y',Math.min(RY+eh+23,298));
+    dd.textContent=fm(dpt)+' m'; dd.setAttribute('x',ex+ew+8); dd.setAttribute('y',RY+eh/2+8);
+    if(eh<30){ dd.setAttribute('y',RY+eh+23); dw.setAttribute('x',180-34); dd.setAttribute('x',180+34); dd.setAttribute('text-anchor','start'); dw.setAttribute('text-anchor','end'); }
+    else { dw.setAttribute('x',180); dw.setAttribute('text-anchor','middle'); dd.setAttribute('text-anchor','start'); }
+    // planning guide (permitted development, single-storey rear extensions, England)
+    var v=$('#pv'), t, x;
+    if(dpt<=lim){ v.className='v'; t='No planning application, usually'; x='Up to '+lim+' m out from a '+type+' house normally counts as permitted development.'; }
+    else if(dpt<=big){ v.className='v am'; t='Prior approval needed'; x='Between '+lim+' m and '+big+' m out from a '+type+' house, the council asks your neighbours first. It is a lighter process than full planning permission.'; }
+    else { v.className='v rd'; t='Planning permission needed'; x='More than '+big+' m out from a '+type+' house needs a planning application to the council.'; }
+    $('#pvt2').textContent=t; $('#pvx').textContent=x;
+    $('#pa').textContent=fm(a)+' m²';
+    var lo=Math.round(a*1800/1000)*1000, hi=Math.round(a*3000/1000)*1000;
+    $('#pc').textContent='£'+lo.toLocaleString('en-GB')+' to £'+hi.toLocaleString('en-GB');
+    var m="Hi Dave, I'm thinking about a single-storey rear extension, about "+fm(dpt)+'m out by '+fm(w)+'m wide, on a '+type+' house. Can you come and have a look?';
+    $('#ps').setAttribute('href','sms:+447973826006?&body='+encodeURIComponent(m));
+  }
+  pf.addEventListener('input',plan); pf.addEventListener('change',plan); plan();
 
   // tell Dave about the job: writes the text for the customer
   var f=$('#qf'), out=$('#qm'), send=$('#qs');
