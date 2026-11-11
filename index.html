@@ -1147,21 +1147,32 @@ section.block{padding:var(--sp) 0}
     fitMsgs();
   }
 
-  /* frame-rate check: measure for ~1.2s once the page has settled; under ~45fps, drop the heavy effects (see .lite in the CSS) */
+  /* frame-rate check: once the page has settled, measure two short windows. Only if BOTH run under ~25fps are the heavy
+     effects dropped (see .lite in the CSS). A browser that is saving battery draws at a steady 30fps and keeps the full
+     effects, and one slow moment while the page is still loading no longer switches them off. */
   (function(){
-    var gaps = [], last = 0, t0 = 0;
-    function sample(now){
-      if (!t0) t0 = now;
-      if (last) gaps.push(now - last);
-      last = now;
-      if (now - t0 < 1500) { requestAnimationFrame(sample); return; }
-      var g = gaps.slice(Math.floor(gaps.length * 0.3)).sort(function(a,b){ return a-b; }); // ignore the warm-up frames
-      var median = g.length ? g[Math.floor(g.length / 2)] : 16;
-      if (median > 22){
-        lite = true; document.documentElement.classList.add("lite"); heroPhone.style.transform = "";
+    function measure(done){
+      var gaps = [], last = 0, t0 = 0;
+      function sample(now){
+        if (!t0) t0 = now;
+        if (last) gaps.push(now - last);
+        last = now;
+        if (now - t0 < 1500) { requestAnimationFrame(sample); return; }
+        var g = gaps.slice(Math.floor(gaps.length * 0.3)).sort(function(a,b){ return a-b; }); // ignore the warm-up frames
+        done(g.length ? g[Math.floor(g.length / 2)] : 16);
       }
+      requestAnimationFrame(sample);
     }
-    setTimeout(function(){ requestAnimationFrame(sample); }, 1800);
+    function slow(median){ return median > 40; }
+    setTimeout(function(){
+      measure(function(first){
+        if (!slow(first)) return;
+        measure(function(second){
+          if (!slow(second)) return;
+          lite = true; document.documentElement.classList.add("lite"); heroPhone.style.transform = "";
+        });
+      });
+    }, 1800);
   })();
 
   /* ----- nav + mobile bar ----- */
