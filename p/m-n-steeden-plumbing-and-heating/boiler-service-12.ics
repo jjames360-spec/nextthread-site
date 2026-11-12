@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//M N Steeden Plumbing and Heating//Boiler service reminder//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:boiler-service-12@mnsteeden-plumbing
+DTSTAMP:20261112T200000Z
+DTSTART;VALUE=DATE:20261201
+DTEND;VALUE=DATE:20261202
+RRULE:FREQ=YEARLY
+SUMMARY:Boiler service due: ring Martin Steeden on 07817 698723
+DESCRIPTION:Your boiler is due its yearly service. Ring or text Martin Steeden of M N Steeden Plumbing & Heating on 07817 698723\, or 01256 463423.
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
