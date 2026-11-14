@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//South East Electrical and Renewables//EICR reminder//EN
+BEGIN:VEVENT
+UID:eicr-202911@southeastelectrical
+DTSTAMP:20261114T103319Z
+DTSTART;VALUE=DATE:20291101
+DTEND;VALUE=DATE:20291102
+SUMMARY:Electrical safety check (EICR) due this month
+DESCRIPTION:The five-yearly electrical inspection on your rented property is due this month. Book it with South East Electrical and Renewables on 07985 467794.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Electrical safety check (EICR) due next month. Ring South East Electrical and Renewables on 07985 467794.
+TRIGGER:-P28D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
