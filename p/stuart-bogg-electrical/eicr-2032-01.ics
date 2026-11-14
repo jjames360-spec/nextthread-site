@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Stuart Bogg Electrical//Inspection reminder//EN
+BEGIN:VEVENT
+UID:eicr-203201@stuartboggelectrical
+DTSTAMP:20261114T134437Z
+DTSTART;VALUE=DATE:20320101
+DTEND;VALUE=DATE:20320102
+SUMMARY:Electrical safety check (EICR) due this month
+DESCRIPTION:The electrical inspection on your property is due this month. Book it with Stuart Bogg Electrical on 07923 103259.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Electrical safety check (EICR) due next month. Ring Stuart Bogg Electrical on 07923 103259.
+TRIGGER:-P28D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
