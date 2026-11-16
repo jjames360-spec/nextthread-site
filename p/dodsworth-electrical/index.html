@@ -381,6 +381,7 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
   html{scroll-behavior:smooth}
   #sc .cable{animation:draw 1.5s .25s cubic-bezier(.6,0,.3,1) both}
   #sc .feed{animation:pop .45s both}
+  #sc .cable-xl{animation:pop .2s 1.72s both}
   #sc .pulse{animation:flow 3.6s 2.1s linear infinite}
   #sc .blades{animation:spin 10s linear infinite}
   #sc .belt{animation:belt .7s linear infinite}
@@ -599,7 +600,7 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
             </g>
           </g>
 
-          <path class="cable-x" d="M-2000 356H0M1200 356H3200"/>
+          <path class="cable-x" d="M1200 356H3200"/><path class="cable-x cable-xl" d="M-2000 356H0"/>
           <path class="cable" d="M1200 356H0"/>
           <path class="pulse" d="M1200 356H0"/>
           <g class="feed f-wind" style="animation-delay:.4s"><line x1="1090" y1="356" x2="1090" y2="332"/><circle cx="1090" cy="356" r="7"/><text x="1090" y="390">Wind turbines</text></g>
