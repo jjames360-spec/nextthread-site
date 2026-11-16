@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Blades;Andy;;;
+FN:Andy Blades
+ORG:Blades Electrical Services Ltd
+TITLE:Electrician
+TEL;TYPE=WORK,VOICE:023 9279 3610
+EMAIL;TYPE=WORK:andyblades1@outlook.com
+ADR;TYPE=WORK:;;;Portsmouth;;;United Kingdom
+NOTE:Electricians in Portsmouth since 2004. On the NICEIC register.
+END:VCARD

@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Blades Electrical Services//Inspection reminder//EN
+BEGIN:VEVENT
+UID:eicr-203409@bladeselectricalservices
+DTSTAMP:20261116T210000Z
+DTSTART;VALUE=DATE:20340901
+DTEND;VALUE=DATE:20340902
+SUMMARY:Electrical inspection due this month
+DESCRIPTION:Your electrical inspection is due this month. Book it with Blades Electrical Services on 023 9279 3610.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Electrical inspection due next month. Ring Blades Electrical Services on 023 9279 3610.
+TRIGGER:-P28D
+END:VALARM
+END:VEVENT
+END:VCALENDAR
