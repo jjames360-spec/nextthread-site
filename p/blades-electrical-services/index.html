@@ -80,8 +80,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .btn-call .long{display:none}
 
 /* hero */
-.hero{position:relative;--sky1:#A9D5F2;--sky2:#E8F4FC;--ln:#0E2240;--wall:#FFFFFF;--roof:#C9573A;--room:#FFF4CC;--roomoff:#B7C3D1;--sea:#6FAEDB;--hill:#A9CFA0;--far:#8FA9C2;--road:#D5DEE8;--twr:#F6FAFD;--hedge:#5FA567;--car:#1D6FB8;--lab:#0E2240}
-.hero.night{--sky1:#040A17;--sky2:#15294B;--ln:#DCE6F2;--wall:#182741;--roof:#5A2B20;--room:#FFD966;--roomoff:#0A1220;--sea:#0C1F38;--hill:#0B1B31;--far:#0F2038;--road:#0A1424;--twr:#B5CAE6;--hedge:#123324;--car:#2B7CC7;--lab:#fff}
+.hero{position:relative;--sky1:#A9D5F2;--sky2:#E8F4FC;--ln:#0E2240;--wall:#FFFFFF;--roof:#C9573A;--room:#FFF4CC;--roomoff:#B7C3D1;--sea:#6FAEDB;--hill:#A9CFA0;--far:#8FA9C2;--road:#D5DEE8;--twr:#F6FAFD;--hedge:#5FA567;--car:#1D6FB8;--lab:#0E2240;--iln:#0E2240;--iwall:#FFFFFF}
+.hero.night{--sky1:#040A17;--sky2:#15294B;--ln:#DCE6F2;--wall:#182741;--roof:#8A3526;--room:#F3B442;--roomoff:#0A1220;--sea:#0C1F38;--hill:#0B1B31;--far:#0F2038;--road:#1C2A44;--twr:#B5CAE6;--hedge:#123324;--car:#2B7CC7;--lab:#fff;--iln:#0E2240;--iwall:#FFF6E0}
 .h1w{padding-top:18px;padding-bottom:16px}
 .h1{font-size:34px;font-size:clamp(33px,9.2vw,72px);text-wrap:balance}
 .h1 em{font-style:normal;color:var(--sea-b)}
@@ -104,6 +104,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 #sc .frame{fill:none;stroke:var(--ln);stroke-width:4;stroke-linejoin:round}
 #sc .roof{fill:var(--roof);stroke:var(--ln);stroke-width:3;stroke-linejoin:round}
 #sc .room{fill:var(--room)}
+#sc .in{--ln:var(--iln);--wall:var(--iwall)}
+#sc .rglow{opacity:0}
 #sc .sea{fill:var(--sea)}
 #sc .wave{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;opacity:.55}
 #sc .hill{fill:var(--hill)}
@@ -143,9 +145,15 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{ou
 .night #sc .farw{opacity:.9}
 .night #sc .glow{opacity:.3}
 .night #sc .wave{opacity:.2}
+.night #sc .rglow{opacity:1}
+.night #sc .bulb{fill:#FFFDF2}
+.night #sc.x-lights .in{--ln:#5B6E8C;--wall:#16233B}
+.night #sc.x-lights .glass{fill-opacity:.16}
+.night #sc.x-lights .in .gl2{fill:#33466A}
 /* a circuit that is off */
 #sc.x-lights .room{fill:var(--roomoff)}
 #sc.x-lights .bulb{fill:var(--roomoff)}
+#sc.x-lights .rglow{display:none}
 #sc.x-sockets .tv{fill:#17202C}
 #sc.x-sockets .lamp{fill:var(--roomoff)}
 #sc.x-cooker .oven{fill:var(--wall)}
@@ -527,6 +535,12 @@ body.locked{overflow:hidden}
   <div class="band"><div class="wrap">
     <div class="art">
       <svg id="sc" viewBox="40 0 1200 470" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A drawing of a Portsmouth house cut open to show its rooms, with the Spinnaker Tower and the Solent behind it and an electric car charging outside.">
+        <defs>
+          <radialGradient id="rg1" gradientUnits="userSpaceOnUse" cx="551" cy="262" r="104"><stop offset="0" stop-color="#FFF7DA"/><stop offset=".4" stop-color="#FFEBB0" stop-opacity=".8"/><stop offset="1" stop-color="#FFE39A" stop-opacity="0"/></radialGradient>
+          <radialGradient id="rg2" gradientUnits="userSpaceOnUse" cx="690" cy="262" r="104"><stop offset="0" stop-color="#FFF7DA"/><stop offset=".4" stop-color="#FFEBB0" stop-opacity=".8"/><stop offset="1" stop-color="#FFE39A" stop-opacity="0"/></radialGradient>
+          <radialGradient id="rg3" gradientUnits="userSpaceOnUse" cx="551" cy="358" r="104"><stop offset="0" stop-color="#FFF7DA"/><stop offset=".4" stop-color="#FFEBB0" stop-opacity=".8"/><stop offset="1" stop-color="#FFE39A" stop-opacity="0"/></radialGradient>
+          <radialGradient id="rg4" gradientUnits="userSpaceOnUse" cx="664" cy="356" r="104"><stop offset="0" stop-color="#FFF7DA"/><stop offset=".4" stop-color="#FFEBB0" stop-opacity=".8"/><stop offset="1" stop-color="#FFE39A" stop-opacity="0"/></radialGradient>
+        </defs>
         <g class="stars"><circle cx="668" cy="159" r="0.9"/><circle cx="1152" cy="28" r="1.6"/><circle cx="670" cy="37" r="1.2"/><circle cx="244" cy="107" r="1.2"/><circle cx="985" cy="135" r="1.2"/><circle cx="255" cy="69" r="1.2"/><circle cx="787" cy="118" r="1.2"/><circle cx="496" cy="175" r="0.9"/><circle cx="304" cy="122" r="0.9"/><circle cx="641" cy="60" r="1.6"/><circle cx="906" cy="126" r="0.9"/><circle cx="676" cy="89" r="1.2"/><circle cx="291" cy="67" r="0.9"/><circle cx="682" cy="103" r="1.2"/><circle cx="651" cy="96" r="1.2"/><circle cx="703" cy="187" r="1.6"/><circle cx="668" cy="175" r="1.2"/><circle cx="392" cy="73" r="1.2"/><circle cx="378" cy="84" r="0.9"/><circle cx="668" cy="126" r="1.2"/><circle cx="759" cy="86" r="0.9"/><circle cx="294" cy="163" r="1.2"/><circle cx="974" cy="43" r="0.9"/><circle cx="961" cy="32" r="0.9"/><circle cx="1077" cy="83" r="0.9"/><circle cx="669" cy="28" r="0.9"/><circle cx="1200" cy="29" r="1.2"/><circle cx="574" cy="164" r="1.2"/><circle cx="873" cy="109" r="0.9"/><circle cx="404" cy="135" r="0.9"/><circle cx="990" cy="108" r="1.6"/><circle cx="794" cy="150" r="0.9"/><circle cx="373" cy="120" r="0.9"/><circle cx="546" cy="73" r="1.2"/><circle cx="497" cy="182" r="1.2"/><circle cx="621" cy="167" r="1.2"/><circle cx="106" cy="199" r="0.9"/><circle cx="437" cy="196" r="0.9"/><circle cx="94" cy="94" r="0.9"/><circle cx="297" cy="12" r="1.2"/><circle cx="1165" cy="37" r="1.2"/><circle cx="563" cy="154" r="1.2"/><circle cx="883" cy="41" r="1.2"/></g>
         <circle class="sun" cx="930" cy="72" r="22"/>
         <g id="moon" transform="translate(930 72)"><circle class="moon-d" r="19"/><path class="moon-l" id="moon-l" d="M0-19A19 19 0 0 1 0 19A9 19 0 0 0 0-19Z"/></g>
@@ -568,7 +582,12 @@ body.locked{overflow:hidden}
         <rect class="room" x="630" y="240" width="158" height="96"/>
         <rect class="room" x="472" y="336" width="158" height="94"/>
         <rect class="room" x="630" y="336" width="158" height="94"/>
+        <rect class="rglow" x="472" y="240" width="158" height="96" fill="url(#rg1)"/>
+        <rect class="rglow" x="630" y="240" width="158" height="96" fill="url(#rg2)"/>
+        <rect class="rglow" x="472" y="336" width="158" height="94" fill="url(#rg3)"/>
+        <rect class="rglow" x="630" y="336" width="158" height="94" fill="url(#rg4)"/>
 
+        <g class="in">
         <!-- bedroom -->
         <path class="ln-t" d="M551 240v15"/><circle class="bulb" cx="551" cy="260" r="5"/>
         <rect class="ln" x="484" y="290" width="8" height="38" rx="2"/>
@@ -606,7 +625,9 @@ body.locked{overflow:hidden}
         <rect class="oven" x="708" y="406" width="36" height="18" rx="2"/>
         <path class="ln" d="M716 400v-8h20v8Z"/><path class="ln-n" d="M736 394h9"/>
 
-        <path class="frame" d="M472 240H788V430H472ZM472 336H788M630 240V430"/>
+        <path class="frame" d="M472 336H788M630 240V430"/>
+        </g>
+        <path class="frame" d="M472 240H788V430H472Z"/>
 
         <!-- outside: lantern, charger and the car -->
         <circle class="glow" cx="802" cy="362" r="28"/>
