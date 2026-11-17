@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SPS Design and Build//Certificate reminder//EN
+BEGIN:VEVENT
+UID:eicr-202811@spsdesignandbuild
+DTSTAMP:20261117T230000Z
+DTSTART;VALUE=DATE:20281101
+DTEND;VALUE=DATE:20281102
+SUMMARY:Electrical report (EICR) due this month
+DESCRIPTION:Your electrical report (EICR) is due this month. Book it with SPS Design & Build on 07402 420702.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Electrical report due next month. Ring SPS Design & Build on 07402 420702.
+TRIGGER:-P28D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

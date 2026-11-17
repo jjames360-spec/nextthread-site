@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//SPS Design and Build//Certificate reminder//EN
+BEGIN:VEVENT
+UID:gas-202809@spsdesignandbuild
+DTSTAMP:20261117T230000Z
+DTSTART;VALUE=DATE:20280901
+DTEND;VALUE=DATE:20280902
+SUMMARY:Gas safety check due this month
+DESCRIPTION:Your landlord gas safety check is due this month. Book it with SPS Design & Build on 07402 420702.
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Gas safety check due next month. Ring SPS Design & Build on 07402 420702.
+TRIGGER:-P28D
+END:VALARM
+END:VEVENT
+END:VCALENDAR

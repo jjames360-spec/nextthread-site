@@ -3,130 +3,1298 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SPS Design &amp; Build | website preview</title>
-<meta name="description" content="A free preview of what a website for SPS Design &amp; Build could look like, made by NextThread.">
+<title>SPS Design &amp; Build | Extensions, lofts, gas and electrics in Hounslow</title>
+<meta name="description" content="SPS Design &amp; Build Ltd: extensions, loft conversions and refurbishments in Hounslow, Feltham and West London, with the gas and electrics done by our own registered engineers.">
 <!-- a preview for one business, not a live site: kept out of search engines -->
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="color-scheme" content="only light">
 <meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#23272B">
+<meta name="theme-color" content="#0E3A8A">
 <meta property="og:title" content="SPS Design &amp; Build: your website preview">
-<meta property="og:description" content="A free preview of what a website for SPS Design &amp; Build could look like, made by NextThread.">
+<meta property="og:description" content="A preview of a website for SPS Design &amp; Build Ltd, made by NextThread.">
 <meta property="og:image" content="https://nextthreadautomation.co.uk/og.png">
-<link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/p/assets/preview.css?v=021aeb90">
-<style>:root{--brand:#23272B; --accent:#E8693A; --on-accent:#FFFFFF; --tint:#EEECEA; --sky:#E6E2DD; --roof:#3A4046}</style>
+<link rel="icon" href="/p/sps-design-and-build/icon-192.png">
+<link rel="apple-touch-icon" href="/p/sps-design-and-build/icon-192.png">
+<link rel="preload" href="/p/sps-design-and-build/sofia.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/p/sps-design-and-build/sofia-cond.woff" as="font" type="font/woff" crossorigin>
+<script>document.documentElement.className += " js";</script>
+<style>
+@font-face{font-family:"Sofia SPS";src:url("/p/sps-design-and-build/sofia.woff") format("woff");font-weight:400 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Sofia Cond SPS";src:url("/p/sps-design-and-build/sofia-cond.woff") format("woff");font-weight:500 900;font-style:normal;font-display:swap}
+
+:root{
+  --blue:#0E3A8A;      /* drawing-office blue: the "design" half */
+  --blue-d:#0A2C6B;
+  --navy:#0A1B3D;      /* ink */
+  --body:#27344D;
+  --mid:#55627A;
+  --paper:#F4F6FA;     /* drafting film, cool not cream */
+  --rule:#CCD5E3;
+  --copper:#B8561C;    /* pipe and cable: the thing all three trades share */
+  --copper-l:#F2A065;
+  --green:#0F7A3D;
+  --note:#FFF3B8;--note-b:#E0B400;
+  --sans:"Sofia SPS","Helvetica Neue",Arial,sans-serif;
+  --cond:"Sofia Cond SPS","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:84px;scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--body);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+h1,h2{text-wrap:balance}
+p,li{text-wrap:pretty}
+ul,ol{padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--copper);outline-offset:3px;border-radius:3px}
+.dark :focus-visible,.pv :focus-visible{outline-color:#fff}
+.wrap{width:min(100% - 36px,1200px);margin-inline:auto}
+.d{font-family:var(--cond);font-weight:800;color:var(--navy);letter-spacing:-.005em}
+.h2{font-size:clamp(31px,4.300vw,46px);line-height:1.02}
+.lede{font-size:clamp(18px,1.900vw,20px);line-height:1.55;max-width:38em;margin-top:14px}
+.fine{font-size:15px;line-height:1.5;color:var(--mid)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:11px 20px;border:2px solid transparent;border-radius:6px;font-weight:700;font-size:17px;line-height:1.15;text-decoration:none;cursor:pointer;text-align:center}
+.btn svg{width:21px;height:21px;flex:none}
+.btn-flame{background:var(--copper-l);color:var(--navy)}
+.btn-flame:hover{background:#FFB57F}
+.btn-copper{background:var(--copper);color:#fff}
+.btn-copper:hover{background:#9C4612}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{background:#0B6431}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:#16306A}
+.btn-line{background:transparent;border-color:currentColor;color:var(--navy)}
+.btn-line:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.dark .btn-line{color:#fff}
+.dark .btn-line:hover{background:#fff;border-color:#fff;color:var(--navy)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+/* the preview bar and Joshua's notes: not part of the site itself */
+.pv{background:#000;color:#fff;font-size:13px;line-height:1.3}
+.pv .wrap{display:flex;align-items:center;gap:10px;min-height:54px;padding-block:7px}
+.pv .mk{width:24px;height:24px;flex:none}
+.pv .mine,.pv .back{flex:1;min-width:0;color:#C9CDCF}
+.pv b{display:block;color:#fff;font-size:14px}
+.pv .back{display:none}
+.pv .ver{display:flex;flex:none;border:2px solid #fff;border-radius:8px;overflow:hidden}
+.pv .ver a,.pv .ver span{display:flex;align-items:center;min-height:44px;padding:4px 11px;font-weight:700;text-decoration:none;color:#fff}
+.pv .ver span{background:#fff;color:#000}
+.pv .ver a:hover{background:#333}
+.pv button{flex:none;min-height:44px;padding:6px 11px;border:2px solid #fff;border-radius:8px;background:transparent;color:#fff;font-weight:700;font-size:13px;cursor:pointer}
+.pv button:hover{background:#fff;color:#000}
+.jn{margin-top:22px;background:var(--note);border-left:5px solid var(--note-b);padding:13px 16px;font-size:15px;line-height:1.5;color:#2B2500;max-width:46em;border-radius:0 8px 8px 0}
+.jn b{color:#000}
+.jn a{font-weight:700}
+.cust .jn,.cust .jsec,.cust .jhold,.cust .pv .mine,.cust .pv .ver{display:none}
+.cust .pv .back{display:block}
+.facts .cvw,.b-facts .cvw{display:none}
+.cust .facts .cvw,.cust .b-facts .cvw{display:block}
+.cust .facts .pvw,.cust .b-facts .pvw{display:none}
+
+/* header */
+.hd{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--rule)}
+.hd-in{display:flex;align-items:center;gap:22px;min-height:66px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy);margin-right:auto;min-height:44px}
+.brand svg{width:38px;height:38px;flex:none}
+.brand span{font:800 22px/1 var(--cond);letter-spacing:.005em;white-space:nowrap}
+.brand small{display:block;font:500 13px/1.2 var(--sans);color:var(--mid);letter-spacing:0;margin-top:3px}
+.nav{display:flex;gap:22px;font-size:16px;font-weight:600}
+.nav a{text-decoration:none;color:var(--navy);padding-block:10px;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--copper)}
+.hd .btn{min-height:46px;padding:8px 16px;font-size:16px}
+.hd .btn .short{display:none}
+
+/* Joshua's own section */
+.jsec{background:#FFFBE6;border-top:6px solid var(--note-b);padding-block:clamp(52px,7vw,88px)}
+.jsec .from{font-weight:700;color:#5C4A00;font-size:16px;margin-bottom:8px}
+.serps{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.serp{background:#fff;border:1px solid #E3D9A8;border-radius:10px;padding:18px 20px 16px}
+.serp h3{font:700 16px/1.3 var(--sans);color:var(--navy);margin-bottom:12px}
+.sr{padding-block:9px;border-top:1px solid #EEE7C6}
+.sr i{display:block;font-style:normal;font-size:13px;color:var(--mid)}
+.sr b{display:block;color:#1A3FB0;font-weight:600;font-size:16px;line-height:1.3}
+.sr span{display:block;font-size:14px;line-height:1.4;color:var(--body)}
+.serp .v{margin-top:12px;font-weight:700;color:#7A1F12;font-size:15px;line-height:1.4}
+.serp.good{border:2px solid var(--green)}
+.serp.good .v{color:var(--green)}
+.say{margin-top:24px;max-width:44em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px 44px;margin-top:30px}
+.two h3{font:800 24px/1.1 var(--cond);color:var(--navy);margin-bottom:10px}
+.two li{position:relative;padding-left:22px;margin-top:8px;line-height:1.5}
+.two li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--copper)}
+.jsec .after{margin-top:16px;max-width:44em}
+
+/* contact band */
+.contact{background:var(--navy);color:#DDE4F1;padding-block:clamp(52px,7vw,88px) 34px}
+.contact .h2{color:#fff}
+.contact .lede{color:#DDE4F1}
+.contact .tel{display:inline-block;margin-top:18px;font:800 clamp(46px,9vw,84px)/1 var(--cond);color:#fff;text-decoration:none;letter-spacing:.01em}
+.contact .tel:hover{color:var(--copper-l)}
+.lines{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:16px 48px;margin-top:26px}
+.lines dt{font-size:14px;color:#9FB0CF}
+.lines dd{font-weight:600;color:#fff}
+.lines a{text-decoration-color:var(--copper-l);text-underline-offset:.2em}
+.legal{margin-top:38px;padding-top:20px;border-top:1px solid #2A3D66;font-size:14px;line-height:1.5;color:#9FB0CF;max-width:60em}
+.legal + .jn{margin-top:14px}
+.legal a{color:#C5D1E8}
+
+/* phone bar */
+.cb{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--rule);box-shadow:0 -6px 20px rgba(10,27,61,.12);transform:translateY(110%);visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
+.cb.on{transform:none;visibility:visible;transition:transform .25s ease}
+.cb .btn{flex:1;min-height:50px;padding:8px 10px;font-size:16px}
+
+@media (max-width:1000px){
+  .nav{display:none}
+}
+@media (max-width:760px){
+  body{font-size:16.500px}
+  .wrap{width:min(100% - 32px,1200px)}
+  .serps,.two{grid-template-columns:minmax(0,1fr)}
+  .lines{grid-template-columns:minmax(0,1fr);gap:14px}
+  .pv span{display:none}
+  .pv .wrap{gap:8px}
+  .pv .ver a,.pv .ver span{padding:4px 9px}
+  .pv button{padding:6px 9px}
+  .hd-in{min-height:58px;gap:12px}
+  .brand svg{width:34px;height:34px}
+  .brand span{font-size:19px}
+  .brand small{font-size:12px}
+  .hd .btn .long{display:none}
+  .hd .btn .short{display:inline}
+  .cb{display:flex}
+  body{padding-bottom:0}
+  .contact{padding-bottom:96px}
+}
+@media (max-width:380px){
+  .pv .mk{display:none}
+  .pv b{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cb{transition:none}
+}
+@media print{
+  .pv,.cb,.jn,.jsec{display:none}
+  .hd{position:static}
+}
+/* ---------- the house drawing: one set of shapes, three finishes ---------- */
+.sc-defs{position:absolute;width:0;height:0;overflow:hidden}
+#hs .earth{fill:var(--earth);stroke:none}
+#hs .hard{fill:var(--hard);stroke:var(--thin);stroke-width:var(--thin-w)}
+#hs .lawn{fill:var(--lawn);stroke:var(--thin);stroke-width:var(--thin-w)}
+#hs .gl0{stroke:var(--ground);stroke-width:2;fill:none}
+#hs .rm{fill:var(--rm);stroke:none}
+#hs .rm-c{fill:var(--rm-c)}
+#hs .rm-w{fill:var(--rm-w)}
+#hs .void{fill:var(--void)}
+#hs .f{opacity:var(--f-o)}
+#hs .f rect,#hs .f path{stroke:var(--thin);stroke-width:var(--thin-w);stroke-linejoin:round;stroke-linecap:round}
+#hs .f-sofa{fill:var(--sofa)}
+#hs .f-wood{fill:var(--wood)}
+#hs .f-dark{fill:var(--dark)}
+#hs .f-unit{fill:var(--unit)}
+#hs .f-top{fill:var(--top)}
+#hs .f-bed{fill:var(--bed)}
+#hs .f-pill{fill:var(--pill)}
+#hs .f-bath{fill:var(--bath)}
+#hs .f-mir{fill:var(--mir)}
+#hs .f-plant{fill:var(--plant)}
+#hs .f-ln{fill:none}
+#hs .f-leg{stroke-width:var(--leg-w)}
+#hs .kit rect,#hs .kit path{stroke-linejoin:round;stroke-linecap:round}
+#hs .rad{fill:var(--rad);stroke:var(--rad-s);stroke-width:var(--kit-w)}
+#hs .rail{fill:none}
+#hs .boil{fill:var(--boil);stroke:var(--kit-s);stroke-width:var(--kit-w)}
+#hs .flame{fill:var(--flame);stroke:none}
+#hs .cu{fill:var(--cu);stroke:var(--kit-s);stroke-width:var(--kit-w)}
+#hs .cu-l{fill:none;stroke:var(--cu-l);stroke-width:1.600}
+#hs .meter{fill:var(--boil);stroke:var(--kit-s);stroke-width:var(--kit-w)}
+#hs .evc{fill:var(--evc);stroke:var(--kit-s);stroke-width:var(--kit-w)}
+#hs .cut rect{fill:var(--cut);stroke:var(--cut-s);stroke-width:var(--cut-w)}
+#hs .beam{fill:var(--beam);stroke:var(--cut-s);stroke-width:var(--cut-w)}
+#hs .roof{fill:none;stroke:var(--roof);stroke-width:var(--roof-w);stroke-linejoin:miter;stroke-linecap:square}
+#hs .gl rect{fill:var(--glass);stroke:var(--glass-s);stroke-width:1.500}
+#hs .gl-l{fill:var(--glass-l);stroke:var(--glass-s);stroke-width:2.500;stroke-linejoin:round}
+#hs .gl-r{fill:none;stroke:var(--glass-r);stroke-width:var(--roof-w)}
+#hs .door{fill:none;stroke:var(--glass-s);stroke-width:1.500}
+#hs .gas{fill:none;stroke:var(--gas);stroke-width:var(--gas-w);stroke-dasharray:var(--gas-d);stroke-linejoin:round;opacity:var(--gas-o)}
+#hs .heat{fill:none;stroke:var(--gas);stroke-width:var(--heat-w);stroke-dasharray:var(--gas-d);stroke-linejoin:round;opacity:var(--gas-o)}
+#hs .elec{fill:none;stroke:var(--elec);stroke-width:var(--elec-w);stroke-dasharray:var(--elec-d);stroke-linejoin:round;opacity:var(--elec-o)}
+#hs .lamp path{fill:none;stroke:var(--thin);stroke-width:1.400}
+#hs .lamp circle,#hs .lamp rect{fill:var(--bulb);stroke:var(--thin);stroke-width:var(--thin-w)}
+#hs .out{opacity:var(--out-o)}
+#hs .car{fill:var(--car);stroke:var(--thin);stroke-width:var(--thin-w);stroke-linejoin:round}
+#hs .car-w{fill:var(--glass);stroke:var(--thin);stroke-width:var(--thin-w);stroke-linejoin:round}
+#hs .whl{fill:var(--whl);stroke:var(--thin);stroke-width:var(--thin-w)}
+#hs .hub{fill:var(--hub);stroke:none}
+#hs .lead{fill:none;stroke:var(--elec);stroke-width:2.200;stroke-linecap:round;stroke-dasharray:var(--elec-d)}
+#hs .trunk{fill:var(--wood);stroke:var(--thin);stroke-width:var(--thin-w)}
+#hs .tree{fill:var(--tree);stroke:var(--tree-s);stroke-width:var(--thin-w)}
+#hs .fence{fill:none;stroke:var(--fence);stroke-width:2.400;stroke-linecap:round}
+
+/* finish 1: the drawing, white line on blue */
+.sc-plan{--earth:url(#p-hatch);--hard:none;--lawn:none;--ground:#fff;--thin:rgba(255,255,255,.72);--thin-w:1.100;--leg-w:1.100;
+  --rm:transparent;--rm-c:transparent;--rm-w:transparent;--void:transparent;--f-o:1;
+  --sofa:none;--wood:none;--dark:none;--unit:none;--top:none;--bed:none;--pill:none;--bath:none;--mir:none;--plant:none;
+  --rad:none;--rad-s:rgba(255,255,255,.8);--kit-s:#fff;--kit-w:1.300;--boil:rgba(255,255,255,.14);--flame:none;--cu:rgba(255,255,255,.14);--cu-l:rgba(255,255,255,.7);--evc:rgba(255,255,255,.14);
+  --cut:rgba(255,255,255,.22);--cut-s:#fff;--cut-w:1.500;--beam:#fff;--roof:#fff;--roof-w:3;
+  --glass:#0E3A8A;--glass-s:#fff;--glass-l:none;--glass-r:#0E3A8A;
+  --gas:#fff;--gas-w:1.500;--heat-w:1.200;--gas-d:7 4;--gas-o:.85;--elec:#fff;--elec-w:1.200;--elec-d:1.500 4;--elec-o:.85;
+  --bulb:none;--out-o:1;--car:none;--whl:none;--hub:none;--tree:none;--tree-s:rgba(255,255,255,.72);--fence:rgba(255,255,255,.72)}
+.sc-plan .gl-r{stroke-dasharray:3 3;stroke:#fff}
+
+/* finish 2: the house as built */
+.sc-built{--earth:#33415F;--hard:#C9CED8;--lawn:#7DB37A;--ground:#1B2A4A;--thin:#1B2A4A;--thin-w:1.200;--leg-w:1.800;
+  --rm:#FBF1DD;--rm-c:#EAF0F8;--rm-w:#DDEFEC;--void:#3D4A66;--f-o:1;
+  --sofa:#3D62AE;--wood:#B98A5E;--dark:#1B2A4A;--unit:#2E4E96;--top:#F4F6FA;--bed:#FFFFFF;--pill:#C9D8F0;--bath:#FFFFFF;--mir:#CFE6FA;--plant:#4E9B5C;
+  --rad:#FFFFFF;--rad-s:#B8561C;--kit-s:#1B2A4A;--kit-w:1.300;--boil:#FFFFFF;--flame:#2F7BEA;--cu:#D9DEE8;--cu-l:#1B2A4A;--evc:#FFFFFF;
+  --cut:#1B2A4A;--cut-s:#1B2A4A;--cut-w:1;--beam:#C4672B;--roof:#A8543A;--roof-w:8;
+  --glass:#BFE0FA;--glass-s:#1B2A4A;--glass-l:rgba(191,224,250,.75);--glass-r:#BFE0FA;
+  --gas:#C4672B;--gas-w:3;--heat-w:2.200;--gas-d:none;--gas-o:1;--elec:#F2B500;--elec-w:2;--elec-d:none;--elec-o:1;
+  --bulb:#FFE08A;--out-o:1;--car:#F4F6FA;--whl:#1B2A4A;--hub:#C9CED8;--tree:#4E9B5C;--tree-s:#2F6B3F;--fence:#8A6B4A}
+
+/* finish 3: a quiet outline, for the simple page */
+.sc-line{--earth:none;--hard:none;--lawn:none;--ground:#0A1B3D;--thin:rgba(10,27,61,.55);--thin-w:1;--leg-w:1;
+  --rm:transparent;--rm-c:transparent;--rm-w:transparent;--void:transparent;--f-o:1;
+  --sofa:none;--wood:none;--dark:none;--unit:none;--top:none;--bed:none;--pill:none;--bath:none;--mir:none;--plant:none;
+  --rad:none;--rad-s:#B8561C;--kit-s:#0A1B3D;--kit-w:1.200;--boil:#fff;--flame:#B8561C;--cu:#fff;--cu-l:#0A1B3D;--evc:#fff;
+  --cut:#0A1B3D;--cut-s:#0A1B3D;--cut-w:.5;--beam:#B8561C;--roof:#0A1B3D;--roof-w:5;
+  --glass:#fff;--glass-s:#0A1B3D;--glass-l:none;--glass-r:#fff;
+  --gas:#B8561C;--gas-w:2.400;--heat-w:1.800;--gas-d:none;--gas-o:1;--elec:#0E3A8A;--elec-w:1.400;--elec-d:2 3;--elec-o:1;
+  --bulb:#fff;--out-o:1;--car:none;--whl:none;--hub:none;--tree:none;--tree-s:rgba(10,27,61,.55);--fence:rgba(10,27,61,.55)}
+/* ---------- hero ---------- */
+.hero{background:var(--blue);color:#fff;padding-block:clamp(26px,4vw,52px) clamp(34px,5vw,56px);
+  background-image:linear-gradient(rgba(255,255,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.055) 1px,transparent 1px);background-size:24px 24px;background-position:center top}
+
+.hero-in{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-areas:"h1 stage" "txt stage" "note note";gap:0 clamp(24px,4vw,56px)}
+.hero h1{grid-area:h1;align-self:end}
+.pitch{grid-area:txt;align-self:start}
+.stage{grid-area:stage}
+.hero h1{font:800 clamp(42px,5vw,66px)/.96 var(--cond);color:#fff;letter-spacing:-.008em}
+.hero .lede{color:#E4EBF8;margin-top:20px;max-width:30em}
+.hero .acts{margin-top:28px}
+.hero .btn-line{color:#fff}
+.hero .btn-line:hover{background:#fff;border-color:#fff;color:var(--navy)}
+.stage{min-width:0}
+.hero .jn{grid-area:note;margin-top:30px;justify-self:start}
+.hl-n{display:none}
+.scene{position:relative;aspect-ratio:960/480;overflow:hidden;border-radius:10px;border:1.500px solid rgba(255,255,255,.55);background:var(--blue);touch-action:pan-y;cursor:ew-resize;-webkit-user-select:none;user-select:none;--p:.44}
+.sc-in{position:absolute;inset:0}
+.sc-in svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.bw{position:absolute;inset:0;-webkit-clip-path:inset(0 0 0 calc(var(--p)*100%));clip-path:inset(0 0 0 calc(var(--p)*100%))}
+.an path,.an line{fill:none;stroke:#fff;stroke-width:1.100}
+.an text{font:600 16px var(--cond);fill:#fff;letter-spacing:.03em}
+.tb rect{fill:rgba(14,58,138,.85);stroke:#fff;stroke-width:1.200}
+.tb line{stroke:#fff;stroke-width:1.200}
+.tb text{font:600 14.500px var(--cond);fill:#fff;letter-spacing:.06em}
+.tb .t1{font-weight:800;font-size:17.500px}
+.hl{fill:rgba(242,160,101,.16);stroke:var(--copper-l);stroke-width:3;stroke-linejoin:round;opacity:0;transition:opacity .25s ease}
+.hl.on{opacity:1}
+.hdl{position:absolute;top:0;bottom:0;left:calc(var(--p)*100%);width:0;z-index:3}
+.hdl::before{content:"";position:absolute;top:0;bottom:0;left:-1.500px;width:3px;background:#fff;box-shadow:0 0 0 1px rgba(10,27,61,.35)}
+.knob{position:absolute;left:-26px;top:58%;width:52px;height:52px;margin-top:-26px;border-radius:50%;border:3px solid #fff;background:var(--copper-l);color:var(--navy);font:800 31px/1 var(--cond);display:grid;place-items:center;padding:0 0 3px;cursor:ew-resize;box-shadow:0 4px 14px rgba(10,27,61,.4);touch-action:none}
+.knob:focus-visible{outline:3px solid #fff;outline-offset:3px;border-radius:50%}
+.knob::before,.knob::after{content:"";position:absolute;top:50%;width:0;height:0;border-block:6px solid transparent;margin-top:-6px}
+.knob::before{right:calc(100% + 9px);border-right:8px solid #fff}
+.knob::after{left:calc(100% + 9px);border-left:8px solid var(--navy)}
+.tag{position:absolute;top:12px;font:800 17px/1 var(--cond);letter-spacing:.02em;padding:7px 11px 8px;white-space:nowrap;border-radius:4px}
+.tag{transition:opacity .16s}
+.scene.nd .tag-d,.scene.nb .tag-b{opacity:0}
+.scene .tb{transition:opacity .2s}
+.scene.ntb .tb{opacity:0}
+.tag-d{right:12px;color:#fff;background:rgba(14,58,138,.88);border:1.500px solid #fff}
+.tag-b{left:12px;color:var(--navy);background:#fff;border:1.500px solid var(--navy)}
+.hint{margin-top:12px;font-size:15px;color:#D5DFF3}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{min-height:44px;padding:8px 12px;border:1.500px solid rgba(255,255,255,.75);border-radius:999px;background:transparent;color:#fff;font-weight:600;font-size:15px;cursor:pointer;line-height:1.1}
+.chip:hover{background:rgba(255,255,255,.14)}
+.chip[aria-pressed="true"]{background:#fff;border-color:#fff;color:var(--navy)}
+.cap{margin-top:14px;min-height:5.200em;font-size:16px;line-height:1.5;color:#E4EBF8;max-width:40em}
+.cap b{display:block;color:#fff;font:800 22px/1.15 var(--cond);margin-bottom:3px}
+.scene.m-gas .sc-built{--f-o:.22;--elec-o:.1;--gas-w:4.600;--heat-w:3.400;--out-o:.35}
+.scene.m-gas .sc-plan{--f-o:.25;--elec-o:.12;--gas-w:2.600;--heat-w:2.200;--gas-d:none;--out-o:.4}
+.scene.m-elec .sc-built{--f-o:.22;--gas-o:.1;--elec-w:3.600}
+.scene.m-elec .sc-plan{--f-o:.25;--gas-o:.12;--elec-w:2.400;--elec-d:none}
+
+/* ---------- facts ---------- */
+.facts{border-bottom:1px solid var(--rule)}
+.facts ul{display:grid;grid-template-columns:repeat(4,1fr)}
+.facts li{padding:22px 22px 22px 0}
+.facts li + li{padding-left:22px;border-left:1px solid var(--rule)}
+.facts b{display:block;font:800 23px/1.1 var(--cond);color:var(--navy)}
+.facts span{display:block;font-size:15px;line-height:1.4;color:var(--mid);margin-top:4px}
+.facts span.slot,.slot{display:inline-block;margin-top:0;min-width:5.500em;border:1.500px dashed var(--copper);border-radius:4px;padding:0 7px;color:var(--copper);font-weight:600}
+.facts + .wrap .jn{margin-top:18px}
+
+/* ---------- sections ---------- */
+.sec{padding-block:clamp(56px,8vw,104px)}
+.sec.pp{background:var(--paper)}
+.sec.dark{background:var(--blue-d);color:#DDE6F6}
+.sec.dark .h2{color:#fff}
+
+/* what we take on */
+.trades{display:grid;grid-template-columns:repeat(3,1fr);margin-top:36px;border-top:2px solid var(--navy)}
+.trade{padding:26px 28px 6px 0}
+.trade + .trade{padding-left:28px;border-left:1px solid var(--rule)}
+.trade h3{display:flex;align-items:center;gap:11px;font:800 27px/1.1 var(--cond);color:var(--navy)}
+.trade h3 svg{width:30px;height:30px;flex:none}
+.trade li{padding-block:13px;border-top:1px solid var(--rule);margin-top:13px}
+.trade li:first-child{margin-top:16px}
+.trade li b{display:block;color:var(--navy);font-weight:700;line-height:1.3}
+.trade li span{display:block;font-size:15.500px;line-height:1.45;color:var(--mid);margin-top:2px}
+
+/* tools */
+.tool{margin-top:32px;background:#fff;border:1px solid var(--rule);border-radius:10px;padding:clamp(18px,3vw,30px)}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{min-height:46px;padding:9px 16px;border:1.500px solid var(--navy);border-radius:999px;background:#fff;color:var(--navy);font-weight:600;font-size:16px;cursor:pointer;line-height:1.1}
+.tab:hover{background:var(--paper)}
+.tab[aria-pressed="true"],.tab[aria-selected="true"]{background:var(--navy);color:#fff}
+.docs{margin-top:22px;display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.docs li{display:grid;grid-template-columns:34px 1fr;gap:0 12px;padding-block:15px;border-top:1px solid var(--rule)}
+.docs svg{width:30px;height:30px;margin-top:2px}
+.docs b{display:block;color:var(--navy);font-weight:700;line-height:1.3}
+.docs span{display:block;font-size:15.500px;line-height:1.45;color:var(--body);margin-top:3px}
+.docs em{font-style:normal;color:var(--copper);font-weight:600}
+.tool-foot{margin-top:18px;padding-top:18px;border-top:2px solid var(--navy);font-weight:600;color:var(--navy)}
+
+/* planning */
+.q{margin-top:22px}
+.q:first-child{margin-top:0}
+.q > b,.q > label{display:block;font-weight:700;color:var(--navy);margin-bottom:9px}
+.rng{display:flex;align-items:center;gap:14px;max-width:520px}
+.rng input{flex:1 1 auto;width:100%;min-width:0;height:44px;margin:0;accent-color:var(--copper)}
+.rng output{flex:none;min-width:4.200em;font:800 26px/1 var(--cond);color:var(--navy);text-align:right}
+.ans{margin-top:24px;padding:18px 20px;border-radius:8px;background:var(--paper);border-left:6px solid var(--mid)}
+.ans b{display:block;font:800 26px/1.1 var(--cond);color:var(--navy);margin-bottom:5px}
+.ans.ok{border-left-color:var(--green)}
+.ans.mid{border-left-color:var(--note-b)}
+.ans.no{border-left-color:var(--copper)}
+.tool .fine{margin-top:14px;max-width:46em}
+.tool .acts{margin-top:18px}
+
+/* how a job runs: one copper run through five joints */
+.run{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0 26px;margin-top:44px;counter-reset:st}
+.run::before{content:"";position:absolute;left:14px;right:14px;top:13px;height:4px;background:var(--copper-l);border-radius:2px}
+.run li{position:relative;padding-top:44px;counter-increment:st}
+.run li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--blue-d);border:4px solid var(--copper-l);color:#fff;font:800 15px/22px var(--cond);text-align:center}
+.run b{display:block;font:800 23px/1.1 var(--cond);color:#fff;margin-bottom:6px}
+.run span{display:block;font-size:15.500px;line-height:1.5;color:#D3DDF0}
+.sec.dark .jn{margin-top:36px}
+
+/* landlords */
+.ll{display:grid;grid-template-columns:1fr 1fr;gap:0 40px}
+.ll > div{padding-block:4px}
+.ll > div + div{padding-left:40px;border-left:1px solid var(--rule)}
+.ll h3{font:800 24px/1.1 var(--cond);color:var(--navy)}
+.ll .every{font-size:15.500px;color:var(--mid);margin-top:3px}
+.pick{display:flex;gap:8px;margin-top:14px}
+.pick select{min-height:48px;padding:8px 10px;border:1.500px solid var(--navy);border-radius:6px;background:#fff;min-width:0}
+.pick select{flex:1}
+.pick select[id$="-m"]{flex:1.500}
+.due{margin-top:14px;min-height:3.200em;font-weight:600;color:var(--navy);line-height:1.45}
+.due.late{color:#A32A14}
+.due a{display:inline-flex;align-items:center;min-height:44px;color:var(--copper);font-weight:700}
+
+/* area */
+.area{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(24px,5vw,64px);align-items:start;margin-top:8px}
+.pc{display:flex;gap:8px;margin-top:22px;max-width:420px}
+.pc input{flex:1;min-width:0;min-height:52px;padding:10px 14px;border:1.500px solid var(--navy);border-radius:6px;font-weight:600;font-size:18px;text-transform:uppercase}
+.pc input::placeholder{text-transform:none;font-weight:400;color:#7A869C}
+.pc-out{margin-top:14px;min-height:3.200em;font-weight:600;color:var(--navy);max-width:28em}
+.places{display:flex;flex-wrap:wrap;gap:8px 8px}
+.places li{border:1px solid var(--rule);border-radius:999px;padding:6px 13px;font-size:15.500px;color:var(--navy);background:#fff}
+.places li.home{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700}
+
+/* work and reviews */
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
+.shot{border:1.500px dashed #8FA0BE;border-radius:10px;background:#fff;overflow:hidden}
+.shot svg{width:100%;height:auto;aspect-ratio:4/3;background:#fff}
+.shot figcaption{padding:11px 14px 13px;border-top:1.500px dashed #8FA0BE;font-size:15px;color:var(--mid)}
+.shot figcaption b{display:block;color:var(--navy)}
+.revs{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:26px}
+.rev{border:1.500px dashed #8FA0BE;border-radius:10px;padding:18px 18px 16px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;color:var(--mid);font-size:15.500px;background:#fff}
+.rev i{display:block;font:800 54px/.6 var(--cond);color:#B9C5DA;font-style:normal;height:26px}
+.sub{margin-top:clamp(44px,6vw,72px)}
+
+/* brief builder */
+.brief{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(22px,4vw,48px);margin-top:32px;align-items:start}
+.fld{margin-top:20px}
+.fld:first-child{margin-top:0}
+.fld > label,.fld > b{display:block;font-weight:700;color:var(--navy);margin-bottom:8px}
+.fld input,.fld select,.fld textarea{width:100%;min-height:50px;padding:10px 13px;border:1.500px solid var(--navy);border-radius:6px;background:#fff}
+.fld textarea{min-height:104px;resize:vertical;line-height:1.45}
+.fld .row{display:grid;grid-template-columns:1fr 1.300fr;gap:12px}
+.msg{background:var(--navy);color:#fff;border-radius:10px;padding:22px 22px 24px;position:sticky;top:92px}
+.msg h3{font:800 22px/1.1 var(--cond);color:#fff}
+.msg pre{margin:12px 0 0;white-space:pre-wrap;word-break:break-word;font:400 16px/1.5 var(--sans);background:#E7F6DF;color:#0B2A12;border-radius:10px 10px 10px 2px;padding:13px 15px;min-height:7.500em}
+.msg .acts{margin-top:16px}
+.msg .btn{flex:1 1 150px}
+
+@media (max-width:1000px){
+  .hero-in{grid-template-columns:minmax(0,1fr);grid-template-areas:"h1" "stage" "txt" "note"}
+  .stage{margin-top:24px}
+  .pitch .lede{margin-top:26px}
+  .hero .lede{max-width:34em}
+  .trades{grid-template-columns:minmax(0,1fr)}
+  .trade{padding:24px 0 4px}
+  .trade + .trade{padding-left:0;border-left:0;border-top:2px solid var(--navy);margin-top:22px}
+  .run{grid-template-columns:minmax(0,1fr);gap:0}
+  .run::before{left:13px;right:auto;top:14px;bottom:30px;width:4px;height:auto}
+  .run li{padding:0 0 26px 48px}
+  .run li:last-child{padding-bottom:0}
+  .brief{grid-template-columns:minmax(0,1fr)}
+  .msg{position:static}
+}
+@media (max-width:760px){
+  .hero{padding-top:26px}
+  .stage{margin-inline:-16px}
+  .scene{border-radius:0;border-inline:0}
+  .scene{aspect-ratio:556/480}
+  .scene .sc-in{left:-28.780%;right:auto;width:172.660%}
+  .hl-w{display:none}
+  .hl-n{display:block}
+  .an,.tb{display:none}
+  .hint,.chips,.cap{margin-inline:16px}
+  .tag{font-size:15px;padding:6px 9px 7px;top:10px}
+  .tag-d{right:9px}.tag-b{left:9px}
+  .knob{width:48px;height:48px;left:-24px;margin-top:-24px;font-size:28px}
+  .facts ul{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .facts li{padding:16px 14px 16px 0}
+  .facts li + li{padding-left:14px}
+  .facts li:nth-child(3){padding-left:0;border-left:0}
+  .facts li:nth-child(n+3){border-top:1px solid var(--rule)}
+  .docs{grid-template-columns:minmax(0,1fr)}
+  .ll{grid-template-columns:minmax(0,1fr)}
+  .ll > div + div{padding-left:0;border-left:0;border-top:1px solid var(--rule);margin-top:22px;padding-top:22px}
+  .area{grid-template-columns:minmax(0,1fr)}
+  .shots,.revs{grid-template-columns:minmax(0,1fr)}
+  .rev{min-height:110px}
+  .fld .row{grid-template-columns:minmax(0,1fr)}
+  .tab{padding:9px 13px;font-size:15.500px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hl{transition:none}
+}
+.js .scene{--p:.94}
+@media (prefers-reduced-motion:reduce){.js .scene{--p:.44}}
+
+</style>
 </head>
 <body>
-<header class="hd"><div class="wrap">
-  <a class="logo" href="#top" aria-label="SPS Design &amp; Build home"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="var(--brand)"/><path d="M8 22 20 11l12 11" fill="none" stroke="var(--accent)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21v9h16v-9" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg><span>SPS Design &amp; Build</span></a>
-  <a class="btn btn-c demo" href="#quote" aria-label="Call now" data-msg="On your live site this button rings your phone."><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1Z"/></svg><b>Call now</b></a>
-</div></header>
+<!-- shared drawing: one house, used three times (drawing, built, quiet outline) -->
+<svg class="sc-defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D5E6F8"/><stop offset="1" stop-color="#F6FAFE"/></linearGradient>
+    <radialGradient id="g-glow"><stop offset="0" stop-color="#FFD76A" stop-opacity=".75"/><stop offset=".5" stop-color="#FFD76A" stop-opacity=".22"/><stop offset="1" stop-color="#FFD76A" stop-opacity="0"/></radialGradient>
+    <pattern id="p-hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="#fff" stroke-opacity=".5" stroke-width="1.2"/></pattern>
+    <symbol id="i-mark" viewBox="0 0 48 48"><path d="M24 5.500 5.500 21v21.500H24Z" fill="#fff" stroke="#0E3A8A" stroke-width="3" stroke-linejoin="round"/><path d="M24 3.500 44 20.300V44H24Z" fill="#B8561C"/><rect x="11.500" y="25.500" width="7" height="8.500" fill="none" stroke="#0E3A8A" stroke-width="2.200"/><rect x="29.500" y="25" width="8" height="10" fill="#fff"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.600 10.800a15.200 15.200 0 0 0 6.600 6.600l2.200-2.200c.300-.300.700-.400 1-.200 1.100.400 2.300.600 3.600.600.600 0 1 .400 1 1V20c0 .600-.400 1-1 1A17 17 0 0 1 3 4c0-.600.400-1 1-1h3.500c.600 0 1 .400 1 1 0 1.300.200 2.500.600 3.600.100.300 0 .700-.200 1Z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5.100-1.300A10 10 0 1 0 12 2Zm0 18.200a8.200 8.200 0 0 1-4.200-1.200l-.3-.2-3 .8.8-2.900-.2-.3A8.200 8.200 0 1 1 12 20.200Zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.700 6.700 0 0 1-3.300-2.900c-.3-.4.3-.4.7-1.300.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.800 11.900 11.900 0 0 0 4.600 4c1.700.7 2.300.8 3.200.6a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.3-.2-.5-.3Z"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 30 30"><path d="M7 3.500h11l5.500 5.500V26.500H7Z" fill="#fff" stroke="#0A1B3D" stroke-width="2" stroke-linejoin="round"/><path d="M18 3.500V9h5.500" fill="none" stroke="#0A1B3D" stroke-width="2" stroke-linejoin="round"/><path d="M11 17.500l3 3 5.500-6.500" fill="none" stroke="#B8561C" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <g id="hs">
+      <!-- ground -->
+      <rect class="earth" x="0" y="470" width="960" height="50"/>
+      <rect class="hard" x="22" y="465" width="188" height="6"/>
+      <rect class="hard" x="702" y="465" width="84" height="6"/>
+      <rect class="lawn" x="786" y="463" width="174" height="8"/>
+      <line class="gl0" x1="0" y1="470" x2="960" y2="470"/>
+      <!-- rooms -->
+      <rect class="rm" x="222" y="370" width="150" height="100"/>
+      <rect class="rm" x="380" y="366" width="312" height="104"/>
+      <rect class="rm rm-c" x="222" y="258" width="150" height="100"/>
+      <rect class="rm rm-w" x="380" y="258" width="138" height="100"/>
+      <path class="rm" d="M262 246V205L370 133l23 16h125v97Z"/>
+      <path class="void" d="M222 246v-13l40-28v41Z"/>
+      <!-- living room -->
+      <g class="f">
+        <rect class="f-sofa" x="238" y="424" width="15" height="40" rx="5"/>
+        <rect class="f-sofa" x="244" y="443" width="70" height="21" rx="6"/>
+        <rect class="f-sofa" x="300" y="434" width="15" height="30" rx="5"/>
+        <path class="f-ln" d="M244 464v6M309 464v6"/>
+        <rect class="f-wood" x="338" y="452" width="32" height="18" rx="1.5"/>
+        <rect class="f-dark" x="365" y="408" width="4" height="36" rx="1"/>
+        <rect class="f-wood" x="316" y="394" width="32" height="22" rx="1"/>
+        <path class="f-ln" d="M321 411l8-9 6 6 4-3 5 5"/>
+      </g>
+      <!-- kitchen and extension -->
+      <g class="f">
+        <rect class="f-unit" x="424" y="384" width="84" height="24" rx="1.5"/>
+        <path class="f-ln" d="M452 384v24M480 384v24"/>
+        <rect class="f-unit" x="410" y="437" width="98" height="33" rx="1.5"/>
+        <path class="f-ln" d="M434 437v33M459 437v33M484 437v33"/>
+        <rect class="f-top" x="407" y="432" width="104" height="5.500" rx="1"/>
+        <rect class="f-dark" x="452" y="429" width="28" height="3"/>
+        <rect class="f-unit" x="560" y="437" width="74" height="33" rx="1.5"/>
+        <path class="f-ln" d="M584.500 437v33M609.500 437v33"/>
+        <rect class="f-top" x="555" y="432" width="84" height="5.500" rx="1"/>
+        <path class="f-ln f-leg" d="M650 448h14M657 448v22M652 470h10M670 448h14M677 448v22M672 470h10"/>
+        <path class="f-plant" d="M601 432c-6-10-2-19 3-23 1 7 5 9 3 23ZM606 432c0-9 5-15 11-16-1 7-4 12-8 16Z"/>
+      </g>
+      <!-- bedroom -->
+      <g class="f">
+        <rect class="f-wood" x="240" y="310" width="8" height="48" rx="2"/>
+        <rect class="f-wood" x="246" y="346" width="98" height="9" rx="1.500"/>
+        <path class="f-ln" d="M252 355v3M338 355v3"/>
+        <rect class="f-bed" x="247" y="333" width="96" height="14" rx="5"/>
+        <rect class="f-pill" x="250" y="325" width="26" height="10" rx="5"/>
+        <rect class="f-unit" x="346" y="272" width="24" height="86" rx="1.5"/>
+        <path class="f-ln" d="M358 272v86"/>
+      </g>
+      <!-- bathroom -->
+      <g class="f">
+        <path class="f-bath" d="M394 334h80v10c0 9-6 14-14 14h-52c-8 0-14-5-14-14Z"/>
+        <path class="f-ln" d="M398 334v-9c0-5 7-5 7 0"/>
+        <rect class="f-bath" x="486" y="320" width="24" height="9" rx="4"/>
+        <rect class="f-bath" x="495" y="329" width="6" height="29"/>
+        <rect class="f-mir" x="489" y="286" width="18" height="24" rx="2"/>
+      </g>
+      <!-- loft room -->
+      <g class="f">
+        <rect class="f-wood" x="412" y="238" width="92" height="8" rx="1.500"/>
+        <rect class="f-bed" x="413" y="227" width="90" height="12" rx="4.500"/>
+        <rect class="f-pill" x="476" y="220" width="24" height="9" rx="4.500"/>
+        <rect class="f-wood" x="282" y="218" width="46" height="4" rx="1"/>
+        <path class="f-ln f-leg" d="M286 222v24M324 222v24"/>
+        <path class="f-ln f-leg" d="M340 228h13M346.500 228v18M340 228v-14"/>
+      </g>
+      <!-- radiators, boiler, fuse board, meter, charger -->
+      <g class="kit">
+        <rect class="rad" x="224.500" y="446" width="5.500" height="20" rx="1.500"/>
+        <rect class="rad" x="224.500" y="336" width="5.500" height="20" rx="1.500"/>
+        <rect class="rad" x="264.500" y="224" width="5.500" height="20" rx="1.500"/>
+        <path class="rad rail" d="M384 288v38M388.500 288v38M384 294h4.500M384 302h4.500M384 310h4.500M384 318h4.500"/>
+        <rect class="boil" x="384" y="384" width="24" height="33" rx="2.500"/>
+        <path class="flame" d="M396 410c-4.500 0-6.500-3.500-4.500-7 1 1.500 2 1.500 2.500.5 0-3 1-5 3-6.500 0 3 4 5 4 9 0 2.500-2 4-5 4Z"/>
+        <rect class="cu" x="226" y="382" width="20" height="14" rx="1.500"/>
+        <path class="cu-l" d="M230 386v6M234 386v6M238 386v6M242 386v6"/>
+        <rect class="meter" x="197" y="440" width="13" height="18" rx="1.500"/>
+        <rect class="evc" x="198" y="402" width="12" height="17" rx="3"/>
+        <path class="cu-l" d="M201 446h5M201 450h5"/>
+      </g>
+      <!-- structure cut through -->
+      <g class="cut">
+        <rect x="202" y="470" width="28" height="24"/>
+        <rect x="364" y="470" width="24" height="16"/>
+        <rect x="510" y="470" width="28" height="24"/>
+        <rect x="682" y="470" width="28" height="24"/>
+        <rect x="222" y="470" width="468" height="7"/>
+        <rect x="210" y="246" width="12" height="224"/>
+        <rect x="372" y="258" width="8" height="212"/>
+        <rect x="518" y="246" width="12" height="112"/>
+        <rect x="222" y="358" width="296" height="12"/>
+        <rect x="222" y="246" width="296" height="12"/>
+        <rect x="337" y="98" width="22" height="56"/>
+        <rect x="342" y="88" width="12" height="10"/>
+        <rect x="388" y="141" width="146" height="9"/>
+        <rect x="518" y="150" width="12" height="96"/>
+        <rect x="530" y="352" width="66" height="14"/>
+        <rect x="644" y="352" width="62" height="14"/>
+        <rect x="690" y="366" width="12" height="14"/>
+        <rect x="591" y="342" width="6" height="10"/>
+        <rect x="643" y="342" width="6" height="10"/>
+        <rect x="698" y="346" width="10" height="7"/>
+      </g>
+      <path class="beam" d="M512 358h24v3h-9.500v8h9.500v3h-24v-3h9.500v-8h-9.500Z"/>
+      <!-- roof covering -->
+      <path class="roof" d="M194 253 370 129.500 396 147.500"/>
+      <!-- glass -->
+      <g class="gl">
+        <rect x="210" y="396" width="12" height="50"/>
+        <rect x="210" y="284" width="12" height="52"/>
+        <rect x="518" y="284" width="12" height="42"/>
+        <rect x="518" y="166" width="12" height="48"/>
+        <rect x="691" y="380" width="10" height="90"/>
+      </g>
+      <path class="gl-l" d="M594 343.500 620 325l26 18.500"/>
+      <path class="gl-r" d="M272 198.300 311 171"/>
+      <path class="door" d="M696 380v90"/>
+      <!-- gas and heating pipework -->
+      <path class="gas" d="M203.500 458v26H396v-67M396 484h70v-52"/>
+      <path class="heat" d="M391 417v50H230M386 384V243H270M386 355.500H230M386 300h2"/>
+      <!-- wiring -->
+      <path class="elec" d="M236 382v-18h376M297 364v6M578 364v2M612 364v2M241 364V252h199M297 252v6M440 252v6M262 252v-46l108-72 23 16.500h47M226 390h-10v20h-6"/>
+      <!-- lights -->
+      <g class="lamp">
+        <path d="M297 370v18M578 366v24M612 366v24M297 258v18M440 150v10"/>
+        <circle cx="297" cy="392.500" r="5"/><circle cx="578" cy="394.500" r="5"/><circle cx="612" cy="394.500" r="5"/>
+        <circle cx="297" cy="280.500" r="5"/><circle cx="440" cy="164.500" r="5"/>
+        <rect x="434" y="258" width="12" height="4" rx="1.500"/>
+      </g>
+      <!-- outside -->
+      <g class="out">
+        <path class="car" d="M60 458c0-13 4-19 18-21l13-17c3-4 6-5 11-5h36c6 0 9 2 12 6l12 16c12 2 17 7 17 16v7c0 3-2 5-5 5H65c-3 0-5-2-5-5Z"/>
+        <path class="car-w" d="M95 437l10-13c1-2 3-3 6-3h10v16ZM127 421h9c3 0 5 1 7 3l9 13h-25Z"/>
+        <circle class="whl" cx="88" cy="462" r="10.500"/><circle class="whl" cx="151" cy="462" r="10.500"/>
+        <circle class="hub" cx="88" cy="462" r="4"/><circle class="hub" cx="151" cy="462" r="4"/>
+        <path class="lead" d="M198 412c-12 2-14 16-17 26"/>
+        <rect class="trunk" x="864" y="418" width="8" height="46"/>
+        <circle class="tree" cx="868" cy="392" r="34"/><circle class="tree" cx="843" cy="410" r="21"/><circle class="tree" cx="893" cy="412" r="22"/>
+        <path class="fence" d="M938 414v50M948 414v50M932 426h22M932 448h22"/>
+        <path class="f-ln f-leg" d="M722 452h14M729 452v13M756 452h14M763 452v13M740 440h12M746 440v25"/>
+      </g>
+    </g>
+  </defs>
+</svg>
+<div class="pv"><div class="wrap">
+  <svg class="mk" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F2C230"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="mine"><b>Your free preview, Swraj.</b><span>Yellow notes are from Joshua.</span></div>
+  <div class="back"><b>This is what customers see.</b><span>No notes, no banner.</span></div>
+  <div class="ver" role="group" aria-label="Two versions of this preview"><span aria-current="page">Full</span><a href="/p/sps-design-and-build/simple/">Simple</a></div>
+  <button type="button" id="cv" aria-pressed="false">Customer view</button>
+</div></div>
+
+<header class="hd">
+  <div class="wrap hd-in">
+    <a class="brand" href="#top" aria-label="SPS Design and Build, home"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-mark"/></svg><span>SPS Design &amp; Build<small>Hounslow and West London</small></span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#work">What we do</a><a href="#papers">Paperwork</a><a href="#planning">Planning</a><a href="#landlords">Landlords</a><a href="#price">Get a price</a>
+    </nav>
+    <a class="btn btn-copper" href="tel:+447402420702" aria-label="Call SPS Design and Build on 07402 420702"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tel"/></svg><span class="long">07402 420702</span><span class="short">Call</span></a>
+  </div>
+</header>
+
 <main id="top">
-<section class="hero"><div class="wrap">
-  <div>
-    <p class="kicker">Builder</p>
-    <h1>Building work, done right.</h1>
-    <p class="sub">Extensions, renovations and building work. Tell us about the job and we&#x27;ll come and take a look.</p>
-    <div class="ctas">
-      <a class="btn btn-a" href="#quote">Get a free quote</a>
-      <a class="btn btn-b demo" href="#quote" data-msg="On your live site this button rings your phone."><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1Z"/></svg>Call us</a>
+
+<section class="hero dark" aria-labelledby="h1">
+  <div class="wrap hero-in">
+    <h1 id="h1">One firm, from first drawing to final certificate.</h1>
+    <div class="pitch">
+      <p class="lede">Extensions, loft conversions and refurbishments across Hounslow, Feltham and West London. The heating and the electrics are done by us too, so no part of your job is handed to someone you’ve never met.</p>
+      <div class="acts" id="hero-acts">
+        <a class="btn btn-flame" href="https://wa.me/447402420702" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp us</a>
+        <a class="btn btn-line" href="tel:+447402420702"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tel"/></svg>07402 420702</a>
+      </div>
     </div>
-    <ul class="badges"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>Free quotes</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>Local team</li></ul>
+    <div class="stage">
+      <div class="scene" id="scene">
+        <div class="sc-in">
+          <svg class="sc-plan" viewBox="0 40 960 480" role="img" aria-label="A drawing of a house, cut through from front to back: a loft conversion with a dormer, a rear kitchen extension, and the gas pipes and wiring running through it.">
+            <use href="#hs"/>
+            <g class="an" aria-hidden="true">
+              <path d="M530 498v14M690 498v14M530 505h160M526 509l8-8M686 509l8-8"/>
+              <text x="610" y="499" text-anchor="middle">4.0 m</text>
+              <path d="M458 150v96M454 154l8-8M454 250l8-8"/>
+              <text x="464" y="205">2.4 m</text>
+              <path d="M566 112 510 139"/><text x="571" y="114">Dormer</text>
+              <path d="M214 166 284 188"/><text x="209" y="168" text-anchor="end">Rooflight</text>
+              <path d="M552 306 528 356"/><text x="556" y="303">Steel beam</text>
+              <path d="M676 318 640 336"/><text x="681" y="319">Roof lantern</text>
+              <path d="M724 408 704 422"/><text x="729" y="410">Bifold doors</text>
+              <path d="M166 384 196 404"/><text x="161" y="384" text-anchor="end">Car charger</text>
+            </g>
+            <g class="tb" aria-hidden="true">
+              <rect x="20" y="58" width="234" height="70"/><line x1="20" y1="86" x2="254" y2="86"/>
+              <text class="t1" x="31" y="78">SPS DESIGN &amp; BUILD LTD</text>
+              <text x="31" y="104">SECTION A–A · SCALE 1:50</text>
+              <text x="31" y="120">EXTENSION AND LOFT · DRG 01</text>
+            </g>
+          </svg>
+        </div>
+        <div class="bw" aria-hidden="true"><div class="sc-in">
+          <svg class="sc-built" viewBox="0 40 960 480">
+            <rect y="40" width="960" height="430" fill="url(#g-sky)"/>
+            <path d="M700 78c0-10 9-18 20-18 6-12 26-14 34-2 13-3 24 6 24 18Z" fill="#fff" opacity=".8"/>
+            <path d="M92 132c0-8 7-14 16-14 5-9 21-11 27-1 10-2 19 5 19 15Z" fill="#fff" opacity=".7"/>
+            <use href="#hs"/>
+            <g class="glow"><circle cx="297" cy="392" r="30" fill="url(#g-glow)"/><circle cx="578" cy="394" r="28" fill="url(#g-glow)"/><circle cx="612" cy="394" r="28" fill="url(#g-glow)"/><circle cx="297" cy="280" r="30" fill="url(#g-glow)"/><circle cx="440" cy="164" r="26" fill="url(#g-glow)"/><circle cx="440" cy="264" r="22" fill="url(#g-glow)"/></g>
+          </svg>
+        </div></div>
+        <div class="sc-in" aria-hidden="true"><svg viewBox="0 40 960 480">
+          <path class="hl" id="hl-loft" d="M254 251V201L370 124l24 16h143v111Z"/>
+          <rect class="hl" id="hl-ext" x="524" y="318" width="190" height="160" rx="6"/>
+          <rect class="hl" id="hl-kit" x="377" y="376" width="270" height="99" rx="6"/>
+          <rect class="hl" id="hl-bath" x="377" y="255" width="146" height="107" rx="6"/>
+          <rect class="hl hl-w" id="hl-ev" x="46" y="392" width="172" height="88" rx="6"/>
+          <rect class="hl hl-n" id="hl-ev2" x="164" y="394" width="58" height="84" rx="6"/>
+        </svg></div>
+        <div class="hdl">
+          <span class="tag tag-d" aria-hidden="true">Design</span>
+          <span class="tag tag-b" aria-hidden="true">Build</span>
+          <button type="button" class="knob" id="knob" role="slider" aria-label="Drag between the drawing and the finished house" aria-valuemin="0" aria-valuemax="100" aria-valuenow="44" aria-valuetext="Mostly built">&amp;</button>
+        </div>
+      </div>
+      <p class="hint" id="hint">Drag the &amp; across the house. Left of it is our drawing, right of it is the finished job.</p>
+      <div class="chips" role="group" aria-label="Show a part of the job">
+        <button type="button" class="chip" data-k="loft" aria-pressed="false">Loft</button>
+        <button type="button" class="chip" data-k="ext" aria-pressed="false">Extension</button>
+        <button type="button" class="chip" data-k="kit" aria-pressed="false">Kitchen</button>
+        <button type="button" class="chip" data-k="bath" aria-pressed="false">Bathroom</button>
+        <button type="button" class="chip" data-k="gas" aria-pressed="false">Gas &amp; heating</button>
+        <button type="button" class="chip" data-k="elec" aria-pressed="false">Electrics</button>
+        <button type="button" class="chip" data-k="ev" aria-pressed="false">Car charger</button>
+      </div>
+      <p class="cap" id="cap" aria-live="polite">Tap one to find it in the house.</p>
+    </div>
+    <p class="jn"><b>Joshua:</b> Swraj, drag the &amp; across the house. One side is the drawing and the other is the build, so your company name is something a customer can play with. Then tap “Gas &amp; heating” and “Electrics”: they light up the pipe and cable runs, which is how I’ve shown that you do the parts most builders hand to someone else.</p>
   </div>
-  <div class="art"><svg viewBox="0 0 480 330" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a house with a new tiled roof">
-<defs><clipPath id="r75f9f0"><path d="M84 178 240 66l156 112Z"/></clipPath>
-<linearGradient id="s75f9f0" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
-<rect width="480" height="330" fill="var(--sky)"/><rect width="480" height="200" fill="url(#s75f9f0)"/>
-<circle cx="400" cy="70" r="30" fill="var(--accent)" opacity=".85"/>
-<path d="M0 270c80-18 150-20 240-8s170 10 240-6v74H0Z" fill="var(--tint)"/><path d="M0 292c90-10 170-8 250 0s160 6 230-4v42H0Z" fill="#fff" opacity=".55"/>
-<rect x="114" y="172" width="252" height="112" fill="#FBF8F2"/><rect x="114" y="172" width="252" height="10" fill="#000" opacity=".06"/>
-<rect x="306" y="92" width="30" height="66" fill="#B4553F"/><rect x="301" y="86" width="40" height="10" rx="2" fill="#8E3F2E"/>
-<path d="M84 178 240 66l156 112Z" fill="var(--roof)"/>
-<g clip-path="url(#r75f9f0)" stroke="#fff" stroke-opacity=".16" stroke-width="2">
-<path d="M60 92h360M60 110h360M60 128h360M60 146h360M60 164h360"/>
-<path d="M200 92v18M232 92v18M264 92v18M184 110v18M216 110v18M248 110v18M280 110v18M168 128v18M200 128v18M232 128v18M264 128v18M296 128v18M152 146v18M184 146v18M216 146v18M248 146v18M280 146v18M312 146v18M136 164v14M168 164v14M200 164v14M232 164v14M264 164v14M296 164v14M328 164v14"/></g>
-<path d="M80 180h320" stroke="var(--brand)" stroke-width="8" stroke-linecap="round"/>
-<rect x="150" y="204" width="54" height="46" rx="3" fill="var(--sky)" stroke="#fff" stroke-width="5"/><path d="M177 204v46M150 227h54" stroke="#fff" stroke-width="4"/>
-<rect x="276" y="204" width="54" height="46" rx="3" fill="var(--sky)" stroke="#fff" stroke-width="5"/><path d="M303 204v46M276 227h54" stroke="#fff" stroke-width="4"/>
-<rect x="218" y="216" width="44" height="68" rx="3" fill="var(--brand)"/><circle cx="252" cy="252" r="3" fill="var(--accent)"/>
-<g stroke="#8B6A3E" stroke-width="5" stroke-linecap="round"><path d="M392 286 362 150M420 286 390 150"/><path d="M370 186h29M374 206h29M379 226h29M383 246h29M388 266h29" stroke-width="4"/></g>
-</svg></div>
-</div></section>
+</section>
 
-<section class="sec"><div class="wrap">
-  <h2>What we do</h2>
-  <p class="lead">The work we take on.</p>
-  <div class="grid"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5h18v14H3z"/><path d="M3 9.7h18M3 14.3h18M9 5v4.7M15 5v4.7M6 9.7v4.6M12 9.7v4.6M18 9.7v4.6M9 14.3V19M15 14.3V19"/></svg></div><div><h3>Extensions</h3><p>Single and double-storey extensions.</p></div></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12 12 4l9 8"/><path d="M6 10v9h12v-9"/><path d="M10 19v-5h4v5"/></svg></div><div><h3>Renovations</h3><p>Whole-house and room renovations.</p></div></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 9 5-9 5-9-5Z"/><path d="m3 13 9 5 9-5"/></svg></div><div><h3>Brickwork</h3><p>Walls, repairs and repointing.</p></div></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/><path d="M6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></svg></div><div><h3>Kitchens &amp; bathrooms</h3><p>Fitted from start to finish.</p></div></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.2L4 16.8 7.2 20l5.3-5.3a4 4 0 0 0 5.2-5.4l-2.4 2.4-2.6-.6-.6-2.6Z"/></svg></div><div><h3>Repairs &amp; alterations</h3><p>Walls knocked through, jobs big and small.</p></div></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></div><div><h3>Free quotes</h3><p>A clear price before any work starts.</p></div></div></div>
-</div></section>
+<section class="facts" aria-label="About the company">
+  <div class="wrap"><ul>
+    <li><b>Since 2016</b><span>Started as SPS Gas Services</span></li>
+    <li><b>NICEIC registered</b><span>For all our electrical work</span></li>
+    <li><b>Gas Safe registered</b><span class="pvw">Number <span class="slot">to add</span></span><span class="cvw">For all our gas and heating work</span></li>
+    <li><b>Based in Hounslow</b><span>Working across West London</span></li>
+  </ul></div>
+</section>
+<div class="wrap"><p class="jn"><b>Joshua:</b> the dates and the NICEIC listing are from Companies House and the NICEIC register. I couldn’t get onto the Gas Safe register tonight, so I’ve left your number as a gap and not guessed. Send it over and it goes in.</p></div>
 
-<section class="sec" style="padding-top:0"><div class="wrap">
-  <h2>Recent jobs</h2>
-  <div class="jobs">
-    <figure><svg viewBox="0 0 480 330" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a house with a new tiled roof">
-<defs><clipPath id="r75f9f0j"><path d="M84 178 240 66l156 112Z"/></clipPath>
-<linearGradient id="s75f9f0j" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
-<rect width="480" height="330" fill="var(--sky)"/><rect width="480" height="200" fill="url(#s75f9f0j)"/>
-<circle cx="400" cy="70" r="30" fill="var(--accent)" opacity=".85"/>
-<path d="M0 270c80-18 150-20 240-8s170 10 240-6v74H0Z" fill="var(--tint)"/><path d="M0 292c90-10 170-8 250 0s160 6 230-4v42H0Z" fill="#fff" opacity=".55"/>
-<rect x="114" y="172" width="252" height="112" fill="#FBF8F2"/><rect x="114" y="172" width="252" height="10" fill="#000" opacity=".06"/>
-<rect x="306" y="92" width="30" height="66" fill="#B4553F"/><rect x="301" y="86" width="40" height="10" rx="2" fill="#8E3F2E"/>
-<path d="M84 178 240 66l156 112Z" fill="var(--roof)"/>
-<g clip-path="url(#r75f9f0j)" stroke="#fff" stroke-opacity=".16" stroke-width="2">
-<path d="M60 92h360M60 110h360M60 128h360M60 146h360M60 164h360"/>
-<path d="M200 92v18M232 92v18M264 92v18M184 110v18M216 110v18M248 110v18M280 110v18M168 128v18M200 128v18M232 128v18M264 128v18M296 128v18M152 146v18M184 146v18M216 146v18M248 146v18M280 146v18M312 146v18M136 164v14M168 164v14M200 164v14M232 164v14M264 164v14M296 164v14M328 164v14"/></g>
-<path d="M80 180h320" stroke="var(--brand)" stroke-width="8" stroke-linecap="round"/>
-<rect x="150" y="204" width="54" height="46" rx="3" fill="var(--sky)" stroke="#fff" stroke-width="5"/><path d="M177 204v46M150 227h54" stroke="#fff" stroke-width="4"/>
-<rect x="276" y="204" width="54" height="46" rx="3" fill="var(--sky)" stroke="#fff" stroke-width="5"/><path d="M303 204v46M276 227h54" stroke="#fff" stroke-width="4"/>
-<rect x="218" y="216" width="44" height="68" rx="3" fill="var(--brand)"/><circle cx="252" cy="252" r="3" fill="var(--accent)"/>
-<g stroke="#8B6A3E" stroke-width="5" stroke-linecap="round"><path d="M392 286 362 150M420 286 390 150"/><path d="M370 186h29M374 206h29M379 226h29M383 246h29M388 266h29" stroke-width="4"/></g>
-</svg><figcaption>Renovation</figcaption></figure><figure><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a flat roof extension">
-<rect width="400" height="260" fill="var(--sky)"/><circle cx="70" cy="60" r="22" fill="var(--accent)" opacity=".8"/>
-<path d="M0 214c70-12 140-12 210-4s130 8 190-4v54H0Z" fill="var(--tint)"/>
-<rect x="40" y="70" width="170" height="150" fill="#FBF8F2"/><path d="M30 70 125 18l95 52Z" fill="var(--roof)" opacity=".55"/>
-<rect x="196" y="122" width="170" height="98" fill="#F3EEE4"/><rect x="186" y="110" width="190" height="14" rx="3" fill="var(--roof)"/>
-<rect x="250" y="103" width="60" height="8" rx="2" fill="#fff" opacity=".9"/>
-<rect x="222" y="146" width="56" height="74" rx="3" fill="var(--sky)" stroke="#fff" stroke-width="5"/><path d="M250 146v74" stroke="#fff" stroke-width="4"/>
-<rect x="300" y="146" width="44" height="38" rx="3" fill="var(--sky)" stroke="#fff" stroke-width="5"/>
-<rect x="72" y="104" width="44" height="40" rx="3" fill="var(--sky)" stroke="#fff" stroke-width="5"/><rect x="138" y="104" width="44" height="40" rx="3" fill="var(--sky)" stroke="#fff" stroke-width="5"/>
-</svg><figcaption>Extension</figcaption></figure><figure><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of new brickwork">
-<rect width="400" height="260" fill="var(--sky)"/><rect x="40" y="70" width="320" height="132" fill="#B4553F"/>
-<g stroke="#E9DCCF" stroke-width="3"><path d="M40 70h320"/><path d="M88 70v22"/><path d="M136 70v22"/><path d="M184 70v22"/><path d="M232 70v22"/><path d="M280 70v22"/><path d="M328 70v22"/><path d="M40 92h320"/><path d="M112 92v22"/><path d="M160 92v22"/><path d="M208 92v22"/><path d="M256 92v22"/><path d="M304 92v22"/><path d="M352 92v22"/><path d="M40 114h320"/><path d="M88 114v22"/><path d="M136 114v22"/><path d="M184 114v22"/><path d="M232 114v22"/><path d="M280 114v22"/><path d="M328 114v22"/><path d="M40 136h320"/><path d="M112 136v22"/><path d="M160 136v22"/><path d="M208 136v22"/><path d="M256 136v22"/><path d="M304 136v22"/><path d="M352 136v22"/><path d="M40 158h320"/><path d="M88 158v22"/><path d="M136 158v22"/><path d="M184 158v22"/><path d="M232 158v22"/><path d="M280 158v22"/><path d="M328 158v22"/><path d="M40 180h320"/><path d="M112 180v22"/><path d="M160 180v22"/><path d="M208 180v22"/><path d="M256 180v22"/><path d="M304 180v22"/><path d="M352 180v22"/></g>
-<rect x="232" y="40" width="128" height="14" rx="4" fill="var(--accent)"/><circle cx="296" cy="47" r="4" fill="#fff"/>
-<rect y="202" width="400" height="58" fill="var(--tint)"/></svg><figcaption>Brickwork</figcaption></figure>
+<section class="sec" id="work" aria-labelledby="work-h">
+  <div class="wrap">
+    <h2 class="d h2" id="work-h">What we take on</h2>
+    <p class="lede">Most builders bring in a separate gas engineer and a separate electrician. We are the gas engineer and the electrician, so the whole job has one price, one programme and one person to ring.</p>
+    <div class="trades">
+      <div class="trade">
+        <h3><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15 16 5l12 10v13H4Z" fill="none" stroke="#0A1B3D" stroke-width="2.400" stroke-linejoin="round"/><path d="M13 28v-8h6v8" fill="none" stroke="#B8561C" stroke-width="2.400" stroke-linejoin="round"/></svg>Building</h3>
+        <ul>
+          <li><b>Rear and side extensions</b><span>Kitchen extensions, bifold doors and roof lanterns, from the footings up.</span></li>
+          <li><b>Loft conversions</b><span>Dormer and rooflight lofts, stairs included.</span></li>
+          <li><b>Kitchens and bathrooms</b><span>Fitted start to finish, with the tiling and plastering.</span></li>
+          <li><b>Full refurbishments</b><span>Whole-house renovations for homeowners and landlords.</span></li>
+        </ul>
+      </div>
+      <div class="trade">
+        <h3><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 28c-6 0-10-4-10-9 0-4 3-6 4-10 3 2 4 4 4 7 2-3 2-7 1-12 6 3 11 9 11 15 0 5-4 9-10 9Z" fill="none" stroke="#0A1B3D" stroke-width="2.400" stroke-linejoin="round"/><path d="M16 28c-2.500 0-4-1.800-4-4 0-2 1.500-3 2-5 2.500 1.500 6 4 6 6 0 1.800-1.500 3-4 3Z" fill="#B8561C"/></svg>Gas and heating</h3>
+        <ul>
+          <li><b>New and replacement boilers</b><span>Fitted, registered and covered by the maker’s warranty.</span></li>
+          <li><b>Central heating</b><span>Radiators, pipework and controls.</span></li>
+          <li><b>Boiler servicing and repairs</b><span>A yearly service keeps most warranties valid.</span></li>
+          <li><b>Landlord gas safety certificates</b><span>The yearly check and the record that goes with it.</span></li>
+        </ul>
+      </div>
+      <div class="trade">
+        <h3><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M18 3 6 18h8l-2 11 14-16h-9Z" fill="none" stroke="#0A1B3D" stroke-width="2.400" stroke-linejoin="round"/><path d="M14.500 17.500h-5l6.500-8Z" fill="#B8561C"/></svg>Electrics</h3>
+        <ul>
+          <li><b>Rewires</b><span>Full and partial, with every circuit tested.</span></li>
+          <li><b>Fuse boards</b><span>Old boards replaced with modern consumer units.</span></li>
+          <li><b>Car chargers</b><span>A home charger on its own circuit.</span></li>
+          <li><b>Electrical safety reports</b><span>The EICR, for landlords, home buyers and older wiring.</span></li>
+        </ul>
+      </div>
+    </div>
+    <p class="jn"><b>Joshua:</b> I couldn’t find a list of your services anywhere online, so this is my reading of the public record: gas since 2016 (your first company name), plumbing and heating (how you’re listed at Companies House), electrics (NICEIC) and building (the name since 2020). Tell me what to keep, cut or add and I’ll change it the same day.</p>
   </div>
-  <p class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Your own job photos go here, sent straight from your phone.</p>
-</div></section>
+</section>
 
-<section class="sec" style="padding-top:0"><div class="wrap">
-  <h2>What customers say</h2>
-  
-  <div class="revs"><div class="rev"><div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg></div><p class="ph">Your customer&#x27;s review goes here</p><div class="bar"></div><div class="bar s"></div><div class="who"><i></i><b></b></div></div><div class="rev"><div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg></div><p class="ph">Your customer&#x27;s review goes here</p><div class="bar"></div><div class="bar s"></div><div class="who"><i></i><b></b></div></div><div class="rev"><div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg></div><p class="ph">Your customer&#x27;s review goes here</p><div class="bar"></div><div class="bar s"></div><div class="who"><i></i><b></b></div></div></div>
-  <span class="tagline">Taken from your Google, Checkatrade or Facebook page</span>
-</div></section>
+<section class="sec pp" id="papers" aria-labelledby="papers-h">
+  <div class="wrap">
+    <h2 class="d h2" id="papers-h">The paperwork you should be handed</h2>
+    <p class="lede">Building work comes with certificates, and a buyer’s solicitor will ask for every one of them when you sell. Pick a job to see what you should end up holding.</p>
+    <div class="tool">
+      <div class="tabs" role="tablist" aria-label="Type of job">
+        <button type="button" class="tab" role="tab" id="pt-ext" aria-controls="pp-ext" aria-selected="true">Extension</button>
+        <button type="button" class="tab" role="tab" id="pt-loft" aria-controls="pp-loft" aria-selected="false" tabindex="-1">Loft conversion</button>
+        <button type="button" class="tab" role="tab" id="pt-boil" aria-controls="pp-boil" aria-selected="false" tabindex="-1">New boiler</button>
+        <button type="button" class="tab" role="tab" id="pt-wire" aria-controls="pp-wire" aria-selected="false" tabindex="-1">Rewire or fuse board</button>
+      </div>
+      <ul class="docs" id="pp-ext" role="tabpanel" aria-labelledby="pt-ext">
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Planning approval, or proof you didn’t need it</b><span>Either the council’s permission or a lawful development certificate saying the extension was allowed without it.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Building Regulations completion certificate</b><span>Issued by building control after they have inspected the finished work. It is the first thing a solicitor asks for.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Structural calculations</b><span>The engineer’s figures for any steel beam, kept with the drawings.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Electrical Installation Certificate</b><span>Test results for the new circuits, signed by the electrician and registered through NICEIC.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Gas certificate</b><span><em>If the boiler or a gas appliance was fitted or moved.</em> A Building Regulations certificate sent to you by Gas Safe.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Party wall agreement</b><span><em>If you build on or close to the boundary.</em> A signed agreement with the neighbour before work starts.</span></div></li>
+      </ul>
+      <ul class="docs" id="pp-loft" role="tabpanel" aria-labelledby="pt-loft" hidden>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Planning approval, or proof you didn’t need it</b><span>Most lofts don’t need permission, and a lawful development certificate proves yours didn’t.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Building Regulations completion certificate</b><span>Covers the structure, the stairs, insulation and fire safety: the new fire doors and linked smoke alarms.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Structural calculations</b><span>The engineer’s figures for the new floor and the steel beams that carry it.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Electrical Installation Certificate</b><span>Test results for the loft’s new circuits, registered through NICEIC.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Party wall agreement</b><span><em>In a semi or a terrace, nearly always.</em> The new beams rest on the wall you share with next door.</span></div></li>
+      </ul>
+      <ul class="docs" id="pp-boil" role="tabpanel" aria-labelledby="pt-boil" hidden>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Building Regulations Compliance Certificate</b><span>Gas Safe sends it to you after the engineer registers the new boiler. Keep it with the house deeds.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Benchmark checklist</b><span>The commissioning record in the back of the boiler manual, filled in and signed on the day.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Warranty registration</b><span>The boiler registered with its maker in your name. Most warranties depend on it, and on a yearly service.</span></div></li>
+      </ul>
+      <ul class="docs" id="pp-wire" role="tabpanel" aria-labelledby="pt-wire" hidden>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Electrical Installation Certificate</b><span>Test results for every circuit, signed by the electrician who did the work.</span></div></li>
+        <li><svg viewBox="0 0 30 30" aria-hidden="true"><use href="#i-doc"/></svg><div><b>Building Regulations Compliance Certificate</b><span>Confirms the council has been told, as the law requires for a rewire or a new fuse board. NICEIC posts it to you.</span></div></li>
+      </ul>
+      <p class="tool-foot">With us they arrive together, in one folder. The people who did the work are the people who sign it off.</p>
+    </div>
+    <p class="jn"><b>Joshua:</b> missing certificates are what frighten people about building work, and most builders’ websites never mention them. This shows you know exactly what a customer should be given, and it makes the point that you can issue the gas and electrical ones yourself.</p>
+  </div>
+</section>
 
-<section class="sec quote" id="quote"><div class="wrap"><div class="box">
-  <div>
-    <h2>Need a builder?</h2>
-    <p style="margin-top:12px">Tell us about the job and we'll come back to you with a clear quote.</p>
-    <ul class="areas" style="margin-top:18px"><li>Surrounding areas</li></ul>
+<section class="sec" id="planning" aria-labelledby="planning-h">
+  <div class="wrap">
+    <h2 class="d h2" id="planning-h">Will it need planning permission?</h2>
+    <p class="lede">Often it won’t. Answer three questions for the general rule, then send us the address and we’ll check it properly.</p>
+    <div class="tool" id="plan">
+      <div class="q"><b id="pl-q1">What are you thinking of?</b>
+        <div class="tabs" role="group" aria-labelledby="pl-q1">
+          <button type="button" class="tab" data-job="ext" aria-pressed="true">A rear extension</button>
+          <button type="button" class="tab" data-job="loft" aria-pressed="false">A loft conversion</button>
+        </div>
+      </div>
+      <div class="q"><b id="pl-q2">What kind of home is it?</b>
+        <div class="tabs" role="group" aria-labelledby="pl-q2">
+          <button type="button" class="tab" data-home="semi" aria-pressed="true">Semi-detached</button>
+          <button type="button" class="tab" data-home="terr" aria-pressed="false">Terraced</button>
+          <button type="button" class="tab" data-home="det" aria-pressed="false">Detached</button>
+          <button type="button" class="tab" data-home="flat" aria-pressed="false">Flat or maisonette</button>
+        </div>
+      </div>
+      <div class="q" id="pl-depth"><label for="pl-m">How far out from the back wall, on one storey?</label>
+        <div class="rng"><input type="range" id="pl-m" min="1" max="9" step="0.5" value="3"><output id="pl-mo" for="pl-m">3 m</output></div>
+      </div>
+      <div class="ans ok" id="pl-a" aria-live="polite"><b></b><span></span></div>
+      <p class="fine">This is the general rule for houses in England. Conservation areas, earlier extensions and some newer estates change the answer, and so does height: an extension taller than 4 m needs permission whatever its depth.</p>
+      <div class="acts"><a class="btn btn-wa" id="pl-wa" href="https://wa.me/447402420702" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Ask us to check your address</a></div>
+    </div>
+    <p class="jn"><b>Joshua:</b> a lot of people never ring a builder because they assume planning will be a battle. This gives them an answer in ten seconds and puts your WhatsApp under it, with their question already typed. The figures are the national permitted development limits.</p>
   </div>
-  <div class="ctas">
-    <a class="btn btn-a demo" href="#quote" data-msg="On your live site this button rings your phone."><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1Z"/></svg>Call now</a>
-    <a class="btn btn-b demo" href="#quote" data-msg="On your live site this opens a WhatsApp chat with you."><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>WhatsApp us</a>
+</section>
+
+<section class="sec dark" aria-labelledby="run-h">
+  <div class="wrap">
+    <h2 class="d h2" id="run-h">How a job runs</h2>
+    <ol class="run">
+      <li><b>We visit</b><span>We come to the house, measure up and talk through what you want.</span></li>
+      <li><b>Drawings and a price</b><span>You get drawings and one written price for the whole job, every trade included.</span></li>
+      <li><b>Approvals</b><span>Planning if it’s needed, building control, and party wall notices for the neighbours.</span></li>
+      <li><b>The build</b><span>One team on site. The gas and electrics go in as the walls go up, so nobody is waiting on a subcontractor.</span></li>
+      <li><b>Sign-off</b><span>Building control inspects, we test and certify, and you get every certificate in one folder.</span></li>
+    </ol>
+    <p class="jn"><b>Joshua:</b> this is the usual shape of a design-and-build job. If yours runs differently, tell me and I’ll rewrite it in your words.</p>
   </div>
-</div></div></section>
+</section>
+
+<section class="sec pp" id="landlords" aria-labelledby="ll-h">
+  <div class="wrap">
+    <h2 class="d h2" id="ll-h">Landlords: both certificates in one visit</h2>
+    <p class="lede">A rented home needs a gas safety check every year and an electrical report at least every five. We are registered for both, so it’s one appointment and one invoice. Tell us when yours were last done and we’ll tell you when they’re due.</p>
+    <div class="tool ll">
+      <div>
+        <h3>Gas safety certificate</h3>
+        <p class="every">Due every 12 months</p>
+        <div class="pick"><label class="vh" for="g-m">Month of the last gas safety check</label><select id="g-m"></select><label class="vh" for="g-y">Year of the last gas safety check</label><select id="g-y"></select></div>
+        <p class="due" id="g-out" aria-live="polite">Pick the month it was last done.</p>
+      </div>
+      <div>
+        <h3>Electrical report (EICR)</h3>
+        <p class="every">Due every 5 years</p>
+        <div class="pick"><label class="vh" for="e-m">Month of the last electrical report</label><select id="e-m"></select><label class="vh" for="e-y">Year of the last electrical report</label><select id="e-y"></select></div>
+        <p class="due" id="e-out" aria-live="polite">Pick the month it was last done.</p>
+      </div>
+    </div>
+    <p class="jn"><b>Joshua:</b> there are a lot of rented homes around Hounslow and Feltham, and you are one of the few firms that can sign off both. The reminder goes into the landlord’s own calendar with your number on it, so next year they ring you and not whoever is cheapest that week. I’ve assumed you do landlord certificates; say if you don’t.</p>
+  </div>
+</section>
+
+<section class="sec" id="area" aria-labelledby="area-h">
+  <div class="wrap">
+    <h2 class="d h2" id="area-h">Where we work</h2>
+    <div class="area">
+      <div>
+        <p class="lede">We are based in Hounslow and most of our work is within a few miles of it. Put in your postcode to see how close you are.</p>
+        <form class="pc" id="pc-f" novalidate>
+          <label class="vh" for="pc-i">Your postcode</label>
+          <input id="pc-i" type="text" inputmode="text" autocomplete="postal-code" maxlength="8" placeholder="Your postcode" autocapitalize="characters" spellcheck="false">
+          <button class="btn btn-navy" type="submit">Check</button>
+        </form>
+        <p class="pc-out" id="pc-o" aria-live="polite"></p>
+      </div>
+      <ul class="places" aria-label="Places we cover">
+        <li class="home">Hounslow</li><li>Feltham</li><li>Isleworth</li><li>Heston</li><li>Cranford</li><li>Whitton</li><li>Twickenham</li><li>Hanworth</li><li>Bedfont</li><li>Brentford</li><li>Southall</li><li>Hayes</li><li>Ashford</li><li>Sunbury</li><li>Teddington</li><li>Richmond</li><li>Ealing</li><li>Staines</li>
+      </ul>
+    </div>
+    <p class="jn"><b>Joshua:</b> I’ve assumed Hounslow and the towns around it. Tell me your real patch and I’ll set the checker to match. Naming the places also helps you turn up when someone searches “loft conversion Isleworth” or “boiler repair Feltham”.</p>
+  </div>
+</section>
+
+<section class="jhold sec pp" id="proof" aria-labelledby="proof-h">
+  <div class="wrap">
+    <h2 class="d h2" id="proof-h">Recent work</h2>
+    <div class="shots">
+      <figure class="shot"><svg class="sc-line" viewBox="384 250 316 237" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#hs"/></svg><figcaption><b>Your photo here</b>A finished kitchen extension</figcaption></figure>
+      <figure class="shot"><svg class="sc-line" viewBox="232 92 304 228" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#hs"/></svg><figcaption><b>Your photo here</b>A loft conversion</figcaption></figure>
+      <figure class="shot"><svg class="sc-line" viewBox="356 366 164 123" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><use href="#hs"/></svg><figcaption><b>Your photo here</b>A boiler, with the pipework on show</figcaption></figure>
+    </div>
+    <p class="jn"><b>Joshua:</b> these three are drawings standing in for your photos. Six to ten pictures off your phone is plenty for the whole site: a finished kitchen, a loft, a boiler with neat pipework. Before and after from the same spot works best. Press “Customer view” at the top and this whole section hides until your photos and reviews are in.</p>
+    <div class="sub">
+      <h2 class="d h2">What customers say</h2>
+      <div class="revs">
+        <div class="rev"><i aria-hidden="true">“</i><span>A real review goes here, with the customer’s name and town.</span></div>
+        <div class="rev"><i aria-hidden="true">“</i><span>And another.</span></div>
+        <div class="rev"><i aria-hidden="true">“</i><span>And a third.</span></div>
+      </div>
+      <p class="jn"><b>Joshua:</b> empty on purpose. I won’t put a review on your site that a real customer didn’t write. I did find four on a directory called Builder U, but I couldn’t tell who wrote them, so I’ve left them off. Send me real ones (screenshots of texts are fine) and they go here.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="price" aria-labelledby="price-h">
+  <div class="wrap">
+    <h2 class="d h2" id="price-h">Tell us about the job</h2>
+    <p class="lede">Four quick answers and your message is written for you. Send it by WhatsApp or email and we’ll come back with a time to visit.</p>
+    <div class="brief">
+      <form id="bf" novalidate>
+        <div class="fld"><b id="bf-jl">What is it?</b>
+          <div class="tabs" role="group" aria-labelledby="bf-jl" id="bf-jobs">
+            <button type="button" class="tab" aria-pressed="false">Extension</button>
+            <button type="button" class="tab" aria-pressed="false">Loft conversion</button>
+            <button type="button" class="tab" aria-pressed="false">Kitchen</button>
+            <button type="button" class="tab" aria-pressed="false">Bathroom</button>
+            <button type="button" class="tab" aria-pressed="false">Refurbishment</button>
+            <button type="button" class="tab" aria-pressed="false">Boiler or heating</button>
+            <button type="button" class="tab" aria-pressed="false">Electrical work</button>
+            <button type="button" class="tab" aria-pressed="false">Landlord certificates</button>
+          </div>
+        </div>
+        <div class="fld"><div class="row">
+          <div><label for="bf-pc">Postcode</label><input id="bf-pc" type="text" autocomplete="postal-code" maxlength="8" autocapitalize="characters" spellcheck="false"></div>
+          <div><label for="bf-when">When?</label><select id="bf-when"><option value="">Choose</option><option>As soon as possible</option><option>In the next three months</option><option>Later this year</option><option>Just pricing it up for now</option></select></div>
+        </div></div>
+        <div class="fld"><label for="bf-more">Anything we should know?</label><textarea id="bf-more" maxlength="400" placeholder="Rough size, what’s there now, anything that worries you"></textarea></div>
+        <div class="fld"><label for="bf-name">Your name</label><input id="bf-name" type="text" autocomplete="name" maxlength="60"></div>
+      </form>
+      <div class="msg dark">
+        <h3>Your message</h3>
+        <pre id="bf-out" aria-live="polite"></pre>
+        <div class="acts">
+          <a class="btn btn-wa" id="bf-wa" href="https://wa.me/447402420702" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>Send on WhatsApp</a>
+          <a class="btn btn-line" id="bf-em" href="mailto:spsgasservice@yahoo.com">Send by email</a>
+        </div>
+      </div>
+    </div>
+    <p class="jn"><b>Joshua:</b> try it. The green button opens WhatsApp with the message already written to 07402 420702, so every enquiry arrives with the job, the postcode and the timing. It really does message you, so maybe don’t press send on your own phone. I’ve assumed that number is on WhatsApp.</p>
+  </div>
+</section>
+
+<section class="jsec" id="yours" aria-labelledby="yours-h">
+  <div class="wrap">
+    <p class="from">From Joshua at NextThread</p>
+    <h2 class="d h2" id="yours-h">Swraj, this is yours if you want it.</h2>
+    <p class="lede">I build websites for tradespeople, and I made this one for SPS Design &amp; Build before asking you for a penny. I made two versions. This is the full one, and there is <a href="/p/sps-design-and-build/simple/"><b>a simpler one here</b></a>. Tell me which is more you and that’s the one I finish.</p>
+    <div class="serps">
+      <div class="serp"><h3>Search your name today</h3>
+        <div class="sr"><i>Companies House</i><b>SPS DESIGN &amp; BUILD LTD overview</b><span>Filing history, accounts and officers. No phone number.</span></div>
+        <div class="sr"><i>Company-data sites</i><b>SPS Design &amp; Build Ltd: company profile</b><span>The same public records, copied.</span></div>
+        <div class="sr"><i>A builders’ directory</i><b>Find builders in Hounslow, London</b><span>A list of other builders.</span></div>
+        <p class="v">Nothing of yours. Someone who is given your name finds your filing dates and a list of your competitors.</p>
+      </div>
+      <div class="serp good"><h3>With a site of your own</h3>
+        <div class="sr"><i>Your own web address</i><b>SPS Design &amp; Build | Extensions, lofts, gas and electrics in Hounslow</b><span>One firm from first drawing to final certificate. NICEIC registered. Call or WhatsApp 07402 420702.</span></div>
+        <p class="v">Your name, your number and ten years of work, at the top.</p>
+      </div>
+    </div>
+    <p class="say">I searched for “SPS Design &amp; Build Hounslow” tonight, and the first list is what came back. You have been trading since 2016, you are on the NICEIC register, and you can do what most builders can’t. None of that shows. This puts it in front of people on the phone they are already holding.</p>
+    <div class="two">
+      <div><h3>What it costs</h3>
+        <ul>
+          <li>£595 one-off, with your own web address and the first year’s hosting included</li>
+          <li>Live within a week of you saying yes</li>
+          <li>You pay once you have seen it finished</li>
+          <li>No monthly fees. From year two, hosting is £60 a year</li>
+          <li>Rather spread it? £79 a month instead, with no contract. The first month is paid before it goes live, and you can cancel any time</li>
+        </ul>
+      </div>
+      <div><h3>What I’d need from you</h3>
+        <ul>
+          <li>Which version you prefer, this one or the simple one</li>
+          <li>Your Gas Safe number</li>
+          <li>The jobs you actually do, and the area you cover</li>
+          <li>Your logo if you have one, and a few photos off your phone</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acts">
+      <a class="btn btn-wa" rel="noopener" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20I%27ve%20seen%20the%20website%20preview%20for%20SPS%20Design%20%26%20Build."><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp Joshua</a>
+    </div>
+    <p class="after">Or reply to my email, or ring me on <a href="tel:+447856075882"><b>07856 075882</b></a>. Want something changed first? Tell me and I’ll change it.</p>
+  </div>
+</section>
+
 </main>
-<footer class="ft"><div class="wrap"><span>&copy; 2026 SPS Design &amp; Build Ltd</span><span>Website preview by NextThread</span></div></footer>
 
-<div class="nt" role="complementary" aria-label="About this preview">
-  <svg class="mk" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F2C230"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#0F2A21" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  <div class="t"><b>Your free website preview</b><span>Made for SPS Design &amp; Build. £595, live in a week.</span></div>
-  <a href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20I%27ve%20seen%20the%20website%20preview%20for%20SPS%20Design%20%26%20Build."><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Like it?</a>
+<footer class="contact dark" id="contact">
+  <div class="wrap">
+    <h2 class="d h2">Ring us about your job</h2>
+    <p class="lede">Extensions, lofts, gas and electrics in Hounslow and West London. Ask for Swraj.</p>
+    <a class="tel" href="tel:+447402420702" aria-label="Call 07402 420702">07402 420702</a>
+    <dl class="lines">
+      <div><dt>WhatsApp</dt><dd><a href="https://wa.me/447402420702" rel="noopener">Message us</a></dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:spsgasservice@yahoo.com">spsgasservice@<wbr>yahoo.com</a></dd></div>
+      <div><dt>Based in</dt><dd>Hounslow, TW3</dd></div>
+    </dl>
+    <div class="acts">
+      <a class="btn btn-flame" href="tel:+447402420702"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tel"/></svg>Call now</a>
+      <a class="btn btn-line" href="/p/sps-design-and-build/sps-design-and-build.vcf">Save our number</a>
+      <button type="button" class="btn btn-line" id="b-share">Pass us on</button>
+    </div>
+    <p class="jn"><b>Joshua:</b> “Save our number” puts you in the customer’s contacts as their builder. “Pass us on” opens their phone’s share menu with a message already written, so recommending you to a neighbour takes two taps.</p>
+    <p class="legal">SPS Design &amp; Build Ltd. Registered in England and Wales, company number 10265979. Registered office: 163 Rochester Avenue, Feltham, TW13 4EH.</p>
+    <p class="jn"><b>Joshua:</b> a limited company’s website has to show its registered name, number and office. Yours are in, as they appear at Companies House.</p>
+    <p class="legal" style="margin-top:14px;border-top:0;padding-top:0">© 2026 SPS Design &amp; Build Ltd. Website preview by <a href="https://nextthreadautomation.co.uk/">NextThread</a>.</p>
+  </div>
+</footer>
+
+<div class="cb" id="cb">
+  <a class="btn btn-copper" href="tel:+447402420702"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tel"/></svg>Call</a>
+  <a class="btn btn-wa" href="https://wa.me/447402420702" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
 </div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="/p/assets/preview.js?v=021aeb90" defer></script>
+<script>
+(function(){
+'use strict';
+var D=document,H=D.documentElement;
+function $(s,r){return (r||D).querySelector(s)}
+function $$(s,r){return [].slice.call((r||D).querySelectorAll(s))}
+var RM=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches);
+var TEL='07402 420702',WA='https://wa.me/447402420702',MAIL='spsgasservice@yahoo.com';
+var MONTHS=['January','February','March','April','May','June','July','August','September','October','November','December'];
+function pad(n){return n<10?'0'+n:''+n}
+function press(btns,on){btns.forEach(function(b){b.setAttribute('aria-pressed',b===on?'true':'false')})}
+
+/* ---- customer view ---- */
+var cv=$('#cv');
+if(cv)cv.addEventListener('click',function(){
+  var on=H.classList.toggle('cust');
+  cv.setAttribute('aria-pressed',on?'true':'false');
+  cv.textContent=on?'Back to preview':'Customer view';
+});
+
+/* ---- the house: drag between drawing and build ---- */
+var sc=$('#scene'),knob=$('#knob');
+if(sc&&knob){
+  var p=RM?.44:.94,raf=0,touched=false,drag=null;
+  var setP=function(v){
+    p=Math.max(.03,Math.min(.97,v));
+    sc.style.setProperty('--p',p.toFixed(4));
+    var W=sc.clientWidth||600;
+    sc.classList.toggle('nd',p*W<98);
+    sc.classList.toggle('nb',(1-p)*W<88);
+    sc.classList.toggle('ntb',p*W-88<.275*W);
+    var pct=Math.round(p*100);
+    knob.setAttribute('aria-valuenow',pct);
+    knob.setAttribute('aria-valuetext',pct<=8?'All built':pct>=92?'All drawing':(100-pct)+' percent built');
+  };
+  var glide=function(to,ms){
+    cancelAnimationFrame(raf);
+    if(RM){setP(to);return}
+    var from=p,t0=0;ms=ms||560;
+    raf=requestAnimationFrame(function step(t){
+      if(!t0)t0=t;
+      var k=Math.min(1,(t-t0)/ms),e=1-Math.pow(1-k,3);
+      setP(from+(to-from)*e);
+      if(k<1)raf=requestAnimationFrame(step);
+    });
+  };
+  var fromX=function(x){var r=sc.getBoundingClientRect();return (x-r.left)/r.width};
+  var atX=function(vx){var svg=$('.sc-in svg',sc),r=svg.getBoundingClientRect(),s=sc.getBoundingClientRect();return (r.left-s.left+vx/960*r.width)/s.width};
+  setP(p);
+  sc.addEventListener('pointerdown',function(e){
+    if(e.button)return;
+    touched=true;cancelAnimationFrame(raf);
+    drag={id:e.pointerId,x:e.clientX,moved:false,onKnob:e.target===knob};
+    try{sc.setPointerCapture(e.pointerId)}catch(_){}
+  });
+  sc.addEventListener('pointermove',function(e){
+    if(!drag||e.pointerId!==drag.id)return;
+    if(!drag.moved&&Math.abs(e.clientX-drag.x)>4)drag.moved=true;
+    if(drag.moved)setP(fromX(e.clientX));
+  });
+  var end=function(e){
+    if(!drag||e.pointerId!==drag.id)return;
+    if(!drag.moved&&!drag.onKnob&&e.type==='pointerup')glide(fromX(e.clientX),380);
+    drag=null;
+  };
+  sc.addEventListener('pointerup',end);
+  sc.addEventListener('pointercancel',end);
+  knob.addEventListener('keydown',function(e){
+    var k=e.key,v=null;
+    if(k==='ArrowLeft'||k==='ArrowDown')v=p-.05;
+    else if(k==='ArrowRight'||k==='ArrowUp')v=p+.05;
+    else if(k==='Home')v=.03;
+    else if(k==='End')v=.97;
+    if(v!==null){e.preventDefault();touched=true;cancelAnimationFrame(raf);setP(v)}
+  });
+  knob.addEventListener('click',function(e){e.preventDefault()});
+  /* one opening move: the drawing becomes the build */
+  if(!RM){
+    var intro=function(){if(!touched)glide(.44,1500)};
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(en){if(en[0].isIntersecting){io.disconnect();setTimeout(intro,700)}},{threshold:.45});
+      io.observe(sc);
+    }else setTimeout(intro,700);
+  }
+
+  /* find a part of the job in the house */
+  var PARTS={
+    loft:{x:240,t:'Loft conversions',d:'Dormer and rooflight lofts, with the stairs, insulation, wiring and radiators all part of the same job.'},
+    ext:{x:498,t:'Rear and side extensions',d:'From the footings to the roof lantern. Steel beams are sized by a structural engineer and inspected by building control before they are covered up.'},
+    kit:{x:364,t:'Kitchens',d:'Units and worktops fitted, with the gas hob, the extractor and every socket connected and certified by us.'},
+    bath:{x:364,t:'Bathrooms',d:'Stripped out, re-plumbed, tiled and finished. The electrics too, which have their own rules in a bathroom.'},
+    gas:{x:150,t:'Gas and heating',d:'We started as gas engineers in 2016. The copper lines are the gas supply, the boiler and every radiator: fitted by us and registered with Gas Safe.',m:'m-gas'},
+    elec:{x:36,t:'Electrics',d:'The yellow lines are the wiring, from the fuse board to every light and out to the car charger. Tested and certified through NICEIC.',m:'m-elec'},
+    ev:{x:36,t:'Car chargers',d:'A charger on the drive, on its own circuit from the fuse board, with the certificate to go with it.'}
+  };
+  var chips=$$('.chip'),cap=$('#cap'),cap0=cap.innerHTML;
+  chips.forEach(function(c){c.addEventListener('click',function(){
+    var k=c.getAttribute('data-k'),on=c.getAttribute('aria-pressed')!=='true',P=PARTS[k];
+    press(chips,on?c:null);
+    $$('.hl',sc).forEach(function(h){h.classList.remove('on')});
+    sc.classList.remove('m-gas','m-elec');
+    touched=true;
+    if(!on){cap.innerHTML=cap0;return}
+    $$('#hl-'+k+',#hl-'+k+'2',sc).forEach(function(h){h.classList.add('on')});
+    if(P.m)sc.classList.add(P.m);
+    cap.innerHTML='<b>'+P.t+'</b>'+P.d;
+    glide(Math.max(.05,Math.min(.9,atX(P.x))),620);
+  })});
+}
+
+/* ---- paperwork tabs ---- */
+var ptabs=$$('#papers [role=tab]');
+function showTab(t,focus){
+  ptabs.forEach(function(b){
+    var on=b===t;
+    b.setAttribute('aria-selected',on?'true':'false');
+    b.tabIndex=on?0:-1;
+    var pn=D.getElementById(b.getAttribute('aria-controls'));if(pn)pn.hidden=!on;
+  });
+  if(focus)t.focus();
+}
+ptabs.forEach(function(t,i){
+  t.addEventListener('click',function(){showTab(t)});
+  t.addEventListener('keydown',function(e){
+    var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:e.key==='Home'?0:e.key==='End'?ptabs.length-1:null;
+    if(n===null)return;e.preventDefault();showTab(ptabs[(n+ptabs.length)%ptabs.length],true);
+  });
+});
+
+/* ---- planning: the national permitted development limits ---- */
+var plan=$('#plan');
+if(plan){
+  var job='ext',home='semi',pm=$('#pl-m'),pmo=$('#pl-mo'),pa=$('#pl-a'),pwa=$('#pl-wa'),pdepth=$('#pl-depth');
+  var jobB=$$('[data-job]',plan),homeB=$$('[data-home]',plan);
+  var NAME={semi:'semi-detached',terr:'terraced',det:'detached',flat:'flat or maisonette'};
+  var fmt=function(v){return (v%1?v.toFixed(1):v)+' m'};
+  var render=function(){
+    var d=parseFloat(pm.value),cls,b,s,ask;
+    pmo.textContent=fmt(d);
+    pdepth.hidden=job!=='ext';
+    if(home==='flat'){
+      cls='no';b='Yes, it will.';
+      s='Flats and maisonettes have no permitted development rights, so any extension or loft conversion needs a planning application.';
+    }else if(job==='loft'){
+      cls='ok';b='Probably not.';
+      s='A loft conversion is normally allowed without a planning application if it adds no more than '+(home==='terr'?40:50)+' cubic metres, goes no higher than the roof you have now, and any dormer is at the back of the house.';
+    }else{
+      var lim=home==='det'?4:3;
+      if(d<=lim){cls='ok';b='Probably not.';s='A single-storey rear extension of up to '+lim+' m is normally allowed on a '+NAME[home]+' house without a planning application.'}
+      else if(d<=lim*2){cls='mid';b='Not a full application, but the council must be told first.';s='Between '+lim+' and '+(lim*2)+' m goes through “prior approval”. The council writes to your neighbours and has 42 days to object. It needs drawings and a form, which is far less than a planning application.'}
+      else{cls='no';b='Yes, it will.';s='More than '+(lim*2)+' m out from the back of a '+NAME[home]+' house needs a full planning application.'}
+    }
+    pa.className='ans '+cls;
+    pa.firstElementChild.textContent=b;pa.lastElementChild.textContent=s;
+    ask='Hi, could you check whether I would need planning permission for a '+(job==='loft'?'loft conversion':'rear extension of about '+fmt(d))+' ('+NAME[home]+')? My address is: ';
+    pwa.href=WA+'?text='+encodeURIComponent(ask);
+  };
+  jobB.forEach(function(b){b.addEventListener('click',function(){job=b.getAttribute('data-job');press(jobB,b);render()})});
+  homeB.forEach(function(b){b.addEventListener('click',function(){home=b.getAttribute('data-home');press(homeB,b);render()})});
+  pm.addEventListener('input',render);
+  render();
+}
+
+/* ---- landlords: when is each certificate due ---- */
+(function(){
+  var now=new Date(),cy=now.getFullYear(),cm=now.getMonth();
+  function fill(msel,ysel,back){
+    var o='<option value="">Month</option>';
+    MONTHS.forEach(function(m,i){o+='<option value="'+i+'">'+m+'</option>'});
+    msel.innerHTML=o;
+    o='<option value="">Year</option>';
+    for(var y=cy;y>=cy-back;y--)o+='<option>'+y+'</option>';
+    ysel.innerHTML=o;
+  }
+  function wire(pre,months,back,file,lastY,what){
+    var ms=$('#'+pre+'-m'),ys=$('#'+pre+'-y'),out=$('#'+pre+'-out');
+    if(!ms||!ys||!out)return;
+    fill(ms,ys,back);
+    var go=function(){
+      out.className='due';
+      if(ms.value===''||ys.value===''){out.textContent='Pick the month it was last done.';return}
+      var m=+ms.value,y=+ys.value;
+      if(y>cy||(y===cy&&m>cm)){out.textContent='That date is in the future. Check the certificate.';return}
+      var t=y*12+m+months,dy=Math.floor(t/12),dm=t%12,cur=cy*12+cm,when=MONTHS[dm]+' '+dy;
+      if(t<cur){out.className='due late';out.innerHTML='It was due in '+when+', so it is overdue. Ring us on <a href="tel:+447402420702">'+TEL+'</a> and we will book it in.';return}
+      var h=(t===cur?'It is due this month.':'The next '+what+' is due in '+when+'.');
+      if(dy<=lastY)h+=' <a href="/p/sps-design-and-build/'+file+'-'+dy+'-'+pad(dm+1)+'.ics">Add a reminder to my calendar</a>';
+      out.innerHTML=h;
+    };
+    ms.addEventListener('change',go);ys.addEventListener('change',go);
+  }
+  wire('g',12,2,'gas',2028,'gas safety check');
+  wire('e',60,7,'eicr',2032,'electrical report');
+})();
+
+/* ---- how far is this postcode from Hounslow ---- */
+(function(){
+  var f=$('#pc-f'),inp=$('#pc-i'),out=$('#pc-o');
+  if(!f)return;
+  var O={"TW3":[51.4683,-0.364],"TW4":[51.4655,-0.388],"TW7":[51.4729,-0.336],"TW5":[51.4825,-0.3863],"TW2":[51.4464,-0.3543],"TW1":[51.451,-0.3254],"UB2":[51.4997,-0.3789],"TW13":[51.439,-0.4019],"TW14":[51.4534,-0.4216],"TW8":[51.4874,-0.3051],"TW10":[51.4477,-0.303],"TW9":[51.4696,-0.2924],"TW12":[51.423,-0.3697],"TW11":[51.4263,-0.3318],"W7":[51.5119,-0.336],"UB1":[51.5154,-0.3735],"W13":[51.513,-0.3212],"UB3":[51.5052,-0.4244],"TW6":[51.4708,-0.4487],"W5":[51.5134,-0.3022],"SW14":[51.4654,-0.267],"TW16":[51.4157,-0.4169],"UB4":[51.526,-0.4086],"W4":[51.4912,-0.2641],"KT8":[51.4015,-0.3629],"KT2":[51.419,-0.2905],"UB11":[51.5115,-0.4472],"TW15":[51.4312,-0.4587],"UB6":[51.5392,-0.3403],"KT1":[51.4076,-0.2983],"W3":[51.5111,-0.2675],"UB7":[51.5044,-0.4692],"UB5":[51.5431,-0.3765],"SW13":[51.4763,-0.2433],"KT7":[51.388,-0.334],"TW19":[51.4543,-0.4984],"SW15":[51.457,-0.2286],"W12":[51.5084,-0.2396],"TW17":[51.3982,-0.4478],"W6":[51.4926,-0.2284],"KT6":[51.3874,-0.3028],"HA0":[51.551,-0.3053],"KT5":[51.3905,-0.2868],"KT12":[51.3773,-0.4084],"KT3":[51.3997,-0.2576],"UB8":[51.5351,-0.4736],"TW18":[51.4278,-0.5043],"UB10":[51.5493,-0.4521],"KT10":[51.3694,-0.3543],"W14":[51.4947,-0.2102],"SW6":[51.4765,-0.2009],"NW10":[51.5412,-0.2482],"SW20":[51.4108,-0.2279],"W11":[51.5123,-0.2153],"HA9":[51.5606,-0.2851],"HA2":[51.5737,-0.3614],"HA4":[51.5703,-0.4107],"W10":[51.5232,-0.2166],"SW18":[51.4515,-0.1914],"SW19":[51.4242,-0.2028],"SW5":[51.4916,-0.1919],"W8":[51.5012,-0.1943],"KT9":[51.3638,-0.3033],"SL0":[51.526,-0.517],"HA1":[51.5803,-0.3386],"KT13":[51.3682,-0.4491],"SW10":[51.4837,-0.1828],"KT4":[51.3784,-0.2431],"SW7":[51.4963,-0.177],"SL3":[51.4987,-0.5513],"W9":[51.5249,-0.1926],"W2":[51.5152,-0.1852],"TW20":[51.4275,-0.553],"SW3":[51.4894,-0.1659],"SW11":[51.4688,-0.1628],"NW2":[51.5583,-0.2201],"SM4":[51.393,-0.1997],"HA5":[51.595,-0.3863],"NW6":[51.5422,-0.1962],"HA3":[51.5938,-0.3209],"KT16":[51.382,-0.5176],"KT19":[51.3527,-0.2708],"SW17":[51.4311,-0.1653],"KT15":[51.3637,-0.4959],"SM3":[51.3713,-0.2162],"NW8":[51.5323,-0.1743],"SW12":[51.4463,-0.1491],"NW9":[51.5882,-0.2547],"KT11":[51.3283,-0.4026]};
+  var HOME=[51.4683,-0.364];
+  function miles(a,b){var R=3958.8,r=Math.PI/180,dl=(b[0]-a[0])*r,dn=(b[1]-a[1])*r,x=Math.sin(dl/2)*Math.sin(dl/2)+Math.cos(a[0]*r)*Math.cos(b[0]*r)*Math.sin(dn/2)*Math.sin(dn/2);return 2*R*Math.asin(Math.sqrt(x))}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=inp.value.toUpperCase().replace(/[^A-Z0-9]/g,''),oc='';
+    if(v.length>=5&&/\d[A-Z]{2}$/.test(v))oc=v.slice(0,v.length-3);else oc=v;
+    if(!/^[A-Z]{1,2}\d[A-Z\d]?$/.test(oc)){out.textContent='That doesn’t look like a postcode. The first half is enough, like TW13.';return}
+    var c=O[oc];
+    if(!c){out.textContent=oc+' is outside our usual patch in West London. For an extension or a loft, ring us anyway on '+TEL+'.';return}
+    var mi=miles(HOME,c),n=Math.round(mi),far=mi<.8?'under a mile':'about '+n+(n===1?' mile':' miles');
+    if(mi<=6.5)out.textContent='Yes, we work in '+oc+'. It is '+far+' from us in Hounslow.';
+    else if(mi<=11)out.textContent='Yes, for most jobs. '+oc+' is '+far+' from us in Hounslow.';
+    else out.textContent=oc+' is '+far+' from us. For an extension or a loft we will travel, so ring us on '+TEL+'.';
+  });
+})();
+
+/* ---- the message writes itself ---- */
+(function(){
+  var f=$('#bf');if(!f)return;
+  var jobs=$$('#bf-jobs .tab'),job='',pc=$('#bf-pc'),when=$('#bf-when'),more=$('#bf-more'),nm=$('#bf-name'),out=$('#bf-out'),wa=$('#bf-wa'),em=$('#bf-em');
+  function clean(s){return s.replace(/\s+/g,' ').replace(/^ | $/g,'')}
+  function make(){
+    var P=clean(pc.value).toUpperCase(),M=clean(more.value),N=clean(nm.value),W=when.value;
+    var a=job?(job==='Landlord certificates'?'landlord certificates':job==='Electrical work'?'some electrical work':job==='Boiler or heating'?'boiler or heating work':'a '+job.toLowerCase()):'';
+    var msg=(a?'Hi, I’d like a price for '+a:'Hi, I’d like to talk to you about some work')+(P?' in '+P:'')+'.';
+    if(W)msg+='\nTiming: '+W.charAt(0).toLowerCase()+W.slice(1)+'.';
+    if(M)msg+='\n'+M;
+    if(N)msg+='\n'+N;
+    out.textContent=msg;
+    wa.href=WA+'?text='+encodeURIComponent(msg);
+    em.href='mailto:'+MAIL+'?subject='+encodeURIComponent('Enquiry: '+(job||'building work')+(P?' ('+P+')':''))+'&body='+encodeURIComponent(msg);
+  }
+  jobs.forEach(function(b){b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';job=on?b.textContent:'';press(jobs,on?b:null);make()})});
+  [pc,when,more,nm].forEach(function(el){el.addEventListener('input',make);el.addEventListener('change',make)});
+  f.addEventListener('submit',function(e){e.preventDefault()});
+  make();
+})();
+
+/* ---- pass us on ---- */
+var sh=$('#b-share');
+if(sh)sh.addEventListener('click',function(){
+  var url=location.href.split('#')[0],text='SPS Design & Build: extensions, lofts, gas and electrics in West London. '+TEL;
+  if(navigator.share){navigator.share({title:'SPS Design & Build',text:text,url:url}).catch(function(){});return}
+  var done=function(){var t=sh.textContent;sh.textContent='Copied, ready to paste';setTimeout(function(){sh.textContent=t},2200)};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(text+' '+url).then(done,function(){});
+});
+
+/* ---- phone bar: appears once the first buttons have scrolled away ---- */
+var cb=$('#cb'),ha=$('#hero-acts'),ft=$('#contact');
+if(cb&&ha){
+  var tick=0,upd=function(){tick=0;var past=ha.getBoundingClientRect().bottom<0,foot=ft&&ft.getBoundingClientRect().top<innerHeight-90;cb.classList.toggle('on',past&&!foot)};
+  var ask=function(){if(!tick)tick=requestAnimationFrame(upd)};
+  addEventListener('scroll',ask,{passive:true});addEventListener('resize',ask);upd();
+}
+})();
+</script>
 </body>
 </html>

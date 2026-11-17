@@ -1,0 +1,589 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SPS Design &amp; Build | Builders, gas and electrics in Hounslow</title>
+<meta name="description" content="SPS Design &amp; Build Ltd: extensions, lofts, gas and electrics in Hounslow and West London. NICEIC registered. Call 07402 420702.">
+<!-- a preview for one business, not a live site: kept out of search engines -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="color-scheme" content="only light">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#0E3A8A">
+<meta property="og:title" content="SPS Design &amp; Build: your website preview">
+<meta property="og:description" content="A preview of a website for SPS Design &amp; Build Ltd, made by NextThread.">
+<meta property="og:image" content="https://nextthreadautomation.co.uk/og.png">
+<link rel="icon" href="/p/sps-design-and-build/icon-192.png">
+<link rel="apple-touch-icon" href="/p/sps-design-and-build/icon-192.png">
+<link rel="preload" href="/p/sps-design-and-build/sofia.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/p/sps-design-and-build/sofia-cond.woff" as="font" type="font/woff" crossorigin>
+<script>document.documentElement.className += " js";</script>
+<style>
+@font-face{font-family:"Sofia SPS";src:url("/p/sps-design-and-build/sofia.woff") format("woff");font-weight:400 800;font-style:normal;font-display:swap}
+@font-face{font-family:"Sofia Cond SPS";src:url("/p/sps-design-and-build/sofia-cond.woff") format("woff");font-weight:500 900;font-style:normal;font-display:swap}
+
+:root{
+  --blue:#0E3A8A;      /* drawing-office blue: the "design" half */
+  --blue-d:#0A2C6B;
+  --navy:#0A1B3D;      /* ink */
+  --body:#27344D;
+  --mid:#55627A;
+  --paper:#F4F6FA;     /* drafting film, cool not cream */
+  --rule:#CCD5E3;
+  --copper:#B8561C;    /* pipe and cable: the thing all three trades share */
+  --copper-l:#F2A065;
+  --green:#0F7A3D;
+  --note:#FFF3B8;--note-b:#E0B400;
+  --sans:"Sofia SPS","Helvetica Neue",Arial,sans-serif;
+  --cond:"Sofia Cond SPS","Arial Narrow","Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+[hidden]{display:none!important}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-padding-top:84px;scroll-behavior:smooth}
+body{margin:0;background:#fff;color:var(--body);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3,p,ul,ol,dl,dd,figure{margin:0}
+h1,h2{text-wrap:balance}
+p,li{text-wrap:pretty}
+ul,ol{padding:0;list-style:none}
+:focus-visible{outline:3px solid var(--copper);outline-offset:3px;border-radius:3px}
+.dark :focus-visible,.pv :focus-visible{outline-color:#fff}
+.wrap{width:min(100% - 36px,1200px);margin-inline:auto}
+.d{font-family:var(--cond);font-weight:800;color:var(--navy);letter-spacing:-.005em}
+.h2{font-size:clamp(31px,4.300vw,46px);line-height:1.02}
+.lede{font-size:clamp(18px,1.900vw,20px);line-height:1.55;max-width:38em;margin-top:14px}
+.fine{font-size:15px;line-height:1.5;color:var(--mid)}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:52px;padding:11px 20px;border:2px solid transparent;border-radius:6px;font-weight:700;font-size:17px;line-height:1.15;text-decoration:none;cursor:pointer;text-align:center}
+.btn svg{width:21px;height:21px;flex:none}
+.btn-flame{background:var(--copper-l);color:var(--navy)}
+.btn-flame:hover{background:#FFB57F}
+.btn-copper{background:var(--copper);color:#fff}
+.btn-copper:hover{background:#9C4612}
+.btn-wa{background:var(--green);color:#fff}
+.btn-wa:hover{background:#0B6431}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{background:#16306A}
+.btn-line{background:transparent;border-color:currentColor;color:var(--navy)}
+.btn-line:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+.dark .btn-line{color:#fff}
+.dark .btn-line:hover{background:#fff;border-color:#fff;color:var(--navy)}
+.acts{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+
+/* the preview bar and Joshua's notes: not part of the site itself */
+.pv{background:#000;color:#fff;font-size:13px;line-height:1.3}
+.pv .wrap{display:flex;align-items:center;gap:10px;min-height:54px;padding-block:7px}
+.pv .mk{width:24px;height:24px;flex:none}
+.pv .mine,.pv .back{flex:1;min-width:0;color:#C9CDCF}
+.pv b{display:block;color:#fff;font-size:14px}
+.pv .back{display:none}
+.pv .ver{display:flex;flex:none;border:2px solid #fff;border-radius:8px;overflow:hidden}
+.pv .ver a,.pv .ver span{display:flex;align-items:center;min-height:44px;padding:4px 11px;font-weight:700;text-decoration:none;color:#fff}
+.pv .ver span{background:#fff;color:#000}
+.pv .ver a:hover{background:#333}
+.pv button{flex:none;min-height:44px;padding:6px 11px;border:2px solid #fff;border-radius:8px;background:transparent;color:#fff;font-weight:700;font-size:13px;cursor:pointer}
+.pv button:hover{background:#fff;color:#000}
+.jn{margin-top:22px;background:var(--note);border-left:5px solid var(--note-b);padding:13px 16px;font-size:15px;line-height:1.5;color:#2B2500;max-width:46em;border-radius:0 8px 8px 0}
+.jn b{color:#000}
+.jn a{font-weight:700}
+.cust .jn,.cust .jsec,.cust .jhold,.cust .pv .mine,.cust .pv .ver{display:none}
+.cust .pv .back{display:block}
+.facts .cvw,.b-facts .cvw{display:none}
+.cust .facts .cvw,.cust .b-facts .cvw{display:block}
+.cust .facts .pvw,.cust .b-facts .pvw{display:none}
+
+/* header */
+.hd{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--rule)}
+.hd-in{display:flex;align-items:center;gap:22px;min-height:66px}
+.brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--navy);margin-right:auto;min-height:44px}
+.brand svg{width:38px;height:38px;flex:none}
+.brand span{font:800 22px/1 var(--cond);letter-spacing:.005em;white-space:nowrap}
+.brand small{display:block;font:500 13px/1.2 var(--sans);color:var(--mid);letter-spacing:0;margin-top:3px}
+.nav{display:flex;gap:22px;font-size:16px;font-weight:600}
+.nav a{text-decoration:none;color:var(--navy);padding-block:10px;border-bottom:2px solid transparent}
+.nav a:hover{border-bottom-color:var(--copper)}
+.hd .btn{min-height:46px;padding:8px 16px;font-size:16px}
+.hd .btn .short{display:none}
+
+/* Joshua's own section */
+.jsec{background:#FFFBE6;border-top:6px solid var(--note-b);padding-block:clamp(52px,7vw,88px)}
+.jsec .from{font-weight:700;color:#5C4A00;font-size:16px;margin-bottom:8px}
+.serps{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.serp{background:#fff;border:1px solid #E3D9A8;border-radius:10px;padding:18px 20px 16px}
+.serp h3{font:700 16px/1.3 var(--sans);color:var(--navy);margin-bottom:12px}
+.sr{padding-block:9px;border-top:1px solid #EEE7C6}
+.sr i{display:block;font-style:normal;font-size:13px;color:var(--mid)}
+.sr b{display:block;color:#1A3FB0;font-weight:600;font-size:16px;line-height:1.3}
+.sr span{display:block;font-size:14px;line-height:1.4;color:var(--body)}
+.serp .v{margin-top:12px;font-weight:700;color:#7A1F12;font-size:15px;line-height:1.4}
+.serp.good{border:2px solid var(--green)}
+.serp.good .v{color:var(--green)}
+.say{margin-top:24px;max-width:44em}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:26px 44px;margin-top:30px}
+.two h3{font:800 24px/1.1 var(--cond);color:var(--navy);margin-bottom:10px}
+.two li{position:relative;padding-left:22px;margin-top:8px;line-height:1.5}
+.two li::before{content:"";position:absolute;left:0;top:.62em;width:10px;height:2px;background:var(--copper)}
+.jsec .after{margin-top:16px;max-width:44em}
+
+/* contact band */
+.contact{background:var(--navy);color:#DDE4F1;padding-block:clamp(52px,7vw,88px) 34px}
+.contact .h2{color:#fff}
+.contact .lede{color:#DDE4F1}
+.contact .tel{display:inline-block;margin-top:18px;font:800 clamp(46px,9vw,84px)/1 var(--cond);color:#fff;text-decoration:none;letter-spacing:.01em}
+.contact .tel:hover{color:var(--copper-l)}
+.lines{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:16px 48px;margin-top:26px}
+.lines dt{font-size:14px;color:#9FB0CF}
+.lines dd{font-weight:600;color:#fff}
+.lines a{text-decoration-color:var(--copper-l);text-underline-offset:.2em}
+.legal{margin-top:38px;padding-top:20px;border-top:1px solid #2A3D66;font-size:14px;line-height:1.5;color:#9FB0CF;max-width:60em}
+.legal + .jn{margin-top:14px}
+.legal a{color:#C5D1E8}
+
+/* phone bar */
+.cb{position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--rule);box-shadow:0 -6px 20px rgba(10,27,61,.12);transform:translateY(110%);visibility:hidden;transition:transform .25s ease,visibility 0s .25s}
+.cb.on{transform:none;visibility:visible;transition:transform .25s ease}
+.cb .btn{flex:1;min-height:50px;padding:8px 10px;font-size:16px}
+
+@media (max-width:1000px){
+  .nav{display:none}
+}
+@media (max-width:760px){
+  body{font-size:16.500px}
+  .wrap{width:min(100% - 32px,1200px)}
+  .serps,.two{grid-template-columns:minmax(0,1fr)}
+  .lines{grid-template-columns:minmax(0,1fr);gap:14px}
+  .pv span{display:none}
+  .pv .wrap{gap:8px}
+  .pv .ver a,.pv .ver span{padding:4px 9px}
+  .pv button{padding:6px 9px}
+  .hd-in{min-height:58px;gap:12px}
+  .brand svg{width:34px;height:34px}
+  .brand span{font-size:19px}
+  .brand small{font-size:12px}
+  .hd .btn .long{display:none}
+  .hd .btn .short{display:inline}
+  .cb{display:flex}
+  body{padding-bottom:0}
+  .contact{padding-bottom:96px}
+}
+@media (max-width:380px){
+  .pv .mk{display:none}
+  .pv b{font-size:13px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .cb{transition:none}
+}
+@media print{
+  .pv,.cb,.jn,.jsec{display:none}
+  .hd{position:static}
+}
+/* ---------- the house drawing: one set of shapes, three finishes ---------- */
+.sc-defs{position:absolute;width:0;height:0;overflow:hidden}
+#hs .earth{fill:var(--earth);stroke:none}
+#hs .hard{fill:var(--hard);stroke:var(--thin);stroke-width:var(--thin-w)}
+#hs .lawn{fill:var(--lawn);stroke:var(--thin);stroke-width:var(--thin-w)}
+#hs .gl0{stroke:var(--ground);stroke-width:2;fill:none}
+#hs .rm{fill:var(--rm);stroke:none}
+#hs .rm-c{fill:var(--rm-c)}
+#hs .rm-w{fill:var(--rm-w)}
+#hs .void{fill:var(--void)}
+#hs .f{opacity:var(--f-o)}
+#hs .f rect,#hs .f path{stroke:var(--thin);stroke-width:var(--thin-w);stroke-linejoin:round;stroke-linecap:round}
+#hs .f-sofa{fill:var(--sofa)}
+#hs .f-wood{fill:var(--wood)}
+#hs .f-dark{fill:var(--dark)}
+#hs .f-unit{fill:var(--unit)}
+#hs .f-top{fill:var(--top)}
+#hs .f-bed{fill:var(--bed)}
+#hs .f-pill{fill:var(--pill)}
+#hs .f-bath{fill:var(--bath)}
+#hs .f-mir{fill:var(--mir)}
+#hs .f-plant{fill:var(--plant)}
+#hs .f-ln{fill:none}
+#hs .f-leg{stroke-width:var(--leg-w)}
+#hs .kit rect,#hs .kit path{stroke-linejoin:round;stroke-linecap:round}
+#hs .rad{fill:var(--rad);stroke:var(--rad-s);stroke-width:var(--kit-w)}
+#hs .rail{fill:none}
+#hs .boil{fill:var(--boil);stroke:var(--kit-s);stroke-width:var(--kit-w)}
+#hs .flame{fill:var(--flame);stroke:none}
+#hs .cu{fill:var(--cu);stroke:var(--kit-s);stroke-width:var(--kit-w)}
+#hs .cu-l{fill:none;stroke:var(--cu-l);stroke-width:1.600}
+#hs .meter{fill:var(--boil);stroke:var(--kit-s);stroke-width:var(--kit-w)}
+#hs .evc{fill:var(--evc);stroke:var(--kit-s);stroke-width:var(--kit-w)}
+#hs .cut rect{fill:var(--cut);stroke:var(--cut-s);stroke-width:var(--cut-w)}
+#hs .beam{fill:var(--beam);stroke:var(--cut-s);stroke-width:var(--cut-w)}
+#hs .roof{fill:none;stroke:var(--roof);stroke-width:var(--roof-w);stroke-linejoin:miter;stroke-linecap:square}
+#hs .gl rect{fill:var(--glass);stroke:var(--glass-s);stroke-width:1.500}
+#hs .gl-l{fill:var(--glass-l);stroke:var(--glass-s);stroke-width:2.500;stroke-linejoin:round}
+#hs .gl-r{fill:none;stroke:var(--glass-r);stroke-width:var(--roof-w)}
+#hs .door{fill:none;stroke:var(--glass-s);stroke-width:1.500}
+#hs .gas{fill:none;stroke:var(--gas);stroke-width:var(--gas-w);stroke-dasharray:var(--gas-d);stroke-linejoin:round;opacity:var(--gas-o)}
+#hs .heat{fill:none;stroke:var(--gas);stroke-width:var(--heat-w);stroke-dasharray:var(--gas-d);stroke-linejoin:round;opacity:var(--gas-o)}
+#hs .elec{fill:none;stroke:var(--elec);stroke-width:var(--elec-w);stroke-dasharray:var(--elec-d);stroke-linejoin:round;opacity:var(--elec-o)}
+#hs .lamp path{fill:none;stroke:var(--thin);stroke-width:1.400}
+#hs .lamp circle,#hs .lamp rect{fill:var(--bulb);stroke:var(--thin);stroke-width:var(--thin-w)}
+#hs .out{opacity:var(--out-o)}
+#hs .car{fill:var(--car);stroke:var(--thin);stroke-width:var(--thin-w);stroke-linejoin:round}
+#hs .car-w{fill:var(--glass);stroke:var(--thin);stroke-width:var(--thin-w);stroke-linejoin:round}
+#hs .whl{fill:var(--whl);stroke:var(--thin);stroke-width:var(--thin-w)}
+#hs .hub{fill:var(--hub);stroke:none}
+#hs .lead{fill:none;stroke:var(--elec);stroke-width:2.200;stroke-linecap:round;stroke-dasharray:var(--elec-d)}
+#hs .trunk{fill:var(--wood);stroke:var(--thin);stroke-width:var(--thin-w)}
+#hs .tree{fill:var(--tree);stroke:var(--tree-s);stroke-width:var(--thin-w)}
+#hs .fence{fill:none;stroke:var(--fence);stroke-width:2.400;stroke-linecap:round}
+
+/* finish 1: the drawing, white line on blue */
+.sc-plan{--earth:url(#p-hatch);--hard:none;--lawn:none;--ground:#fff;--thin:rgba(255,255,255,.72);--thin-w:1.100;--leg-w:1.100;
+  --rm:transparent;--rm-c:transparent;--rm-w:transparent;--void:transparent;--f-o:1;
+  --sofa:none;--wood:none;--dark:none;--unit:none;--top:none;--bed:none;--pill:none;--bath:none;--mir:none;--plant:none;
+  --rad:none;--rad-s:rgba(255,255,255,.8);--kit-s:#fff;--kit-w:1.300;--boil:rgba(255,255,255,.14);--flame:none;--cu:rgba(255,255,255,.14);--cu-l:rgba(255,255,255,.7);--evc:rgba(255,255,255,.14);
+  --cut:rgba(255,255,255,.22);--cut-s:#fff;--cut-w:1.500;--beam:#fff;--roof:#fff;--roof-w:3;
+  --glass:#0E3A8A;--glass-s:#fff;--glass-l:none;--glass-r:#0E3A8A;
+  --gas:#fff;--gas-w:1.500;--heat-w:1.200;--gas-d:7 4;--gas-o:.85;--elec:#fff;--elec-w:1.200;--elec-d:1.500 4;--elec-o:.85;
+  --bulb:none;--out-o:1;--car:none;--whl:none;--hub:none;--tree:none;--tree-s:rgba(255,255,255,.72);--fence:rgba(255,255,255,.72)}
+.sc-plan .gl-r{stroke-dasharray:3 3;stroke:#fff}
+
+/* finish 2: the house as built */
+.sc-built{--earth:#33415F;--hard:#C9CED8;--lawn:#7DB37A;--ground:#1B2A4A;--thin:#1B2A4A;--thin-w:1.200;--leg-w:1.800;
+  --rm:#FBF1DD;--rm-c:#EAF0F8;--rm-w:#DDEFEC;--void:#3D4A66;--f-o:1;
+  --sofa:#3D62AE;--wood:#B98A5E;--dark:#1B2A4A;--unit:#2E4E96;--top:#F4F6FA;--bed:#FFFFFF;--pill:#C9D8F0;--bath:#FFFFFF;--mir:#CFE6FA;--plant:#4E9B5C;
+  --rad:#FFFFFF;--rad-s:#B8561C;--kit-s:#1B2A4A;--kit-w:1.300;--boil:#FFFFFF;--flame:#2F7BEA;--cu:#D9DEE8;--cu-l:#1B2A4A;--evc:#FFFFFF;
+  --cut:#1B2A4A;--cut-s:#1B2A4A;--cut-w:1;--beam:#C4672B;--roof:#A8543A;--roof-w:8;
+  --glass:#BFE0FA;--glass-s:#1B2A4A;--glass-l:rgba(191,224,250,.75);--glass-r:#BFE0FA;
+  --gas:#C4672B;--gas-w:3;--heat-w:2.200;--gas-d:none;--gas-o:1;--elec:#F2B500;--elec-w:2;--elec-d:none;--elec-o:1;
+  --bulb:#FFE08A;--out-o:1;--car:#F4F6FA;--whl:#1B2A4A;--hub:#C9CED8;--tree:#4E9B5C;--tree-s:#2F6B3F;--fence:#8A6B4A}
+
+/* finish 3: a quiet outline, for the simple page */
+.sc-line{--earth:none;--hard:none;--lawn:none;--ground:#0A1B3D;--thin:rgba(10,27,61,.55);--thin-w:1;--leg-w:1;
+  --rm:transparent;--rm-c:transparent;--rm-w:transparent;--void:transparent;--f-o:1;
+  --sofa:none;--wood:none;--dark:none;--unit:none;--top:none;--bed:none;--pill:none;--bath:none;--mir:none;--plant:none;
+  --rad:none;--rad-s:#B8561C;--kit-s:#0A1B3D;--kit-w:1.200;--boil:#fff;--flame:#B8561C;--cu:#fff;--cu-l:#0A1B3D;--evc:#fff;
+  --cut:#0A1B3D;--cut-s:#0A1B3D;--cut-w:.5;--beam:#B8561C;--roof:#0A1B3D;--roof-w:5;
+  --glass:#fff;--glass-s:#0A1B3D;--glass-l:none;--glass-r:#fff;
+  --gas:#B8561C;--gas-w:2.400;--heat-w:1.800;--gas-d:none;--gas-o:1;--elec:#0E3A8A;--elec-w:1.400;--elec-d:2 3;--elec-o:1;
+  --bulb:#fff;--out-o:1;--car:none;--whl:none;--hub:none;--tree:none;--tree-s:rgba(10,27,61,.55);--fence:rgba(10,27,61,.55)}
+/* ---------- the simple version: one page, mostly white ---------- */
+.hd{border-bottom:0}
+.b-hero{padding-block:clamp(32px,4.400vw,60px) 0}
+.b-hero h1{font:800 clamp(40px,6vw,80px)/1 var(--sans);letter-spacing:-.022em;color:var(--navy);max-width:13.500em}
+.b-hero .lede{margin-top:clamp(18px,2.400vw,28px);font-size:clamp(18px,2vw,22px);max-width:33em}
+.b-hero .acts{margin-top:clamp(24px,3vw,34px)}
+.b-fig{margin-top:clamp(28px,3.400vw,44px)}
+.b-fig svg{width:100%;height:auto;aspect-ratio:900/436}
+.b-fig figcaption{display:flex;flex-wrap:wrap;gap:8px 30px;margin-top:6px;padding-top:16px;border-top:2px solid var(--navy);font-size:16px;color:var(--body)}
+.b-fig figcaption span{display:inline-flex;align-items:center;gap:10px}
+.b-fig figcaption i{display:block;width:34px;height:0;border-top:3px solid var(--copper)}
+.b-fig figcaption i.w{border-top:2.500px dotted var(--blue)}
+.b-fig + .wrap .jn{margin-top:26px}
+.b-three{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:clamp(52px,8vw,104px)}
+.b-three div{padding:4px 34px 4px 0}
+.b-three div + div{padding-left:34px;border-left:1px solid var(--rule)}
+.b-three h2{font:800 clamp(26px,3vw,34px)/1.05 var(--sans);letter-spacing:-.015em;color:var(--navy)}
+.b-three p{margin-top:12px;font-size:18px;line-height:1.55}
+.b-facts{margin-top:clamp(52px,8vw,104px);border-block:1px solid var(--rule)}
+.b-facts ul{display:grid;grid-template-columns:repeat(4,1fr)}
+.b-facts li{padding:24px 22px 24px 0}
+.b-facts li + li{padding-left:22px;border-left:1px solid var(--rule)}
+.b-facts b{display:block;font:800 21px/1.15 var(--sans);letter-spacing:-.01em;color:var(--navy)}
+.b-facts span{display:block;font-size:15.500px;line-height:1.4;color:var(--mid);margin-top:4px}
+.b-facts span.slot,.slot{display:inline-block;margin-top:0;min-width:5.500em;border:1.500px dashed var(--copper);border-radius:4px;padding:0 7px;color:var(--copper);font-weight:600}
+.b-after{padding-bottom:clamp(52px,8vw,104px)}
+.contact .tel{font-family:var(--sans);letter-spacing:-.02em;font-size:clamp(44px,8.500vw,92px)}
+.contact .h2,.jsec .h2{font-family:var(--sans);letter-spacing:-.02em;font-size:clamp(30px,4vw,44px)}
+.two h3{font-family:var(--sans);font-size:21px;letter-spacing:-.01em}
+@media (max-width:760px){
+  .b-fig{margin-inline:0;width:100%;overflow:hidden}
+  .b-fig svg{width:150%;max-width:none;margin-left:-25%}
+  .b-fig figcaption{margin-inline:16px;font-size:15px}
+  .b-three{grid-template-columns:minmax(0,1fr)}
+  .b-three div{padding:0}
+  .b-three div + div{padding-left:0;border-left:0;border-top:1px solid var(--rule);margin-top:26px;padding-top:26px}
+  .b-facts ul{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .b-facts li{padding:18px 14px 18px 0}
+  .b-facts li + li{padding-left:14px}
+  .b-facts li:nth-child(3){padding-left:0;border-left:0}
+  .b-facts li:nth-child(n+3){border-top:1px solid var(--rule)}
+}
+
+</style>
+</head>
+<body>
+<!-- shared drawing: one house, used three times (drawing, built, quiet outline) -->
+<svg class="sc-defs" width="0" height="0" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D5E6F8"/><stop offset="1" stop-color="#F6FAFE"/></linearGradient>
+    <radialGradient id="g-glow"><stop offset="0" stop-color="#FFD76A" stop-opacity=".75"/><stop offset=".5" stop-color="#FFD76A" stop-opacity=".22"/><stop offset="1" stop-color="#FFD76A" stop-opacity="0"/></radialGradient>
+    <pattern id="p-hatch" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="9" stroke="#fff" stroke-opacity=".5" stroke-width="1.2"/></pattern>
+    <symbol id="i-mark" viewBox="0 0 48 48"><path d="M24 5.500 5.500 21v21.500H24Z" fill="#fff" stroke="#0E3A8A" stroke-width="3" stroke-linejoin="round"/><path d="M24 3.500 44 20.300V44H24Z" fill="#B8561C"/><rect x="11.500" y="25.500" width="7" height="8.500" fill="none" stroke="#0E3A8A" stroke-width="2.200"/><rect x="29.500" y="25" width="8" height="10" fill="#fff"/></symbol>
+    <symbol id="i-tel" viewBox="0 0 24 24"><path fill="currentColor" d="M6.600 10.800a15.200 15.200 0 0 0 6.600 6.600l2.200-2.200c.300-.300.700-.400 1-.200 1.100.400 2.300.600 3.600.600.600 0 1 .400 1 1V20c0 .600-.400 1-1 1A17 17 0 0 1 3 4c0-.600.400-1 1-1h3.500c.600 0 1 .400 1 1 0 1.300.200 2.500.600 3.600.100.300 0 .700-.200 1Z"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5.100-1.300A10 10 0 1 0 12 2Zm0 18.200a8.200 8.200 0 0 1-4.200-1.200l-.3-.2-3 .8.8-2.900-.2-.3A8.200 8.200 0 1 1 12 20.200Zm4.500-6.100c-.2-.1-1.500-.7-1.700-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.700 6.700 0 0 1-3.300-2.900c-.3-.4.3-.4.7-1.300.1-.2 0-.3 0-.4l-.8-1.800c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.200 5.200 5.200 0 0 0 1.100 2.800 11.900 11.900 0 0 0 4.600 4c1.700.7 2.300.8 3.200.6a2.700 2.700 0 0 0 1.800-1.300 2.200 2.200 0 0 0 .2-1.300c-.1-.1-.3-.2-.5-.3Z"/></symbol>
+    <symbol id="i-doc" viewBox="0 0 30 30"><path d="M7 3.500h11l5.500 5.500V26.500H7Z" fill="#fff" stroke="#0A1B3D" stroke-width="2" stroke-linejoin="round"/><path d="M18 3.500V9h5.500" fill="none" stroke="#0A1B3D" stroke-width="2" stroke-linejoin="round"/><path d="M11 17.500l3 3 5.500-6.500" fill="none" stroke="#B8561C" stroke-width="2.400" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <g id="hs">
+      <!-- ground -->
+      <rect class="earth" x="0" y="470" width="960" height="50"/>
+      <rect class="hard" x="22" y="465" width="188" height="6"/>
+      <rect class="hard" x="702" y="465" width="84" height="6"/>
+      <rect class="lawn" x="786" y="463" width="174" height="8"/>
+      <line class="gl0" x1="0" y1="470" x2="960" y2="470"/>
+      <!-- rooms -->
+      <rect class="rm" x="222" y="370" width="150" height="100"/>
+      <rect class="rm" x="380" y="366" width="312" height="104"/>
+      <rect class="rm rm-c" x="222" y="258" width="150" height="100"/>
+      <rect class="rm rm-w" x="380" y="258" width="138" height="100"/>
+      <path class="rm" d="M262 246V205L370 133l23 16h125v97Z"/>
+      <path class="void" d="M222 246v-13l40-28v41Z"/>
+      <!-- living room -->
+      <g class="f">
+        <rect class="f-sofa" x="238" y="424" width="15" height="40" rx="5"/>
+        <rect class="f-sofa" x="244" y="443" width="70" height="21" rx="6"/>
+        <rect class="f-sofa" x="300" y="434" width="15" height="30" rx="5"/>
+        <path class="f-ln" d="M244 464v6M309 464v6"/>
+        <rect class="f-wood" x="338" y="452" width="32" height="18" rx="1.5"/>
+        <rect class="f-dark" x="365" y="408" width="4" height="36" rx="1"/>
+        <rect class="f-wood" x="316" y="394" width="32" height="22" rx="1"/>
+        <path class="f-ln" d="M321 411l8-9 6 6 4-3 5 5"/>
+      </g>
+      <!-- kitchen and extension -->
+      <g class="f">
+        <rect class="f-unit" x="424" y="384" width="84" height="24" rx="1.5"/>
+        <path class="f-ln" d="M452 384v24M480 384v24"/>
+        <rect class="f-unit" x="410" y="437" width="98" height="33" rx="1.5"/>
+        <path class="f-ln" d="M434 437v33M459 437v33M484 437v33"/>
+        <rect class="f-top" x="407" y="432" width="104" height="5.500" rx="1"/>
+        <rect class="f-dark" x="452" y="429" width="28" height="3"/>
+        <rect class="f-unit" x="560" y="437" width="74" height="33" rx="1.5"/>
+        <path class="f-ln" d="M584.500 437v33M609.500 437v33"/>
+        <rect class="f-top" x="555" y="432" width="84" height="5.500" rx="1"/>
+        <path class="f-ln f-leg" d="M650 448h14M657 448v22M652 470h10M670 448h14M677 448v22M672 470h10"/>
+        <path class="f-plant" d="M601 432c-6-10-2-19 3-23 1 7 5 9 3 23ZM606 432c0-9 5-15 11-16-1 7-4 12-8 16Z"/>
+      </g>
+      <!-- bedroom -->
+      <g class="f">
+        <rect class="f-wood" x="240" y="310" width="8" height="48" rx="2"/>
+        <rect class="f-wood" x="246" y="346" width="98" height="9" rx="1.500"/>
+        <path class="f-ln" d="M252 355v3M338 355v3"/>
+        <rect class="f-bed" x="247" y="333" width="96" height="14" rx="5"/>
+        <rect class="f-pill" x="250" y="325" width="26" height="10" rx="5"/>
+        <rect class="f-unit" x="346" y="272" width="24" height="86" rx="1.5"/>
+        <path class="f-ln" d="M358 272v86"/>
+      </g>
+      <!-- bathroom -->
+      <g class="f">
+        <path class="f-bath" d="M394 334h80v10c0 9-6 14-14 14h-52c-8 0-14-5-14-14Z"/>
+        <path class="f-ln" d="M398 334v-9c0-5 7-5 7 0"/>
+        <rect class="f-bath" x="486" y="320" width="24" height="9" rx="4"/>
+        <rect class="f-bath" x="495" y="329" width="6" height="29"/>
+        <rect class="f-mir" x="489" y="286" width="18" height="24" rx="2"/>
+      </g>
+      <!-- loft room -->
+      <g class="f">
+        <rect class="f-wood" x="412" y="238" width="92" height="8" rx="1.500"/>
+        <rect class="f-bed" x="413" y="227" width="90" height="12" rx="4.500"/>
+        <rect class="f-pill" x="476" y="220" width="24" height="9" rx="4.500"/>
+        <rect class="f-wood" x="282" y="218" width="46" height="4" rx="1"/>
+        <path class="f-ln f-leg" d="M286 222v24M324 222v24"/>
+        <path class="f-ln f-leg" d="M340 228h13M346.500 228v18M340 228v-14"/>
+      </g>
+      <!-- radiators, boiler, fuse board, meter, charger -->
+      <g class="kit">
+        <rect class="rad" x="224.500" y="446" width="5.500" height="20" rx="1.500"/>
+        <rect class="rad" x="224.500" y="336" width="5.500" height="20" rx="1.500"/>
+        <rect class="rad" x="264.500" y="224" width="5.500" height="20" rx="1.500"/>
+        <path class="rad rail" d="M384 288v38M388.500 288v38M384 294h4.500M384 302h4.500M384 310h4.500M384 318h4.500"/>
+        <rect class="boil" x="384" y="384" width="24" height="33" rx="2.500"/>
+        <path class="flame" d="M396 410c-4.500 0-6.500-3.500-4.500-7 1 1.500 2 1.500 2.500.5 0-3 1-5 3-6.500 0 3 4 5 4 9 0 2.500-2 4-5 4Z"/>
+        <rect class="cu" x="226" y="382" width="20" height="14" rx="1.500"/>
+        <path class="cu-l" d="M230 386v6M234 386v6M238 386v6M242 386v6"/>
+        <rect class="meter" x="197" y="440" width="13" height="18" rx="1.500"/>
+        <rect class="evc" x="198" y="402" width="12" height="17" rx="3"/>
+        <path class="cu-l" d="M201 446h5M201 450h5"/>
+      </g>
+      <!-- structure cut through -->
+      <g class="cut">
+        <rect x="202" y="470" width="28" height="24"/>
+        <rect x="364" y="470" width="24" height="16"/>
+        <rect x="510" y="470" width="28" height="24"/>
+        <rect x="682" y="470" width="28" height="24"/>
+        <rect x="222" y="470" width="468" height="7"/>
+        <rect x="210" y="246" width="12" height="224"/>
+        <rect x="372" y="258" width="8" height="212"/>
+        <rect x="518" y="246" width="12" height="112"/>
+        <rect x="222" y="358" width="296" height="12"/>
+        <rect x="222" y="246" width="296" height="12"/>
+        <rect x="337" y="98" width="22" height="56"/>
+        <rect x="342" y="88" width="12" height="10"/>
+        <rect x="388" y="141" width="146" height="9"/>
+        <rect x="518" y="150" width="12" height="96"/>
+        <rect x="530" y="352" width="66" height="14"/>
+        <rect x="644" y="352" width="62" height="14"/>
+        <rect x="690" y="366" width="12" height="14"/>
+        <rect x="591" y="342" width="6" height="10"/>
+        <rect x="643" y="342" width="6" height="10"/>
+        <rect x="698" y="346" width="10" height="7"/>
+      </g>
+      <path class="beam" d="M512 358h24v3h-9.500v8h9.500v3h-24v-3h9.500v-8h-9.500Z"/>
+      <!-- roof covering -->
+      <path class="roof" d="M194 253 370 129.500 396 147.500"/>
+      <!-- glass -->
+      <g class="gl">
+        <rect x="210" y="396" width="12" height="50"/>
+        <rect x="210" y="284" width="12" height="52"/>
+        <rect x="518" y="284" width="12" height="42"/>
+        <rect x="518" y="166" width="12" height="48"/>
+        <rect x="691" y="380" width="10" height="90"/>
+      </g>
+      <path class="gl-l" d="M594 343.500 620 325l26 18.500"/>
+      <path class="gl-r" d="M272 198.300 311 171"/>
+      <path class="door" d="M696 380v90"/>
+      <!-- gas and heating pipework -->
+      <path class="gas" d="M203.500 458v26H396v-67M396 484h70v-52"/>
+      <path class="heat" d="M391 417v50H230M386 384V243H270M386 355.500H230M386 300h2"/>
+      <!-- wiring -->
+      <path class="elec" d="M236 382v-18h376M297 364v6M578 364v2M612 364v2M241 364V252h199M297 252v6M440 252v6M262 252v-46l108-72 23 16.500h47M226 390h-10v20h-6"/>
+      <!-- lights -->
+      <g class="lamp">
+        <path d="M297 370v18M578 366v24M612 366v24M297 258v18M440 150v10"/>
+        <circle cx="297" cy="392.500" r="5"/><circle cx="578" cy="394.500" r="5"/><circle cx="612" cy="394.500" r="5"/>
+        <circle cx="297" cy="280.500" r="5"/><circle cx="440" cy="164.500" r="5"/>
+        <rect x="434" y="258" width="12" height="4" rx="1.500"/>
+      </g>
+      <!-- outside -->
+      <g class="out">
+        <path class="car" d="M60 458c0-13 4-19 18-21l13-17c3-4 6-5 11-5h36c6 0 9 2 12 6l12 16c12 2 17 7 17 16v7c0 3-2 5-5 5H65c-3 0-5-2-5-5Z"/>
+        <path class="car-w" d="M95 437l10-13c1-2 3-3 6-3h10v16ZM127 421h9c3 0 5 1 7 3l9 13h-25Z"/>
+        <circle class="whl" cx="88" cy="462" r="10.500"/><circle class="whl" cx="151" cy="462" r="10.500"/>
+        <circle class="hub" cx="88" cy="462" r="4"/><circle class="hub" cx="151" cy="462" r="4"/>
+        <path class="lead" d="M198 412c-12 2-14 16-17 26"/>
+        <rect class="trunk" x="864" y="418" width="8" height="46"/>
+        <circle class="tree" cx="868" cy="392" r="34"/><circle class="tree" cx="843" cy="410" r="21"/><circle class="tree" cx="893" cy="412" r="22"/>
+        <path class="fence" d="M938 414v50M948 414v50M932 426h22M932 448h22"/>
+        <path class="f-ln f-leg" d="M722 452h14M729 452v13M756 452h14M763 452v13M740 440h12M746 440v25"/>
+      </g>
+    </g>
+  </defs>
+</svg>
+<div class="pv"><div class="wrap">
+  <svg class="mk" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F2C230"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#000" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  <div class="mine"><b>Your free preview, Swraj.</b><span>Yellow notes are from Joshua.</span></div>
+  <div class="back"><b>This is what customers see.</b><span>No notes, no banner.</span></div>
+  <div class="ver" role="group" aria-label="Two versions of this preview"><a href="/p/sps-design-and-build/">Full</a><span aria-current="page">Simple</span></div>
+  <button type="button" id="cv" aria-pressed="false">Customer view</button>
+</div></div>
+
+<header class="hd">
+  <div class="wrap hd-in">
+    <a class="brand" href="#top" aria-label="SPS Design and Build, home"><svg viewBox="0 0 48 48" aria-hidden="true"><use href="#i-mark"/></svg><span>SPS Design &amp; Build<small>Hounslow and West London</small></span></a>
+    <a class="btn btn-copper" href="tel:+447402420702" aria-label="Call SPS Design and Build on 07402 420702"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tel"/></svg><span class="long">07402 420702</span><span class="short">Call</span></a>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="b-hero" aria-labelledby="h1">
+  <div class="wrap">
+    <h1 id="h1">We design it, build it, wire it and plumb it.</h1>
+    <p class="lede">SPS Design &amp; Build: extensions, loft conversions and refurbishments across Hounslow and West London, with the gas and the electrics done by us. One firm, one price, one number to ring.</p>
+    <div class="acts" id="hero-acts">
+      <a class="btn btn-wa" href="https://wa.me/447402420702" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp us</a>
+      <a class="btn btn-line" href="tel:+447402420702"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tel"/></svg>07402 420702</a>
+    </div>
+  </div>
+  <figure class="b-fig wrap">
+    <svg class="sc-line" viewBox="30 78 900 436" role="img" aria-label="A line drawing of a house cut through from front to back, with a loft conversion and a rear extension. The gas and heating pipes and the wiring are picked out."><use href="#hs"/></svg>
+    <figcaption><span><i></i>Gas and heating</span><span><i class="w"></i>Wiring</span><span>Both fitted and certified by us.</span></figcaption>
+  </figure>
+  <div class="wrap"><p class="jn"><b>Joshua:</b> Swraj, this is the simple version. One page, nothing to play with, and everything a customer needs in ten seconds. There is also <a href="/p/sps-design-and-build/">a full version</a>, where the drawing works and customers can check planning rules and certificates. Tell me which is more you.</p></div>
+</section>
+
+<section class="b-three wrap" aria-label="What we do">
+  <div><h2>Building</h2><p>Rear and side extensions, loft conversions, kitchens, bathrooms and full refurbishments.</p></div>
+  <div><h2>Gas and heating</h2><p>New boilers, central heating, servicing, repairs and landlord gas safety certificates.</p></div>
+  <div><h2>Electrics</h2><p>Rewires, fuse boards, car chargers and electrical safety reports for landlords and home buyers.</p></div>
+</section>
+
+<section class="b-facts" aria-label="About the company">
+  <div class="wrap"><ul>
+    <li><b>Since 2016</b><span>Started as SPS Gas Services</span></li>
+    <li><b>NICEIC registered</b><span>For all our electrical work</span></li>
+    <li><b>Gas Safe registered</b><span class="pvw">Number <span class="slot">to add</span></span><span class="cvw">For all our gas and heating work</span></li>
+    <li><b>Based in Hounslow</b><span>Working across West London</span></li>
+  </ul></div>
+</section>
+<div class="wrap b-after"><p class="jn"><b>Joshua:</b> the dates and the NICEIC listing are from Companies House and the NICEIC register. I couldn’t get onto the Gas Safe register tonight, so your number is a gap for now. I couldn’t find a list of your services online either, so the three lists above are my reading of the public record. Tell me what to keep, cut or add.</p></div>
+
+<section class="jsec" id="yours" aria-labelledby="yours-h">
+  <div class="wrap">
+    <p class="from">From Joshua at NextThread</p>
+    <h2 class="d h2" id="yours-h">Swraj, this is yours if you want it.</h2>
+    <p class="lede">I build websites for tradespeople, and I made this for SPS Design &amp; Build before asking you for a penny. Search your company name today and you get Companies House and a list of other builders. This puts your name, your number and ten years of work at the top.</p>
+    <div class="two">
+      <div><h3>What it costs</h3>
+        <ul>
+          <li>£595 one-off, with your own web address and the first year’s hosting included</li>
+          <li>Live within a week of you saying yes</li>
+          <li>You pay once you have seen it finished</li>
+          <li>No monthly fees. From year two, hosting is £60 a year</li>
+          <li>Rather spread it? £79 a month instead, with no contract. The first month is paid before it goes live, and you can cancel any time</li>
+        </ul>
+      </div>
+      <div><h3>What I’d need from you</h3>
+        <ul>
+          <li>Which version you prefer, this one or <a href="/p/sps-design-and-build/">the full one</a></li>
+          <li>Your Gas Safe number</li>
+          <li>The jobs you actually do, and the area you cover</li>
+          <li>Your logo if you have one, and a few photos off your phone</li>
+        </ul>
+      </div>
+    </div>
+    <div class="acts">
+      <a class="btn btn-wa" rel="noopener" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20I%27ve%20seen%20the%20website%20preview%20for%20SPS%20Design%20%26%20Build."><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp Joshua</a>
+    </div>
+    <p class="after">Or reply to my email, or ring me on <a href="tel:+447856075882"><b>07856 075882</b></a>. Want something changed first? Tell me and I’ll change it.</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="contact dark" id="contact">
+  <div class="wrap">
+    <h2 class="d h2">Ring us about your job</h2>
+    <p class="lede">Ask for Swraj.</p>
+    <a class="tel" href="tel:+447402420702" aria-label="Call 07402 420702">07402 420702</a>
+    <dl class="lines">
+      <div><dt>WhatsApp</dt><dd><a href="https://wa.me/447402420702" rel="noopener">Message us</a></dd></div>
+      <div><dt>Email</dt><dd><a href="mailto:spsgasservice@yahoo.com">spsgasservice@<wbr>yahoo.com</a></dd></div>
+      <div><dt>Based in</dt><dd>Hounslow, TW3</dd></div>
+    </dl>
+    <p class="legal">SPS Design &amp; Build Ltd. Registered in England and Wales, company number 10265979. Registered office: 163 Rochester Avenue, Feltham, TW13 4EH.</p>
+    <p class="legal" style="margin-top:14px;border-top:0;padding-top:0">© 2026 SPS Design &amp; Build Ltd. Website preview by <a href="https://nextthreadautomation.co.uk/">NextThread</a>.</p>
+  </div>
+</footer>
+
+<div class="cb" id="cb">
+  <a class="btn btn-copper" href="tel:+447402420702"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-tel"/></svg>Call</a>
+  <a class="btn btn-wa" href="https://wa.me/447402420702" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#i-wa"/></svg>WhatsApp</a>
+</div>
+<script>
+(function(){
+'use strict';
+var D=document,H=D.documentElement,cv=D.getElementById('cv');
+if(cv)cv.addEventListener('click',function(){
+  var on=H.classList.toggle('cust');
+  cv.setAttribute('aria-pressed',on?'true':'false');
+  cv.textContent=on?'Back to preview':'Customer view';
+});
+var cb=D.getElementById('cb'),ha=D.getElementById('hero-acts'),ft=D.getElementById('contact');
+if(cb&&ha){
+  var tick=0,upd=function(){tick=0;var past=ha.getBoundingClientRect().bottom<0,foot=ft&&ft.getBoundingClientRect().top<innerHeight-90;cb.classList.toggle('on',past&&!foot)};
+  var ask=function(){if(!tick)tick=requestAnimationFrame(upd)};
+  addEventListener('scroll',ask,{passive:true});addEventListener('resize',ask);upd();
+}
+})();
+</script>
+</body>
+</html>
