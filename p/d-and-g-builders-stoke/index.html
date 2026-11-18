@@ -40,7 +40,7 @@ button,input{font:inherit;color:inherit}
 .on-ochre :focus-visible,.light :focus-visible{outline-color:var(--ink)}
 [id]{scroll-margin-top:20px}
 
-/* ---- preview strip and Joshua's notes: NextThread's voice, never the builder's ---- */
+/* ---- preview strip and NextThread's notes: NextThread's voice, never the builder's ---- */
 .pv{background:var(--ntg);color:#F4F1E6;font-size:14.5px;line-height:1.35}
 .pv .wrap{display:flex;align-items:center;padding-top:10px;padding-bottom:10px}
 .pv svg{width:26px;height:26px;flex:none;margin-right:12px}
@@ -148,7 +148,7 @@ legend{font-weight:750;font-size:18px;padding:0;margin-bottom:10px}
 .steps b{display:block;font-stretch:62%;font-variation-settings:"wdth" 62;font-weight:800;font-size:28px;line-height:1.05}
 .steps span{display:block;color:var(--mute);font-size:17px;line-height:1.42;margin-top:4px}
 
-/* Joshua's card */
+/* NextThread's card */
 #yours{padding:0 0 72px}
 .card{background:var(--ntg);color:#F4F1E6;border-radius:18px;padding:30px 22px 26px}
 .card .who{display:flex;align-items:center;font-size:15px;font-weight:600;color:var(--nty)}
@@ -256,7 +256,7 @@ legend{font-weight:750;font-size:18px;padding:0;margin-bottom:10px}
 .btn-n:hover{background:#17392E}
 body.nn .todo{display:none}
 
-/* search comparison inside Joshua's card */
+/* search comparison inside NextThread's card */
 .serp{display:grid;gap:18px;margin-top:26px}
 .serp>div{min-width:0}
 .serp h3{margin-bottom:9px}
@@ -362,7 +362,7 @@ body.nn .nt{display:none}
 
 <div class="pv" role="note" aria-label="About this preview"><div class="wrap">
   <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F2C230"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#0F2A21" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  <p><b>Your free preview, Dave.</b> <span id="pvt">Yellow notes are from Joshua.</span></p>
+  <p><b>Your free preview, Dave.</b> <span id="pvt">Yellow notes are from NextThread.</span></p>
   <button type="button" id="ntg" aria-pressed="false">Customer view</button>
 </div></div>
 
@@ -404,7 +404,7 @@ body.nn .nt{display:none}
 <section class="light sec" id="build"><div class="wrap">
   <h2 class="d">What we build</h2>
   <p class="lead">Building work for homes across Stoke-on-Trent and the surrounding area. Tap a job to see where it sits on the house.</p>
-  <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Joshua:</b> this list is my best guess at your work, Dave. Tell me the jobs you want more of and I&rsquo;ll rewrite it.</p></aside>
+  <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>NextThread:</b> this list is our best guess at your work, Dave. Tell us the jobs you want more of and we&rsquo;ll rewrite it.</p></aside>
   <div class="build">
     <div class="sheet"><svg class="plan" viewBox="0 30 772 334" role="img" aria-label="Drawing of a house with an extension, a garage and a garden wall">
       <defs><pattern id="bh" width="112" height="56" patternUnits="userSpaceOnUse" patternTransform="scale(.25)"><rect width="112" height="56" fill="#B5482F"/><path d="M0 2h112M0 30h112M28 2v28M84 30v28" stroke="#F0C9BA" stroke-opacity=".6" stroke-width="4" fill="none"/></pattern></defs>
@@ -453,7 +453,7 @@ body.nn .nt{display:none}
 <section class="dark sec" id="plan"><div class="wrap">
   <h2 class="d">Plan your extension</h2>
   <p class="lead">Set the size, see it drawn on your plot, and get a rough idea of planning and cost before you ring.</p>
-  <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Joshua:</b> this is the bit other builders&rsquo; sites don&rsquo;t have, Dave. The prices are UK averages I looked up. I&rsquo;ll put in your own figures, or take prices off if you&rsquo;d rather not show them.</p></aside>
+  <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>NextThread:</b> this is the bit other builders&rsquo; sites don&rsquo;t have, Dave. The prices are UK averages we looked up. We&rsquo;ll put in your own figures, or take prices off if you&rsquo;d rather not show them.</p></aside>
   <div class="pgrid">
     <figure class="plot">
       <svg id="plot" viewBox="0 0 360 312" role="img" aria-label="Plan of the house and garden with the extension drawn to size">
@@ -519,7 +519,7 @@ body.nn .nt{display:none}
     </svg>
     <div>
       <p class="places">Based in <b>Blurton</b>, in the south of the city. <b>Longton, Fenton, Trentham and Meir</b> are on the doorstep, with <b>Stoke, Hanley, Newcastle, Barlaston and Stone</b> all within about five miles.</p>
-      <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Joshua:</b> tell me how far you&rsquo;ll travel for a job, Dave, and I&rsquo;ll draw the line there.</p></aside>
+      <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>NextThread:</b> tell us how far you&rsquo;ll travel for a job, Dave, and we&rsquo;ll draw the line there.</p></aside>
     </div>
   </div>
 </div></section>
@@ -527,7 +527,7 @@ body.nn .nt{display:none}
 <section class="on-ochre sec" id="quote"><div class="wrap">
   <h2 class="d">Tell Dave about the job</h2>
   <p class="lead">Two taps and your message is written for you. No forms, no waiting on an email.</p>
-  <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F2C230"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#0F2A21" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Joshua:</b> try it, Dave. The buttons are live, so it opens a text to your own mobile. This is how jobs will land on your phone.</p></aside>
+  <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F2C230"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#0F2A21" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>NextThread:</b> try it, Dave. The buttons are live, so it opens a text to your own mobile. This is how jobs will land on your phone.</p></aside>
   <div class="qgrid">
     <form id="qf" autocomplete="off" onsubmit="return false">
       <fieldset><legend>What&rsquo;s the job?</legend><div class="chips">
@@ -571,21 +571,21 @@ body.nn .nt{display:none}
   <div>
     <h2>Our work</h2>
     <div class="frames"><div><span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.500-2h7L17 8h3v11H4Z"/><circle cx="12" cy="13" r="3.500"/></svg>Your photo</span></div><div><span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.500-2h7L17 8h3v11H4Z"/><circle cx="12" cy="13" r="3.500"/></svg>Your photo</span></div><div><span><svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l1.500-2h7L17 8h3v11H4Z"/><circle cx="12" cy="13" r="3.500"/></svg>Your photo</span></div></div>
-    <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Joshua:</b> this is the one thing I can&rsquo;t do for you, Dave. Text me one photo of a job you&rsquo;re proud of and I&rsquo;ll have it in the first frame the same day, so you can see it.</p></aside>
-    <a class="btn btn-n" href="sms:+447856075882?&amp;body=Photo%20for%20the%20D%20%26%20G%20Builders%20website%20from%20Dave%3A" data-nocopy data-desk="Open this page on your phone and this button starts a text to Joshua on 07856 075882, ready for a photo.">Text Joshua a photo</a>
+    <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>NextThread:</b> this is the one thing we can&rsquo;t do for you, Dave. Text us one photo of a job you&rsquo;re proud of and we&rsquo;ll have it in the first frame the same day, so you can see it.</p></aside>
+    <a class="btn btn-n" href="sms:+447856075882?&amp;body=Photo%20for%20the%20D%20%26%20G%20Builders%20website%20from%20Dave%3A" data-nocopy data-desk="Open this page on your phone and this button starts a text to us on 07856 075882, ready for a photo.">Text us a photo</a>
   </div>
   <div>
     <h2>What customers say</h2>
     <div class="quotes"><div><b>&#9733;&#9733;&#9733;&#9733;&#9733;</b>A few words from one of your customers go here.</div><div><b>&#9733;&#9733;&#9733;&#9733;&#9733;</b>And another here, with their first name and area.</div></div>
-    <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>Joshua:</b> 45 years of customers and none of it is online yet. This button writes the text for you. Pick an old customer and press send.</p></aside>
+    <aside class="jn"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#0F2A21"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#F2C230" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg><p><b>NextThread:</b> 45 years of customers and none of it is online yet. This button writes the text for you. Pick an old customer and press send.</p></aside>
     <a class="btn btn-n" href="sms:?&amp;body=Hi%2C%20it%27s%20Dave%20from%20D%20%26%20G%20Builders.%20I%27m%20putting%20a%20website%20together%20and%20would%20be%20grateful%20for%20a%20line%20or%20two%20about%20the%20work%20we%20did%20for%20you.%20Just%20reply%20to%20this%20text.%20Thanks%2C%20Dave" data-desk="Paste it into a text or an email to a customer. On your phone, this button opens the text for you.">Ask a customer for a few words</a>
   </div>
 </div></div></section>
 
 <section class="light" id="yours"><div class="wrap"><div class="card">
-  <div class="who"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F2C230"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#0F2A21" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>From Joshua at NextThread</div>
+  <div class="who"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F2C230"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#0F2A21" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>From NextThread</div>
   <h2>Dave, this is yours if you want it.</h2>
-  <p>I build websites for tradespeople, and I made this one for D &amp; G Builders before asking you for a penny. Everything on it is true to what I could find: the 1981 start, Blurton, and your numbers from the Trader Register.</p>
+  <p>We build websites for tradespeople, and we made this one for D &amp; G Builders before asking you for a penny. Everything on it is true to what we could find: the 1981 start, Blurton, and your numbers from the Trader Register.</p>
   <div class="serp">
     <div><h3>Search your name today</h3>
       <div class="r"><div class="u">traderregister.org.uk</div><div class="t">D &amp; G Builders (Stoke) Ltd</div><div class="s">Services provided: Builders. Overall rating: 0 reviews.</div></div>
@@ -603,16 +603,16 @@ body.nn .nt{display:none}
       <li>You pay once you&rsquo;ve seen it finished</li>
       <li>No monthly fees. From year two, hosting is £60 a year</li>
     </ul></div>
-    <div><h3>What I&rsquo;d need from you</h3><ul>
+    <div><h3>What we&rsquo;d need from you</h3><ul>
       <li>Six to ten photos of your work, straight off your phone</li>
       <li>A few words from two or three customers</li>
       <li>The jobs you want more of, and the number you want ringing</li>
     </ul></div>
   </div>
   <div class="go">
-    <a class="btn btn-y" href="https://wa.me/447856075882?text=Hi%20Joshua%2C%20it%27s%20Dave%20from%20D%20%26%20G%20Builders.%20I%20like%20the%20preview.">WhatsApp Joshua</a>
+    <a class="btn btn-y" href="https://wa.me/447856075882?text=Hi%2C%20it%27s%20Dave%20from%20D%20%26%20G%20Builders.%20I%20like%20the%20preview.">WhatsApp us</a>
   </div>
-  <p class="small">Or reply &ldquo;yes&rdquo; to my email, or text me on <a class="num" href="sms:+447856075882" data-nocopy data-desk="Text Joshua on 07856 075882 from your phone.">07856 075882</a>. Want something changed first? Tell me and I&rsquo;ll change it.</p>
+  <p class="small">Or reply &ldquo;yes&rdquo; to our email, or text us on <a class="num" href="sms:+447856075882" data-nocopy data-desk="Text us on 07856 075882 from your phone.">07856 075882</a>. Want something changed first? Tell us and we&rsquo;ll change it.</p>
 </div></div></section>
 </main>
 
@@ -648,12 +648,12 @@ body.nn .nt{display:none}
   var now=new Date(), y=now.getFullYear()-1981-((now.getMonth()<6||(now.getMonth()===6&&now.getDate()<16))?1:0);
   if(y>=45){ $('#yrs').textContent=y; $$('.yr').forEach(function(e){e.textContent=y}); }
 
-  // Joshua's notes on and off
+  // NextThread's notes on and off
   var tg=$('#ntg');
   tg.addEventListener('click',function(){
     var off=d.body.classList.toggle('nn');
     tg.textContent=off?'Show notes':'Customer view'; tg.setAttribute('aria-pressed',off);
-    $('#pvt').textContent=off?'This is how customers see it.':'Yellow notes are from Joshua.';
+    $('#pvt').textContent=off?'This is how customers see it.':'Yellow notes are from NextThread.';
     $('#ntb').setAttribute('href',off?'#contact':'#yours');
   });
   $('#ntb').addEventListener('click',function(e){
