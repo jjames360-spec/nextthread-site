@@ -12,7 +12,7 @@
 <meta name="theme-color" content="#ffffff">
 <meta property="og:title" content="Country Green Heating Ltd">
 <meta property="og:description" content="Family run heating and plumbing in Chiseldon, Swindon. Gas Safe registered 603857.">
-<meta property="og:image" content="https://nextthreadautomation.co.uk/p/country-green-heating/land.jpg">
+<meta property="og:image" content="https://nextthreadautomation.co.uk/p/country-green-heating/apple-touch-icon.png">
 <link rel="icon" type="image/png" href="/p/country-green-heating/icon-64.png">
 <link rel="apple-touch-icon" href="/p/country-green-heating/apple-touch-icon.png">
 <link rel="preload" href="/p/country-green-heating/archivo-var.woff" as="font" type="font/woff" crossorigin>
@@ -104,14 +104,14 @@ h1{font-size:clamp(2rem,1.25rem + 3.6vw,3.25rem);max-width:17ch}
 .diary .when{display:block;margin-top:1rem;font-size:.875rem;color:var(--soft)}
 .diary .when a{color:var(--soft)}
 
-/* downs band */
-.downs{position:relative;margin:0}
-.downs picture,.downs img{display:block;width:100%;height:clamp(15rem,26vw,21rem)}
-.downs img{object-fit:cover;object-position:50% 60%}
-.quote{position:relative;margin:-3.25rem auto 0;width:min(100% - 2.5rem,46rem);background:#fff;border-radius:var(--r);padding:1.5rem 1.4rem 1.4rem;box-shadow:0 1px 0 var(--rule),0 18px 40px -24px rgba(29,36,23,.45)}
-.quote blockquote{margin:0;font:italic 500 1.3125rem/1.45 var(--serif);color:var(--ink)}
-.quote .who{margin-top:.9rem;font-size:.9375rem;color:var(--soft)}
-.quote .who strong{color:var(--ink)}
+/* Stuart's quote */
+.story{background:#2f3d20;color:#e6ecdc;padding:3.25rem 0 3.5rem}
+.story blockquote,.story .who{max-width:46rem}
+.story-mark{width:3.25rem;height:auto;margin-bottom:1.25rem;background:#fff;border-radius:50%;padding:.45rem}
+.story blockquote{margin:0;font:italic 500 clamp(1.4rem,1.1rem + 1.4vw,2rem)/1.42 var(--serif);color:#fff}
+.story .who{margin-top:1.25rem;font-size:1rem;color:#c7d3b6;display:flex;align-items:center;gap:.75rem}
+.story .who::before{content:"";width:2.25rem;height:.3rem;border-radius:3px;background:var(--line)}
+.story .who strong{color:#fff}
 
 /* sections */
 .sec{padding:3.5rem 0}
@@ -206,8 +206,6 @@ body{padding-bottom:calc(4.25rem + env(safe-area-inset-bottom))}
   .why{grid-template-columns:1fr 1fr}
   .revs{grid-template-columns:1fr 1fr}
   .row2{grid-template-columns:1fr 1fr}
-  .quote{padding:1.8rem 2rem 1.6rem}
-  .quote blockquote{font-size:1.5rem}
 }
 @media (min-width:900px){
   .hd .wrap{padding:.8rem 0}
@@ -299,16 +297,13 @@ body{padding-bottom:calc(4.25rem + env(safe-area-inset-bottom))}
   </div>
 </section>
 
-<figure class="downs">
-  <picture>
-    <source srcset="/p/country-green-heating/land.webp" type="image/webp">
-    <img src="/p/country-green-heating/land.jpg" width="1138" height="236" alt="Wooded valleys and fields of the Wiltshire countryside">
-  </picture>
-  <figcaption class="quote">
+<section class="story" aria-label="A word from Stuart">
+  <div class="wrap">
+    <img class="story-mark" src="/p/country-green-heating/mark.png" width="96" height="93" alt="" aria-hidden="true">
     <blockquote>&ldquo;We pride ourselves on loyal customers and a personal service from a familiar engineer, who remembers the details that matter when visiting your home.&rdquo;</blockquote>
-    <p class="who"><strong>Stuart Tanner</strong>, Director</p>
-  </figcaption>
-</figure>
+    <p class="who"><span><strong>Stuart Tanner</strong>, Director</span></p>
+  </div>
+</section>
 
 <section class="sec" id="services" aria-labelledby="svc-h">
   <div class="wrap">
