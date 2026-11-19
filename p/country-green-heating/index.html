@@ -1,120 +1,485 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="en-GB" class="nojs">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Country Green Heating | website preview</title>
-<meta name="description" content="A free preview of what a website for Country Green Heating could look like, made by NextThread.">
-<!-- a preview for one business, not a live site: kept out of search engines -->
+<title>Country Green Heating Ltd | Gas Safe heating engineers in Chiseldon, Swindon</title>
+<meta name="description" content="Family run heating and plumbing based in Chiseldon, Swindon. Gas and oil boilers, servicing, breakdowns, central heating, gas fires and plumbing across Swindon, Marlborough and Chippenham. Gas Safe registered 603857.">
+<!-- a private preview for one business, not a live site: kept out of search engines -->
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="color-scheme" content="only light">
 <meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#4A2019">
-<meta property="og:title" content="Country Green Heating: your website preview">
-<meta property="og:description" content="A free preview of what a website for Country Green Heating could look like, made by NextThread.">
-<meta property="og:image" content="https://nextthreadautomation.co.uk/og.png">
-<link rel="icon" href="/favicon.ico" sizes="32x32">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,500..800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/p/assets/preview.css?v=021aeb90">
-<style>:root{--brand:#4A2019; --accent:#F0B35A; --on-accent:#4A2019; --tint:#F4E8E4; --sky:#F1E3DA; --roof:#6B2E24}</style>
+<meta name="theme-color" content="#ffffff">
+<meta property="og:title" content="Country Green Heating Ltd">
+<meta property="og:description" content="Family run heating and plumbing in Chiseldon, Swindon. Gas Safe registered 603857.">
+<meta property="og:image" content="https://nextthreadautomation.co.uk/p/country-green-heating/land.jpg">
+<link rel="icon" type="image/png" href="/p/country-green-heating/icon-64.png">
+<link rel="apple-touch-icon" href="/p/country-green-heating/apple-touch-icon.png">
+<link rel="preload" href="/p/country-green-heating/archivo-var.woff" as="font" type="font/woff" crossorigin>
+<link rel="preload" href="/p/country-green-heating/lora600.woff" as="font" type="font/woff" crossorigin>
+<script>document.documentElement.className="js";</script>
+<style>
+@font-face{font-family:"Archivo CG";src:url("/p/country-green-heating/archivo-var.woff") format("woff");font-weight:400 700;font-style:normal;font-display:swap}
+@font-face{font-family:"Lora CG";src:url("/p/country-green-heating/lora600.woff") format("woff");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Lora CG";src:url("/p/country-green-heating/lora-i500.woff") format("woff");font-weight:500;font-style:italic;font-display:swap}
+
+:root{
+  --paper:#ffffff;
+  --mist:#f3f6ee;      /* pale sage, for quieter sections */
+  --ink:#1d2417;       /* headings */
+  --text:#2f3628;
+  --soft:#5b6453;
+  --rule:#dfe5d6;
+  --leaf:#7e934e;      /* leaf fill, sampled from the logo */
+  --leaf-dk:#4c5a2f;   /* leaf outline, sampled from the logo: buttons */
+  --leaf-dp:#3c4825;
+  --line:#a0ce64;      /* the green underline in the logo */
+  --drop:#53a7d3;      /* the water drop in the logo */
+  --gas:#ffe600;
+  --serif:"Lora CG",Georgia,"Times New Roman",serif;
+  --sans:"Archivo CG","Helvetica Neue",Arial,sans-serif;
+  --r:14px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--text);font:400 1.0625rem/1.6 var(--sans);overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--drop);outline-offset:3px;border-radius:4px}
+h1,h2,h3{font-family:var(--serif);font-weight:600;color:var(--ink);margin:0;line-height:1.18;letter-spacing:-.01em}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+.wrap{width:min(100% - 2.5rem,68rem);margin-inline:auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* preview bar */
+.pv{background:var(--ink);color:#e8eedf;font-size:.875rem;line-height:1.35}
+.pv .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.55rem 0}
+.pv b{font-weight:600;color:#fff}
+.pv a{flex:none;color:var(--ink);background:var(--line);text-decoration:none;font-weight:700;padding:.4rem .8rem;border-radius:999px}
+.pv a:hover{background:#b6dc84}
+
+/* header */
+.hd{border-bottom:1px solid var(--rule);background:var(--paper)}
+.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.7rem 0}
+.logo{display:block;width:142px;flex:none}
+.logo img{width:100%}
+.hd-call{display:flex;align-items:center;gap:1rem}
+.hd-num{display:none;text-decoration:none;text-align:right;line-height:1.25}
+.hd-num small{display:block;color:var(--soft);font-size:.8125rem}
+.hd-num strong{font-size:1.25rem;color:var(--ink);font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;min-height:3.25rem;padding:.8rem 1.25rem;border-radius:999px;font:700 1.0625rem/1.2 var(--sans);text-decoration:none;cursor:pointer;border:2px solid transparent;white-space:nowrap}
+.btn svg{width:1.25rem;height:1.25rem;flex:none}
+.btn-call{background:var(--leaf-dk);color:#fff}
+.btn-call:hover{background:var(--leaf-dp)}
+.btn-wa{background:#fff;color:var(--ink);border-color:var(--leaf-dk)}
+.btn-wa:hover{background:var(--mist)}
+.btn-sm{min-height:2.75rem;padding:.55rem 1rem;font-size:1rem}
+
+/* hero */
+.hero{padding:2.25rem 0 2.5rem}
+.hero-grid{display:grid;gap:1.75rem}
+.place{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .75rem;margin-bottom:1rem;color:var(--soft);font-size:.9375rem}
+.gs{display:inline-flex;align-items:stretch;border:1.5px solid var(--ink);border-radius:6px;overflow:hidden;font-size:.875rem;line-height:1;color:var(--ink);text-decoration:none}
+.gs span{display:flex;align-items:center;padding:.4rem .5rem}
+.gs span:first-child{background:var(--gas);font-weight:700}
+.gs span:last-child{font-variant-numeric:tabular-nums;font-weight:600}
+h1{font-size:clamp(2rem,1.25rem + 3.6vw,3.25rem);max-width:17ch}
+.lead{margin-top:1rem;font-size:1.1875rem;max-width:36rem;color:var(--text)}
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.6rem}
+.ctas .btn{flex:1 1 15rem}
+.mail{margin-top:.9rem;color:var(--soft);font-size:.9375rem}
+.mail a{color:var(--ink);font-weight:600;text-underline-offset:3px}
+.trust{display:grid;gap:.6rem;padding-top:1.4rem;border-top:1px solid var(--rule);font-size:.9375rem}
+.trust li{display:flex;gap:.6rem;align-items:flex-start}
+.trust li::before{content:"";flex:none;width:.9rem;height:.3rem;margin-top:.6rem;border-radius:2px;background:var(--line)}
+.trust strong{color:var(--ink)}
+
+/* diary card */
+.diary{align-self:start;background:var(--mist);border-radius:var(--r);padding:1.4rem 1.4rem 1.5rem;border-left:6px solid var(--line)}
+.diary h2{font-size:1.375rem}
+.diary p{margin-top:.6rem}
+.diary .when{display:block;margin-top:1rem;font-size:.875rem;color:var(--soft)}
+.diary .when a{color:var(--soft)}
+
+/* downs band */
+.downs{position:relative;margin:0}
+.downs picture,.downs img{display:block;width:100%;height:clamp(15rem,26vw,21rem)}
+.downs img{object-fit:cover;object-position:50% 60%}
+.quote{position:relative;margin:-3.25rem auto 0;width:min(100% - 2.5rem,46rem);background:#fff;border-radius:var(--r);padding:1.5rem 1.4rem 1.4rem;box-shadow:0 1px 0 var(--rule),0 18px 40px -24px rgba(29,36,23,.45)}
+.quote blockquote{margin:0;font:italic 500 1.3125rem/1.45 var(--serif);color:var(--ink)}
+.quote .who{margin-top:.9rem;font-size:.9375rem;color:var(--soft)}
+.quote .who strong{color:var(--ink)}
+
+/* sections */
+.sec{padding:3.5rem 0}
+.sec-mist{background:var(--mist)}
+.sec h2{font-size:clamp(1.65rem,1.2rem + 2vw,2.375rem)}
+.sec h2::after{content:"";display:block;width:3.25rem;height:.3rem;margin-top:.8rem;border-radius:3px;background:var(--line)}
+.intro{margin-top:1rem;max-width:40rem;color:var(--soft)}
+
+/* services */
+.svc{display:grid;gap:0;margin-top:2rem;border-top:1px solid var(--rule)}
+.svc li{padding:1.15rem 0;border-bottom:1px solid var(--rule)}
+.svc h3{font:700 1.125rem/1.3 var(--sans);color:var(--ink);letter-spacing:0}
+.svc p{margin-top:.3rem;color:var(--soft)}
+
+/* why */
+.why{display:grid;gap:1rem;margin-top:2rem}
+.why li{background:#fff;border-radius:var(--r);padding:1.25rem 1.25rem 1.3rem;border:1px solid var(--rule)}
+.why h3{font-size:1.25rem}
+.why p{margin-top:.45rem;color:var(--soft)}
+.why a{color:var(--ink);text-underline-offset:3px}
+
+/* reviews */
+.score{display:flex;flex-wrap:wrap;align-items:baseline;gap:.25rem .7rem;margin-top:1.1rem}
+.score b{font:600 2.75rem/1 var(--serif);color:var(--ink)}
+.score span{color:var(--soft)}
+.revs{display:grid;gap:1rem;margin-top:1.75rem}
+.rev{margin:0;padding:1.3rem 1.3rem 1.2rem;border-radius:var(--r);background:var(--mist);display:flex;flex-direction:column;justify-content:space-between;gap:1rem}
+.rev blockquote{margin:0;font:italic 500 1.1875rem/1.45 var(--serif);color:var(--ink)}
+.rev figcaption{font-size:.9375rem;color:var(--soft)}
+.rev figcaption strong{color:var(--ink)}
+.src{margin-top:1.25rem;font-size:.9375rem;color:var(--soft)}
+.src a{color:var(--ink);text-underline-offset:3px}
+
+/* tip */
+.tip{display:grid;gap:1.5rem;align-items:start}
+.tip-card{background:#fff;border-radius:var(--r);padding:1.5rem 1.4rem;border:1px solid var(--rule)}
+.tip-card ol{margin:0;padding:0;list-style:none;counter-reset:t;display:grid;gap:1.1rem}
+.tip-card li{counter-increment:t;display:grid;grid-template-columns:2rem 1fr;gap:.75rem}
+.tip-card li::before{content:counter(t);display:grid;place-items:center;width:2rem;height:2rem;border-radius:50%;background:var(--leaf-dk);color:#fff;font-weight:700;font-size:.9375rem}
+.tip-card strong{color:var(--ink)}
+.tip-q{font:italic 500 1.25rem/1.45 var(--serif);color:var(--ink);margin-top:1rem}
+
+/* areas */
+.areas{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.6rem}
+.areas li{padding:.55rem 1rem;border-radius:999px;border:1.5px solid var(--leaf);color:var(--ink);font-weight:600}
+.areas li.base{background:var(--leaf-dk);border-color:var(--leaf-dk);color:#fff}
+.areas-note{margin-top:1rem;color:var(--soft)}
+
+/* contact */
+.contact{display:grid;gap:2rem}
+.direct{display:grid;gap:.9rem;align-content:start}
+.direct .big{display:block;text-decoration:none;font:600 clamp(1.9rem,1.4rem + 2vw,2.6rem)/1.1 var(--serif);color:var(--ink);font-variant-numeric:lining-nums;white-space:nowrap}
+.direct .big small{display:block;font:400 .9375rem/1.4 var(--sans);color:var(--soft);margin-bottom:.35rem}
+.direct .btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.direct .btns .btn{flex:1 1 12rem}
+.direct p{color:var(--soft)}
+.direct p a{color:var(--ink);font-weight:600;text-underline-offset:3px;word-break:break-word}
+form{background:var(--mist);border-radius:var(--r);padding:1.4rem}
+form h3{font-size:1.375rem}
+form p.help{margin-top:.35rem;color:var(--soft);font-size:.9375rem}
+.fld{display:grid;gap:.35rem;margin-top:1rem}
+.fld label{font-weight:600;color:var(--ink);font-size:.9375rem}
+.fld input,.fld select,.fld textarea{width:100%;font:400 1rem/1.4 var(--sans);color:var(--ink);background:#fff;border:1.5px solid #c9d2bd;border-radius:10px;padding:.75rem .85rem;min-height:3rem;-webkit-appearance:none;appearance:none}
+.fld select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%231d2417' stroke-width='2'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center;padding-right:2.5rem}
+.fld textarea{min-height:6.5rem;resize:vertical}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--leaf-dk);box-shadow:0 0 0 3px rgba(160,206,100,.55)}
+.row2{display:grid;gap:0 1rem}
+.f-btns{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem}
+.f-btns .btn{flex:1 1 12rem}
+.f-err{display:none;margin-top:.9rem;color:#8a1f11;font-weight:600}
+.f-err.on{display:block}
+
+/* footer */
+.ft{background:var(--ink);color:#d9e1cf;padding:2.5rem 0 2rem;font-size:.9375rem}
+.ft .wrap{display:grid;gap:1.25rem}
+.ft-logo{width:120px;background:#fff;border-radius:10px;padding:.5rem .6rem}
+.ft a{color:#fff;text-underline-offset:3px}
+.ft p+p{margin-top:.3rem}
+.ft .by{color:#9fab92;font-size:.8125rem;margin-top:.5rem}
+
+/* sticky call bar on phones */
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:20;display:grid;grid-template-columns:1fr 1fr;gap:.5rem;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:rgba(255,255,255,.97);border-top:1px solid var(--rule);box-shadow:0 -8px 24px -18px rgba(29,36,23,.5)}
+.bar .btn{min-height:3rem;padding:.6rem .5rem;font-size:1rem}
+body{padding-bottom:calc(4.25rem + env(safe-area-inset-bottom))}
+.js .bar{transform:translateY(115%);transition:transform .2s ease}
+.js .bar.show{transform:none}
+@media (prefers-reduced-motion:reduce){.js .bar{transition:none}}
+
+@media (min-width:600px){
+  .logo{width:150px}
+  .svc{grid-template-columns:1fr 1fr;column-gap:2.5rem}
+  .why{grid-template-columns:1fr 1fr}
+  .revs{grid-template-columns:1fr 1fr}
+  .row2{grid-template-columns:1fr 1fr}
+  .quote{padding:1.8rem 2rem 1.6rem}
+  .quote blockquote{font-size:1.5rem}
+}
+@media (min-width:900px){
+  .hd .wrap{padding:.8rem 0}
+  .logo{width:168px}
+  .hd-num{display:block}
+  .hero{padding:3.5rem 0 3.75rem}
+  .hero-grid{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);grid-template-areas:"main diary" "main trust";gap:1.25rem 3.5rem;align-items:start}
+  .h-main{grid-area:main;align-self:center}
+  .diary{grid-area:diary;align-self:end}
+  .trust{grid-area:trust;margin-top:0;padding:1.2rem 1.4rem;border:1px solid var(--rule);border-radius:var(--r)}
+  h1{font-size:3.05rem;max-width:19ch}
+  .ctas .btn{flex:0 1 auto}
+  .sec{padding:5rem 0}
+  .revs{grid-template-columns:repeat(3,1fr)}
+  .tip{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:3.5rem}
+  .contact{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:3.5rem}
+  .ft .wrap{grid-template-columns:auto 1fr;align-items:start;gap:2.5rem}
+  .bar{display:none}
+  body{padding-bottom:0}
+}
+@media (min-width:1100px){
+  .why{grid-template-columns:repeat(4,1fr)}
+}
+@media (max-width:519px){
+  .pv-long{display:none}
+}
+@media (max-width:359px){
+  .pv .wrap>span{font-size:.8125rem}
+  .btn{font-size:1rem;padding:.75rem 1rem}
+  .direct .big{font-size:1.75rem}
+}
+@media print{.pv,.bar{display:none}body{padding:0}}
+</style>
 </head>
 <body>
-<header class="hd"><div class="wrap">
-  <a class="logo" href="#top" aria-label="Country Green Heating home"><svg viewBox="0 0 40 40" aria-hidden="true"><rect width="40" height="40" rx="10" fill="var(--brand)"/><path d="M8 22 20 11l12 11" fill="none" stroke="var(--accent)" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 21v9h16v-9" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round"/></svg><span>Country Green Heating</span></a>
-  <a class="btn btn-c demo" href="#quote" aria-label="Call now" data-msg="On your live site this button rings your phone."><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1Z"/></svg><b>Call now</b></a>
-</div></header>
-<main id="top">
-<section class="hero"><div class="wrap">
-  <div>
-    <p class="kicker">Plumbing &amp; heating · Swindon</p>
-    <h1>Plumbing and heating in Swindon, done right.</h1>
-    <p class="sub">Boilers, bathrooms, leaks and repairs across Swindon and the surrounding area. Tell us what&#x27;s wrong and we&#x27;ll sort it.</p>
-    <div class="ctas">
-      <a class="btn btn-a" href="#quote">Get a free quote</a>
-      <a class="btn btn-b demo" href="#quote" data-msg="On your live site this button rings your phone."><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1Z"/></svg>Call us</a>
-    </div>
-    <ul class="badges"><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>Free quotes</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></svg>Local to Swindon</li></ul>
+
+<div class="pv" role="note" aria-label="Preview notice">
+  <div class="wrap">
+    <span><b>Your website preview</b><span class="pv-long"> &middot; made for Country Green Heating by NextThread</span></span>
+    <a href="https://wa.me/447856075882?text=Hi%2C%20I%27ve%20seen%20the%20website%20preview%20for%20Country%20Green%20Heating." rel="noopener">I like it</a>
   </div>
-  <div class="art"><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a new boiler"><rect width="400" height="260" fill="var(--sky)"/><g stroke="#fff" stroke-opacity=".55" stroke-width="2"><path d="M0 40h400M0 80h400M0 120h400M0 160h400"/><path d="M50 0v200M100 0v200M150 0v200M200 0v200M250 0v200M300 0v200M350 0v200"/></g><rect y="200" width="400" height="60" fill="var(--tint)"/><path d="M0 200h400" stroke="#000" stroke-opacity=".08" stroke-width="3"/>
-<rect x="90" y="28" width="120" height="150" rx="10" fill="#fff"/><rect x="90" y="150" width="120" height="28" rx="0" fill="#EEF1F2"/>
-<rect x="112" y="48" width="76" height="30" rx="5" fill="var(--brand)"/><path d="M122 63h20" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
-<circle cx="125" cy="164" r="7" fill="var(--accent)"/><circle cx="150" cy="164" r="5" fill="#C6CDD0"/>
-<g stroke="#C8874A" stroke-width="7" stroke-linecap="round"><path d="M110 178v40M130 178v40M170 178v40M190 178v40"/></g>
-<rect x="250" y="120" width="120" height="70" rx="8" fill="#fff"/><g stroke="#E1E5E7" stroke-width="4"><path d="M266 128v54M282 128v54M298 128v54M314 128v54M330 128v54M346 128v54"/></g>
-<path d="M262 190v16M358 190v16" stroke="#C8874A" stroke-width="6" stroke-linecap="round"/></svg></div>
-</div></section>
-
-<section class="sec"><div class="wrap">
-  <h2>What we do</h2>
-  <p class="lead">The work we take on across Swindon.</p>
-  <div class="grid"><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="3" width="12" height="14" rx="2"/><path d="M9 7h6M9 20v-3M15 20v-3"/><circle cx="12" cy="12" r="1.5"/></svg></div><div><h3>Boilers &amp; heating</h3><p>New boilers, servicing and breakdowns.</p></div></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18v2a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5Z"/><path d="M6 12V6a2 2 0 0 1 4 0M7 19l-1 2M17 19l1 2"/></svg></div><div><h3>Bathrooms</h3><p>Full bathroom fits and refreshes.</p></div></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3s6 6.4 6 10.5A6 6 0 0 1 6 13.5C6 9.4 12 3 12 3Z"/></svg></div><div><h3>Leaks &amp; repairs</h3><p>Leaks found and fixed, big or small.</p></div></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 6v12M11 6v12M15 6v12M19 18v2M5 18v2"/></svg></div><div><h3>Radiators</h3><p>New radiators, valves and power flushing.</p></div></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h9a3 3 0 0 1 3 3v1"/><path d="M8 10V6M5 6h6"/><path d="M16 18c0 1-.7 2-1.5 2S13 19 13 18s1.5-2.5 1.5-2.5S16 17 16 18Z"/></svg></div><div><h3>Taps, toilets &amp; showers</h3><p>Everyday jobs sorted properly.</p></div></div><div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg></div><div><h3>Free quotes</h3><p>A clear price before any work starts.</p></div></div></div>
-</div></section>
-
-<section class="sec" style="padding-top:0"><div class="wrap">
-  <h2>Recent jobs</h2>
-  <div class="jobs">
-    <figure><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a new bathroom"><rect width="400" height="260" fill="var(--sky)"/><g stroke="#fff" stroke-opacity=".55" stroke-width="2"><path d="M0 40h400M0 80h400M0 120h400M0 160h400"/><path d="M50 0v200M100 0v200M150 0v200M200 0v200M250 0v200M300 0v200M350 0v200"/></g><rect y="200" width="400" height="60" fill="var(--tint)"/><path d="M0 200h400" stroke="#000" stroke-opacity=".08" stroke-width="3"/>
-<path d="M300 30v40" stroke="#B9C0C4" stroke-width="6" stroke-linecap="round"/><path d="M300 30h-30" stroke="#B9C0C4" stroke-width="6" stroke-linecap="round"/><rect x="250" y="22" width="34" height="14" rx="7" fill="#9AA3A8"/>
-<g stroke="var(--brand)" stroke-opacity=".35" stroke-width="2" stroke-dasharray="2 9" stroke-linecap="round"><path d="M258 42 248 120M267 42 262 120M276 42 276 120"/></g>
-<rect x="110" y="128" width="250" height="70" rx="22" fill="#fff"/><rect x="110" y="128" width="250" height="16" rx="8" fill="#E9EDEF"/>
-<path d="M140 198v14M330 198v14" stroke="#9AA3A8" stroke-width="8" stroke-linecap="round"/>
-<path d="M60 70h40" stroke="#9AA3A8" stroke-width="5" stroke-linecap="round"/><rect x="66" y="74" width="28" height="56" rx="4" fill="var(--accent)"/>
-<circle cx="200" cy="100" r="4" fill="#B9C0C4"/></svg><figcaption>Bathroom</figcaption></figure><figure><svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a new boiler"><rect width="400" height="260" fill="var(--sky)"/><g stroke="#fff" stroke-opacity=".55" stroke-width="2"><path d="M0 40h400M0 80h400M0 120h400M0 160h400"/><path d="M50 0v200M100 0v200M150 0v200M200 0v200M250 0v200M300 0v200M350 0v200"/></g><rect y="200" width="400" height="60" fill="var(--tint)"/><path d="M0 200h400" stroke="#000" stroke-opacity=".08" stroke-width="3"/>
-<rect x="90" y="28" width="120" height="150" rx="10" fill="#fff"/><rect x="90" y="150" width="120" height="28" rx="0" fill="#EEF1F2"/>
-<rect x="112" y="48" width="76" height="30" rx="5" fill="var(--brand)"/><path d="M122 63h20" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
-<circle cx="125" cy="164" r="7" fill="var(--accent)"/><circle cx="150" cy="164" r="5" fill="#C6CDD0"/>
-<g stroke="#C8874A" stroke-width="7" stroke-linecap="round"><path d="M110 178v40M130 178v40M170 178v40M190 178v40"/></g>
-<rect x="250" y="120" width="120" height="70" rx="8" fill="#fff"/><g stroke="#E1E5E7" stroke-width="4"><path d="M266 128v54M282 128v54M298 128v54M314 128v54M330 128v54M346 128v54"/></g>
-<path d="M262 190v16M358 190v16" stroke="#C8874A" stroke-width="6" stroke-linecap="round"/></svg><figcaption>Boiler</figcaption></figure><figure><svg viewBox="0 0 480 330" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Illustration of a house with a new tiled roof">
-<defs><clipPath id="r19ca77j"><path d="M84 178 240 66l156 112Z"/></clipPath>
-<linearGradient id="s19ca77j" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient></defs>
-<rect width="480" height="330" fill="var(--sky)"/><rect width="480" height="200" fill="url(#s19ca77j)"/>
-<circle cx="400" cy="70" r="30" fill="var(--accent)" opacity=".85"/>
-<path d="M0 270c80-18 150-20 240-8s170 10 240-6v74H0Z" fill="var(--tint)"/><path d="M0 292c90-10 170-8 250 0s160 6 230-4v42H0Z" fill="#fff" opacity=".55"/>
-<rect x="114" y="172" width="252" height="112" fill="#FBF8F2"/><rect x="114" y="172" width="252" height="10" fill="#000" opacity=".06"/>
-<rect x="306" y="92" width="30" height="66" fill="#B4553F"/><rect x="301" y="86" width="40" height="10" rx="2" fill="#8E3F2E"/>
-<path d="M84 178 240 66l156 112Z" fill="var(--roof)"/>
-<g clip-path="url(#r19ca77j)" stroke="#fff" stroke-opacity=".16" stroke-width="2">
-<path d="M60 92h360M60 110h360M60 128h360M60 146h360M60 164h360"/>
-<path d="M200 92v18M232 92v18M264 92v18M184 110v18M216 110v18M248 110v18M280 110v18M168 128v18M200 128v18M232 128v18M264 128v18M296 128v18M152 146v18M184 146v18M216 146v18M248 146v18M280 146v18M312 146v18M136 164v14M168 164v14M200 164v14M232 164v14M264 164v14M296 164v14M328 164v14"/></g>
-<path d="M80 180h320" stroke="var(--brand)" stroke-width="8" stroke-linecap="round"/>
-<rect x="150" y="204" width="54" height="46" rx="3" fill="var(--sky)" stroke="#fff" stroke-width="5"/><path d="M177 204v46M150 227h54" stroke="#fff" stroke-width="4"/>
-<rect x="276" y="204" width="54" height="46" rx="3" fill="var(--sky)" stroke="#fff" stroke-width="5"/><path d="M303 204v46M276 227h54" stroke="#fff" stroke-width="4"/>
-<rect x="218" y="216" width="44" height="68" rx="3" fill="var(--brand)"/><circle cx="252" cy="252" r="3" fill="var(--accent)"/>
-<g stroke="#8B6A3E" stroke-width="5" stroke-linecap="round"><path d="M392 286 362 150M420 286 390 150"/><path d="M370 186h29M374 206h29M379 226h29M383 246h29M388 266h29" stroke-width="4"/></g>
-</svg><figcaption>Home</figcaption></figure>
-  </div>
-  <p class="note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 8h.01"/></svg>Your own job photos go here, sent straight from your phone.</p>
-</div></section>
-
-<section class="sec" style="padding-top:0"><div class="wrap">
-  <h2>What customers say</h2>
-  
-  <div class="revs"><div class="rev"><div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg></div><p class="ph">Your customer&#x27;s review goes here</p><div class="bar"></div><div class="bar s"></div><div class="who"><i></i><b></b></div></div><div class="rev"><div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg></div><p class="ph">Your customer&#x27;s review goes here</p><div class="bar"></div><div class="bar s"></div><div class="who"><i></i><b></b></div></div><div class="rev"><div class="stars"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9Z"/></svg></div><p class="ph">Your customer&#x27;s review goes here</p><div class="bar"></div><div class="bar s"></div><div class="who"><i></i><b></b></div></div></div>
-  <span class="tagline">Taken from your Google, Checkatrade or Facebook page</span>
-</div></section>
-
-<section class="sec quote" id="quote"><div class="wrap"><div class="box">
-  <div>
-    <h2>Need a plumber in Swindon?</h2>
-    <p style="margin-top:12px">Tell us about the job and we'll come back to you with a clear quote.</p>
-    <ul class="areas" style="margin-top:18px"><li>Swindon</li><li>Surrounding areas</li></ul>
-  </div>
-  <div class="ctas">
-    <a class="btn btn-a demo" href="#quote" data-msg="On your live site this button rings your phone."><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.2 15.2 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1Z"/></svg>Call now</a>
-    <a class="btn btn-b demo" href="#quote" data-msg="On your live site this opens a WhatsApp chat with you."><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>WhatsApp us</a>
-  </div>
-</div></div></section>
-</main>
-<footer class="ft"><div class="wrap"><span>&copy; 2026 Country Green Heating Ltd</span><span>Website preview by NextThread</span></div></footer>
-
-<div class="nt" role="complementary" aria-label="About this preview">
-  <svg class="mk" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#F2C230"/><path d="M18 46 46 18M24 18h22v22" fill="none" stroke="#0F2A21" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  <div class="t"><b>Your free website preview</b><span>Made for Country Green Heating. £595, live in a week.</span></div>
-  <a href="https://wa.me/447856075882?text=Hi%2C%20I%27ve%20seen%20the%20website%20preview%20for%20Country%20Green%20Heating."><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>Like it?</a>
 </div>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
-<script src="/p/assets/preview.js?v=021aeb90" defer></script>
+
+<header class="hd">
+  <div class="wrap">
+    <a class="logo" href="/p/country-green-heating/" aria-label="Country Green Heating Ltd, home">
+      <picture>
+        <source srcset="/p/country-green-heating/logo.webp" type="image/webp">
+        <img src="/p/country-green-heating/logo.png" width="387" height="233" alt="Country Green Heating Ltd.">
+      </picture>
+    </a>
+    <div class="hd-call">
+      <a class="hd-num" href="tel:+447748604652"><small>Call or WhatsApp Stuart</small><strong>07748 604652</strong></a>
+      <a class="btn btn-call btn-sm" href="tel:+447748604652" aria-label="Call 07748 604652"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Call</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div class="h-main">
+      <div class="place">
+        <span class="gs" title="Gas Safe registered business number 603857"><span>Gas Safe</span><span>603857</span></span>
+        <span>Family run, based in Chiseldon</span>
+      </div>
+      <h1 id="h1">Heating and plumbing for Swindon, Marlborough and Chippenham</h1>
+      <p class="lead">Gas and oil boilers, servicing and breakdowns, central heating, gas fires and plumbing, from a small local team that customers know by name.</p>
+      <div class="ctas">
+        <a class="btn btn-call" href="tel:+447748604652"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Call 07748 604652</a>
+        <a class="btn btn-wa" href="https://wa.me/447748604652?text=Hi%20Stuart%2C%20" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M17.3 14.6c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.3.2-.6.1a7.6 7.6 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5l-.9-2.1c-.2-.6-.5-.5-.6-.5h-.5a1 1 0 0 0-.8.4 3.2 3.2 0 0 0-1 2.4c0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>WhatsApp</a>
+      </div>
+      <p class="mail">Or email <a href="mailto:cgheating@outlook.com">cgheating@outlook.com</a></p>
+    </div>
+
+    <ul class="trust">
+      <li><span><strong>Gas Safe registered</strong>, number 603857</span></li>
+      <li><span><strong>100% recommend</strong> across 9 Facebook reviews</span></li>
+      <li><span><strong>Country Green Heating Ltd</strong>, a registered company since 2017</span></li>
+    </ul>
+
+    <aside class="diary" aria-labelledby="diary-h">
+      <h2 id="diary-h">Now booking boiler services for the new year</h2>
+      <p>The diary is nearly full for this year, with December kept clear for breakdowns and emergencies.</p>
+      <p>If your boiler service is due, get in touch and we&rsquo;ll book you in.</p>
+      <span class="when">From Stuart&rsquo;s update in November</span>
+    </aside>
+  </div>
+</section>
+
+<figure class="downs">
+  <picture>
+    <source srcset="/p/country-green-heating/land.webp" type="image/webp">
+    <img src="/p/country-green-heating/land.jpg" width="1138" height="236" alt="Wooded valleys and fields of the Wiltshire countryside">
+  </picture>
+  <figcaption class="quote">
+    <blockquote>&ldquo;We pride ourselves on loyal customers and a personal service from a familiar engineer, who remembers the details that matter when visiting your home.&rdquo;</blockquote>
+    <p class="who"><strong>Stuart Tanner</strong>, Director</p>
+  </figcaption>
+</figure>
+
+<section class="sec" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <h2 id="svc-h">What we do</h2>
+    <p class="intro">Gas and oil, heating and plumbing, for homes and landlords in and around Swindon.</p>
+    <ul class="svc">
+      <li><h3>Boiler servicing</h3><p>Yearly services for gas and oil boilers, to keep them safe and running well.</p></li>
+      <li><h3>Breakdowns and repairs</h3><p>Fast call-outs when a boiler stops, with new parts fitted when they&rsquo;re needed.</p></li>
+      <li><h3>Central heating and radiators</h3><p>New radiators fitted, old ones capped off, and leaking radiators and pipes found and fixed.</p></li>
+      <li><h3>Landlord gas safety checks</h3><p>The yearly gas safety check that landlords need by law.</p></li>
+      <li><h3>Gas fires</h3><p>Gas fire work, done by a Gas Safe registered engineer.</p></li>
+      <li><h3>Plumbing</h3><p>From tracing a leak to plumbing in a new washing machine.</p></li>
+      <li><h3>Kitchen, utility and bathroom appliances</h3><p>Appliances plumbed in and connected properly.</p></li>
+      <li><h3>Smart home and efficiency</h3><p>Smart home installations and efficiency improvements. Home efficiency, home safety.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec sec-mist" id="why" aria-labelledby="why-h">
+  <div class="wrap">
+    <h2 id="why-h">Why customers stay with us</h2>
+    <ul class="why">
+      <li><h3>A familiar face</h3><p>Customers mention Stuart and Andy by name. A small, family run business that prides itself on loyal customers.</p></li>
+      <li><h3>Quick to respond</h3><p>One customer&rsquo;s boiler packed up overnight and the heating was back on by noon.</p></li>
+      <li><h3>Gas Safe registered</h3><p>Registration number 603857. You can <a href="https://www.gassaferegister.co.uk/" rel="noopener">check it on the Gas Safe Register</a>.</p></li>
+      <li><h3>Local to you</h3><p>Based in Chiseldon, covering Swindon, Marlborough, Chippenham and the villages around them.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" id="reviews" aria-labelledby="rev-h">
+  <div class="wrap">
+    <h2 id="rev-h">What customers say</h2>
+    <p class="score"><b>100%</b><span>of 9 reviewers on Facebook recommend Country Green Heating</span></p>
+    <div class="revs">
+      <figure class="rev"><blockquote>&ldquo;Stuart is a great guy who can&rsquo;t do enough for his customers.&rdquo;</blockquote><figcaption><strong>Kriston</strong> &middot; December 2023</figcaption></figure>
+      <figure class="rev"><blockquote>&ldquo;Boiler packed up overnight&hellip; all sorted and heating back on by noon.&rdquo;</blockquote><figcaption><strong>Theresa</strong> &middot; February 2021</figcaption></figure>
+      <figure class="rev"><blockquote>&ldquo;Excellent workmanship, reliable, on time, nothing is too much trouble.&rdquo;</blockquote><figcaption><strong>Dan</strong> &middot; January 2021</figcaption></figure>
+      <figure class="rev"><blockquote>&ldquo;Arrived on time and did a great tidy job.&rdquo;</blockquote><figcaption><strong>Kim</strong> &middot; November 2020</figcaption></figure>
+      <figure class="rev"><blockquote>&ldquo;Highly skilled, knowledgeable &amp; friendly. Couldn&rsquo;t recommend more. 10/10&rdquo;</blockquote><figcaption><strong>Debbie</strong> &middot; October 2020</figcaption></figure>
+      <figure class="rev"><blockquote>&ldquo;Great to deal with and highly professional team.&rdquo;</blockquote><figcaption><strong>Julie</strong> &middot; January 2021</figcaption></figure>
+    </div>
+    <p class="src">From recommendations on <a href="https://www.facebook.com/CountryGreenHeatingLtd/reviews" rel="noopener">the Country Green Heating Facebook page</a>.</p>
+  </div>
+</section>
+
+<section class="sec sec-mist" id="tip" aria-labelledby="tip-h">
+  <div class="wrap tip">
+    <div>
+      <h2 id="tip-h">Stuart&rsquo;s advice before the cold sets in</h2>
+      <p class="tip-q">&ldquo;You wouldn&rsquo;t leave your car for 6 months and then expect it to run perfectly.&rdquo;</p>
+    </div>
+    <div class="tip-card">
+      <ol>
+        <li><span><strong>Give your heating a good run</strong> before it turns really cold. It shows up a sticking valve or a burnt out motor before you need the heat.</span></li>
+        <li><span><strong>When it freezes, check the condensate pipe</strong> outside your boiler, and lag it if it isn&rsquo;t already. A frozen pipe makes the boiler gurgle before it stops with a fault code.</span></li>
+        <li><span><strong>Any problems, call straight away</strong> on <a href="tel:+447748604652">07748 604652</a>, rather than waiting for it to fail.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="areas" aria-labelledby="area-h">
+  <div class="wrap">
+    <h2 id="area-h">Where we work</h2>
+    <ul class="areas">
+      <li class="base">Chiseldon</li>
+      <li>Swindon</li>
+      <li>Marlborough</li>
+      <li>Chippenham</li>
+    </ul>
+    <p class="areas-note">And the surrounding villages. Not sure if you&rsquo;re covered? Just ask.</p>
+  </div>
+</section>
+
+<section class="sec sec-mist" id="contact" aria-labelledby="ct-h">
+  <div class="wrap contact">
+    <div class="direct">
+      <h2 id="ct-h">Get in touch</h2>
+      <a class="big" href="tel:+447748604652"><small>Call or WhatsApp Stuart</small>07748 604652</a>
+      <div class="btns">
+        <a class="btn btn-call" href="tel:+447748604652">Call now</a>
+        <a class="btn btn-wa" href="https://wa.me/447748604652?text=Hi%20Stuart%2C%20" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M17.3 14.6c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.3.2-.6.1a7.6 7.6 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5l-.9-2.1c-.2-.6-.5-.5-.6-.5h-.5a1 1 0 0 0-.8.4 3.2 3.2 0 0 0-1 2.4c0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>WhatsApp</a>
+      </div>
+      <p>Email <a href="mailto:cgheating@outlook.com">cgheating@outlook.com</a></p>
+      <p>Based in Chiseldon, Swindon SN4 0LS.</p>
+    </div>
+
+    <form id="enq" novalidate>
+      <h3>Send an enquiry</h3>
+      <p class="help">Fill this in and it&rsquo;ll open as an email or WhatsApp message, ready to send.</p>
+      <div class="row2">
+        <div class="fld"><label for="f-name">Your name</label><input id="f-name" name="name" autocomplete="name" required></div>
+        <div class="fld"><label for="f-tel">Phone number</label><input id="f-tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" required></div>
+      </div>
+      <div class="row2">
+        <div class="fld"><label for="f-where">Village or postcode</label><input id="f-where" name="where" autocomplete="postal-code"></div>
+        <div class="fld"><label for="f-need">What do you need?</label>
+          <select id="f-need" name="need">
+            <option>Boiler service</option>
+            <option>Breakdown or repair</option>
+            <option>Landlord gas safety check</option>
+            <option>Heating or radiators</option>
+            <option>Plumbing</option>
+            <option>Something else</option>
+          </select>
+        </div>
+      </div>
+      <div class="fld"><label for="f-msg">Anything else we should know?</label><textarea id="f-msg" name="msg" rows="3"></textarea></div>
+      <p class="f-err" id="f-err" role="alert">Please add your name and phone number so Stuart can get back to you.</p>
+      <div class="f-btns">
+        <button class="btn btn-call" type="submit" data-via="email">Send by email</button>
+        <button class="btn btn-wa" type="submit" data-via="wa">Send by WhatsApp</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+</main>
+
+<footer class="ft">
+  <div class="wrap">
+    <picture>
+      <source srcset="/p/country-green-heating/logo.webp" type="image/webp">
+      <img class="ft-logo" src="/p/country-green-heating/logo.png" width="387" height="233" alt="Country Green Heating Ltd." loading="lazy">
+    </picture>
+    <div>
+      <p><strong>Country Green Heating Ltd.</strong> Home efficiency, home safety.</p>
+      <p>Gas Safe registered 603857. Call or WhatsApp <a href="tel:+447748604652">07748 604652</a> &middot; <a href="mailto:cgheating@outlook.com">cgheating@outlook.com</a></p>
+      <p>Registered in England and Wales, company number 11088396. Registered office: 36 Draycott Road, Chiseldon, Swindon, Wiltshire SN4 0LS.</p>
+      <p><a href="https://www.facebook.com/CountryGreenHeatingLtd/" rel="noopener">Find us on Facebook</a></p>
+      <p class="by">Website preview by NextThread</p>
+    </div>
+  </div>
+</footer>
+
+<nav class="bar" aria-label="Quick contact">
+  <a class="btn btn-call" href="tel:+447748604652"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg>Call</a>
+  <a class="btn btn-wa" href="https://wa.me/447748604652?text=Hi%20Stuart%2C%20" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M17.3 14.6c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.3.2-.6.1a7.6 7.6 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5l-.9-2.1c-.2-.6-.5-.5-.6-.5h-.5a1 1 0 0 0-.8.4 3.2 3.2 0 0 0-1 2.4c0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>WhatsApp</a>
+</nav>
+
+<script>
+(function(){
+  var bar=document.querySelector('.bar'), cta=document.querySelector('.ctas');
+  if(bar&&cta&&'IntersectionObserver' in window){
+    new IntersectionObserver(function(es){bar.classList.toggle('show',!es[0].isIntersecting&&es[0].boundingClientRect.top<0);},{threshold:0}).observe(cta);
+  }else if(bar){bar.classList.add('show');}
+})();
+(function(){
+  var f=document.getElementById('enq'); if(!f) return;
+  var err=document.getElementById('f-err'), via='email';
+  var btns=f.querySelectorAll('button[data-via]');
+  for(var i=0;i<btns.length;i++){btns[i].addEventListener('click',function(){via=this.getAttribute('data-via');});}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var v=function(n){return (f.elements[n].value||'').replace(/^\s+|\s+$/g,'');};
+    var name=v('name'), tel=v('tel'), where=v('where'), need=v('need'), msg=v('msg');
+    if(!name||!tel){err.className='f-err on'; (name?f.elements.tel:f.elements.name).focus(); return;}
+    err.className='f-err';
+    var lines=['Hi Stuart,','','Name: '+name,'Phone: '+tel];
+    if(where) lines.push('Village or postcode: '+where);
+    lines.push('Need: '+need);
+    if(msg){lines.push('',msg);}
+    var body=lines.join('\n');
+    if(via==='wa'){
+      window.location.href='https://wa.me/447748604652?text='+encodeURIComponent(body);
+    }else{
+      window.location.href='mailto:cgheating@outlook.com?subject='+encodeURIComponent('Website enquiry: '+need)+'&body='+encodeURIComponent(body);
+    }
+  });
+})();
+</script>
 </body>
 </html>
