@@ -9,12 +9,13 @@
 <meta name="robots" content="noindex, nofollow, noarchive">
 <meta name="color-scheme" content="only light">
 <meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#0D3540">
+<meta name="theme-color" content="#0A3340">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Adapt Drainage Services">
 <meta property="og:title" content="Adapt Drainage Services, Chesterfield">
 <meta property="og:description" content="Blocked drain? Call Lewis, day or night. Rated 5 out of 5 on Derbyshire Trusted Trader.">
-<meta property="og:image" content="https://nextthreadautomation.co.uk/p/adapt-drainage-services/og.png">
+<meta property="og:image" content="https://nextthreadautomation.co.uk/p/adapt-drainage-services/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:url" content="https://nextthreadautomation.co.uk/p/adapt-drainage-services/">
@@ -28,219 +29,347 @@
 @font-face{font-family:"Archivo AD";src:url("archivo-var.woff") format("woff");font-weight:400 900;font-stretch:62% 125%;font-style:normal;font-display:swap}
 
 :root{
-  --petrol:#0D3540;     /* the page's dark ground */
-  --deep:#082730;       /* one step darker, for the strip and the footer */
-  --ink:#0E2A33;
-  --text:#22373E;
-  --soft:#536A72;
+  --abyss:#05252E;      /* the deepest tone: strip, footer */
+  --petrol:#0A3340;     /* the dark ground */
+  --ink:#0A2630;        /* headings and text on orange */
+  --text:#21373F;
+  --soft:#566D75;
   --paper:#ffffff;
-  --mist:#EDF2F3;
-  --rule:#D4DEE1;
-  --pipe:#F26A1B;       /* the orange of underground drain pipe: every call button */
-  --pipe-dk:#B8480A;    /* the same orange, dark enough for text on white */
-  --water:#9ED9EA;      /* pale blue, on the dark ground */
-  --water-dk:#1B7895;   /* the water company's pipe in the drawing */
-  --live:#35D07F;
-  --sans:"Archivo AD","Helvetica Neue",Arial,sans-serif;
+  --mist:#F1F5F6;
+  --rule:#DBE4E7;
+  --pipe:#FF6B1A;       /* the orange of underground drain pipe: every call button */
+  --pipe-dk:#B8460A;    /* the same orange, dark enough for text on white */
+  --cyan:#8FE0F0;       /* water and light, on the dark ground */
+  --cyan-dk:#127C97;    /* the water company's pipe in the drawing */
+  --live:#3BD98A;
+  --sans:"Archivo AD","Helvetica Neue",Helvetica,Arial,sans-serif;
 }
 *,*::before,*::after{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%;text-size-adjust:100%;scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--text);font:400 1.0625rem/1.6 var(--sans);overflow-x:hidden}
-img,svg{display:block;max-width:100%}
-a{color:inherit}
+body{margin:0;background:var(--paper);color:var(--text);font:400 1.0625rem/1.6 var(--sans);overflow-wrap:break-word;word-wrap:break-word;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+svg,canvas{display:block}
+svg{max-width:100%}
+a{color:inherit;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+button{font:inherit;color:inherit;-webkit-tap-highlight-color:rgba(0,0,0,0)}
 p,h1,h2,h3,ul,ol,dl,dd,figure,blockquote,fieldset{margin:0;padding:0}
 ul,ol{list-style:none}
 fieldset{border:0;min-width:0}
 :focus-visible{outline:3px solid var(--pipe);outline-offset:3px;border-radius:6px}
-.wrap{width:min(100% - 2.5rem,70rem);margin-inline:auto}
+.wrap{width:calc(100% - 2.5rem);max-width:70rem;margin-left:auto;margin-right:auto}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .num{font-variant-numeric:lining-nums tabular-nums;white-space:nowrap}
+.skip{position:absolute;left:-999rem;top:0;z-index:50;padding:.75rem 1rem;background:#fff;color:var(--ink);font-weight:700}
+.skip:focus{left:.5rem;top:.5rem}
 
 /* the narrow, heavy cut of the typeface: headings and the phone number */
-.d{font-stretch:66%;font-weight:850;line-height:.96;letter-spacing:-.005em}
+.d{font-stretch:66%;font-variation-settings:"wdth" 66;font-weight:850;line-height:.96;letter-spacing:-.005em}
 
 /* preview strip */
-.pv{background:var(--deep);color:#C9DADF;font-size:.875rem;line-height:1.4}
+.pv{background:var(--abyss);color:#C5D8DD;font-size:.875rem;line-height:1.4}
 .pv .wrap{padding:.6rem 0}
 .pv b{color:#fff;font-weight:650}
 .pv-long{display:none}
 
-/* dark top: header and hero share one ground */
-.top{position:relative;isolation:isolate;overflow:hidden;background:var(--petrol);color:#fff}
-.bore{position:absolute;z-index:-1;width:34rem;max-width:none;right:-17rem;top:-7rem;pointer-events:none}
-.hd .wrap{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1.1rem 0 0}
-.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:#fff}
-.brand svg{width:2.25rem;height:2.25rem;flex:none}
-.brand span{font-size:1.375rem;line-height:1}
-.hd-num{display:none}
+/* header */
+.hd{position:relative;z-index:30;margin-bottom:-4.5rem;color:#fff}
+.hd-in{display:flex;align-items:center;justify-content:space-between;min-height:4.5rem}
+.logo{display:flex;align-items:center;text-decoration:none;color:#fff}
+.logo svg{width:2.625rem;height:2.625rem;flex:none;margin-right:.7rem}
+.logo-t{display:block}
+.logo-a{display:block;font-size:1.875rem;line-height:.8}
+.logo-b{display:block;margin-top:.3rem;font-size:.6875rem;line-height:1;font-weight:700;letter-spacing:.115em;text-transform:uppercase;color:#CFE3E8}
+.nav,.hd-call{display:none}
 
-.hero .wrap{padding:2.25rem 0 2.75rem}
-.oncall{display:flex;align-items:center;gap:.6rem;color:var(--water);font-size:.9375rem;line-height:1.35}
-.dot{position:relative;flex:none;width:.6rem;height:.6rem;border-radius:50%;background:var(--live)}
-.dot::after{content:"";position:absolute;inset:-.3rem;border-radius:50%;border:2px solid var(--live);opacity:0;animation:ping 2.4s ease-out infinite}
+/* hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:#0A3340;background:radial-gradient(30rem 24rem at 90% 11%,rgba(96,208,232,.26),rgba(96,208,232,0) 72%),linear-gradient(180deg,#0A3340 0%,#05252E 100%)}
+.bore{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;display:none}
+.bore-svg{position:absolute;width:34rem;max-width:none;right:-15rem;top:-11rem;pointer-events:none}
+.has-bore .bore{display:block}
+.has-bore .bore-svg{display:none}
+.hero-grid{position:relative;padding:6rem 0 2.75rem}
+.oncall{display:inline-flex;align-items:flex-start;padding:.4rem .85rem .4rem .7rem;border-radius:1.15rem;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);color:#DDF3F8;font-size:.9375rem;font-size:clamp(.8125rem,3.75vw,.9375rem);line-height:1.3}
+.dot{position:relative;flex:none;width:.6rem;height:.6rem;margin:.31rem .55rem 0 0;border-radius:50%;background:var(--live)}
+.dot::after{content:"";position:absolute;top:-.3rem;right:-.3rem;bottom:-.3rem;left:-.3rem;border-radius:50%;border:2px solid var(--live);opacity:0;animation:ping 2.4s ease-out infinite}
 @keyframes ping{0%{transform:scale(.4);opacity:.7}100%{transform:scale(1.25);opacity:0}}
-h1{margin-top:1.1rem;font-size:clamp(3rem,15.4vw,5rem);line-height:.9;color:#fff}
+h1{margin-top:1.1rem;font-size:2.75rem;font-size:clamp(2.5rem,15.4vw,5rem);line-height:.9;color:#fff}
 h1 span{display:block}
-.lead{margin-top:1.25rem;max-width:32rem;font-size:1.1875rem;line-height:1.5;color:#E3EDEF}
-.hero-act{margin-top:1.75rem;display:grid;gap:.75rem}
-.hero-act > *,.end-act > *{min-width:0}
-.proof{margin-top:1.5rem;display:flex;gap:.65rem;align-items:flex-start;max-width:30rem;font-size:.9375rem;line-height:1.45;color:#C9DADF}
-.proof svg{flex:none;width:1.25rem;height:1.25rem;margin-top:.1rem;color:var(--live)}
-.proof a{color:#fff;text-underline-offset:3px}
+h1,h2,h3,.say,.rv-q{text-wrap:balance}
+.lead,.intro,.rv-sub,.svc p{text-wrap:pretty}
+.lead{margin-top:1.2rem;max-width:31rem;font-size:1.1875rem;line-height:1.5;color:#DCEBEE}
+.hero-act{margin-top:1.75rem;max-width:29rem}
+.hero-act .btn{margin-top:.75rem}
+.proof{display:flex;flex-wrap:wrap;align-items:center;margin-top:.8rem;padding:.7rem 0;color:#CFE3E8;font-size:.9375rem;line-height:1.4;text-decoration:none}
+.proof u{color:#fff;text-underline-offset:3px}
+.proof-t{flex:1 1 9rem;min-width:0;padding:.15rem 0}
+.marks{display:flex;flex:none;margin-right:.75rem}
+.marks svg{width:1.2rem;height:1.2rem;margin-right:.16rem}
+.js .rise{animation:rise .7s cubic-bezier(.2,.7,.2,1) both}
+.js .rise-2{animation-delay:.07s}
+.js .rise-3{animation-delay:.14s}
+.js .rise-4{animation-delay:.21s}
+.js .rise-5{animation-delay:.28s}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 
 /* the call panel: the one loud thing on the page */
-.call{display:block;padding:.95rem 1.2rem 1.1rem;border-radius:16px;background:var(--pipe);color:var(--ink);text-decoration:none}
-.call:hover{background:#FF7A2E}
-.call-l{display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:1.0625rem}
-.call-l svg{width:1.35rem;height:1.35rem}
-.call-n{display:block;margin-top:.3rem;font-size:clamp(2.6rem,14.4vw,4.75rem);line-height:.86}
+.call{display:block;padding:.95rem 1.2rem 1.15rem;border-radius:18px;color:var(--ink);text-decoration:none;background:#FF6B1A;background:linear-gradient(180deg,#FF7D31 0%,#FF6212 100%);box-shadow:inset 0 1px 0 rgba(255,255,255,.4),0 20px 40px -20px rgba(255,107,26,.7)}
+.call:hover{background:#FF7D31;background:linear-gradient(180deg,#FF8C47 0%,#FF6B1A 100%)}
+.call-l{display:flex;align-items:center;justify-content:space-between;font-weight:700;font-size:1.0625rem;line-height:1.2}
+.call-i{margin-left:.5rem}
+.call-i{display:flex;align-items:center;justify-content:center;flex:none;width:2.25rem;height:2.25rem;border-radius:50%;background:var(--ink);color:#fff}
+.call-i svg{width:1.1rem;height:1.1rem}
+.call-n{display:block;margin-top:.1rem;font-size:2.3rem;font-size:clamp(2.3rem,14.4vw,4.75rem);line-height:.9}
 @supports (font-size:1cqw){
   .call{container-type:inline-size}
   .call-n{font-size:min(4.9rem,19.2cqw)}
 }
 
 /* buttons */
-.btn{display:flex;align-items:center;justify-content:center;gap:.6rem;min-height:3.5rem;padding:.8rem 1.25rem;border-radius:12px;border:2px solid transparent;font:700 1.0625rem/1.2 var(--sans);text-decoration:none;text-align:center;cursor:pointer}
-.btn svg{width:1.4rem;height:1.4rem;flex:none}
-.btn-line{border-color:rgba(255,255,255,.5);color:#fff}
-.btn-line:hover{border-color:#fff;background:rgba(255,255,255,.06)}
+.btn{display:flex;align-items:center;justify-content:center;min-height:3.5rem;padding:.8rem 1.25rem;border-radius:14px;border:2px solid transparent;font:700 1.0625rem/1.2 var(--sans);text-decoration:none;text-align:center;cursor:pointer}
+.btn svg{width:1.4rem;height:1.4rem;flex:none;margin-right:.6rem}
+.btn-line{border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.05);color:#fff}
+.btn-line:hover{border-color:#fff;background:rgba(255,255,255,.1)}
 .btn-ink{background:var(--ink);color:#fff}
-.btn-ink:hover{background:#153b47}
-.btn-plain{border-color:var(--ink);color:var(--ink);background:#fff}
+.btn-ink:hover{background:#12404e}
+.btn-plain{border-color:var(--ink);background:#fff;color:var(--ink)}
 .btn-plain:hover{background:var(--mist)}
 
+/* four facts under the hero */
+.facts{border-bottom:1px solid var(--rule)}
+.facts ul{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-gap:1.35rem 1rem;padding:1.6rem 0}
+.facts li{display:flex;align-items:flex-start}
+.facts li > span{min-width:0}
+.facts svg{flex:none;width:1.5rem;height:1.5rem;margin:.05rem .6rem 0 0;color:var(--pipe-dk)}
+.facts b{display:block;color:var(--ink);font-weight:700;line-height:1.25}
+.facts small{display:block;margin-top:.15rem;font-size:.9375rem;line-height:1.35;color:var(--soft);text-wrap:balance}
+
 /* sections */
-.sec{padding-block:clamp(3.25rem,2rem + 6vw,6rem)}
+.sec{padding-top:3.5rem;padding-bottom:3.5rem}
 .sec-mist{background:var(--mist)}
-h2{font-size:clamp(2.25rem,1.5rem + 3.4vw,3.5rem);color:var(--ink);max-width:15ch}
-.intro{margin-top:.9rem;max-width:32rem;color:var(--text)}
+h2{font-size:2.4rem;font-size:clamp(2.4rem,1.6rem + 3.4vw,3.75rem);color:var(--ink);max-width:15ch}
+.intro{margin-top:.9rem;max-width:32rem}
+
+/* services */
+.svc{margin-top:1.75rem;border-bottom:1px solid var(--rule)}
+.svc li{position:relative;padding:1.35rem 0 1.35rem 4.5rem;border-top:1px solid var(--rule)}
+.svc-i{position:absolute;left:0;top:1.35rem;display:flex;align-items:center;justify-content:center;width:3.5rem;height:3.5rem;border-radius:16px;background:var(--petrol);color:#fff}
+.svc-i svg{width:2.4rem;height:2.4rem}
+.svc-i .hot{stroke:var(--pipe)}
+.svc-i .hot-f{fill:var(--pipe)}
+.svc h3{font-size:1.9rem;color:var(--ink)}
+.svc p{margin-top:.35rem}
+.svc a{display:inline-block;margin-top:.05rem;padding:.5rem 0;color:var(--pipe-dk);font-weight:700;text-underline-offset:3px}
 
 /* tell Lewis */
-.tell-grid{display:grid;gap:1.75rem}
-.chips{display:flex;flex-wrap:wrap;gap:.5rem}
-.chip{position:relative;display:block}
-.chip input{position:absolute;inset:0;opacity:0;margin:0;cursor:pointer}
-.chip span{display:block;padding:.7rem 1rem;border-radius:999px;border:1.5px solid #B9C7CC;background:#fff;color:var(--ink);font-weight:600;font-size:1rem;line-height:1.25}
+.tell-grid{display:grid;grid-template-columns:minmax(0,1fr);grid-gap:1.75rem}
+.chips{display:flex;flex-wrap:wrap;margin:-.25rem}
+.chip{position:relative;display:block;margin:.25rem}
+.chip input{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;margin:0;cursor:pointer}
+.chip span{display:block;padding:.7rem 1rem;border-radius:999px;border:1.5px solid #B7C6CB;background:#fff;color:var(--ink);font-weight:600;font-size:1rem;line-height:1.25}
 .chip input:checked + span{background:var(--ink);border-color:var(--ink);color:#fff}
 .chip input:focus-visible + span{outline:3px solid var(--pipe);outline-offset:3px}
-.pc{margin-top:1.25rem}
-.pc label{display:block;font-weight:650;color:var(--ink)}
-.pc label small{display:block;font-weight:400;font-size:.9375rem;color:var(--soft)}
-.pc input{margin-top:.4rem;width:100%;max-width:13rem;min-height:3.25rem;padding:.6rem .9rem;border:1.5px solid #B9C7CC;border-radius:12px;background:#fff;color:var(--ink);font:600 1.125rem/1.2 var(--sans);text-transform:uppercase;letter-spacing:.02em}
-.pc input::placeholder{color:#93A5AB;font-weight:400}
-.msg{margin-top:1.5rem}
-.msg-h{font-size:.9375rem;color:var(--soft)}
-.msg p{margin-top:.4rem;padding:.9rem 1.05rem;border-radius:16px 16px 4px 16px;background:#fff;border:1px solid var(--rule);color:var(--ink);font-size:1.0625rem;line-height:1.45}
-.tell .btn{margin-top:1rem}
-.hint{margin-top:.85rem;font-size:.9375rem;color:var(--soft)}
-.hint a{color:var(--ink);font-weight:650;text-underline-offset:3px}
-.nojs .msg,.nojs .pc{display:none}
+.pc{margin-top:1.4rem}
+.pc label{display:block;font-weight:700;color:var(--ink)}
+.pc small{display:block;font-weight:400;font-size:.9375rem;color:var(--soft)}
+.pc input{display:block;margin-top:.45rem;width:100%;max-width:13rem;min-height:3.25rem;padding:.6rem .9rem;border:1.5px solid #B7C6CB;border-radius:12px;background:#fff;color:var(--ink);font:600 1.125rem/1.2 var(--sans);text-transform:uppercase;letter-spacing:.02em;-webkit-appearance:none;appearance:none}
+.pc input::placeholder{color:#637A82;font-weight:400;opacity:1}
+.nojs .choices{display:none}
+.chat{margin-top:1.75rem;border-radius:22px;background:#fff;border:1px solid var(--rule);overflow:hidden}
+.chat-top{display:flex;align-items:center;padding:.8rem 1rem;background:var(--petrol);color:#fff}
+.chat-top svg{flex:none;width:2.25rem;height:2.25rem;margin-right:.7rem}
+.chat-top b{display:block;font-weight:700;line-height:1.2}
+.chat-top small{display:block;font-size:.8125rem;line-height:1.3;color:#BFD6DC}
+.chat-body{padding:1.1rem 1rem 1rem;background:#E9EFF1}
+.bubble{position:relative;margin-left:1.5rem;padding:.75rem .95rem;border-radius:16px 16px 4px 16px;background:#fff;color:var(--ink);font-size:1.0625rem;line-height:1.45;box-shadow:0 1px 1px rgba(10,38,48,.12)}
+.chat-note{margin-top:.6rem;text-align:right;font-size:.8125rem;color:var(--soft)}
+.chat-go{padding:.8rem 1rem 1rem;background:#E9EFF1}
+.hint{margin-top:.45rem;font-size:.9375rem;color:var(--soft)}
+.hint a{display:inline-block;padding:.6rem 0;color:var(--ink);font-weight:700;text-underline-offset:3px}
 
-/* what he does */
-.does-grid{display:grid;gap:2.5rem}
-.svc{margin-top:1.5rem;border-bottom:1px solid var(--rule)}
-.svc li{padding:.42em 0 .36em;border-top:1px solid var(--rule);font-size:clamp(2.1rem,1.3rem + 4vw,3.5rem);color:var(--ink)}
-.how h3{font-size:1.75rem;color:var(--ink)}
-.how dl{margin-top:1.1rem;display:grid;gap:1.1rem}
-.how dt{font-weight:700;color:var(--ink);font-size:1.125rem}
-.how dd{color:var(--text);max-width:30rem}
+/* run by Lewis */
+.about-grid{display:grid;grid-template-columns:minmax(0,1fr);grid-gap:2.25rem}
+.about-copy p{margin-top:.9rem;max-width:34rem}
+.say{font-size:3rem;font-size:clamp(3rem,1.8rem + 6vw,5.5rem);line-height:.9;color:var(--ink)}
+.say-by{margin-top:.9rem;color:var(--soft);font-size:.9375rem}
 
 /* reviews: back on the dark ground */
-.rv{background:var(--petrol);color:#DCE8EB}
-.rv h2{color:#fff;max-width:none;font-size:1.0625rem;font-stretch:100%;font-weight:400;line-height:1.5;letter-spacing:0}
-.rv h2 strong{font-weight:700}
-.rv-q{margin-top:1.4rem;max-width:18ch;font-size:clamp(2.5rem,1.4rem + 5.4vw,4.75rem);line-height:.94;color:#fff}
-.rv-by{margin-top:1.1rem;color:var(--water);font-size:.9375rem}
-.rv-rest{margin-top:3rem}
-.rv-rest h3{font-size:1.75rem;color:#fff}
-.rv-list{margin-top:1.1rem;border-bottom:1px solid rgba(255,255,255,.16)}
-.rv-list li{display:grid;gap:.15rem;padding:.95rem 0;border-top:1px solid rgba(255,255,255,.16)}
-.rv-list time{color:var(--water);font-size:.9375rem;font-variant-numeric:lining-nums tabular-nums}
-.rv-src{margin-top:1.4rem;max-width:40rem;font-size:.9375rem;line-height:1.5;color:#B9CDD2}
-.rv-src a{color:#fff;font-weight:650;text-underline-offset:3px}
+.rv{color:#DCE8EB;background:#0A3340;background:linear-gradient(180deg,#0A3340 0%,#07303B 100%)}
+.rv-grid{display:grid;grid-template-columns:minmax(0,1fr);grid-gap:2.75rem}
+.rv h2{color:#fff;max-width:none}
+.rv-sub{margin-top:.6rem;color:#CFE3E8}
+.rv .marks{margin:0 0 1rem}
+.rv .marks svg{width:1.6rem;height:1.6rem;margin-right:.22rem}
+.rv-q{margin-top:2rem;padding-left:1.1rem;border-left:4px solid var(--pipe);font-size:2.1rem;font-size:clamp(2.1rem,1.4rem + 3.2vw,3.25rem);line-height:.98;color:#fff}
+.rv-by{margin-top:.9rem;padding-left:1.35rem;color:var(--cyan);font-size:.9375rem}
+.rv h3{font-size:1.75rem;color:#fff}
+.tl{position:relative;margin-top:1.25rem;padding-left:2rem}
+.tl::before{content:"";position:absolute;left:.3rem;top:.55rem;bottom:.6rem;width:4px;border-radius:4px;background:var(--pipe)}
+.tl li{position:relative;padding-bottom:1.35rem}
+.tl li:last-child{padding-bottom:0}
+.tl li::before{content:"";position:absolute;left:-2rem;top:.3rem;width:1rem;height:1rem;border-radius:50%;background:#0A3340;border:3px solid #fff}
+.tl time{display:block;color:var(--cyan);font-size:.9375rem;font-variant-numeric:lining-nums tabular-nums}
+.tl p{margin-top:.1rem}
+.rv-src{margin-top:1.75rem;font-size:.9375rem;line-height:1.5;color:#B5CBD1}
+.rv-src a{display:inline-block;padding:.65rem 0;color:#fff;font-weight:700;text-underline-offset:3px}
 
-/* whose drain */
-.whose-grid{display:grid;gap:2rem;align-items:center}
-.keys{margin-top:1.4rem;display:grid;gap:1rem;max-width:32rem}
-.keys li{display:grid;grid-template-columns:auto 1fr;gap:.8rem}
-.keys i{display:block;width:1.75rem;height:.5rem;margin-top:.62rem;border-radius:999px}
+/* your drains */
+.drains-grid{display:grid;grid-template-columns:minmax(0,1fr);grid-gap:2rem}
+.keys{margin-top:1.4rem;max-width:32rem}
+.keys li{position:relative;padding-left:2.6rem}
+.keys li + li{margin-top:1rem}
+.keys i{position:absolute;left:0;top:.6rem;width:1.75rem;height:.5rem;border-radius:999px}
 .k-you{background:var(--pipe)}
-.k-wat{background:var(--water-dk)}
+.k-wat{background:var(--cyan-dk)}
 .keys b{color:var(--ink);font-weight:700}
 .ask{margin-top:1.25rem;max-width:32rem}
-.src{margin-top:1rem;font-size:.875rem;color:var(--soft)}
-.src a{text-underline-offset:3px}
-.plan{width:100%;max-width:34rem;margin-inline:auto}
+.src{margin-top:.7rem;font-size:.875rem;color:var(--soft)}
+.src a{display:inline-block;padding:.6rem 0;text-underline-offset:3px}
+.plan-box{padding:1rem;border-radius:22px;border:1px solid var(--rule);background:#fff}
+.plan{width:100%;height:auto}
 .plan text{font-family:var(--sans)}
+.flow{animation:flow 1.6s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-28}}
+.parts{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-gap:.75rem 1rem;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule);font-size:.9375rem;line-height:1.35}
+.parts li{position:relative;padding-left:2rem;color:var(--soft)}
+.parts b{display:block;color:var(--ink);font-weight:700}
+.parts i{position:absolute;left:0;top:.05rem;width:1.5rem;height:1.5rem;border-radius:50%;background:var(--ink);color:#fff;font-style:normal;font-weight:700;font-size:.8125rem;line-height:1.5rem;text-align:center}
 
 /* check him out */
-.check-grid{display:grid;gap:2.5rem}
-.recs{margin-top:1.5rem;border-bottom:1px solid #C6D2D6}
-.recs li{padding:1.15rem 0;border-top:1px solid #C6D2D6}
-.recs h3{font-size:1.125rem;font-weight:700;color:var(--ink);line-height:1.3}
-.recs p{margin-top:.25rem;max-width:34rem}
-.recs a{display:inline-block;margin-top:.5rem;color:var(--pipe-dk);font-weight:700;text-underline-offset:3px}
-.save{align-self:start;padding:1.5rem;border-radius:20px;background:#fff}
-.save h3{font-size:2rem;color:var(--ink);max-width:12ch}
-.save p{margin-top:.7rem;max-width:24rem}
-.save .btn{margin-top:1.2rem}
+.recs{display:grid;grid-template-columns:minmax(0,1fr);grid-gap:1rem;margin-top:1.75rem}
+.rec{padding:1.4rem;border-radius:22px;background:#fff;border:1px solid var(--rule)}
+.rec-src{font-size:.875rem;color:var(--soft)}
+.rec h3{margin-top:.15rem;font-size:1.25rem;font-weight:700;line-height:1.25;color:var(--ink)}
+.rec dl{margin-top:.9rem;border-top:1px solid var(--rule)}
+.rec dl div{display:flex;justify-content:space-between;padding:.6rem 0;border-bottom:1px solid var(--rule)}
+.rec dt{flex:none;margin-right:1rem;color:var(--soft)}
+.rec dd{text-align:right;color:var(--ink);font-weight:600}
+.rec a{display:inline-block;margin-top:.5rem;padding:.5rem 0;color:var(--pipe-dk);font-weight:700;text-underline-offset:3px}
+.rec-note{margin-top:1.1rem;font-size:.875rem;color:var(--soft)}
 
-/* contact and footer */
-.end{background:var(--petrol);color:#DCE8EB}
+/* contact */
+.end{color:#DCE8EB;background:#0A3340;background:radial-gradient(34rem 22rem at 100% 0%,rgba(96,208,232,.16),rgba(96,208,232,0) 70%),linear-gradient(180deg,#0A3340 0%,#05252E 100%)}
 .end h2{color:#fff}
-.end-grid{display:grid;gap:1.75rem}
-.end-act{display:grid;gap:.75rem;max-width:28rem}
-.end-more{margin-top:1.4rem;display:grid;gap:.3rem}
-.end-more a{color:#fff;font-weight:650;text-underline-offset:3px}
-.ft{background:var(--deep);color:#A9C0C6;font-size:.875rem;line-height:1.55}
+.end-grid{display:grid;grid-template-columns:minmax(0,1fr);grid-gap:2rem}
+.end-more{margin-top:1rem}
+.end-more p + p{margin-top:0}
+.end-more a{display:inline-block;overflow-wrap:anywhere;padding:.45rem 0;color:#fff;font-weight:700;text-underline-offset:3px}
+.end-act{max-width:29rem}
+.end-act .btn{margin-top:.75rem}
+.copy{display:none}
+.save{max-width:29rem;padding:1.4rem;border-radius:22px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16)}
+.save h3{font-size:1.75rem;color:#fff}
+.save p{margin-top:.6rem;color:#CFE3E8}
+.save .btn{margin-top:1.1rem}
+.qr-box{display:none}
+
+/* footer */
+.ft{background:var(--abyss);color:#A6BEC5;font-size:.875rem;line-height:1.55}
 .ft .wrap{padding:1.5rem 0 6.5rem}
 .ft p + p{margin-top:.35rem}
 
 /* call bar on phones, once the first call panel has scrolled away */
-.bar{position:fixed;z-index:20;left:0;right:0;bottom:0;display:grid;grid-template-columns:1.25fr 1fr;gap:.5rem;padding:.55rem .75rem calc(.55rem + env(safe-area-inset-bottom));background:var(--deep);box-shadow:0 -1px 0 rgba(255,255,255,.12);transform:translateY(110%);transition:transform .25s ease;visibility:hidden}
+.bar{position:fixed;z-index:40;left:0;right:0;bottom:0;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);grid-gap:.5rem;padding:.55rem .75rem;padding-bottom:calc(.55rem + env(safe-area-inset-bottom));background:var(--abyss);box-shadow:0 -1px 0 rgba(255,255,255,.12);transform:translateY(110%);transition:transform .25s ease;visibility:hidden}
 .bar.on{transform:none;visibility:visible}
 .bar .btn{min-height:3.1rem;padding:.5rem .75rem;font-size:1rem}
 .bar-call{background:var(--pipe);color:var(--ink)}
 .bar-wa{background:#fff;color:var(--ink)}
 
+@media (max-width:19rem){
+  .facts ul,.parts{grid-template-columns:minmax(0,1fr)}
+  .rec dl div{display:block}
+  .rec dd{text-align:left}
+  .bar{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .bar .btn{padding-left:.3rem;padding-right:.3rem}
+  .bar .btn svg{display:none}
+  .chat-go .btn svg{display:none}
+}
+@media (min-width:36rem){
+  .recs{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+}
 @media (min-width:48rem){
-  .pv .wrap{display:flex;justify-content:space-between;gap:2rem}
-  .pv-long{display:inline}
-  .bore{width:60rem;right:-27rem;top:50%;transform:translateY(-50%)}
-  .hd .wrap{padding-top:1.4rem}
-  .brand svg{width:2.5rem;height:2.5rem}
-  .brand span{font-size:1.5rem}
-  .hd-num{display:block;text-decoration:none;text-align:right;line-height:1.2;color:#fff}
-  .hd-num small{display:block;font-size:.8125rem;color:var(--water)}
-  .hd-num strong{font-size:1.5rem}
-  .hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);grid-template-areas:"copy act" "proof act";column-gap:3.5rem;padding:3.5rem 0 5rem}
+  html{scroll-padding-top:5.5rem}
+  .pv .wrap{display:flex;justify-content:space-between}
+  .hd{position:-webkit-sticky;position:sticky;top:0;margin-bottom:-4.75rem;transition:background-color .2s ease,box-shadow .2s ease}
+  .hd.stuck{background:#0A3340;box-shadow:0 1px 0 rgba(255,255,255,.1),0 14px 30px -20px rgba(0,0,0,.7)}
+  .hd-in{min-height:4.75rem}
+  .nav{display:flex}
+  .logo-b{white-space:nowrap}
+  .nav a{margin:0 .55rem;padding:.6rem 0;border-bottom:2px solid transparent;color:#D5E5E9;font-weight:600;font-size:.9688rem;line-height:1.5;text-decoration:none;white-space:nowrap}
+  .nav a:hover{color:#fff;border-bottom-color:var(--pipe)}
+  .hd-call{display:flex;align-items:center;flex:none;min-height:2.75rem;padding:.5rem 1.05rem .5rem .85rem;border-radius:999px;background:var(--pipe);color:var(--ink);text-decoration:none}
+  .hd-call:hover{background:#FF8440}
+  .hd-call svg{width:1.05rem;height:1.05rem;margin-right:.5rem}
+  .hd-call .num{font-size:1.4rem;line-height:1}
+  .hero{background:radial-gradient(42rem 34rem at 75% 54%,rgba(96,208,232,.24),rgba(96,208,232,0) 72%),linear-gradient(180deg,#0A3340 0%,#05252E 100%)}
+  .bore-svg{width:60rem;right:auto;left:calc(76% - 31.5rem);top:50%;transform:translateY(-50%)}
+  .hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-areas:"copy act" "proof act";grid-column-gap:3rem;padding:8.25rem 0 5rem}
   .hero-copy{grid-area:copy}
-  .proof{grid-area:proof}
-  .hero-act{grid-area:act;align-self:center;margin-top:0}
+  .proof{grid-area:proof;justify-self:start;flex-wrap:nowrap}
+  .proof-t{flex:0 1 auto}
+  .hero-act{grid-area:act;align-self:center;margin-top:0;max-width:none}
+  .hero-act .btn{font-size:1rem;padding-left:.9rem;padding-right:.9rem}
+  .end-act,.save{max-width:none}
+  .save-mob{grid-column:1 / -1;display:flex;align-items:center;justify-content:space-between}
+  .save-mob > div{margin-right:2rem;max-width:30rem}
+  .save-mob .btn{flex:none;margin-top:0}
   h1{font-size:clamp(3.5rem,7.6vw,6.75rem);line-height:.88}
-  .call{padding:1.2rem 1.5rem 1.4rem;border-radius:20px}
+  .call{padding:1.15rem 1.5rem 1.4rem;border-radius:22px}
   .call-n{font-size:clamp(2.75rem,5.3vw,4.75rem)}
   @supports (font-size:1cqw){.call-n{font-size:min(4.9rem,19.2cqw)}}
-  .tell-grid{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:4rem}
-  .tell .btn{display:inline-flex;min-width:20rem}
-  .does-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:5rem;align-items:end}
-  .rv-q{max-width:23ch}
-  .rv-list li{grid-template-columns:9.5rem 1fr;gap:1.5rem}
-  .whose-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4rem}
-  .check-grid{grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:4.5rem}
-  .save{padding:2rem}
-  .end-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4rem;align-items:center}
+  .facts ul{padding:1.9rem 0}
+  .sec{padding-top:5.5rem;padding-bottom:5.5rem}
+  .tell-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);grid-gap:2.5rem;align-items:start}
+  .chat-go .btn{font-size:1rem;padding-left:.75rem;padding-right:.75rem}
+  .chat{margin-top:0;max-width:23rem;margin-left:auto;border:10px solid var(--ink);border-radius:42px;box-shadow:0 40px 60px -40px rgba(10,38,48,.5)}
+  .chat-body{min-height:17rem;display:flex;flex-direction:column;justify-content:flex-end}
+  .about-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-gap:4rem;align-items:center}
+  .drains-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-gap:4rem;align-items:center}
+  .plan-box{padding:1.5rem}
+  .end-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-gap:3rem 4rem;align-items:start}
   .ft .wrap{padding-bottom:1.75rem}
   .bar{display:none}
 }
+@media (min-width:60rem){
+  .pv-long{display:inline}
+  .rv-grid{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);grid-gap:5rem;align-items:start}
+  .rv-lead{position:-webkit-sticky;position:sticky;top:7.5rem}
+  .facts ul{grid-template-columns:repeat(4,minmax(0,1fr));grid-column-gap:2rem}
+}
+@media (min-width:64rem){
+  .nav a{margin:0 .9rem}
+  .hero{background:radial-gradient(42rem 34rem at 78.5% 54%,rgba(96,208,232,.24),rgba(96,208,232,0) 72%),linear-gradient(180deg,#0A3340 0%,#05252E 100%)}
+  .tell-grid{grid-gap:4rem}
+  .chat-go .btn{font-size:1.0625rem;padding-left:1.25rem;padding-right:1.25rem}
+  .hero-grid{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);grid-column-gap:3.5rem}
+  .hero-act .btn{font-size:1.0625rem;padding-left:1.25rem;padding-right:1.25rem}
+  .end .call-n{font-size:clamp(2.5rem,4.6vw,4.75rem)}
+  @supports (font-size:1cqw){.end .call-n{font-size:min(4.9rem,19.2cqw)}}
+  .svc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-column-gap:2rem;border-bottom:0}
+  .svc li{padding:1.4rem 0 0;border-top:3px solid var(--ink)}
+  .svc-i{position:static;width:4rem;height:4rem;margin-bottom:1.2rem}
+  .svc-i svg{width:2.75rem;height:2.75rem}
+  .end-grid{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr) minmax(0,.8fr)}
+  .save-mob{display:none}
+  .qr-box{display:block;padding:1.25rem;border-radius:22px;background:#fff;color:var(--text);text-align:center}
+  .qr{width:100%;max-width:11rem;height:auto;margin:0 auto}
+  .qr-box b{display:block;margin-top:.75rem;color:var(--ink);font-weight:700;line-height:1.3}
+  .qr-box small{display:block;margin-top:.25rem;font-size:.875rem;line-height:1.4;color:var(--soft)}
+}
+@media (min-width:75rem){
+  .hero{background:radial-gradient(42rem 34rem at calc(50% + 20.9rem) 54%,rgba(96,208,232,.24),rgba(96,208,232,0) 72%),linear-gradient(180deg,#0A3340 0%,#05252E 100%)}
+  .bore-svg{left:calc(50% - 10.6rem)}
+}
+@media (hover:hover) and (pointer:fine) and (min-width:48rem){
+  .copy{display:inline-block;margin-top:.4rem;padding:.5rem 0;border:0;background:none;color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+}
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
-  .dot::after{animation:none}
-  .bar{transition:none}
+  .dot::after,.flow,.js .rise{animation:none}
+  .bar,.hd{transition:none}
 }
 </style>
 </head>
 <body>
+<a class="skip" href="#main">Skip to the page</a>
 
 <div class="pv" role="note" aria-label="Preview notice">
   <div class="wrap">
@@ -249,195 +378,265 @@ h2{font-size:clamp(2.25rem,1.5rem + 3.4vw,3.5rem);color:var(--ink);max-width:15c
   </div>
 </div>
 
-<div class="top">
-  <svg class="bore" viewBox="0 0 600 600" aria-hidden="true">
-    <g fill="none" stroke="#fff" stroke-width="2">
-      <circle cx="300" cy="300" r="292" stroke-opacity=".10"/>
-      <circle cx="312" cy="306" r="238" stroke-opacity=".10"/>
-      <circle cx="322" cy="311" r="190" stroke-opacity=".09"/>
-      <circle cx="330" cy="315" r="148" stroke-opacity=".09"/>
-      <circle cx="336" cy="318" r="112" stroke-opacity=".08"/>
-      <circle cx="341" cy="320" r="82" stroke-opacity=".08"/>
-      <circle cx="345" cy="322" r="58" stroke-opacity=".07"/>
-      <circle cx="348" cy="323" r="40" stroke-opacity=".07"/>
+<header class="hd" id="hd">
+  <div class="wrap hd-in">
+    <a class="logo" href="#top" aria-label="Adapt Drainage Services, top of the page">
+      <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#fff" stroke-width="4.5"/><path d="M9.3 27A15 15 0 0 0 38.7 27Z" fill="#FF6B1A"/></svg>
+      <span class="logo-t"><span class="logo-a d">Adapt</span><span class="logo-b">Drainage Services</span></span>
+    </a>
+    <nav class="nav" aria-label="On this page">
+      <a href="#services">Services</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#drains">Your drains</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="hd-call" href="tel:+447947311627" aria-label="Call Lewis on 07947 311627"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg><span class="d num">07947 311627</span></a>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top">
+  <canvas class="bore" id="bore" aria-hidden="true"></canvas>
+  <svg class="bore-svg" viewBox="0 0 600 600" aria-hidden="true">
+    <g fill="none" stroke="#9FE5F3" stroke-width="2">
+      <circle cx="300" cy="300" r="292" stroke-opacity=".16"/>
+      <circle cx="308" cy="304" r="214" stroke-opacity=".15"/>
+      <circle cx="314" cy="307" r="150" stroke-opacity=".14"/>
+      <circle cx="319" cy="310" r="102" stroke-opacity=".13"/>
+      <circle cx="323" cy="312" r="68" stroke-opacity=".12"/>
+      <circle cx="326" cy="313" r="44" stroke-opacity=".11"/>
+      <circle cx="328" cy="314" r="28" stroke-opacity=".10"/>
     </g>
   </svg>
-
-  <header class="hd">
-    <div class="wrap">
-      <a class="brand" href="#top" aria-label="Adapt Drainage Services">
-        <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20" fill="none" stroke="#fff" stroke-width="4.5"/><path d="M9.3 27A15 15 0 0 0 38.7 27Z" fill="#F26A1B"/></svg>
-        <span class="d">Adapt Drainage Services</span>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="oncall rise"><span class="dot" aria-hidden="true"></span><span id="oncall">On call 24 hours a day, 7 days a week.</span></p>
+      <h1 class="d rise rise-2"><span>Blocked drain?</span> <span>Call Lewis.</span></h1>
+      <p class="lead rise rise-3">Adapt Drainage Services unblocks, cleans, repairs and surveys drains in Chesterfield. Fixed prices, no hidden costs, at any hour.</p>
+    </div>
+    <div class="hero-act rise rise-4" id="herocall">
+      <a class="call" href="tel:+447947311627">
+        <span class="call-l">Call Lewis <span class="call-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></span></span>
+        <span class="call-n d num">07947 311627</span>
       </a>
-      <a class="hd-num" href="tel:+447947311627"><small>Call Lewis, any hour</small><strong class="d num">07947 311627</strong></a>
+      <a class="btn btn-line" href="https://wa.me/447947311627?text=Hi%20Lewis%2C%20" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M17.3 14.6c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.3.2-.6.1a7.6 7.6 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5l-.9-2.1c-.2-.6-.5-.5-.6-.5h-.5a1 1 0 0 0-.8.4 3.2 3.2 0 0 0-1 2.4c0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>WhatsApp a photo of the problem</a>
     </div>
-  </header>
+    <a class="proof rise rise-5" href="#reviews">
+      <span class="marks" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FF6B1A"/><path d="M5.6 10.4l2.9 2.9 5.9-6.2" fill="none" stroke="#0A2630" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FF6B1A"/><path d="M5.6 10.4l2.9 2.9 5.9-6.2" fill="none" stroke="#0A2630" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FF6B1A"/><path d="M5.6 10.4l2.9 2.9 5.9-6.2" fill="none" stroke="#0A2630" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FF6B1A"/><path d="M5.6 10.4l2.9 2.9 5.9-6.2" fill="none" stroke="#0A2630" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FF6B1A"/><path d="M5.6 10.4l2.9 2.9 5.9-6.2" fill="none" stroke="#0A2630" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <span class="proof-t">5 out of 5 from 7 reviews on <u>Derbyshire Trusted Trader</u></span>
+    </a>
+  </div>
+</section>
 
-  <main id="top" class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <p class="oncall"><span class="dot" aria-hidden="true"></span><span id="oncall">On call 24 hours a day, 7 days a week.</span></p>
-        <h1 class="d"><span>Blocked drain?</span><span>Call Lewis.</span></h1>
-        <p class="lead">Drain unblocking, cleaning, repairs and CCTV surveys from Adapt Drainage Services in Chesterfield. Fixed prices with no hidden costs, at any hour.</p>
-      </div>
-      <div class="hero-act" id="herocall">
-        <a class="call" href="tel:+447947311627">
-          <span class="call-l">Call Lewis <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></span>
-          <span class="call-n d num">07947 311627</span>
-        </a>
-        <a class="btn btn-line" href="https://wa.me/447947311627?text=Hi%20Lewis%2C%20" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M17.3 14.6c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.3.2-.6.1a7.6 7.6 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5l-.9-2.1c-.2-.6-.5-.5-.6-.5h-.5a1 1 0 0 0-.8.4 3.2 3.2 0 0 0-1 2.4c0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>WhatsApp a photo of the problem</a>
-      </div>
-      <p class="proof">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.5l5 5 10-11"/></svg>
-        <span>Rated 5 out of 5 across 7 customer reviews on Derbyshire Trusted Trader, the scheme run by the county council&rsquo;s Trading Standards. <a href="#reviews">See what customers said</a></span>
-      </p>
-    </div>
-  </main>
-</div>
+<section class="facts" aria-label="At a glance">
+  <ul class="wrap">
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></g></svg><span><b>Any hour</b><small>24 hours, 7 days a week</small></span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12.4V5A1.5 1.5 0 0 1 5 3.5h7.4l8.1 8.1a1.5 1.5 0 0 1 0 2.1l-6.8 6.8a1.5 1.5 0 0 1-2.1 0z"/><circle cx="8" cy="8" r="1.3"/></g></svg><span><b>Fixed prices</b><small>No hidden costs</small></span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="3.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></g></svg><span><b>Any size of job</b><small>None too big or too small</small></span></li>
+    <li><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7.5 3v5.6c0 4.4-3 8.2-7.5 9.4-4.5-1.2-7.5-5-7.5-9.4V6z"/><path d="M8.6 12.2l2.5 2.5 4.4-5"/></g></svg><span><b>Trusted Trader</b><small>Checked by Trading Standards</small></span></li>
+  </ul>
+</section>
+
+<section class="sec" id="services" aria-labelledby="svc-h">
+  <div class="wrap">
+    <h2 class="d" id="svc-h">What Lewis does</h2>
+    <ul class="svc">
+      <li>
+        <span class="svc-i"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14h40M4 34h40"/><path class="hot" d="M11 24h19M24 18l7 6-7 6"/></g><circle class="hot-f" cx="39" cy="24" r="2.2"/></svg></span>
+        <h3 class="d">Drain unblocking</h3>
+        <p>For drains that are blocked, slow or overflowing.</p>
+        <a href="https://wa.me/447947311627?text=Hi%20Lewis%2C%20I%E2%80%99d%20like%20to%20ask%20about%20drain%20unblocking." rel="noopener">Ask Lewis about this</a>
+      </li>
+      <li>
+        <span class="svc-i"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18h9l5 6-5 6H5z"/><path class="hot" d="M26 24h17M25 17l14-7M25 31l14 7"/></g></svg></span>
+        <h3 class="d">Drain cleaning</h3>
+        <p>For drains that keep blocking or have started to smell.</p>
+        <a href="https://wa.me/447947311627?text=Hi%20Lewis%2C%20I%E2%80%99d%20like%20to%20ask%20about%20drain%20cleaning." rel="noopener">Ask Lewis about this</a>
+      </li>
+      <li>
+        <span class="svc-i"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M4 16h11M4 32h11M33 16h11M33 32h11"/><rect x="15" y="10" width="18" height="28" rx="3.5"/><path class="hot" d="M19.5 24.5l3.3 3.3 6-7"/></g></svg></span>
+        <h3 class="d">Drain repairs</h3>
+        <p>For broken drains, gullies and grids.</p>
+        <a href="https://wa.me/447947311627?text=Hi%20Lewis%2C%20I%E2%80%99d%20like%20to%20ask%20about%20a%20drain%20repair." rel="noopener">Ask Lewis about this</a>
+      </li>
+      <li>
+        <span class="svc-i"><svg viewBox="0 0 48 48" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><circle cx="31" cy="20" r="12"/><path d="M19 20h-4c-5.5 0-9 3.5-9 9v11"/><circle class="hot" cx="31" cy="20" r="4.5"/></g></svg></span>
+        <h3 class="d">CCTV surveys</h3>
+        <p>A camera goes down the drain to show what&rsquo;s wrong, and where.</p>
+        <a href="https://wa.me/447947311627?text=Hi%20Lewis%2C%20I%E2%80%99d%20like%20to%20ask%20about%20a%20CCTV%20survey." rel="noopener">Ask Lewis about this</a>
+      </li>
+    </ul>
+  </div>
+</section>
 
 <section class="sec sec-mist tell" id="tell" aria-labelledby="tell-h">
   <div class="wrap tell-grid">
     <div>
       <h2 class="d" id="tell-h">Tell Lewis what&rsquo;s happening</h2>
       <p class="intro">Pick the closest match. It writes the WhatsApp message for you, ready to send.</p>
-    </div>
-    <form id="tellform" onsubmit="return false">
-      <fieldset>
-        <legend class="sr">What is the problem?</legend>
-        <div class="chips">
-          <label class="chip"><input type="radio" name="p" value="my outside drain is blocked or overflowing" checked><span>Outside drain blocked or overflowing</span></label>
-          <label class="chip"><input type="radio" name="p" value="my toilet or sink is backing up"><span>Toilet or sink backing up</span></label>
-          <label class="chip"><input type="radio" name="p" value="there&rsquo;s a bad smell coming from my drains"><span>Bad smell from the drains</span></label>
-          <label class="chip"><input type="radio" name="p" value="I&rsquo;ve got water standing in my yard"><span>Water standing in the yard</span></label>
-          <label class="chip"><input type="radio" name="p" value="I&rsquo;ve got a broken drain, gully or cover"><span>Broken drain, gully or cover</span></label>
-          <label class="chip"><input type="radio" name="p" value="I&rsquo;d like a CCTV survey of my drains"><span>I&rsquo;d like a CCTV survey</span></label>
-          <label class="chip"><input type="radio" name="p" value="I&rsquo;ve got a drainage problem I&rsquo;d like to ask you about"><span>Something else</span></label>
+      <form class="choices" id="tellform" onsubmit="return false">
+        <fieldset>
+          <legend class="sr">What is the problem?</legend>
+          <div class="chips" style="margin-top:1.25rem">
+            <label class="chip"><input type="radio" name="p" value="my outside drain is blocked or overflowing" checked><span>Outside drain blocked or overflowing</span></label>
+            <label class="chip"><input type="radio" name="p" value="my toilet or sink is backing up"><span>Toilet or sink backing up</span></label>
+            <label class="chip"><input type="radio" name="p" value="there&rsquo;s a bad smell coming from my drains"><span>Bad smell from the drains</span></label>
+            <label class="chip"><input type="radio" name="p" value="I&rsquo;ve got water standing in my yard"><span>Water standing in the yard</span></label>
+            <label class="chip"><input type="radio" name="p" value="I&rsquo;ve got a broken drain, gully or cover"><span>Broken drain, gully or cover</span></label>
+            <label class="chip"><input type="radio" name="p" value="I&rsquo;d like a CCTV survey of my drains"><span>I&rsquo;d like a CCTV survey</span></label>
+            <label class="chip"><input type="radio" name="p" value="I&rsquo;ve got a drainage problem I&rsquo;d like to ask you about"><span>Something else</span></label>
+          </div>
+        </fieldset>
+        <div class="pc">
+          <label for="pc">Your postcode <small>Optional. It tells Lewis where you are.</small></label>
+          <input id="pc" name="pc" type="text" autocomplete="postal-code" autocapitalize="characters" autocorrect="off" spellcheck="false" maxlength="8" placeholder="S41">
         </div>
-      </fieldset>
-      <div class="pc">
-        <label for="pc">Your postcode <small>Optional. It tells Lewis where you are.</small></label>
-        <input id="pc" name="pc" type="text" autocomplete="postal-code" autocapitalize="characters" spellcheck="false" maxlength="8" placeholder="S41">
+      </form>
+    </div>
+    <div>
+      <div class="chat">
+        <div class="chat-top">
+          <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="24" fill="#fff"/><circle cx="24" cy="24" r="14.5" fill="none" stroke="#0A2630" stroke-width="3.5"/><path d="M13.4 26.2a10.8 10.8 0 0 0 21.2 0z" fill="#FF6B1A"/></svg>
+          <span><b>Lewis</b><small>Adapt Drainage Services</small></span>
+        </div>
+        <div class="chat-body" aria-live="polite">
+          <p class="bubble" id="msgtext">Hi Lewis, I&rsquo;ve got a drainage problem. Can you help?</p>
+          <p class="chat-note">Not sent yet</p>
+        </div>
+        <div class="chat-go">
+          <a class="btn btn-ink" id="msggo" href="https://wa.me/447947311627?text=Hi%20Lewis%2C%20I%E2%80%99ve%20got%20a%20drainage%20problem.%20Can%20you%20help%3F" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M17.3 14.6c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.3.2-.6.1a7.6 7.6 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5l-.9-2.1c-.2-.6-.5-.5-.6-.5h-.5a1 1 0 0 0-.8.4 3.2 3.2 0 0 0-1 2.4c0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>Open this in WhatsApp</a>
+        </div>
       </div>
-      <div class="msg" aria-live="polite">
-        <span class="msg-h">This is what Lewis will get:</span>
-        <p id="msgtext">Hi Lewis, my outside drain is blocked or overflowing. Can you help?</p>
-      </div>
-      <a class="btn btn-ink" id="msggo" href="https://wa.me/447947311627?text=Hi%20Lewis%2C%20" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M17.3 14.6c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.3.2-.6.1a7.6 7.6 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5l-.9-2.1c-.2-.6-.5-.5-.6-.5h-.5a1 1 0 0 0-.8.4 3.2 3.2 0 0 0-1 2.4c0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>Open this in WhatsApp</a>
       <p class="hint">Add a photo before you send, if you can. Rather talk? <a class="num" href="tel:+447947311627">Call 07947 311627</a></p>
-    </form>
+    </div>
   </div>
 </section>
 
-<section class="sec does" aria-labelledby="does-h">
-  <div class="wrap does-grid">
-    <div>
-      <h2 class="d" id="does-h">What Adapt Drainage does</h2>
-      <ul class="svc d">
-        <li>Drain unblocking</li>
-        <li>Drain cleaning</li>
-        <li>Drain repairs</li>
-        <li>CCTV surveys</li>
-      </ul>
+<section class="sec about" aria-labelledby="about-h">
+  <div class="wrap about-grid">
+    <div class="about-copy">
+      <h2 class="d" id="about-h">Run by Lewis</h2>
+      <p>Lewis has over 4 years&rsquo; experience in the drainage industry, working with one of the top drainage businesses in Derbyshire.</p>
+      <p>Adapt Drainage Services Ltd was registered in June 2024 and has been a Derbyshire Trusted Trader since December 2024. It&rsquo;s based in Newbold, Chesterfield.</p>
     </div>
-    <div class="how">
-      <h3 class="d">How Lewis works</h3>
-      <dl>
-        <div><dt>Fixed prices</dt><dd>For all work, with no hidden costs.</dd></div>
-        <div><dt>Any hour</dt><dd>A 24-hour service, 7 days a week.</dd></div>
-        <div><dt>Any size of job</dt><dd>No job is too big or too small.</dd></div>
-        <div><dt>Experience</dt><dd>Over 4 years in the drainage industry, working with one of the top drainage businesses in Derbyshire.</dd></div>
-      </dl>
+    <div>
+      <p class="say d">Punctual, polite and tidy.</p>
+      <p class="say-by">Customers&rsquo; reviews of Lewis, in three words.</p>
     </div>
   </div>
 </section>
 
 <section class="sec rv" id="reviews" aria-labelledby="rv-h">
-  <div class="wrap">
-    <h2 id="rv-h"><strong>Rated 5 out of 5</strong> across 7 customer reviews on Derbyshire Trusted Trader.</h2>
-    <blockquote class="rv-q d">&ldquo;Came out on a Sunday, would&rsquo;ve done literally any time that day too.&rdquo;</blockquote>
-    <p class="rv-by">A customer, reviewed on 3 March 2025</p>
-
-    <div class="rv-rest">
+  <div class="wrap rv-grid">
+    <div class="rv-lead">
+      <span class="marks" aria-hidden="true"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FF6B1A"/><path d="M5.6 10.4l2.9 2.9 5.9-6.2" fill="none" stroke="#0A2630" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FF6B1A"/><path d="M5.6 10.4l2.9 2.9 5.9-6.2" fill="none" stroke="#0A2630" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FF6B1A"/><path d="M5.6 10.4l2.9 2.9 5.9-6.2" fill="none" stroke="#0A2630" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FF6B1A"/><path d="M5.6 10.4l2.9 2.9 5.9-6.2" fill="none" stroke="#0A2630" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#FF6B1A"/><path d="M5.6 10.4l2.9 2.9 5.9-6.2" fill="none" stroke="#0A2630" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      <h2 class="d" id="rv-h">Rated 5 out of 5</h2>
+      <p class="rv-sub">Across 7 customer reviews on Derbyshire Trusted Trader, the scheme run by the county council&rsquo;s Trading Standards.</p>
+      <blockquote class="rv-q d">&ldquo;Came out on a Sunday, would&rsquo;ve done literally any time that day too.&rdquo;</blockquote>
+      <p class="rv-by">A customer, reviewed on 3 March 2025</p>
+    </div>
+    <div>
       <h3 class="d">The other six, in short</h3>
-      <ul class="rv-list">
-        <li><time datetime="2026-07-17">July 2026</time><span>Arrived on time and mended a smashed drain neatly, for a lot less than a larger firm had quoted. Tidied up afterwards.</span></li>
-        <li><time datetime="2025-08-03">August 2025</time><span>Phoned on a Friday evening and got a reply straight away. He did more than was asked and fixed it quickly.</span></li>
-        <li><time datetime="2025-07-18">July 2025</time><span>Replaced a worn gully and grid, and put in new yard drainage after a New Year&rsquo;s Eve flood. Cleared away every bit of rubble.</span></li>
-        <li><time datetime="2025-05-14">May 2025</time><span>Replied very quickly and cleared a blocked drain efficiently, at a very good price.</span></li>
-        <li><time datetime="2025-03-28">March 2025</time><span>Fast, efficient and friendly. Highly recommended.</span></li>
-        <li><time datetime="2024-12-31">December 2024</time><span>Responded to a blocked drain within 24 hours, had all the equipment for the job and charged a fair price.</span></li>
+      <ul class="tl">
+        <li><time datetime="2026-07-17">July 2026</time><p>Arrived on time and mended a smashed drain neatly, for a lot less than a larger firm had quoted. Tidied up afterwards.</p></li>
+        <li><time datetime="2025-08-03">August 2025</time><p>Phoned on a Friday evening and got a reply straight away. He did more than was asked and fixed it quickly.</p></li>
+        <li><time datetime="2025-07-18">July 2025</time><p>Replaced a worn gully and grid, and put in new yard drainage after a New Year&rsquo;s Eve flood. Cleared away every bit of rubble.</p></li>
+        <li><time datetime="2025-05-14">May 2025</time><p>Replied very quickly and cleared a blocked drain efficiently, at a very good price.</p></li>
+        <li><time datetime="2025-03-28">March 2025</time><p>Fast, efficient and friendly. Highly recommended.</p></li>
+        <li><time datetime="2024-12-31">December 2024</time><p>Responded to a blocked drain within 24 hours, had all the equipment for the job and charged a fair price.</p></li>
       </ul>
-      <p class="rv-src">These six are short summaries, not the customers&rsquo; exact words. Customers leave their reviews with Derbyshire Trusted Trader, the scheme run by the county council&rsquo;s Trading Standards, not on this website. <a href="https://apps.derbyshire.gov.uk/applications/trusted-trader/profile.asp?tid=79361" rel="noopener">Read all 7 in full on the council&rsquo;s site</a></p>
+      <p class="rv-src">These six are short summaries, not the customers&rsquo; exact words. Customers leave their reviews with the council&rsquo;s scheme, not on this website. <a href="https://apps.derbyshire.gov.uk/applications/trusted-trader/profile.asp?tid=79361" rel="noopener">Read all 7 in full on the council&rsquo;s site</a></p>
     </div>
   </div>
 </section>
 
-<section class="sec whose" aria-labelledby="whose-h">
-  <div class="wrap whose-grid">
+<section class="sec" id="drains" aria-labelledby="drains-h">
+  <div class="wrap drains-grid">
     <div>
-      <h2 class="d" id="whose-h">Your drain, or the water company&rsquo;s?</h2>
+      <h2 class="d" id="drains-h">Your drain, or the water company&rsquo;s?</h2>
       <p class="intro">It depends where the problem is. As a rule:</p>
       <ul class="keys">
-        <li><i class="k-you" aria-hidden="true"></i><span><b>Yours.</b> The drain inside your boundary that serves only your home. That&rsquo;s the work Lewis does.</span></li>
-        <li><i class="k-wat" aria-hidden="true"></i><span><b>Usually the water company&rsquo;s.</b> Drains you share with neighbours, and the pipe once it has left your boundary.</span></li>
+        <li><i class="k-you" aria-hidden="true"></i><b>Yours.</b> The drain inside your boundary that serves only your home. That&rsquo;s the work Lewis does.</li>
+        <li><i class="k-wat" aria-hidden="true"></i><b>Usually the water company&rsquo;s.</b> Drains you share with neighbours, and the pipe once it has left your boundary.</li>
       </ul>
       <p class="ask">Not sure which you&rsquo;ve got? Message Lewis a photo and ask.</p>
       <p class="src">Source: Citizens Advice, <a href="https://www.citizensadvice.org.uk/consumer/water/sewerage/who-is-responsible-for-repairing-drains-and-sewers/" rel="noopener">Who is responsible for repairing drains and sewers</a></p>
     </div>
-    <figure>
-      <svg class="plan" viewBox="0 0 360 236" role="img" aria-labelledby="plan-t plan-d">
+    <figure class="plan-box">
+      <svg class="plan" viewBox="0 0 400 262" role="img" aria-labelledby="plan-t plan-d">
         <title id="plan-t">A drain running from a house to the sewer in the road</title>
-        <desc id="plan-d">The pipe from the house to the property boundary is marked as yours. From the boundary to the public sewer under the road it is marked as the water company&rsquo;s.</desc>
-        <rect x="0" y="118" width="360" height="118" fill="#EDF2F3"/>
-        <path d="M0 118H360" stroke="#0E2A33" stroke-width="1.75"/>
+        <desc id="plan-d">The orange pipe, from the house and its gully to the property boundary, is yours. The blue pipe, from the boundary to the public sewer under the road, is usually the water company&rsquo;s.</desc>
+        <path d="M0 132H318v4h82V262H0z" fill="#EEF3F4"/>
+        <path d="M0 132H318v4h82" fill="none" stroke="#0A2630" stroke-width="1.75" stroke-linejoin="round"/>
         <!-- house -->
-        <path d="M28 118V64L76 30l48 34v54" fill="#fff" stroke="#0E2A33" stroke-width="1.75" stroke-linejoin="round"/>
-        <path d="M20 70 76 30l56 40" fill="none" stroke="#0E2A33" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
-        <rect x="46" y="78" width="20" height="20" fill="none" stroke="#0E2A33" stroke-width="1.5"/>
-        <path d="M88 118V84h18v34" fill="none" stroke="#0E2A33" stroke-width="1.5"/>
+        <path d="M30 132V70h112v62z" fill="#fff" stroke="#0A2630" stroke-width="1.75" stroke-linejoin="round"/>
+        <path d="M20 74 86 28l66 46z" fill="#fff" stroke="#0A2630" stroke-width="1.75" stroke-linejoin="round"/>
+        <rect x="46" y="84" width="24" height="24" fill="none" stroke="#0A2630" stroke-width="1.5"/>
+        <path d="M58 84v24M46 96h24" stroke="#0A2630" stroke-width="1"/>
+        <path d="M98 132V90h22v42" fill="none" stroke="#0A2630" stroke-width="1.5"/>
+        <path d="M147 78v50" stroke="#0A2630" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="139" y="128" width="16" height="6" rx="1.5" fill="#0A2630"/>
         <!-- boundary -->
-        <path d="M214 44V226" stroke="#0E2A33" stroke-width="1.5" stroke-dasharray="5 5"/>
-        <text x="214" y="34" text-anchor="middle" font-size="12.5" font-weight="600" fill="#0E2A33">Your boundary</text>
-        <text x="290" y="108" text-anchor="middle" font-size="12.5" fill="#536A72">Road</text>
-        <!-- your drain -->
-        <path d="M112 118v26l102 24" fill="none" stroke="#F26A1B" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        <rect x="264" y="112" width="8" height="20" fill="#0A2630"/>
+        <path d="M268 136V254" stroke="#0A2630" stroke-width="1.5" stroke-dasharray="5 5"/>
         <!-- inspection chamber -->
-        <rect x="159" y="114" width="16" height="45" fill="#fff" stroke="#0E2A33" stroke-width="1.5"/>
-        <path d="M155 114h24" stroke="#0E2A33" stroke-width="3" stroke-linecap="round"/>
-        <path d="M112 144l102 24" fill="none" stroke="#F26A1B" stroke-width="8" stroke-linecap="round"/>
-        <!-- water company's -->
-        <path d="M214 168l70 16" fill="none" stroke="#1B7895" stroke-width="8" stroke-linecap="butt"/>
-        <circle cx="302" cy="190" r="18" fill="#fff" stroke="#1B7895" stroke-width="6"/>
-        <text x="150" y="196" text-anchor="middle" font-size="14" font-weight="700" fill="#B8480A">Yours</text>
-        <text x="282" y="152" text-anchor="middle" font-size="14" font-weight="700" fill="#1B7895">Water company</text>
-        <text x="302" y="228" text-anchor="middle" font-size="12.5" fill="#536A72">Public sewer</text>
+        <rect x="200" y="132" width="18" height="50" fill="#fff" stroke="#0A2630" stroke-width="1.5"/>
+        <path d="M196 131.5h26" stroke="#0A2630" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- your drain -->
+        <path d="M58 134v14L268 186M147 136v28" fill="none" stroke="#FF6B1A" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- the water company's -->
+        <path d="M268 186l70 12.7" fill="none" stroke="#127C97" stroke-width="8"/>
+        <circle cx="356" cy="204" r="19" fill="#fff" stroke="#127C97" stroke-width="7"/>
+        <path d="M342.8 210a14.5 14.5 0 0 0 26.4 0z" fill="#BFE6F0"/>
+        <path class="flow" d="M58 136v12L268 186l70 12.7" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 12"/>
+        <!-- numbered parts -->
+        <g font-size="12.5" font-weight="700" text-anchor="middle" fill="#fff">
+          <circle cx="170" cy="112" r="11" fill="#0A2630"/><text x="170" y="116.4">1</text>
+          <circle cx="209" cy="112" r="11" fill="#0A2630"/><text x="209" y="116.4">2</text>
+          <circle cx="268" cy="92" r="11" fill="#0A2630"/><text x="268" y="96.4">3</text>
+          <circle cx="356" cy="166" r="11" fill="#0A2630"/><text x="356" y="170.4">4</text>
+        </g>
       </svg>
+      <ol class="parts">
+        <li><i aria-hidden="true">1</i><b>Gully</b>Where water enters the drain</li>
+        <li><i aria-hidden="true">2</i><b>Inspection chamber</b>The cover in your yard or drive</li>
+        <li><i aria-hidden="true">3</i><b>Your boundary</b>Where your part usually ends</li>
+        <li><i aria-hidden="true">4</i><b>Public sewer</b>Under the road</li>
+      </ol>
     </figure>
   </div>
 </section>
 
-<section class="sec sec-mist check" aria-labelledby="check-h">
-  <div class="wrap check-grid">
-    <div>
-      <h2 class="d" id="check-h">Check Lewis out for yourself</h2>
-      <ul class="recs">
-        <li>
-          <h3>Derbyshire Trusted Trader</h3>
-          <p>A member since 11 December 2024. The scheme is run by Derbyshire Trading Standards, who check every business that applies.</p>
-          <a href="https://apps.derbyshire.gov.uk/applications/trusted-trader/profile.asp?tid=79361" rel="noopener">See the council&rsquo;s listing</a>
-        </li>
-        <li>
-          <h3>Companies House</h3>
-          <p>Adapt Drainage Services Ltd is a registered company, number <span class="num">15760375</span>, incorporated on 4 June 2024.</p>
-          <a href="https://find-and-update.company-information.service.gov.uk/company/15760375" rel="noopener">See the public record</a>
-        </li>
-      </ul>
+<section class="sec sec-mist" aria-labelledby="check-h">
+  <div class="wrap">
+    <h2 class="d" id="check-h">Check Lewis out for yourself</h2>
+    <p class="intro">Both of these are public records. Neither is written by Adapt Drainage.</p>
+    <div class="recs">
+      <article class="rec">
+        <p class="rec-src">Derbyshire County Council</p>
+        <h3>Derbyshire Trusted Trader</h3>
+        <dl>
+          <div><dt>Member since</dt><dd>11 December 2024</dd></div>
+          <div><dt>Rating</dt><dd>5 out of 5</dd></div>
+          <div><dt>Customer reviews</dt><dd>7</dd></div>
+          <div><dt>Scheme run by</dt><dd>Derbyshire Trading Standards</dd></div>
+        </dl>
+        <a href="https://apps.derbyshire.gov.uk/applications/trusted-trader/profile.asp?tid=79361" rel="noopener">See the council&rsquo;s listing</a>
+      </article>
+      <article class="rec">
+        <p class="rec-src">Companies House</p>
+        <h3>Adapt Drainage Services Ltd</h3>
+        <dl>
+          <div><dt>Company number</dt><dd class="num">15760375</dd></div>
+          <div><dt>Status</dt><dd>Active</dd></div>
+          <div><dt>Incorporated</dt><dd>4 June 2024</dd></div>
+          <div><dt>Registered in</dt><dd>England and Wales</dd></div>
+        </dl>
+        <a href="https://find-and-update.company-information.service.gov.uk/company/15760375" rel="noopener">See the public record</a>
+      </article>
     </div>
-    <div class="save">
-      <h3 class="d">Save the number before you need it</h3>
-      <p>Add Lewis to your contacts now, so the number is already in your phone on the day a drain blocks.</p>
-      <a class="btn btn-plain" href="adapt-drainage-lewis.vcf" download>Add Lewis to your contacts</a>
-    </div>
+    <p class="rec-note">Details as shown on both records on 26 November 2026.</p>
   </div>
 </section>
 
@@ -449,16 +648,31 @@ h2{font-size:clamp(2.25rem,1.5rem + 3.4vw,3.5rem);color:var(--ink);max-width:15c
         <p>Adapt Drainage Services is based in Newbold, Chesterfield.</p>
         <p>Email <a href="mailto:adaptdrains@outlook.com">adaptdrains@outlook.com</a></p>
       </div>
+      <button class="copy" type="button" id="copynum" data-n="07947 311627">Copy the number</button>
     </div>
     <div class="end-act">
       <a class="call" href="tel:+447947311627">
-        <span class="call-l">Call Lewis <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></span>
+        <span class="call-l">Call Lewis <span class="call-i"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg></span></span>
         <span class="call-n d num">07947 311627</span>
       </a>
       <a class="btn btn-line" href="https://wa.me/447947311627?text=Hi%20Lewis%2C%20" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#25D366" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/><path fill="#fff" d="M17.3 14.6c-.3-.1-1.7-.8-1.9-.9-.3-.1-.5-.1-.6.1l-.9 1.1c-.2.2-.3.2-.6.1a7.6 7.6 0 0 1-3.8-3.3c-.3-.5.3-.5.8-1.6.1-.2 0-.3 0-.5l-.9-2.1c-.2-.6-.5-.5-.6-.5h-.5a1 1 0 0 0-.8.4 3.2 3.2 0 0 0-1 2.4c0 1.4 1 2.8 1.2 3 .1.2 2 3.1 4.9 4.3 1.8.8 2.5.8 3.4.7.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3z"/></svg>Message Lewis on WhatsApp</a>
     </div>
+    <div class="save save-mob">
+      <div>
+        <h3 class="d">Save the number before you need it</h3>
+        <p>Add Lewis to your contacts now, so the number is already in your phone on the day a drain blocks.</p>
+      </div>
+      <a class="btn btn-plain" href="adapt-drainage-lewis.vcf">Add Lewis to your contacts</a>
+    </div>
+    <div class="qr-box">
+      <svg class="qr" viewBox="-3 -3 59 59" role="img" aria-label="QR code: scan to save Lewis&rsquo;s number" shape-rendering="crispEdges"><rect x="-3" y="-3" width="59" height="59" fill="#fff"/><path fill="#0A2630" d="M0 0h7v1h-7zM8 0h2v1h-2zM13 0h1v1h-1zM15 0h1v1h-1zM17 0h2v1h-2zM20 0h3v1h-3zM27 0h1v1h-1zM29 0h2v1h-2zM32 0h4v1h-4zM38 0h1v1h-1zM40 0h1v1h-1zM42 0h1v1h-1zM46 0h7v1h-7zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM11 1h1v1h-1zM17 1h2v1h-2zM22 1h1v1h-1zM25 1h1v1h-1zM27 1h1v1h-1zM30 1h1v1h-1zM32 1h4v1h-4zM38 1h1v1h-1zM42 1h2v1h-2zM46 1h1v1h-1zM52 1h1v1h-1zM0 2h1v1h-1zM2 2h3v1h-3zM6 2h1v1h-1zM8 2h2v1h-2zM12 2h2v1h-2zM15 2h2v1h-2zM20 2h1v1h-1zM23 2h1v1h-1zM26 2h1v1h-1zM28 2h2v1h-2zM31 2h1v1h-1zM33 2h2v1h-2zM36 2h1v1h-1zM39 2h2v1h-2zM43 2h1v1h-1zM46 2h1v1h-1zM48 2h3v1h-3zM52 2h1v1h-1zM0 3h1v1h-1zM2 3h3v1h-3zM6 3h1v1h-1zM9 3h2v1h-2zM12 3h2v1h-2zM16 3h1v1h-1zM18 3h1v1h-1zM20 3h1v1h-1zM22 3h2v1h-2zM26 3h1v1h-1zM30 3h6v1h-6zM37 3h6v1h-6zM44 3h1v1h-1zM46 3h1v1h-1zM48 3h3v1h-3zM52 3h1v1h-1zM0 4h1v1h-1zM2 4h3v1h-3zM6 4h1v1h-1zM8 4h5v1h-5zM14 4h2v1h-2zM17 4h1v1h-1zM20 4h1v1h-1zM22 4h1v1h-1zM24 4h7v1h-7zM35 4h1v1h-1zM37 4h6v1h-6zM46 4h1v1h-1zM48 4h3v1h-3zM52 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM11 5h1v1h-1zM14 5h1v1h-1zM16 5h1v1h-1zM19 5h2v1h-2zM22 5h3v1h-3zM28 5h1v1h-1zM32 5h1v1h-1zM37 5h1v1h-1zM41 5h2v1h-2zM46 5h1v1h-1zM52 5h1v1h-1zM0 6h7v1h-7zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM24 6h1v1h-1zM26 6h1v1h-1zM28 6h1v1h-1zM30 6h1v1h-1zM32 6h1v1h-1zM34 6h1v1h-1zM36 6h1v1h-1zM38 6h1v1h-1zM40 6h1v1h-1zM42 6h1v1h-1zM44 6h1v1h-1zM46 6h7v1h-7zM9 7h1v1h-1zM13 7h4v1h-4zM18 7h2v1h-2zM23 7h2v1h-2zM28 7h3v1h-3zM32 7h2v1h-2zM35 7h1v1h-1zM37 7h2v1h-2zM40 7h1v1h-1zM42 7h1v1h-1zM0 8h1v1h-1zM3 8h6v1h-6zM10 8h1v1h-1zM13 8h2v1h-2zM17 8h1v1h-1zM19 8h2v1h-2zM22 8h7v1h-7zM30 8h2v1h-2zM33 8h2v1h-2zM36 8h2v1h-2zM40 8h3v1h-3zM44 8h2v1h-2zM48 8h1v1h-1zM50 8h3v1h-3zM0 9h3v1h-3zM4 9h1v1h-1zM8 9h2v1h-2zM11 9h2v1h-2zM14 9h2v1h-2zM17 9h2v1h-2zM21 9h1v1h-1zM23 9h1v1h-1zM25 9h2v1h-2zM28 9h7v1h-7zM36 9h7v1h-7zM44 9h1v1h-1zM46 9h1v1h-1zM49 9h2v1h-2zM52 9h1v1h-1zM0 10h1v1h-1zM4 10h3v1h-3zM8 10h3v1h-3zM13 10h2v1h-2zM18 10h2v1h-2zM22 10h5v1h-5zM29 10h1v1h-1zM32 10h3v1h-3zM37 10h1v1h-1zM39 10h2v1h-2zM42 10h3v1h-3zM46 10h1v1h-1zM3 11h3v1h-3zM7 11h1v1h-1zM9 11h1v1h-1zM11 11h2v1h-2zM16 11h1v1h-1zM18 11h1v1h-1zM20 11h1v1h-1zM22 11h1v1h-1zM24 11h2v1h-2zM28 11h1v1h-1zM31 11h2v1h-2zM39 11h1v1h-1zM45 11h3v1h-3zM49 11h1v1h-1zM1 12h1v1h-1zM3 12h2v1h-2zM6 12h4v1h-4zM13 12h8v1h-8zM22 12h1v1h-1zM24 12h1v1h-1zM27 12h3v1h-3zM32 12h2v1h-2zM36 12h1v1h-1zM40 12h3v1h-3zM44 12h1v1h-1zM46 12h1v1h-1zM48 12h5v1h-5zM1 13h2v1h-2zM5 13h1v1h-1zM8 13h1v1h-1zM10 13h2v1h-2zM14 13h2v1h-2zM17 13h1v1h-1zM19 13h2v1h-2zM23 13h3v1h-3zM27 13h3v1h-3zM31 13h3v1h-3zM36 13h1v1h-1zM38 13h2v1h-2zM42 13h1v1h-1zM44 13h2v1h-2zM47 13h1v1h-1zM49 13h2v1h-2zM52 13h1v1h-1zM0 14h2v1h-2zM4 14h3v1h-3zM13 14h4v1h-4zM19 14h1v1h-1zM22 14h2v1h-2zM25 14h4v1h-4zM30 14h2v1h-2zM33 14h1v1h-1zM35 14h1v1h-1zM37 14h4v1h-4zM43 14h1v1h-1zM47 14h1v1h-1zM49 14h2v1h-2zM52 14h1v1h-1zM0 15h1v1h-1zM3 15h2v1h-2zM7 15h1v1h-1zM9 15h1v1h-1zM11 15h1v1h-1zM14 15h1v1h-1zM17 15h1v1h-1zM20 15h8v1h-8zM29 15h1v1h-1zM32 15h1v1h-1zM34 15h1v1h-1zM37 15h2v1h-2zM40 15h1v1h-1zM42 15h1v1h-1zM44 15h1v1h-1zM46 15h2v1h-2zM49 15h3v1h-3zM0 16h1v1h-1zM4 16h3v1h-3zM9 16h2v1h-2zM15 16h1v1h-1zM18 16h1v1h-1zM20 16h1v1h-1zM24 16h1v1h-1zM26 16h1v1h-1zM29 16h1v1h-1zM31 16h2v1h-2zM36 16h3v1h-3zM47 16h2v1h-2zM52 16h1v1h-1zM3 17h1v1h-1zM5 17h1v1h-1zM7 17h1v1h-1zM10 17h3v1h-3zM19 17h3v1h-3zM23 17h3v1h-3zM29 17h3v1h-3zM34 17h2v1h-2zM37 17h1v1h-1zM42 17h1v1h-1zM45 17h2v1h-2zM48 17h2v1h-2zM51 17h1v1h-1zM0 18h1v1h-1zM3 18h2v1h-2zM6 18h1v1h-1zM12 18h2v1h-2zM15 18h2v1h-2zM19 18h1v1h-1zM21 18h2v1h-2zM26 18h1v1h-1zM28 18h1v1h-1zM32 18h1v1h-1zM34 18h5v1h-5zM40 18h2v1h-2zM45 18h1v1h-1zM47 18h1v1h-1zM49 18h4v1h-4zM0 19h1v1h-1zM2 19h2v1h-2zM5 19h1v1h-1zM7 19h1v1h-1zM13 19h2v1h-2zM17 19h1v1h-1zM21 19h1v1h-1zM24 19h3v1h-3zM31 19h1v1h-1zM34 19h1v1h-1zM36 19h3v1h-3zM42 19h4v1h-4zM49 19h4v1h-4zM0 20h2v1h-2zM3 20h1v1h-1zM6 20h1v1h-1zM10 20h1v1h-1zM13 20h5v1h-5zM19 20h1v1h-1zM21 20h3v1h-3zM26 20h1v1h-1zM33 20h1v1h-1zM35 20h4v1h-4zM40 20h4v1h-4zM45 20h4v1h-4zM50 20h2v1h-2zM2 21h1v1h-1zM4 21h2v1h-2zM8 21h1v1h-1zM10 21h1v1h-1zM12 21h1v1h-1zM15 21h4v1h-4zM20 21h3v1h-3zM24 21h2v1h-2zM27 21h5v1h-5zM34 21h2v1h-2zM37 21h3v1h-3zM42 21h3v1h-3zM46 21h1v1h-1zM51 21h1v1h-1zM1 22h1v1h-1zM3 22h4v1h-4zM8 22h2v1h-2zM11 22h1v1h-1zM16 22h7v1h-7zM24 22h1v1h-1zM27 22h1v1h-1zM29 22h4v1h-4zM34 22h1v1h-1zM38 22h2v1h-2zM43 22h1v1h-1zM46 22h1v1h-1zM49 22h1v1h-1zM0 23h1v1h-1zM2 23h1v1h-1zM4 23h1v1h-1zM11 23h2v1h-2zM18 23h2v1h-2zM21 23h1v1h-1zM23 23h3v1h-3zM27 23h3v1h-3zM36 23h1v1h-1zM40 23h1v1h-1zM42 23h1v1h-1zM45 23h1v1h-1zM47 23h1v1h-1zM52 23h1v1h-1zM0 24h3v1h-3zM4 24h5v1h-5zM10 24h8v1h-8zM20 24h3v1h-3zM24 24h5v1h-5zM31 24h2v1h-2zM34 24h4v1h-4zM39 24h11v1h-11zM52 24h1v1h-1zM2 25h3v1h-3zM8 25h1v1h-1zM12 25h1v1h-1zM15 25h1v1h-1zM17 25h3v1h-3zM21 25h2v1h-2zM24 25h1v1h-1zM28 25h6v1h-6zM35 25h2v1h-2zM38 25h3v1h-3zM42 25h3v1h-3zM48 25h1v1h-1zM50 25h1v1h-1zM2 26h3v1h-3zM6 26h1v1h-1zM8 26h1v1h-1zM11 26h1v1h-1zM13 26h3v1h-3zM18 26h1v1h-1zM22 26h1v1h-1zM24 26h1v1h-1zM26 26h1v1h-1zM28 26h4v1h-4zM33 26h1v1h-1zM36 26h1v1h-1zM40 26h2v1h-2zM44 26h1v1h-1zM46 26h1v1h-1zM48 26h1v1h-1zM52 26h1v1h-1zM4 27h1v1h-1zM8 27h2v1h-2zM11 27h2v1h-2zM14 27h1v1h-1zM16 27h1v1h-1zM18 27h1v1h-1zM22 27h1v1h-1zM24 27h1v1h-1zM28 27h3v1h-3zM32 27h3v1h-3zM36 27h3v1h-3zM42 27h1v1h-1zM44 27h1v1h-1zM48 27h3v1h-3zM0 28h9v1h-9zM10 28h1v1h-1zM13 28h4v1h-4zM19 28h1v1h-1zM21 28h1v1h-1zM23 28h9v1h-9zM33 28h1v1h-1zM36 28h1v1h-1zM38 28h1v1h-1zM41 28h1v1h-1zM43 28h6v1h-6zM50 28h3v1h-3zM0 29h1v1h-1zM2 29h3v1h-3zM7 29h2v1h-2zM10 29h2v1h-2zM15 29h1v1h-1zM18 29h3v1h-3zM25 29h2v1h-2zM28 29h1v1h-1zM30 29h1v1h-1zM32 29h1v1h-1zM34 29h1v1h-1zM36 29h1v1h-1zM42 29h1v1h-1zM44 29h3v1h-3zM48 29h3v1h-3zM52 29h1v1h-1zM1 30h1v1h-1zM5 30h3v1h-3zM9 30h1v1h-1zM13 30h2v1h-2zM16 30h2v1h-2zM19 30h1v1h-1zM23 30h5v1h-5zM33 30h3v1h-3zM37 30h1v1h-1zM40 30h4v1h-4zM45 30h5v1h-5zM52 30h1v1h-1zM0 31h1v1h-1zM2 31h1v1h-1zM5 31h1v1h-1zM7 31h2v1h-2zM11 31h1v1h-1zM13 31h2v1h-2zM16 31h2v1h-2zM24 31h1v1h-1zM26 31h2v1h-2zM30 31h1v1h-1zM36 31h1v1h-1zM38 31h1v1h-1zM40 31h1v1h-1zM42 31h1v1h-1zM44 31h1v1h-1zM47 31h1v1h-1zM49 31h2v1h-2zM3 32h4v1h-4zM10 32h1v1h-1zM15 32h2v1h-2zM19 32h1v1h-1zM21 32h2v1h-2zM24 32h2v1h-2zM28 32h3v1h-3zM34 32h3v1h-3zM40 32h1v1h-1zM42 32h4v1h-4zM48 32h1v1h-1zM50 32h3v1h-3zM0 33h4v1h-4zM5 33h1v1h-1zM7 33h1v1h-1zM10 33h1v1h-1zM12 33h2v1h-2zM19 33h1v1h-1zM21 33h1v1h-1zM25 33h2v1h-2zM28 33h1v1h-1zM30 33h5v1h-5zM36 33h3v1h-3zM40 33h5v1h-5zM47 33h2v1h-2zM50 33h1v1h-1zM1 34h1v1h-1zM3 34h1v1h-1zM6 34h1v1h-1zM8 34h4v1h-4zM13 34h3v1h-3zM17 34h2v1h-2zM23 34h1v1h-1zM25 34h2v1h-2zM30 34h1v1h-1zM32 34h6v1h-6zM41 34h2v1h-2zM44 34h1v1h-1zM48 34h3v1h-3zM5 35h1v1h-1zM7 35h2v1h-2zM11 35h2v1h-2zM16 35h2v1h-2zM20 35h1v1h-1zM22 35h1v1h-1zM24 35h6v1h-6zM33 35h1v1h-1zM37 35h4v1h-4zM42 35h2v1h-2zM45 35h3v1h-3zM49 35h1v1h-1zM51 35h1v1h-1zM0 36h2v1h-2zM6 36h1v1h-1zM9 36h4v1h-4zM14 36h2v1h-2zM17 36h2v1h-2zM20 36h1v1h-1zM22 36h3v1h-3zM26 36h1v1h-1zM28 36h2v1h-2zM32 36h2v1h-2zM36 36h1v1h-1zM38 36h1v1h-1zM40 36h1v1h-1zM42 36h2v1h-2zM46 36h2v1h-2zM49 36h1v1h-1zM2 37h1v1h-1zM7 37h3v1h-3zM13 37h1v1h-1zM15 37h1v1h-1zM18 37h1v1h-1zM22 37h2v1h-2zM25 37h1v1h-1zM28 37h1v1h-1zM30 37h5v1h-5zM36 37h1v1h-1zM38 37h1v1h-1zM40 37h4v1h-4zM45 37h4v1h-4zM50 37h1v1h-1zM52 37h1v1h-1zM1 38h4v1h-4zM6 38h1v1h-1zM8 38h2v1h-2zM13 38h4v1h-4zM24 38h2v1h-2zM27 38h3v1h-3zM33 38h5v1h-5zM39 38h1v1h-1zM41 38h1v1h-1zM43 38h2v1h-2zM46 38h2v1h-2zM49 38h1v1h-1zM51 38h2v1h-2zM0 39h1v1h-1zM2 39h1v1h-1zM4 39h2v1h-2zM8 39h1v1h-1zM10 39h2v1h-2zM14 39h2v1h-2zM17 39h4v1h-4zM25 39h5v1h-5zM34 39h1v1h-1zM36 39h3v1h-3zM40 39h4v1h-4zM48 39h1v1h-1zM50 39h1v1h-1zM0 40h3v1h-3zM4 40h1v1h-1zM6 40h3v1h-3zM10 40h3v1h-3zM15 40h2v1h-2zM22 40h2v1h-2zM25 40h4v1h-4zM31 40h2v1h-2zM34 40h1v1h-1zM36 40h1v1h-1zM38 40h1v1h-1zM41 40h1v1h-1zM49 40h1v1h-1zM51 40h2v1h-2zM4 41h2v1h-2zM7 41h1v1h-1zM9 41h2v1h-2zM14 41h5v1h-5zM20 41h1v1h-1zM22 41h1v1h-1zM26 41h1v1h-1zM28 41h1v1h-1zM30 41h2v1h-2zM34 41h1v1h-1zM36 41h1v1h-1zM41 41h2v1h-2zM45 41h1v1h-1zM47 41h4v1h-4zM52 41h1v1h-1zM0 42h2v1h-2zM3 42h4v1h-4zM8 42h1v1h-1zM11 42h5v1h-5zM19 42h1v1h-1zM23 42h1v1h-1zM27 42h2v1h-2zM30 42h4v1h-4zM35 42h1v1h-1zM37 42h2v1h-2zM40 42h1v1h-1zM44 42h1v1h-1zM46 42h1v1h-1zM49 42h1v1h-1zM52 42h1v1h-1zM1 43h2v1h-2zM7 43h6v1h-6zM15 43h1v1h-1zM17 43h2v1h-2zM24 43h1v1h-1zM26 43h2v1h-2zM29 43h2v1h-2zM33 43h2v1h-2zM36 43h5v1h-5zM43 43h1v1h-1zM46 43h3v1h-3zM50 43h1v1h-1zM3 44h1v1h-1zM6 44h6v1h-6zM14 44h5v1h-5zM22 44h7v1h-7zM30 44h2v1h-2zM33 44h1v1h-1zM35 44h1v1h-1zM38 44h3v1h-3zM43 44h10v1h-10zM8 45h1v1h-1zM10 45h2v1h-2zM15 45h2v1h-2zM18 45h3v1h-3zM24 45h1v1h-1zM28 45h3v1h-3zM33 45h2v1h-2zM37 45h2v1h-2zM41 45h2v1h-2zM44 45h1v1h-1zM48 45h3v1h-3zM52 45h1v1h-1zM0 46h7v1h-7zM8 46h1v1h-1zM10 46h2v1h-2zM13 46h2v1h-2zM16 46h2v1h-2zM19 46h1v1h-1zM21 46h1v1h-1zM23 46h2v1h-2zM26 46h1v1h-1zM28 46h1v1h-1zM30 46h2v1h-2zM33 46h2v1h-2zM38 46h2v1h-2zM42 46h3v1h-3zM46 46h1v1h-1zM48 46h2v1h-2zM51 46h1v1h-1zM0 47h1v1h-1zM6 47h1v1h-1zM8 47h1v1h-1zM10 47h1v1h-1zM15 47h2v1h-2zM20 47h3v1h-3zM24 47h1v1h-1zM28 47h4v1h-4zM35 47h2v1h-2zM39 47h1v1h-1zM42 47h3v1h-3zM48 47h2v1h-2zM51 47h1v1h-1zM0 48h1v1h-1zM2 48h3v1h-3zM6 48h1v1h-1zM8 48h2v1h-2zM12 48h1v1h-1zM14 48h2v1h-2zM17 48h1v1h-1zM19 48h4v1h-4zM24 48h6v1h-6zM31 48h3v1h-3zM36 48h3v1h-3zM40 48h12v1h-12zM0 49h1v1h-1zM2 49h3v1h-3zM6 49h1v1h-1zM8 49h1v1h-1zM10 49h1v1h-1zM12 49h6v1h-6zM19 49h1v1h-1zM21 49h1v1h-1zM26 49h5v1h-5zM32 49h2v1h-2zM35 49h2v1h-2zM38 49h1v1h-1zM40 49h1v1h-1zM42 49h4v1h-4zM49 49h1v1h-1zM52 49h1v1h-1zM0 50h1v1h-1zM2 50h3v1h-3zM6 50h1v1h-1zM9 50h1v1h-1zM11 50h1v1h-1zM14 50h2v1h-2zM19 50h2v1h-2zM22 50h2v1h-2zM25 50h1v1h-1zM27 50h1v1h-1zM31 50h1v1h-1zM34 50h1v1h-1zM36 50h2v1h-2zM39 50h2v1h-2zM42 50h1v1h-1zM47 50h5v1h-5zM0 51h1v1h-1zM6 51h1v1h-1zM9 51h1v1h-1zM11 51h2v1h-2zM14 51h9v1h-9zM24 51h1v1h-1zM26 51h1v1h-1zM28 51h2v1h-2zM33 51h2v1h-2zM38 51h1v1h-1zM42 51h1v1h-1zM46 51h5v1h-5zM52 51h1v1h-1zM0 52h7v1h-7zM8 52h2v1h-2zM11 52h2v1h-2zM15 52h1v1h-1zM17 52h1v1h-1zM19 52h3v1h-3zM24 52h2v1h-2zM28 52h2v1h-2zM31 52h3v1h-3zM35 52h3v1h-3zM42 52h1v1h-1zM46 52h2v1h-2zM50 52h1v1h-1z"/></svg>
+      <b>Save the number before you need it</b>
+      <small>Point your phone&rsquo;s camera here to add Lewis to your contacts.</small>
+    </div>
   </div>
 </section>
+
+</main>
 
 <footer class="ft">
   <div class="wrap">
@@ -477,42 +691,127 @@ h2{font-size:clamp(2.25rem,1.5rem + 3.4vw,3.5rem);color:var(--ink);max-width:15c
 </script>
 <script>
 (function(){
-  var d=document;
+  var d=document,w=window,root=d.documentElement;
+  var reduce=!!(w.matchMedia&&w.matchMedia("(prefers-reduced-motion: reduce)").matches);
 
   /* the live line at the top: the time in Chesterfield, right now */
   var el=d.getElementById("oncall");
   function tick(){
     try{
       var parts=new Intl.DateTimeFormat("en-GB",{timeZone:"Europe/London",weekday:"long",hour:"numeric",minute:"2-digit",hour12:true}).formatToParts(new Date());
-      var o={};parts.forEach(function(p){o[p.type]=p.value;});
+      var o={},i;
+      for(i=0;i<parts.length;i++){o[parts[i].type]=parts[i].value;}
       var ap=(o.dayPeriod||"").toLowerCase().replace(/[^apm]/g,"");
       var h=o.hour==="0"?"12":o.hour;
-      if(!o.weekday||!o.minute||!ap){return;}
+      if(!o.weekday||!o.minute||!h||(ap!=="am"&&ap!=="pm")){return;}
       el.textContent="It’s "+h+":"+o.minute+ap+" on "+o.weekday+". Lewis is on call.";
     }catch(e){}
   }
-  if(el&&window.Intl&&Intl.DateTimeFormat){tick();setInterval(tick,20000);}
+  if(el&&w.Intl&&Intl.DateTimeFormat&&Intl.DateTimeFormat.prototype.formatToParts){tick();setInterval(tick,20000);}
+
+  /* the view down the pipe behind the headline */
+  (function(){
+    var c=d.getElementById("bore");
+    if(!c||!c.getContext){return;}
+    var ctx=c.getContext("2d");
+    if(!ctx){return;}
+    var hero=c.parentNode,act=d.getElementById("herocall"),W=0,H=0,dpr=1,cx=0,cy=0,R=1,N=9,T=17000,raf=0,seen=true,shown=true;
+    var now=function(){return (w.performance&&performance.now)?performance.now():+new Date();};
+    function draw(t){
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+      ctx.clearRect(0,0,W,H);
+      var sway=reduce?0:1,ox=cx+Math.sin(t/5200)*6*sway,oy=cy+Math.cos(t/6700)*4*sway,i,p,k,r,a;
+      for(i=0;i<N;i++){
+        p=((t/T)+i/N)%1;
+        k=1-p;
+        r=R*0.03/(1-0.97*p);
+        a=Math.min(1,p/0.1)*(p>0.7?Math.max(0,k/0.3):1)*0.36;
+        ctx.beginPath();
+        ctx.arc(ox+k*k*20,oy+k*k*11,r,0,6.2832);
+        ctx.lineWidth=0.75+2.6*(r/R);
+        ctx.strokeStyle="rgba(150,226,243,"+a.toFixed(3)+")";
+        ctx.stroke();
+      }
+    }
+    function size(){
+      var b=hero.getBoundingClientRect();
+      W=Math.max(1,Math.round(b.width));H=Math.max(1,Math.round(b.height));
+      dpr=Math.min(w.devicePixelRatio||1,2);
+      c.width=Math.round(W*dpr);c.height=Math.round(H*dpr);
+      if(W<768||!act){cx=W*0.9;cy=H*0.11;}else{var hb=act.getBoundingClientRect();cx=hb.left-b.left+hb.width/2;cy=H/2+26;}
+      var dx=Math.max(cx,W-cx),dy=Math.max(cy,H-cy);
+      R=Math.sqrt(dx*dx+dy*dy)*1.05;
+      draw(reduce?5000:now());
+    }
+    function loop(){
+      raf=0;
+      if(!seen||!shown){return;}
+      draw(now());
+      raf=w.requestAnimationFrame(loop);
+    }
+    function go(){if(!reduce&&!raf&&seen&&shown&&w.requestAnimationFrame){raf=w.requestAnimationFrame(loop);}}
+    root.className+=" has-bore";
+    size();
+    var rt=0;
+    w.addEventListener("resize",function(){clearTimeout(rt);rt=setTimeout(size,120);});
+    w.addEventListener("load",size);
+    if(d.fonts&&d.fonts.ready&&d.fonts.ready.then){d.fonts.ready.then(size);}
+    if("IntersectionObserver" in w){new IntersectionObserver(function(e){seen=e[0].isIntersecting;go();}).observe(hero);}
+    d.addEventListener("visibilitychange",function(){shown=!d.hidden;go();});
+    go();
+  })();
 
   /* the message builder */
-  var form=d.getElementById("tellform"),out=d.getElementById("msgtext"),go=d.getElementById("msggo"),pc=d.getElementById("pc");
+  var form=d.getElementById("tellform"),out=d.getElementById("msgtext"),goBtn=d.getElementById("msggo"),pc=d.getElementById("pc");
   function build(){
     var c=form.querySelector("input[name=p]:checked");
     var m="Hi Lewis, "+(c?c.value:"I’ve got a drainage problem")+".";
-    var v=(pc.value||"").toUpperCase().replace(/[^A-Z0-9 ]/g,"").replace(/\s+/g," ").trim();
+    var v=(pc.value||"").toUpperCase().replace(/[^A-Z0-9 ]/g,"").replace(/\s+/g," ").replace(/^ | $/g,"");
     if(v){m+=" My postcode is "+v+".";}
     m+=" Can you help?";
     out.textContent=m;
-    go.href="https://wa.me/447947311627?text="+encodeURIComponent(m);
+    goBtn.href="https://wa.me/447947311627?text="+encodeURIComponent(m);
   }
-  if(form&&out&&go&&pc){form.addEventListener("change",build);pc.addEventListener("input",build);build();}
+  if(form&&out&&goBtn&&pc){
+    form.addEventListener("change",build);
+    form.addEventListener("click",build);
+    pc.addEventListener("input",build);
+    pc.addEventListener("keyup",build);
+    build();
+  }
 
-  /* the call bar on phones */
-  var bar=d.getElementById("bar"),hero=d.getElementById("herocall"),end=d.getElementById("contact");
-  if(bar&&hero&&end&&"IntersectionObserver" in window){
+  /* the call bar on phones, and the shadow under the header once you scroll */
+  var bar=d.getElementById("bar"),heroCall=d.getElementById("herocall"),end=d.getElementById("contact"),hd=d.getElementById("hd");
+  if(bar&&heroCall&&end&&"IntersectionObserver" in w){
     var a=true,b=false;
-    function set(){bar.classList.toggle("on",!a&&!b);}
-    new IntersectionObserver(function(e){a=e[0].isIntersecting;set();}).observe(hero);
+    var set=function(){bar.className=(!a&&!b)?"bar on":"bar";};
+    new IntersectionObserver(function(e){a=e[0].isIntersecting;set();}).observe(heroCall);
     new IntersectionObserver(function(e){b=e[0].isIntersecting;set();}).observe(end);
+  }
+  if(hd){
+    var onScroll=function(){
+      var y=w.pageYOffset||root.scrollTop||0;
+      hd.className=y>60?"hd stuck":"hd";
+    };
+    w.addEventListener("scroll",onScroll,{passive:true});
+    onScroll();
+  }
+
+  /* copy the number, for people reading on a computer */
+  var cp=d.getElementById("copynum");
+  if(cp){
+    cp.addEventListener("click",function(){
+      var n=cp.getAttribute("data-n"),done=function(){cp.textContent="Copied: "+n;setTimeout(function(){cp.textContent="Copy the number";},2500);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(n).then(done,function(){});
+      }else{
+        try{
+          var t=d.createElement("textarea");
+          t.value=n;t.setAttribute("readonly","");t.style.position="fixed";t.style.left="-999px";
+          d.body.appendChild(t);t.select();d.execCommand("copy");d.body.removeChild(t);done();
+        }catch(e){}
+      }
+    });
   }
 })();
 </script>
